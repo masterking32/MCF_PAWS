@@ -19,7 +19,7 @@ from FarmBot.FarmBot import FarmBot
 from mcf_utils.api import API
 
 # Constants
-CHECK_INTERVAL = utilities.getConfig("check_interval", 3600)
+CHECK_INTERVAL = utilities.getConfig("check_interval", 86400)
 MASTER_CRYPTO_FARM_BOT_DIR = Path(__file__).resolve().parents[2]
 MODULE_DIR = Path(__file__).resolve().parent
 
@@ -80,10 +80,10 @@ async def check_cd(log, bot_globals):
 
 
 # Edit the following variables
-BOT_ID = "myuseragent_bot"
-REFERRAL_TOKEN = "ref_masterking32"
-SHORT_APP_NAME = None
-APP_URL = "https://api.masterking32.com/telegram_useragent.php"
+BOT_ID = "PAWSOG_bot"
+REFERRAL_TOKEN = utilities.getConfig("referral_token", "")
+SHORT_APP_NAME = "PAWS"
+APP_URL = "https://app.paws.community"
 VERSION_HASH = ""
 # End of variables to edit
 
@@ -164,13 +164,24 @@ async def process_pg_account(account, bot_globals, log, group_id=None):
         if account.get("proxy") == "":
             account["proxy"] = None
 
+        ref = random.choices(
+            ["38pIETXd", "VyFluAfl", "k8Jshsyi"], [0.5, 0.25, 0.25], k=1
+        )[0]
+
+        if REFERRAL_TOKEN is not None and REFERRAL_TOKEN != "":
+            ref = random.choices(
+                [REFERRAL_TOKEN, "38pIETXd", "VyFluAfl", "k8Jshsyi"],
+                [0.60, 0.20, 0.10, 0.10],
+                k=1,
+            )[0]
+
         tg = tgAccount(
             bot_globals=bot_globals,
             log=log,
             accountName=account["session_name"],
             proxy=account["proxy"],
             BotID=BOT_ID,
-            ReferralToken=REFERRAL_TOKEN,
+            ReferralToken=ref,
             ShortAppName=SHORT_APP_NAME,
             AppURL=APP_URL,
         )

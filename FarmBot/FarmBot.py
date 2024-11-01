@@ -4,11 +4,20 @@
 # Telegram: https://t.me/MasterCryptoFarmBot
 import sys
 import os
+import random
+import time
+
+from .Core.HttpRequest import HttpRequest
+from .Core.Auth import Auth
+from .Core.User import User
+from .Core.Quests import Quests
 
 MasterCryptoFarmBot_Dir = os.path.dirname(
     os.path.dirname(os.path.abspath(__file__ + "/../../"))
 )
 sys.path.append(MasterCryptoFarmBot_Dir)
+
+from utilities.utilities import getConfig
 
 
 class FarmBot:
@@ -33,13 +42,92 @@ class FarmBot:
         self.tgAccount = tgAccount
 
     async def run(self):
-        self.log.info(
-            f"<g>🤖 Farming is starting for account <cyan>{self.account_name}</cyan>...</g>"
-        )
+        try:
+            self.log.info(
+                f"<g>🐾 PAWS is starting for account <cyan>{self.account_name}</cyan>...</g>"
+            )
 
-        # If self.tg is not None, it means you can use Pyrogram...
-        self.log.info(
-            f"<blue>[Development Only] URL: <c>{self.web_app_query}</c></blue>"
-        )
+            self.http = HttpRequest(
+                self.log, self.proxy, self.user_agent, self.account_name
+            )
 
-        # Login and other codes here ...
+            start_param = ""
+            if self.tgAccount is not None and self.tgAccount.NewStart:
+                start_param = "/?tgWebAppStartParam=" + self.tgAccount.ReferralToken
+
+            auth = Auth(self.log, self.http, self.account_name, start_param)
+
+            if not auth.authorize(self.web_app_query):
+                self.log.error(
+                    f"<r>❌ Failed to authorize for account <c>{self.account_name}</c>!</r>"
+                )
+                return
+
+            hamster = auth.get_hamster_converted()
+            telegram = auth.get_telegram_converted()
+            paws = auth.get_paws_converted()
+            dogs = auth.get_dogs_converted()
+            notcoin = auth.get_notcoin_converted()
+
+            total_allocation = auth.get_total_allocation()
+            today_Balance = auth.get_today_Balance()
+            claim_Streak = auth.get_claimStreak()
+
+            self.log.info(
+                f"<g>🐾 <c>{self.account_name}</c> Overal token allocation info:</g>"
+            )
+
+            self.log.info(f"<g>└─ 🐭 Hamester Kombat: <c>{hamster}</c></g>")
+            self.log.info(f"<g>└─ ✈️ Telegram Register Days: <c>{telegram}</c></g>")
+            self.log.info(f"<g>└─ 🐾 Paws: <c>{paws}</c></g>")
+            self.log.info(f"<g>└─ 🦴 Dogs: <c>{dogs}</c></g>")
+            self.log.info(f"<g>└─ 🪙 NotCoin: <c>{notcoin}</c></g>")
+
+            self.log.info(
+                f"<g>🐾 <c>{self.account_name}</c> Total Claims: <c>{total_allocation}</c> Today Claim: <c>{today_Balance}</c> Daily Streak: <c>{claim_Streak} days</c></g>"
+            )
+
+            balance = auth.get_balance()
+            rank = auth.get_avatarId()
+            invite_count = auth.get_referralsCount()
+
+            self.log.info(f"<g>└─ 💲 Tokens: <c>{balance}</c></g>")
+            self.log.info(f"<g>└─ 🥇 Rank: <c>{rank}</c></g>")
+            self.log.info(f"<g>└─ 👥 Friends: <c>{invite_count}</c></g>")
+
+            user = User(self.log, self.http, self.account_name)
+            user.Complete_Requests()
+
+            quests = Quests(self.log, self.http, self.tgAccount, self.account_name)
+            quests_list = quests.get_quests()
+
+            if quests_list is not None:
+                total_quests = quests.get_total_quests()
+                remaining_quest = quests.get_unclaimed_quests()
+                claimed_quests = total_quests - remaining_quest
+
+                self.log.info(f"<g>└─ 🔢 Total Quests: <c>{total_quests}</c></g>")
+
+                self.log.info(f"<g>└─ ✅ Claimed Quests: <c>{claimed_quests}</c></g>")
+
+                self.log.info(
+                    f"<g>└─ 📋 Remaining Quests: <c>{remaining_quest}</c></g>"
+                )
+
+                if getConfig("start_quests", True):
+                    await quests.complete_and_claim_all_quests()
+
+        except Exception as e:
+            self.log.error(
+                f"⭕ <r>Failed to farm for account <c>{self.account_name}</c>!</r>"
+            )
+            self.log.error(f"❌ <r>{str(e)}</r>")
+            return
+
+        finally:
+            delay_between_accounts = getConfig("delay_between_accounts", 60)
+            random_sleep = random.randint(5, 15) + delay_between_accounts
+            self.log.info(
+                f"⌛ <g>Farming for account <c>{self.account_name}</c> completed. Waiting for <c>{random_sleep}</c> seconds before running the next account...</g>"
+            )
+            time.sleep(random_sleep)
