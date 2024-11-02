@@ -96,6 +96,7 @@ class User:
         self.log.info(f"<y>⌛ Fetching requests for <c>{self.account_name}</c>...</y>")
 
         self.get_transactions()
-        self.get_leaderboard()
         self.get_my_referral()
+        
+        # self.get_leaderboard()
         # self.get_user()
