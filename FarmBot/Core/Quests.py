@@ -72,6 +72,12 @@ class Quests:
                     f"<r>❌ Failed to complete quest <c>{quest_title}</c>! NULL_RESPONSE</r>"
                 )
                 return False
+            elif response.get("data", False) == False:
+                self.log.error(
+                    f"<y>⚠️ Quest <c>{quest_title}</c> bugged and cannot complete now! (SERVER SIDE)</y>"
+                )
+                return False
+
 
             self.log.info(
                 f"<g>✅ Completed quest <c>{quest_title}</c> successfully!</g>"
@@ -109,10 +115,6 @@ class Quests:
 
             self.get_transactions()
 
-            self.log.info(
-                f"<g>🎉 Quest: <c>{quest_title}</c> Claimed Successfully!</g>"
-            )
-
             return True
 
         except Exception as e:
@@ -137,9 +139,6 @@ class Quests:
             if quest_type not in ["referral", "wallet"] and not progress_claimed:
                 if progress_completed == 0:
                     if await self.complete_quest(quest):
-                        self.log.info(
-                            f"<g>✅ Quest <c>{quest_title}</c> completed successfully!</g>"
-                        )
 
                         progress_completed = 1
 
