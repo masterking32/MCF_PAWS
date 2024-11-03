@@ -95,6 +95,12 @@ class FarmBot:
             self.log.info(f"<g>└─ 🥇 Rank: <c>{rank}</c></g>")
             self.log.info(f"<g>└─ 👥 Friends: <c>{invite_count}</c></g>")
 
+            wallet = auth.get_wallet()
+            self.log.info(
+                f"<g>└─ 💳 Connected Wallet: <c>{wallet}</c></g>" if wallet is not None
+                else f"<y>└─ 💳 No wallet connected yet!</y>"
+            )
+
             user = User(self.log, self.http, self.account_name)
             user.Complete_Requests()
 
@@ -115,7 +121,9 @@ class FarmBot:
                 )
 
                 if getConfig("start_quests", True):
-                    await quests.complete_and_claim_all_quests()
+                    invited_10_user = invite_count >= 10
+                    wallet_connected = wallet != None
+                    await quests.complete_and_claim_all_quests(invited_10_user, wallet_connected)
 
         except Exception as e:
             self.log.error(

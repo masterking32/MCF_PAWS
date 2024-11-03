@@ -46,7 +46,7 @@ class Quests:
             quest_data = quest.get("data", "")
             quest_title = quest.get("title", "N/A")
 
-            if quest_code == "telegram":
+            if quest_code in ["telegram", "blum"]:
                 if (
                     getConfig("join_channels", True)
                     and self.tgAccount is not None
@@ -113,7 +113,7 @@ class Quests:
                 )
                 return False
 
-            self.get_transactions()
+            #self.get_transactions() #NO NEEDS
 
             return True
 
@@ -124,7 +124,7 @@ class Quests:
 
             return False
 
-    async def complete_and_claim_all_quests(self):
+    async def complete_and_claim_all_quests(self, invited_10_user, wallet_connected):
         self.log.info(f"<y>⌛ Checking remaining quests...</y>")
 
         for quest in self.quests:
@@ -136,7 +136,11 @@ class Quests:
             quest_type = quest.get("type", "")
             quest_title = quest.get("title", "N/A")
 
-            if quest_type not in ["referral", "wallet"] and not progress_claimed:
+            if ((quest_type == "referral" and invited_10_user)
+                or (quest_type == "wallet" and wallet_connected)
+                or quest_type not in ["boost", "referral", "wallet"]
+                and not progress_claimed
+            ):
                 if progress_completed == 0:
                     if await self.complete_quest(quest):
 
