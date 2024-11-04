@@ -74,6 +74,20 @@ class Auth:
     def get_avatarId(self):
         return self.get_userData().get("avatarId", 0)
 
+    def mask_wallet_address(self, wallet_address):
+        start = wallet_address[:6]
+        end = wallet_address[-6:]
+        masked = start + "************" + end
+        return masked
+    
+    def get_wallet(self):
+        wallet = self.get_userData().get("wallet", None)
+        if wallet is not None and wallet != '':
+            masked_address = self.mask_wallet_address(wallet)
+            return masked_address
+        else:
+            return None
+
     def get_referralData(self):
         return self.data[1].get("referralData", {})
 
