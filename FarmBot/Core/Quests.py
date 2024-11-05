@@ -58,6 +58,38 @@ class Quests:
                     await asyncio.sleep(random.randint(5, 10))
                 else:
                     return False
+                
+            elif quest_code == "emojiName":
+
+                tgMe = self.tgAccount.me
+
+                if (
+                    getConfig("change_name", True) is False
+                    or self.tgAccount is None
+                    or tgMe is None
+                ):
+                    return False
+                    
+                paws_emoji = "🐾"
+
+                try:
+                    tgMe.first_name = tgMe.first_name or paws_emoji
+                    tgMe.last_name = tgMe.last_name or paws_emoji
+                    
+                    await self.tgAccount.setName(
+                        tgMe.first_name, tgMe.last_name
+                    )
+                    
+                    self.log.info(
+                        f"<g>✔️ <c>{paws_emoji}</c> added to <c>{self.account_name}</c> name!</g>"
+                    )
+
+                except:
+                    self.log.info(
+                        f"<y>⚠️ Failed to add <c>{paws_emoji}</c> to <c>{self.account_name}</c> name!</y>"
+                    )
+                    return False
+                    
 
             payload = {"questId": quest_id}
 
