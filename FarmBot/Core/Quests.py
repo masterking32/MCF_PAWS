@@ -61,23 +61,25 @@ class Quests:
                 
             elif quest_code == "emojiName":
 
-                tgMe = self.tgAccount.me
-
                 if (
                     getConfig("change_name", True) is False
                     or self.tgAccount is None
-                    or tgMe is None
                 ):
                     return False
-                    
+                
+                tgMe = self.tgAccount.me
+
+                if tgMe is None:
+                    return False
+
                 paws_emoji = "🐾"
 
                 try:
-                    tgMe.first_name = tgMe.first_name or paws_emoji
-                    tgMe.last_name = tgMe.last_name or paws_emoji
+                    tgMe.first_name = tgMe.first_name or ""
+                    tgMe.last_name = tgMe.last_name or ""
                     
                     await self.tgAccount.setName(
-                        tgMe.first_name, tgMe.last_name
+                        tgMe.first_name, tgMe.last_name + paws_emoji
                     )
                     
                     self.log.info(
@@ -86,7 +88,7 @@ class Quests:
 
                 except:
                     self.log.info(
-                        f"<y>⚠️ Failed to add <c>{paws_emoji}</c> to <c>{self.account_name}</c> name!</y>"
+                        f"<y>⚠️ Failed to change <c>{self.account_name}</c> name!</y>"
                     )
                     return False
                     
