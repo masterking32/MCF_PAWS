@@ -173,7 +173,7 @@ class Quests:
             if (not progress_claimed
                 and (quest_code == "invite" and invited_10_user)
                 or (quest_code == "wallet" and wallet_connected)
-                or quest_code not in ["boost", "vote", "votedown", "voteup", "mystery"]
+                or quest_code not in ["invite", "wallet", "boost", "vote", "votedown", "voteup", "mystery"]
             ):
                 if progress_completed == 0:
                     if await self.complete_quest(quest):
