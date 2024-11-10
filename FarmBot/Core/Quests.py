@@ -46,7 +46,7 @@ class Quests:
             quest_data = quest.get("data", "")
             quest_title = quest.get("title", "N/A")
 
-            if quest_code in ["telegram", "blum"]:
+            if quest_code == "telegram":
                 if (
                     getConfig("join_channels", True)
                     and self.tgAccount is not None
@@ -59,38 +59,38 @@ class Quests:
                 else:
                     return False
                 
-            elif quest_code == "emojiName":
+            # elif quest_code == "emojiName":
 
-                if (
-                    getConfig("change_name", True) is False
-                    or self.tgAccount is None
-                ):
-                    return False
+            #     if (
+            #         getConfig("change_name", True) is False
+            #         or self.tgAccount is None
+            #     ):
+            #         return False
                 
-                tgMe = self.tgAccount.me
+            #     tgMe = self.tgAccount.me
 
-                if tgMe is None:
-                    return False
+            #     if tgMe is None:
+            #         return False
 
-                paws_emoji = "🐾"
+            #     paws_emoji = "🐾"
 
-                try:
-                    tgMe.first_name = tgMe.first_name or ""
-                    tgMe.last_name = tgMe.last_name or ""
+            #     try:
+            #         tgMe.first_name = tgMe.first_name or ""
+            #         tgMe.last_name = tgMe.last_name or ""
                     
-                    await self.tgAccount.setName(
-                        tgMe.first_name, tgMe.last_name + paws_emoji
-                    )
+            #         await self.tgAccount.setName(
+            #             tgMe.first_name, tgMe.last_name + paws_emoji
+            #         )
                     
-                    self.log.info(
-                        f"<g>✔️ <c>{paws_emoji}</c> added to <c>{self.account_name}</c> name!</g>"
-                    )
+            #         self.log.info(
+            #             f"<g>✔️ <c>{paws_emoji}</c> added to <c>{self.account_name}</c> name!</g>"
+            #         )
 
-                except:
-                    self.log.info(
-                        f"<y>⚠️ Failed to change <c>{self.account_name}</c> name!</y>"
-                    )
-                    return False
+            #     except:
+            #         self.log.info(
+            #             f"<y>⚠️ Failed to change <c>{self.account_name}</c> name!</y>"
+            #         )
+            #         return False
                     
 
             payload = {"questId": quest_id}
@@ -167,13 +167,13 @@ class Quests:
                 "current", 0
             )  # 0 means not clicked, 1 clicked but not claimed, and 2 means completed !
 
-            quest_type = quest.get("type", "")
+            quest_code = quest.get("code", "")
             quest_title = quest.get("title", "N/A")
 
-            if ((quest_type == "referral" and invited_10_user)
-                or (quest_type == "wallet" and wallet_connected)
-                or quest_type not in ["boost", "referral", "wallet"]
-                and not progress_claimed
+            if (not progress_claimed
+                and (quest_code == "invite" and invited_10_user)
+                or (quest_code == "wallet" and wallet_connected)
+                or quest_code not in ["boost", "vote", "votedown", "voteup", "mystery"]
             ):
                 if progress_completed == 0:
                     if await self.complete_quest(quest):
