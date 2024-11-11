@@ -17,7 +17,7 @@
     "key": "change_name",
     "name": "Quests - Add paws emoji to name",
     "type": "checkbox",
-    "default_value": "on",
+    "default_value": "off",
     "description": ""
   },
   {
