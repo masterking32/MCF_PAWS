@@ -117,9 +117,9 @@ class FarmBot:
                 remaining_quest = quests.get_unclaimed_quests()
                 claimed_quests = total_quests - remaining_quest
 
-                self.log.info(f"<g>└─ 🔢 Total Quests: <c>{total_quests}</c></g>")
+                self.log.info(f"<g>┌─ 🔢 Total Quests: <c>{total_quests}</c></g>")
 
-                self.log.info(f"<g>└─ ✅ Claimed Quests: <c>{claimed_quests}</c></g>")
+                self.log.info(f"<g>├─ ✅ Claimed Quests: <c>{claimed_quests}</c></g>")
 
                 self.log.info(
                     f"<g>└─ 📋 Remaining Quests: <c>{remaining_quest}</c></g>"
