@@ -84,8 +84,8 @@
     })[e] + ".js"
   }, h.miniCssF = function(e) {
     return "static/css/" + ({
-      405: "9135d29befea9add",
-      888: "23f0ed0fcc534c0a",
+      405: "466beb2187ec8a1f",
+      888: "e98255243ddef19d",
       918: "1eecfd544477a097"
     })[e] + ".css"
   }, h.g = function() {

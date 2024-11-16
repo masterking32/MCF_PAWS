@@ -1,5 +1,5 @@
 (self.webpackChunk_N_E = self.webpackChunk_N_E || []).push([
-  [627], {
+  [276], {
     9892: function(e, t, r) {
       e = r.nmd(e);
       var n, i, o, a = r(1876).Buffer;
@@ -1070,13 +1070,13 @@
           return new P(e.N >>> t, e.I >>> t | e.N << 32 - t)
         }
 
-        function j(e, t) {
+        function x(e, t) {
           r = (65535 & e.I) + (65535 & t.I);
           var r, n, i = (65535 & (n = (e.I >>> 16) + (t.I >>> 16) + (r >>> 16))) << 16 | 65535 & r;
           return r = (65535 & e.N) + (65535 & t.N) + (n >>> 16), new P((65535 & (n = (e.N >>> 16) + (t.N >>> 16) + (r >>> 16))) << 16 | 65535 & r, i)
         }
 
-        function x(e, t) {
+        function j(e, t) {
           return new P(e.N ^ t.N, e.I ^ t.I)
         }
         var T = [new P(i[0], 3609767458), new P(i[1], 602891725), new P(i[2], 3964484399), new P(i[3], 2173295548), new P(i[4], 4081628472), new P(i[5], 3053834265), new P(i[6], 2937671579), new P(i[7], 3664609560), new P(i[8], 2734883394), new P(i[9], 1164996542), new P(i[10], 1323610764), new P(i[11], 3590304994), new P(i[12], 4068182383), new P(i[13], 991336113), new P(i[14], 633803317), new P(i[15], 3479774868), new P(i[16], 2666613458), new P(i[17], 944711139), new P(i[18], 2341262773), new P(i[19], 2007800933), new P(i[20], 1495990901), new P(i[21], 1856431235), new P(i[22], 3175218132), new P(i[23], 2198950837), new P(i[24], 3999719339), new P(i[25], 766784016), new P(i[26], 2566594879), new P(i[27], 3203337956), new P(i[28], 1034457026), new P(i[29], 2466948901), new P(i[30], 3758326383), new P(i[31], 168717936), new P(i[32], 1188179964), new P(i[33], 1546045734), new P(i[34], 1522805485), new P(i[35], 2643833823), new P(i[36], 2343527390), new P(i[37], 1014477480), new P(i[38], 1206759142), new P(i[39], 344077627), new P(i[40], 1290863460), new P(i[41], 3158454273), new P(i[42], 3505952657), new P(i[43], 106217008), new P(i[44], 3606008344), new P(i[45], 1432725776), new P(i[46], 1467031594), new P(i[47], 851169720), new P(i[48], 3100823752), new P(i[49], 1363258195), new P(i[50], 3750685593), new P(i[51], 3785050280), new P(i[52], 3318307427), new P(i[53], 3812723403), new P(i[54], 2003034995), new P(i[55], 3602036899), new P(i[56], 1575990012), new P(i[57], 1125592928), new P(i[58], 2716904306), new P(i[59], 442776044), new P(i[60], 593698344), new P(i[61], 3733110249), new P(i[62], 2999351573), new P(i[63], 3815920427), new P(3391569614, 3928383900), new P(3515267271, 566280711), new P(3940187606, 3454069534), new P(4118630271, 4000239992), new P(116418474, 1914138554), new P(174292421, 2731055270), new P(289380356, 3203993006), new P(460393269, 320620315), new P(685471733, 587496836), new P(852142971, 1086792851), new P(1017036298, 365543100), new P(1126000580, 2618297676), new P(1288033470, 3409855158), new P(1501505948, 4234509866), new P(1607167915, 987167468), new P(1816402316, 1246189591)];
@@ -1105,13 +1105,13 @@
               r = C(e, 18),
               n = C(e, 41);
             return new P(t.N ^ r.N ^ n.N, t.I ^ r.I ^ n.I)
-          }(f), (r = f, n = p, i = h, new P(r.N & n.N ^ ~r.N & i.N, r.I & n.I ^ ~r.I & i.I)), T[b], _[b]), y = j(function(e) {
+          }(f), (r = f, n = p, i = h, new P(r.N & n.N ^ ~r.N & i.N, r.I & n.I ^ ~r.I & i.I)), T[b], _[b]), y = x(function(e) {
             var t = C(e, 28),
               r = C(e, 34),
               n = C(e, 39);
             return new P(t.N ^ r.N ^ n.N, t.I ^ r.I ^ n.I)
-          }(l), (o = l, a = u, s = c, new P(o.N & a.N ^ o.N & s.N ^ a.N & s.N, o.I & a.I ^ o.I & s.I ^ a.I & s.I))), g = h, h = p, p = f, f = j(d, m), d = c, c = u, u = l, l = j(m, y);
-          return t[0] = j(l, t[0]), t[1] = j(u, t[1]), t[2] = j(c, t[2]), t[3] = j(d, t[3]), t[4] = j(f, t[4]), t[5] = j(p, t[5]), t[6] = j(h, t[6]), t[7] = j(g, t[7]), t
+          }(l), (o = l, a = u, s = c, new P(o.N & a.N ^ o.N & s.N ^ a.N & s.N, o.I & a.I ^ o.I & s.I ^ a.I & s.I))), g = h, h = p, p = f, f = x(d, m), d = c, c = u, u = l, l = x(m, y);
+          return t[0] = x(l, t[0]), t[1] = x(u, t[1]), t[2] = x(c, t[2]), t[3] = x(d, t[3]), t[4] = x(f, t[4]), t[5] = x(p, t[5]), t[6] = x(h, t[6]), t[7] = x(g, t[7]), t
         }
         var U = function(e) {
             function t(t, n, i) {
@@ -1155,17 +1155,17 @@
           var r, n, i, o, a, s, l, u, c, d = [],
             f = [];
           if (null !== e)
-            for (n = 0; n < e.length; n += 2) t[(n >>> 1) % 5][(n >>> 1) / 5 | 0] = x(t[(n >>> 1) % 5][(n >>> 1) / 5 | 0], new P(e[n + 1], e[n]));
+            for (n = 0; n < e.length; n += 2) t[(n >>> 1) % 5][(n >>> 1) / 5 | 0] = j(t[(n >>> 1) % 5][(n >>> 1) / 5 | 0], new P(e[n + 1], e[n]));
           for (r = 0; r < 24; r += 1) {
             for (o = z(), n = 0; n < 5; n += 1) d[n] = (a = t[n][0], s = t[n][1], l = t[n][2], u = t[n][3], c = t[n][4], new P(a.N ^ s.N ^ l.N ^ u.N ^ c.N, a.I ^ s.I ^ l.I ^ u.I ^ c.I));
-            for (n = 0; n < 5; n += 1) f[n] = x(d[(n + 4) % 5], E(d[(n + 1) % 5], 1));
+            for (n = 0; n < 5; n += 1) f[n] = j(d[(n + 4) % 5], E(d[(n + 1) % 5], 1));
             for (n = 0; n < 5; n += 1)
-              for (i = 0; i < 5; i += 1) t[n][i] = x(t[n][i], f[n]);
+              for (i = 0; i < 5; i += 1) t[n][i] = j(t[n][i], f[n]);
             for (n = 0; n < 5; n += 1)
               for (i = 0; i < 5; i += 1) o[i][(2 * n + 3 * i) % 5] = E(t[n][i], R[n][i]);
             for (n = 0; n < 5; n += 1)
-              for (i = 0; i < 5; i += 1) t[n][i] = x(o[n][i], new P(~o[(n + 1) % 5][i].N & o[(n + 2) % 5][i].N, ~o[(n + 1) % 5][i].I & o[(n + 2) % 5][i].I));
-            t[0][0] = x(t[0][0], I[r])
+              for (i = 0; i < 5; i += 1) t[n][i] = j(o[n][i], new P(~o[(n + 1) % 5][i].N & o[(n + 2) % 5][i].N, ~o[(n + 1) % 5][i].I & o[(n + 2) % 5][i].I));
+            t[0][0] = j(t[0][0], I[r])
           }
           return t
         }
@@ -1400,272 +1400,6 @@
         }, S
       }
     },
-    9666: function(e, t, r) {
-      "use strict";
-      var n = r(4836)(r(8416));
-
-      function i(e, t) {
-        var r = Object.keys(e);
-        if (Object.getOwnPropertySymbols) {
-          var n = Object.getOwnPropertySymbols(e);
-          t && (n = n.filter(function(t) {
-            return Object.getOwnPropertyDescriptor(e, t).enumerable
-          })), r.push.apply(r, n)
-        }
-        return r
-      }
-
-      function o(e) {
-        for (var t = 1; t < arguments.length; t++) {
-          var r = null != arguments[t] ? arguments[t] : {};
-          t % 2 ? i(Object(r), !0).forEach(function(t) {
-            (0, n.default)(e, t, r[t])
-          }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(r)) : i(Object(r)).forEach(function(t) {
-            Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(r, t))
-          })
-        }
-        return e
-      }
-      Object.defineProperty(t, "__esModule", {
-          value: !0
-        }),
-        function(e, t) {
-          for (var r in t) Object.defineProperty(e, r, {
-            enumerable: !0,
-            get: t[r]
-          })
-        }(t, {
-          noSSR: function() {
-            return u
-          },
-          default: function() {
-            return c
-          }
-        });
-      let a = r(8754);
-      r(5893), r(7294);
-      let s = a._(r(6887));
-
-      function l(e) {
-        return {
-          default: (null == e ? void 0 : e.default) || e
-        }
-      }
-
-      function u(e, t) {
-        return delete t.webpack, delete t.modules, e(t)
-      }
-
-      function c(e, t) {
-        let r = s.default,
-          n = {
-            loading: e => {
-              let {
-                error: t,
-                isLoading: r,
-                pastDelay: n
-              } = e;
-              return null
-            }
-          };
-        e instanceof Promise ? n.loader = () => e : "function" == typeof e ? n.loader = e : "object" == typeof e && (n = o(o({}, n), e));
-        let i = (n = o(o({}, n), t)).loader;
-        return (n.loadableGenerated && (n = o(o({}, n), n.loadableGenerated), delete n.loadableGenerated), "boolean" != typeof n.ssr || n.ssr) ? r(o(o({}, n), {}, {
-          loader: () => null != i ? i().then(l) : Promise.resolve(l(() => null))
-        })) : (delete n.webpack, delete n.modules, u(r, n))
-      }("function" == typeof t.default || "object" == typeof t.default && null !== t.default) && void 0 === t.default.__esModule && (Object.defineProperty(t.default, "__esModule", {
-        value: !0
-      }), Object.assign(t.default, t), e.exports = t.default)
-    },
-    5808: function(e, t, r) {
-      "use strict";
-      Object.defineProperty(t, "__esModule", {
-        value: !0
-      }), Object.defineProperty(t, "LoadableContext", {
-        enumerable: !0,
-        get: function() {
-          return n
-        }
-      });
-      let n = r(8754)._(r(7294)).default.createContext(null)
-    },
-    6887: function(e, t, r) {
-      "use strict";
-      var n = r(4836)(r(8416));
-
-      function i(e, t) {
-        var r = Object.keys(e);
-        if (Object.getOwnPropertySymbols) {
-          var n = Object.getOwnPropertySymbols(e);
-          t && (n = n.filter(function(t) {
-            return Object.getOwnPropertyDescriptor(e, t).enumerable
-          })), r.push.apply(r, n)
-        }
-        return r
-      }
-
-      function o(e) {
-        for (var t = 1; t < arguments.length; t++) {
-          var r = null != arguments[t] ? arguments[t] : {};
-          t % 2 ? i(Object(r), !0).forEach(function(t) {
-            (0, n.default)(e, t, r[t])
-          }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(r)) : i(Object(r)).forEach(function(t) {
-            Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(r, t))
-          })
-        }
-        return e
-      }
-      Object.defineProperty(t, "__esModule", {
-        value: !0
-      }), Object.defineProperty(t, "default", {
-        enumerable: !0,
-        get: function() {
-          return g
-        }
-      });
-      let a = r(8754)._(r(7294)),
-        s = r(5808),
-        l = [],
-        u = [],
-        c = !1;
-
-      function d(e) {
-        let t = e(),
-          r = {
-            loading: !0,
-            loaded: null,
-            error: null
-          };
-        return r.promise = t.then(e => (r.loading = !1, r.loaded = e, e)).catch(e => {
-          throw r.loading = !1, r.error = e, e
-        }), r
-      }
-      class f {
-        promise() {
-          return this._res.promise
-        }
-        retry() {
-          this._clearTimeouts(), this._res = this._loadFn(this._opts.loader), this._state = {
-            pastDelay: !1,
-            timedOut: !1
-          };
-          let {
-            _res: e,
-            _opts: t
-          } = this;
-          e.loading && ("number" == typeof t.delay && (0 === t.delay ? this._state.pastDelay = !0 : this._delay = setTimeout(() => {
-            this._update({
-              pastDelay: !0
-            })
-          }, t.delay)), "number" == typeof t.timeout && (this._timeout = setTimeout(() => {
-            this._update({
-              timedOut: !0
-            })
-          }, t.timeout))), this._res.promise.then(() => {
-            this._update({}), this._clearTimeouts()
-          }).catch(e => {
-            this._update({}), this._clearTimeouts()
-          }), this._update({})
-        }
-        _update(e) {
-          this._state = o(o({}, this._state), {}, {
-            error: this._res.error,
-            loaded: this._res.loaded,
-            loading: this._res.loading
-          }, e), this._callbacks.forEach(e => e())
-        }
-        _clearTimeouts() {
-          clearTimeout(this._delay), clearTimeout(this._timeout)
-        }
-        getCurrentValue() {
-          return this._state
-        }
-        subscribe(e) {
-          return this._callbacks.add(e), () => {
-            this._callbacks.delete(e)
-          }
-        }
-        constructor(e, t) {
-          this._loadFn = e, this._opts = t, this._callbacks = new Set, this._delay = null, this._timeout = null, this.retry()
-        }
-      }
-
-      function p(e) {
-        return function(e, t) {
-          let r = Object.assign({
-              loader: null,
-              loading: null,
-              delay: 200,
-              timeout: null,
-              webpack: null,
-              modules: null
-            }, t),
-            n = null;
-
-          function i() {
-            if (!n) {
-              let t = new f(e, r);
-              n = {
-                getCurrentValue: t.getCurrentValue.bind(t),
-                subscribe: t.subscribe.bind(t),
-                retry: t.retry.bind(t),
-                promise: t.promise.bind(t)
-              }
-            }
-            return n.promise()
-          }
-          if (!c) {
-            let e = r.webpack ? r.webpack() : r.modules;
-            e && u.push(t => {
-              for (let r of e)
-                if (t.includes(r)) return i()
-            })
-          }
-
-          function o(e, t) {
-            ! function() {
-              i();
-              let e = a.default.useContext(s.LoadableContext);
-              e && Array.isArray(r.modules) && r.modules.forEach(t => {
-                e(t)
-              })
-            }();
-            let o = a.default.useSyncExternalStore(n.subscribe, n.getCurrentValue, n.getCurrentValue);
-            return a.default.useImperativeHandle(t, () => ({
-              retry: n.retry
-            }), []), a.default.useMemo(() => {
-              var t;
-              return o.loading || o.error ? a.default.createElement(r.loading, {
-                isLoading: o.loading,
-                pastDelay: o.pastDelay,
-                timedOut: o.timedOut,
-                error: o.error,
-                retry: n.retry
-              }) : o.loaded ? a.default.createElement((t = o.loaded) && t.default ? t.default : t, e) : null
-            }, [e, o])
-          }
-          return o.preload = () => i(), o.displayName = "LoadableComponent", a.default.forwardRef(o)
-        }(d, e)
-      }
-
-      function h(e, t) {
-        let r = [];
-        for (; e.length;) {
-          let n = e.pop();
-          r.push(n(t))
-        }
-        return Promise.all(r).then(() => {
-          if (e.length) return h(e, t)
-        })
-      }
-      p.preloadAll = () => new Promise((e, t) => {
-        h(l).then(e, t)
-      }), p.preloadReady = e => (void 0 === e && (e = []), new Promise(t => {
-        let r = () => (c = !0, t());
-        h(u, e).then(r, r)
-      })), window.__NEXT_PRELOADREADY = p.preloadReady;
-      let g = p
-    },
     1876: function(e) {
       ! function() {
         var t = {
@@ -1739,7 +1473,7 @@
                 }(e, t);
                 if (ArrayBuffer.isView(e)) return d(e);
                 if (null == e) throw TypeError("The first argument must be one of type string, Buffer, ArrayBuffer, Array, or Array-like Object. Received type " + typeof e);
-                if (j(e, ArrayBuffer) || e && j(e.buffer, ArrayBuffer) || "undefined" != typeof SharedArrayBuffer && (j(e, SharedArrayBuffer) || e && j(e.buffer, SharedArrayBuffer))) return function(e, t, r) {
+                if (x(e, ArrayBuffer) || e && x(e.buffer, ArrayBuffer) || "undefined" != typeof SharedArrayBuffer && (x(e, SharedArrayBuffer) || e && x(e.buffer, SharedArrayBuffer))) return function(e, t, r) {
                   var n;
                   if (t < 0 || e.byteLength < t) throw RangeError('"offset" is outside of buffer bounds');
                   if (e.byteLength < t + (r || 0)) throw RangeError('"length" is outside of buffer bounds');
@@ -1782,7 +1516,7 @@
 
               function p(e, t) {
                 if (s.isBuffer(e)) return e.length;
-                if (ArrayBuffer.isView(e) || j(e, ArrayBuffer)) return e.byteLength;
+                if (ArrayBuffer.isView(e) || x(e, ArrayBuffer)) return e.byteLength;
                 if ("string" != typeof e) throw TypeError('The "string" argument must be one of type string, Buffer, or ArrayBuffer. Received type ' + typeof e);
                 var r = e.length,
                   n = arguments.length > 2 && !0 === arguments[2];
@@ -1818,7 +1552,7 @@
                     return function(e, t, r) {
                       var n = e.length;
                       (!t || t < 0) && (t = 0), (!r || r < 0 || r > n) && (r = n);
-                      for (var i = "", o = t; o < r; ++o) i += x[e[o]];
+                      for (var i = "", o = t; o < r; ++o) i += j[e[o]];
                       return i
                     }(this, t, r);
                   case "utf8":
@@ -1990,7 +1724,7 @@
               }, s.isBuffer = function(e) {
                 return null != e && !0 === e._isBuffer && e !== s.prototype
               }, s.compare = function(e, t) {
-                if (j(e, Uint8Array) && (e = s.from(e, e.offset, e.byteLength)), j(t, Uint8Array) && (t = s.from(t, t.offset, t.byteLength)), !s.isBuffer(e) || !s.isBuffer(t)) throw TypeError('The "buf1", "buf2" arguments must be one of type Buffer or Uint8Array');
+                if (x(e, Uint8Array) && (e = s.from(e, e.offset, e.byteLength)), x(t, Uint8Array) && (t = s.from(t, t.offset, t.byteLength)), !s.isBuffer(e) || !s.isBuffer(t)) throw TypeError('The "buf1", "buf2" arguments must be one of type Buffer or Uint8Array');
                 if (e === t) return 0;
                 for (var r = e.length, n = t.length, i = 0, o = Math.min(r, n); i < o; ++i)
                   if (e[i] !== t[i]) {
@@ -2023,7 +1757,7 @@
                   i = 0;
                 for (r = 0; r < e.length; ++r) {
                   var o = e[r];
-                  if (j(o, Uint8Array) && (o = s.from(o)), !s.isBuffer(o)) throw TypeError('"list" argument must be an Array of Buffers');
+                  if (x(o, Uint8Array) && (o = s.from(o)), !s.isBuffer(o)) throw TypeError('"list" argument must be an Array of Buffers');
                   o.copy(n, i), i += o.length
                 }
                 return n
@@ -2053,7 +1787,7 @@
                   r = t.INSPECT_MAX_BYTES;
                 return e = this.toString("hex", 0, r).replace(/(.{2})/g, "$1 ").trim(), this.length > r && (e += " ... "), "<Buffer " + e + ">"
               }, o && (s.prototype[o] = s.prototype.inspect), s.prototype.compare = function(e, t, r, n, i) {
-                if (j(e, Uint8Array) && (e = s.from(e, e.offset, e.byteLength)), !s.isBuffer(e)) throw TypeError('The "target" argument must be one of type Buffer or Uint8Array. Received type ' + typeof e);
+                if (x(e, Uint8Array) && (e = s.from(e, e.offset, e.byteLength)), !s.isBuffer(e)) throw TypeError('The "target" argument must be one of type Buffer or Uint8Array. Received type ' + typeof e);
                 if (void 0 === t && (t = 0), void 0 === r && (r = e ? e.length : 0), void 0 === n && (n = 0), void 0 === i && (i = this.length), t < 0 || r > e.length || n < 0 || i > this.length) throw RangeError("out of range index");
                 if (n >= i && t >= r) return 0;
                 if (n >= i) return -1;
@@ -2328,10 +2062,10 @@
                 return i
               }
 
-              function j(e, t) {
+              function x(e, t) {
                 return e instanceof t || null != e && null != e.constructor && null != e.constructor.name && e.constructor.name === t.name
               }
-              var x = function() {
+              var j = function() {
                 for (var e = "0123456789abcdef", t = Array(256), r = 0; r < 16; ++r)
                   for (var n = 16 * r, i = 0; i < 16; ++i) t[n + i] = e[r] + e[i];
                 return t
@@ -2389,9 +2123,6 @@
         var i = n(72);
         e.exports = i
       }()
-    },
-    5152: function(e, t, r) {
-      e.exports = r(9666)
     },
     2703: function(e, t, r) {
       "use strict";
@@ -3035,39 +2766,39 @@
                   null == g || g({
                     pauseResume: C,
                     reset: B,
-                    start: x,
-                    update: j
+                    start: j,
+                    update: x
                   })
                 })
               };
               c && c > 0 ? S.current = setTimeout(e, 1e3 * c) : e(), null == m || m({
                 pauseResume: C,
                 reset: B,
-                update: j
+                update: x
               })
             }),
             C = d(function() {
               P().pauseResume(), null == y || y({
                 reset: B,
-                start: x,
-                update: j
+                start: j,
+                update: x
               })
             }),
             B = d(function() {
               P().el && (S.current && clearTimeout(S.current), P().reset(), null == b || b({
                 pauseResume: C,
-                start: x,
-                update: j
+                start: j,
+                update: x
               }))
             }),
-            j = d(function(e) {
+            x = d(function(e) {
               P().update(e), null == v || v({
                 pauseResume: C,
                 reset: B,
-                start: x
+                start: j
               })
             }),
-            x = d(function() {
+            j = d(function() {
               B(), E()
             }),
             T = d(function(e) {
@@ -3080,10 +2811,10 @@
               B()
             }
           }, [B]), {
-            start: x,
+            start: j,
             pauseResume: C,
             reset: B,
-            update: j,
+            update: x,
             getCountUp: P
           }
         },
@@ -4905,18 +4636,18 @@
           if (n) return l(e);
           i && o && s && l(e);
           var C, B = {},
-            j = _(t);
+            x = _(t);
           k.curX = e.touches ? e.touches[0].pageX : e.clientX, k.curY = e.touches ? e.touches[0].pageY : e.clientY, k.swipeLength = Math.round(Math.sqrt(Math.pow(k.curX - k.startX, 2)));
-          var x = Math.round(Math.sqrt(Math.pow(k.curY - k.startY, 2)));
-          if (!s && !g && x > 10) return {
+          var j = Math.round(Math.sqrt(Math.pow(k.curY - k.startY, 2)));
+          if (!s && !g && j > 10) return {
             scrolling: !0
           };
-          s && (k.swipeLength = x);
+          s && (k.swipeLength = j);
           var T = (u ? -1 : 1) * (k.curX > k.startX ? 1 : -1);
           s && (T = k.curY > k.startY ? 1 : -1);
           var M = m(t.touchObject, s),
             A = k.swipeLength;
-          return !w && (0 === c && ("right" === M || "down" === M) || c + 1 >= Math.ceil(b / v) && ("left" === M || "up" === M) || !y(t) && ("left" === M || "up" === M)) && (A = k.swipeLength * d, !1 === f && p && (p(M), B.edgeDragged = !0)), !h && O && (O(M), B.swiped = !0), C = i ? j + P / E * A * T : u ? j - A * T : j + A * T, s && (C = j + A * T), B = a(a({}, B), {}, {
+          return !w && (0 === c && ("right" === M || "down" === M) || c + 1 >= Math.ceil(b / v) && ("left" === M || "up" === M) || !y(t) && ("left" === M || "up" === M)) && (A = k.swipeLength * d, !1 === f && p && (p(M), B.edgeDragged = !0)), !h && O && (O(M), B.swiped = !0), C = i ? x + P / E * A * T : u ? x - A * T : x + A * T, s && (C = x + A * T), B = a(a({}, B), {}, {
             touchObject: k,
             swipeLeft: C,
             trackStyle: S(a(a({}, t), {}, {
@@ -5089,10 +4820,10 @@
       };
       t.getTotalSlides = C;
       var B = function(e) {
-        return e.targetSlide > e.currentSlide ? e.targetSlide > e.currentSlide + j(e) ? "left" : "right" : e.targetSlide < e.currentSlide - x(e) ? "right" : "left"
+        return e.targetSlide > e.currentSlide ? e.targetSlide > e.currentSlide + x(e) ? "left" : "right" : e.targetSlide < e.currentSlide - j(e) ? "right" : "left"
       };
       t.siblingDirection = B;
-      var j = function(e) {
+      var x = function(e) {
         var t = e.slidesToShow,
           r = e.centerMode,
           n = e.rtl,
@@ -5103,8 +4834,8 @@
         }
         return n ? 0 : t - 1
       };
-      t.slidesOnRight = j;
-      var x = function(e) {
+      t.slidesOnRight = x;
+      var j = function(e) {
         var t = e.slidesToShow,
           r = e.centerMode,
           n = e.rtl,
@@ -5115,7 +4846,7 @@
         }
         return n ? t - 1 : 0
       };
-      t.slidesOnLeft = x, t.canUseDOM = function() {
+      t.slidesOnLeft = j, t.canUseDOM = function() {
         return !!("undefined" != typeof window && window.document && window.document.createElement)
       }
     },
@@ -5805,15 +5536,15 @@
         }) : e[t] = r, e
       }
 
-      function j(e, t) {
+      function x(e, t) {
         for (var r = 0; r < t.length; r++) {
           var n = t[r];
           n.enumerable = n.enumerable || !1, n.configurable = !0, "value" in n && (n.writable = !0), Object.defineProperty(e, n.key, n)
         }
       }
 
-      function x(e, t) {
-        return (x = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function(e, t) {
+      function j(e, t) {
+        return (j = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function(e, t) {
           return e.__proto__ = t, e
         })(e, t)
       }
@@ -5902,7 +5633,7 @@
               }
             }), Object.defineProperty(e, "prototype", {
               writable: !1
-            }), t && x(e, t)
+            }), t && j(e, t)
           }(a, e);
           var t, r, i, o = (t = function() {
             if ("undefined" == typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
@@ -6166,7 +5897,7 @@
               }
               return null
             }
-          }], j(a.prototype, r), i && j(a, i), Object.defineProperty(a, "prototype", {
+          }], x(a.prototype, r), i && x(a, i), Object.defineProperty(a, "prototype", {
             writable: !1
           }), a
         }(n.Component);
@@ -8976,23 +8707,23 @@
           return B.crc16
         }
       });
-      var j = r(5090);
+      var x = r(5090);
       Object.defineProperty(t, "crc32c", {
         enumerable: !0,
         get: function() {
-          return j.crc32c
+          return x.crc32c
         }
       });
-      var x = r(6265);
+      var j = r(6265);
       Object.defineProperty(t, "base32Decode", {
         enumerable: !0,
         get: function() {
-          return x.base32Decode
+          return j.base32Decode
         }
       }), Object.defineProperty(t, "base32Encode", {
         enumerable: !0,
         get: function() {
-          return x.base32Encode
+          return j.base32Encode
         }
       });
       var T = r(7509);
@@ -10594,28 +10325,28 @@
           return B.storeStorageUsed
         }
       });
-      var j = r(8593);
+      var x = r(8593);
       Object.defineProperty(t, "loadStorageUsedShort", {
         enumerable: !0,
         get: function() {
-          return j.loadStorageUsedShort
+          return x.loadStorageUsedShort
         }
       }), Object.defineProperty(t, "storeStorageUsedShort", {
         enumerable: !0,
         get: function() {
-          return j.storeStorageUsedShort
+          return x.storeStorageUsedShort
         }
       });
-      var x = r(2800);
+      var j = r(2800);
       Object.defineProperty(t, "loadTickTock", {
         enumerable: !0,
         get: function() {
-          return x.loadTickTock
+          return j.loadTickTock
         }
       }), Object.defineProperty(t, "storeTickTock", {
         enumerable: !0,
         get: function() {
-          return x.storeTickTock
+          return j.storeTickTock
         }
       });
       var T = r(7483);

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width" />
   <meta name="next-head-count" content="2" />
   <link data-next-font="" rel="preconnect" href="/" crossorigin="anonymous" />
-  <style data-href="/_next/static/css/23f0ed0fcc534c0a.css" data-n-g="">
+  <style data-href="/_next/static/css/e98255243ddef19d.css" data-n-g="">
     @charset "UTF-8";
 
     .Toastify__toast-container {
@@ -46,6 +46,37 @@
       font-weight: 400;
       line-height: 18px;
       color: #fff
+    }
+
+    .maintenance-screen-con {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%
+    }
+
+    .maintenance-screen-con .anim-wrap {
+      width: 150px;
+      margin: 0 auto 20px
+    }
+
+    .maintenance-screen-con .title {
+      font-size: 24px;
+      font-weight: 800;
+      text-align: center;
+      margin-top: 20px
+    }
+
+    .maintenance-screen-con .link {
+      padding-top: 10px;
+      text-align: center;
+      color: #4ba4ff;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 21px;
+      -webkit-text-decoration-line: underline;
+      text-decoration-line: underline
     }
 
     /*!
@@ -13270,7 +13301,7 @@
       color: #000
     }
   </style>
-  <style data-href="/_next/static/css/9135d29befea9add.css" data-n-p="">
+  <style data-href="/_next/static/css/466beb2187ec8a1f.css" data-n-p="">
     .preloader-continaer {
       display: flex;
       flex-direction: column;
@@ -13544,7 +13575,7 @@
       position: absolute;
       bottom: 15vh;
       left: 20%;
-      width: 300%;
+      width: 400%;
       z-index: 2;
       transition: 1s ease-in-out;
       transform: translateX(0)
@@ -13552,7 +13583,7 @@
 
     .onboarding-wrapper .planet-bg-con .flags-con .flag-con {
       position: absolute;
-      width: 17%;
+      width: 12%;
       pointer-events: none
     }
 
@@ -13978,7 +14009,24 @@
     .home-tab-con .main-con .balance-wrap .img-con .user-mark {
       position: absolute;
       top: 0;
-      right: 0
+      right: 0;
+      width: 22px;
+      min-width: 22px;
+      height: 22px
+    }
+
+    .home-tab-con .main-con .balance-wrap .img-con .user-mark .icon-con {
+      position: relative;
+      z-index: 1
+    }
+
+    .home-tab-con .main-con .balance-wrap .img-con .user-mark .icon-con .animated-icon {
+      position: absolute;
+      top: -15px;
+      right: -25px;
+      width: 75px;
+      height: 75px;
+      z-index: -1
     }
 
     .home-tab-con .main-con .balance-wrap .my-wrap {
@@ -15854,6 +15902,19 @@
       width: 100%
     }
 
+    .votes-tab-con .section-con .section-items-con.no-active .lottie-con {
+      margin: 0 auto 20px;
+      width: 74px;
+      height: 74px
+    }
+
+    .votes-tab-con .section-con .section-items-con.no-active .descr {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 125%;
+      text-align: center
+    }
+
     .votes-tab-con .section-con .section-items-con .list-heading-con {
       position: relative;
       width: 100%;
@@ -16049,6 +16110,27 @@
       margin: 0 auto;
       width: -moz-fit-content;
       width: fit-content
+    }
+
+    .votes-tab-con .section-con .section-items-con.completed-list .completed-list-item {
+      display: flex;
+      align-items: center
+    }
+
+    .votes-tab-con .section-con .section-items-con.completed-list .completed-list-item .img-con {
+      display: flex;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-right: 10px
+    }
+
+    .votes-tab-con .section-con .section-items-con.completed-list .completed-list-item .title {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 22px
     }
 
     .vote-modal-con {
@@ -16716,17 +16798,133 @@
       font-weight: 400;
       line-height: 28px
     }
+
+    .winner-splash-screen-con .descr-con .title {
+      font-size: 28px;
+      line-height: 85%;
+      margin: 0
+    }
+
+    @media screen and (min-height:560px) {
+      .winner-splash-screen-con .descr-con .title {
+        font-size: 42px
+      }
+    }
+
+    .winner-splash-screen-con .descr-con .descr {
+      font-size: 55px;
+      font-weight: 700;
+      line-height: 85%;
+      color: #fff;
+      margin: 0
+    }
+
+    @media screen and (min-height:560px) {
+      .winner-splash-screen-con .descr-con .descr {
+        font-size: 71px
+      }
+    }
+
+    .winner-splash-screen-con .img-con {
+      width: 80%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-grow: 1
+    }
+
+    @media screen and (max-height:650px) {
+      .winner-splash-screen-con .img-con {
+        width: 70%
+      }
+    }
+
+    .winner-splash-screen-con .shapes-con {
+      position: absolute;
+      top: -17vw;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 1
+    }
+
+    .winner-splash-screen-con .shapes-con .shape-item {
+      position: absolute;
+      width: 70%
+    }
+
+    .winner-splash-screen-con .shapes-con .shape-item.item-1 {
+      top: 20%;
+      left: 45%
+    }
+
+    .winner-splash-screen-con .shapes-con .shape-item.item-5 {
+      top: 52%;
+      left: 40%
+    }
+
+    .winner-splash-screen-con .shapes-con .shape-item.item-7 {
+      top: 10%;
+      left: 0
+    }
+
+    .winner-splash-screen-con .shapes-con .shape-item.item-8 {
+      top: 45%;
+      left: 0
+    }
+
+    .winner-allocation-screen .btn-next {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      width: calc(100% - 32px);
+      margin-bottom: 40px;
+      height: 55px;
+      border-radius: 12px;
+      background: #4c9ce2;
+      font-size: 18px;
+      font-weight: 400
+    }
+
+    .winner-allocation-screen .custom-slider-window {
+      flex-direction: column;
+      align-items: center
+    }
+
+    .winner-allocation-screen .custom-slider-window .default-wrapper {
+      padding-bottom: 16px
+    }
+
+    .winner-paws-allocation-screen {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0
+    }
+
+    .winner-paws-allocation-screen.is-hide {
+      animation: is-hide-anim .25s ease-in-out forwards
+    }
+
+    .winner-paws-allocation-screen.is-show {
+      animation: is-show-anim .25s ease-in-out forwards
+    }
   </style><noscript data-n-css=""></noscript>
   <script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script>
   <script src="/telegram-web-app.js" defer="" data-nscript="beforeInteractive"></script>
-  <script src="/_next/static/chunks/webpack-26b9db5005c29947.js" defer=""></script>
+  <script src="/_next/static/chunks/webpack-9cb9c5d41d95c0da.js" defer=""></script>
   <script src="/_next/static/chunks/framework-5429a50ba5373c56.js" defer=""></script>
   <script src="/_next/static/chunks/main-7cfd392e3607cf8f.js" defer=""></script>
-  <script src="/_next/static/chunks/pages/_app-4f7545a95da983cd.js" defer=""></script>
-  <script src="/_next/static/chunks/627-4059e6d95d574106.js" defer=""></script>
-  <script src="/_next/static/chunks/pages/index-a8d6542e6eb4d712.js" defer=""></script>
-  <script src="/_next/static/QzGbmNQ_stYNjrn4Ub3UR/_buildManifest.js" defer=""></script>
-  <script src="/_next/static/QzGbmNQ_stYNjrn4Ub3UR/_ssgManifest.js" defer=""></script>
+  <script src="/_next/static/chunks/pages/_app-601e486743c4ecc7.js" defer=""></script>
+  <script src="/_next/static/chunks/276-fd582f15ff77df2f.js" defer=""></script>
+  <script src="/_next/static/chunks/pages/index-0cad3ffdd7bc7963.js" defer=""></script>
+  <script src="/_next/static/xWqpJutPh3Rvak10VA4PL/_buildManifest.js" defer=""></script>
+  <script src="/_next/static/xWqpJutPh3Rvak10VA4PL/_ssgManifest.js" defer=""></script>
 </head>
 
 <body>
@@ -16778,7 +16976,7 @@
       },
       "page": "/",
       "query": {},
-      "buildId": "QzGbmNQ_stYNjrn4Ub3UR",
+      "buildId": "xWqpJutPh3Rvak10VA4PL",
       "isFallback": false,
       "isExperimentalCompile": false,
       "gssp": true,
