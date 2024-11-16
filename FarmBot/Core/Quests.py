@@ -66,11 +66,12 @@ class Quests:
                 data=json.dumps(payload),
                 valid_response_code=[200, 201],
             )
-
             if response is None:
                 self.log.error(
                     f"<r>❌ Failed to complete quest <c>{quest_title}</c>! NULL_RESPONSE</r>"
                 )
+                return False
+            if quest_data == "vote" and response.get("success", False) == False:
                 return False
             elif response.get("data", False) == False:
                 self.log.error(
@@ -152,8 +153,6 @@ class Quests:
             if questCode == "boost":  # ???
                 continue
             if questType == "copy":  # should be auto completed
-                continue
-            if questType == "page":  # should be auto completed
                 continue
 
             if currentState == 0:

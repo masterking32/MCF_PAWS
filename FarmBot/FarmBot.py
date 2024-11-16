@@ -68,6 +68,8 @@ class FarmBot:
             paws = auth.get_paws_converted()
             dogs = auth.get_dogs_converted()
             notcoin = auth.get_notcoin_converted()
+            empire = auth.get_xempire_converted()
+            badge = auth.getBadge()
 
             total_allocation = auth.get_total_allocation()
             today_Balance = auth.get_today_Balance()
@@ -77,11 +79,12 @@ class FarmBot:
                 f"<g>🐾 <c>{self.account_name}</c> Overal token allocation info:</g>"
             )
 
-            self.log.info(f"<g>└─ 🐭 Hamester Kombat: <c>{hamster}</c></g>")
-            self.log.info(f"<g>└─ ✈️ Telegram Register Days: <c>{telegram}</c></g>")
-            self.log.info(f"<g>└─ 🐾 Paws: <c>{paws}</c></g>")
-            self.log.info(f"<g>└─ 🦴 Dogs: <c>{dogs}</c></g>")
-            self.log.info(f"<g>└─ 🪙 NotCoin: <c>{notcoin}</c></g>")
+            self.log.info(f"<g>┌─ 🐭 Hamester Kombat: <c>{hamster}</c></g>")
+            self.log.info(f"<g>├─ ✈️ Telegram Register Days: <c>{telegram}</c></g>")
+            self.log.info(f"<g>├─ 🐾 Paws: <c>{paws}</c></g>")
+            self.log.info(f"<g>├─ 🦴 Dogs: <c>{dogs}</c></g>")
+            self.log.info(f"<g>├─ 🪙 NotCoin: <c>{notcoin}</c></g>")
+            self.log.info(f"<g>└─ 👑 Empire: <c>{empire}</c></g>")
 
             self.log.info(
                 f"<g>🐾 <c>{self.account_name}</c> Total Claims: <c>{total_allocation}</c> Today Claim: <c>{today_Balance}</c> Daily Streak: <c>{claim_Streak} days</c></g>"
@@ -91,9 +94,10 @@ class FarmBot:
             rank = auth.get_avatarId()
             invite_count = auth.get_referralsCount()
 
-            self.log.info(f"<g>└─ 💲 Tokens: <c>{balance}</c></g>")
-            self.log.info(f"<g>└─ 🥇 Rank: <c>{rank}</c></g>")
-            self.log.info(f"<g>└─ 👥 Friends: <c>{invite_count}</c></g>")
+            self.log.info(f"<g>┌─ 💲 Tokens: <c>{balance}</c></g>")
+            self.log.info(f"<g>├─ 🏆 Badge Tier: <c>{badge}</c></g>")
+            self.log.info(f"<g>├─ 🥇 Rank: <c>{rank}</c></g>")
+            self.log.info(f"<g>├─ 👥 Friends: <c>{invite_count}</c></g>")
 
             wallet = auth.get_wallet()
             self.log.info(

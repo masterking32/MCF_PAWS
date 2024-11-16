@@ -79,10 +79,10 @@ class Auth:
         end = wallet_address[-6:]
         masked = start + "************" + end
         return masked
-    
+
     def get_wallet(self):
         wallet = self.get_userData().get("wallet", None)
-        if wallet is not None and wallet != '':
+        if wallet is not None and wallet != "":
             masked_address = self.mask_wallet_address(wallet)
             return masked_address
         else:
@@ -129,6 +129,12 @@ class Auth:
 
     def get_notcoin_converted(self):
         return self.get_allocationData().get("notcoin", {}).get("converted", 0)
+
+    def get_xempire_converted(self):
+        return self.get_allocationData().get("empire", {}).get("converted", 0)
+
+    def getBadge(self):
+        return self.data[1].get("badgeTier", 0)
 
     def get_total_allocation(self):
         return self.get_allocationData().get("total", 0)
