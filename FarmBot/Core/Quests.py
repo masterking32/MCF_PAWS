@@ -58,40 +58,6 @@ class Quests:
                     await asyncio.sleep(random.randint(5, 10))
                 else:
                     return False
-                
-            # elif quest_code == "emojiName":
-
-            #     if (
-            #         getConfig("change_name", True) is False
-            #         or self.tgAccount is None
-            #     ):
-            #         return False
-                
-            #     tgMe = self.tgAccount.me
-
-            #     if tgMe is None:
-            #         return False
-
-            #     paws_emoji = "🐾"
-
-            #     try:
-            #         tgMe.first_name = tgMe.first_name or ""
-            #         tgMe.last_name = tgMe.last_name or ""
-                    
-            #         await self.tgAccount.setName(
-            #             tgMe.first_name, tgMe.last_name + paws_emoji
-            #         )
-                    
-            #         self.log.info(
-            #             f"<g>✔️ <c>{paws_emoji}</c> added to <c>{self.account_name}</c> name!</g>"
-            #         )
-
-            #     except:
-            #         self.log.info(
-            #             f"<y>⚠️ Failed to change <c>{self.account_name}</c> name!</y>"
-            #         )
-            #         return False
-                    
 
             payload = {"questId": quest_id}
 
@@ -111,7 +77,6 @@ class Quests:
                     f"<y>⚠️ Quest <c>{quest_title}</c> bugged and cannot complete now! (SERVER SIDE)</y>"
                 )
                 return False
-
 
             self.log.info(
                 f"<g>✅ Completed quest <c>{quest_title}</c> successfully!</g>"
@@ -147,7 +112,7 @@ class Quests:
                 )
                 return False
 
-            #self.get_transactions() #NO NEEDS
+            # self.get_transactions() #NO NEEDS
 
             return True
 
@@ -158,40 +123,57 @@ class Quests:
 
             return False
 
-    async def complete_and_claim_all_quests(self, invited_10_user, wallet_connected):
+    async def complete_and_claim_all_quests(self):
         self.log.info(f"<y>⌛ Checking remaining quests...</y>")
 
         for quest in self.quests:
-            progress_claimed = quest.get("progress", {}).get("claimed", False)
-            progress_completed = quest.get("progress", {}).get(
-                "current", 0
-            )  # 0 means not clicked, 1 clicked but not claimed, and 2 means completed !
+            isClaimed = quest.get("progress", {}).get("claimed", False)
+            if isClaimed:
+                continue
+            currentState = quest.get("progress", {}).get("current", 0)
+            totalStates = quest.get("progress", {}).get("total", 0)
+            questStatus = quest.get("progress", {}).get("status", None)
 
-            quest_code = quest.get("code", "")
-            quest_title = quest.get("title", "N/A")
+            questTitle = quest.get("title", "N/A")
+            rewards_amount = quest.get("rewards", [{}])[0].get("amount", 0)
+            if (
+                currentState >= totalStates
+            ) or questStatus == "claimable":  # just claim if it's possible
+                if self.claim_quest(quest):
+                    self.log.info(
+                        f"<g>🎉 Quest <c>{questTitle}</c> claimed successfully! Reward Amount: {rewards_amount}</g>"
+                    )
+            questCode = quest.get("code", None)
+            questType = quest.get("action", None)
+            if questType is None or questCode is None:
+                continue
+            if questType == "wallet":  # should be auto completed
+                continue
+            if questCode == "boost":  # ???
+                continue
+            if questType == "copy":  # should be auto completed
+                continue
+            if questType == "page":  # should be auto completed
+                continue
 
-            if (not progress_claimed
-                and (quest_code == "invite" and invited_10_user)
-                or (quest_code == "wallet" and wallet_connected)
-                or quest_code not in ["invite", "wallet", "boost", "vote", "votedown", "voteup", "mystery"]
-            ):
-                if progress_completed == 0:
-                    if await self.complete_quest(quest):
-
-                        progress_completed = 1
-
-                        sleep_duration = random.randint(5, 10)
-                        self.log.info(
-                            f"<y>⌛ Claiming quest <c>{quest_title}</c> after {sleep_duration}s...</y>"
-                        )
-                        await asyncio.sleep(sleep_duration)
-
-                if progress_completed == 1:
-                    rewards_amount = quest.get("rewards", [{}])[0].get("amount", 0)
-                    if self.claim_quest(quest):
-                        self.log.info(
-                            f"<g>🎉 Quest <c>{quest_title}</c> claimed successfully! Reward Amount: {rewards_amount}</g>"
-                        )
+            if currentState == 0:
+                if questStatus == "pending":
+                    self.log.info(
+                        f"<y>⌛ Pending quest <c>{questTitle}</c> needs to be completed from bot's server...</y>"
+                    )
+                    continue
+                if await self.complete_quest(quest):
+                    currentState = 1
+                    sleep_duration = random.randint(5, 10)
+                    self.log.info(
+                        f"<y>⌛ Claiming quest <c>{questTitle}</c> after {sleep_duration}s...</y>"
+                    )
+                    await asyncio.sleep(sleep_duration)
+            if currentState == 1:
+                if self.claim_quest(quest):
+                    self.log.info(
+                        f"<g>🎉 Quest <c>{questTitle}</c> claimed successfully! Reward Amount: {rewards_amount}</g>"
+                    )
 
     def get_total_quests(self):
         return len(self.quests)
