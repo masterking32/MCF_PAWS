@@ -1162,12 +1162,12 @@
         };
         return (0, a.useEffect)(() => {
           var e, t, a;
-          return null !== (e = window) && void 0 !== e && null !== (t = e.Telegram) && void 0 !== t && null !== (a = t.WebApp) && void 0 !== a && a.DeviceOrientation || "start" !== i ? (window.Telegram.WebApp.DeviceOrientation.start({
+          return null !== (e = window) && void 0 !== e && null !== (t = e.Telegram) && void 0 !== t && null !== (a = t.WebApp) && void 0 !== a && a.DeviceOrientation && "start" === i ? (window.Telegram.WebApp.DeviceOrientation.start({
             refresh_rate: 500
           }), window.Telegram.WebApp.onEvent("deviceOrientationChanged", s), () => {
             window.Telegram.WebApp.offEvent("deviceOrientationChanged"), window.Telegram.WebApp.DeviceOrientation.stop()
           }) : () => {}
-        }, []), a.createElement(a.Fragment, null)
+        }, [i]), a.createElement(a.Fragment, null)
       };
       let eD = {
           welcome: "TG Age Drop",
