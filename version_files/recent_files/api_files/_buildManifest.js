@@ -4,7 +4,7 @@ self.__BUILD_MANIFEST = {
     beforeFiles: [],
     fallback: []
   },
-  "/": ["static/chunks/810-9a92dad5b384cff9.js", "static/css/466beb2187ec8a1f.css", "static/chunks/pages/index-5c4fb8d2c4da9300.js"],
+  "/": ["static/chunks/810-9a92dad5b384cff9.js", "static/css/3e6601da420a5d44.css", "static/chunks/pages/index-51a53b7d4077fa0a.js"],
   "/404": ["static/chunks/pages/404-fd1982be800c4d0c.js"],
   "/_error": ["static/chunks/pages/_error-53c7c74a0fadb444.js"],
   sortedPages: ["/", "/404", "/_app", "/_error"]
