@@ -154,8 +154,10 @@ class Quests:
                 continue
             if questType == "copy":  # should be auto completed
                 continue
-            if questTitle == "Mystery Quest":  # let's skip this one
-                continue
+            mysteryWhiteList = ["love"]  # action
+            if questTitle == "Mystery Quest":
+                if quest.get("action", "N/A") not in mysteryWhiteList:
+                    continue
 
             if currentState == 0:
                 if questStatus == "pending":
