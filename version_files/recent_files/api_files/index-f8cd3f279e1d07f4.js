@@ -2757,7 +2757,7 @@
             length: o
           }).map(() => i())), () => {
             s([])
-          }), [i]), e.createElement("div", {
+          }), []), e.createElement("div", {
             className: "stars-animation-con"
           }, x.map((t, i) => e.createElement("div", {
             key: i,
