@@ -2152,7 +2152,7 @@
             let t = () => {
               if (!c.paws.length) return;
               let t = ["vote", "mystery"];
-              c.limited.some(i => t.includes(i.code) && "finished" !== i.progress.status) && setTimeout(() => u(), 500)
+              c.limited.some(i => (t.includes(i.code) || "Go Gamble" === i.title) && "finished" !== i.progress.status) && setTimeout(() => u(), 500)
             };
             return window.addEventListener("onUserVoted", t), () => {
               window.removeEventListener("onUserVoted", t)
