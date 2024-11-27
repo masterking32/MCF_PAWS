@@ -1180,7 +1180,7 @@
           x: "X Empire Drop"
         },
         tS = "\uD83D\uDC3E",
-        tD = t => ["voteup", "votedown", "mystery", "custom"].includes(t.code);
+        tD = t => ["vote", "voteup", "votedown", "mystery", "custom"].includes(t.code);
       var tT = t => {
         var i, o, x, r, c;
         let {
