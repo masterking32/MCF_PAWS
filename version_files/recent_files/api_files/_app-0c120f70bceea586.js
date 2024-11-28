@@ -35,8 +35,8 @@
           M = "Opera",
           N = "Samsung",
           D = "Sharp",
-          $ = "Sony",
-          I = "Xiaomi",
+          I = "Sony",
+          $ = "Xiaomi",
           B = "Zebra",
           U = "Facebook",
           V = "Chromium OS",
@@ -284,13 +284,13 @@
               [/\b(poco[\w ]+|m2\d{3}j\d\d[a-z]{2})(?: bui|\))/i, /\b; (\w+) build\/hm\1/i, /\b(hm[-_ ]?note?[_ ]?(?:\d\w)?) bui/i, /\b(redmi[\-_ ]?(?:note|k)?[\w_ ]+)(?: bui|\))/i, /oid[^\)]+; (m?[12][0-389][01]\w{3,6}[c-y])( bui|; wv|\))/i, /\b(mi[-_ ]?(?:a\d|one|one[_ ]plus|note lte|max|cc)?[_ ]?(?:\d?\w?)[_ ]?(?:plus|se|lite)?)(?: bui|\))/i],
               [
                 [d, /_/g, " "],
-                [f, I],
+                [f, $],
                 [h, v]
               ],
               [/oid[^\)]+; (2\d{4}(283|rpbf)[cgl])( bui|\))/i, /\b(mi[-_ ]?(?:pad)(?:[\w_ ]+))(?: bui|\))/i],
               [
                 [d, /_/g, " "],
-                [f, I],
+                [f, $],
                 [h, b]
               ],
               [/; (\w+) bui.+ oppo/i, /\b(cph[12]\d{3}|p(?:af|c[al]|d\w|e[ar])[mt]\d0|x9007|a101op)\b/i],
@@ -344,13 +344,13 @@
                 [h, v]
               ],
               [/droid.+ (a?\d[0-2]{2}so|[c-g]\d{4}|so[-gl]\w+|xq-a\w[4-7][12])(?= bui|\).+chrome\/(?![1-6]{0,1}\d\.))/i],
-              [d, [f, $],
+              [d, [f, I],
                 [h, v]
               ],
               [/sony tablet [ps]/i, /\b(?:sony)?sgp\w+(?: bui|\))/i],
               [
                 [d, "Xperia Tablet"],
-                [f, $],
+                [f, I],
                 [h, b]
               ],
               [/ (kb2005|in20[12]5|be20[12][59])\b/i, /(?:one)?(?:plus)? (a\d0\d\d)(?: b|\))/i],
@@ -549,11 +549,11 @@
                 [h, w]
               ],
               [/(bravia[\w ]+)( bui|\))/i],
-              [d, [f, $],
+              [d, [f, I],
                 [h, w]
               ],
               [/(mitv-\w{5}) bui/i],
-              [d, [f, I],
+              [d, [f, $],
                 [h, w]
               ],
               [/Hbbtv.*(technisat) (.*);/i],
@@ -575,7 +575,7 @@
                 [h, y]
               ],
               [/(playstation [345portablevi]+)/i],
-              [d, [f, $],
+              [d, [f, I],
                 [h, y]
               ],
               [/\b(xbox(?: one)?(?!; xbox))[\); ]/i],
@@ -1570,8 +1570,8 @@
           N = (0, o.default)(e, a),
           {
             imgConf: D,
-            showAltText: $,
-            blurComplete: I,
+            showAltText: I,
+            blurComplete: $,
             defaultLoader: B
           } = t,
           U = D || d.imageConfigDefault;
@@ -1649,10 +1649,10 @@
             bottom: 0,
             objectFit: R,
             objectPosition: L
-          } : {}, $ ? {} : {
+          } : {}, I ? {} : {
             color: "transparent"
           }, S),
-          Z = I || "empty" === _ ? null : "blur" === _ ? 'url("data:image/svg+xml;charset=utf-8,' + (0, u.getImageBlurSvg)({
+          Z = $ || "empty" === _ ? null : "blur" === _ ? 'url("data:image/svg+xml;charset=utf-8,' + (0, u.getImageBlurSvg)({
             widthInt: F,
             heightInt: H,
             blurWidth: i,
@@ -2780,10 +2780,10 @@
         "/": "&#x2F;"
       };
 
-      function $(e) {
+      function I(e) {
         return "string" == typeof e ? e.replace(/[&<>"'\/]/g, e => D[e]) : e
       }
-      class I {
+      class $ {
         constructor(e) {
           this.capacity = e, this.regExpMap = new Map, this.regExpQueue = []
         }
@@ -2795,7 +2795,7 @@
         }
       }
       let B = [" ", ",", "?", "!", ";"],
-        U = new I(20);
+        U = new $(20);
 
       function V(e, t) {
         let n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : ".";
@@ -3497,7 +3497,7 @@
             escapeValue: !0
           });
           let t = e.interpolation;
-          this.escape = void 0 !== t.escape ? t.escape : $, this.escapeValue = void 0 === t.escapeValue || t.escapeValue, this.useRawValueToEscape = void 0 !== t.useRawValueToEscape && t.useRawValueToEscape, this.prefix = t.prefix ? N(t.prefix) : t.prefixEscaped || "{{", this.suffix = t.suffix ? N(t.suffix) : t.suffixEscaped || "}}", this.formatSeparator = t.formatSeparator ? t.formatSeparator : t.formatSeparator || ",", this.unescapePrefix = t.unescapeSuffix ? "" : t.unescapePrefix || "-", this.unescapeSuffix = this.unescapePrefix ? "" : t.unescapeSuffix || "", this.nestingPrefix = t.nestingPrefix ? N(t.nestingPrefix) : t.nestingPrefixEscaped || N("$t("), this.nestingSuffix = t.nestingSuffix ? N(t.nestingSuffix) : t.nestingSuffixEscaped || N(")"), this.nestingOptionsSeparator = t.nestingOptionsSeparator ? t.nestingOptionsSeparator : t.nestingOptionsSeparator || ",", this.maxReplaces = t.maxReplaces ? t.maxReplaces : 1e3, this.alwaysFormat = void 0 !== t.alwaysFormat && t.alwaysFormat, this.resetRegExp()
+          this.escape = void 0 !== t.escape ? t.escape : I, this.escapeValue = void 0 === t.escapeValue || t.escapeValue, this.useRawValueToEscape = void 0 !== t.useRawValueToEscape && t.useRawValueToEscape, this.prefix = t.prefix ? N(t.prefix) : t.prefixEscaped || "{{", this.suffix = t.suffix ? N(t.suffix) : t.suffixEscaped || "}}", this.formatSeparator = t.formatSeparator ? t.formatSeparator : t.formatSeparator || ",", this.unescapePrefix = t.unescapeSuffix ? "" : t.unescapePrefix || "-", this.unescapeSuffix = this.unescapePrefix ? "" : t.unescapeSuffix || "", this.nestingPrefix = t.nestingPrefix ? N(t.nestingPrefix) : t.nestingPrefixEscaped || N("$t("), this.nestingSuffix = t.nestingSuffix ? N(t.nestingSuffix) : t.nestingSuffixEscaped || N(")"), this.nestingOptionsSeparator = t.nestingOptionsSeparator ? t.nestingOptionsSeparator : t.nestingOptionsSeparator || ",", this.maxReplaces = t.maxReplaces ? t.maxReplaces : 1e3, this.alwaysFormat = void 0 !== t.alwaysFormat && t.alwaysFormat, this.resetRegExp()
         }
         reset() {
           this.options && this.init(this.options)
@@ -4631,9 +4631,9 @@
         },
         eN = n(9155),
         eD = n(7009),
-        e$ = n(2783);
+        eI = n(2783);
       n(6649);
-      var eI = () => {
+      var e$ = () => {
         let {
           webApp: e
         } = (0, ew.fW)();
@@ -4643,7 +4643,7 @@
           className: "main-wrap"
         }, o.createElement("div", {
           className: "anim-wrap"
-        }, o.createElement(e$.Z, {
+        }, o.createElement(eI.Z, {
           isShow: !0
         })), o.createElement("div", {
           className: "title"
@@ -4677,7 +4677,7 @@
               let [h, f, g, m] = p.data;
               r((0, ev.av)(f)), g && r((0, ev.x5)({
                 isShowing: !0
-              })), m && m.isShowWinnerModal && r((0, ev.UD)(!0)), window.sessionStorage.setItem("accessToken", h)
+              })), m && m.isShowBumsModal && r((0, ev.UD)(!0)), window.sessionStorage.setItem("accessToken", h)
             } catch (e) {
               (0, eD.Z)({
                 type: "error",
@@ -4688,7 +4688,7 @@
           };
           return (0, o.useEffect)(() => {
             c()
-          }, []), o.createElement(o.Fragment, null, s && o.createElement(eI, null), i && !s && o.createElement(o.Fragment, null, o.createElement(t, n)))
+          }, []), o.createElement(o.Fragment, null, s && o.createElement(e$, null), i && !s && o.createElement(o.Fragment, null, o.createElement(t, n)))
         },
         eV = n(4298),
         eW = n.n(eV),
@@ -4851,9 +4851,6 @@
         av: function() {
           return p
         },
-        uL: function() {
-          return c
-        },
         x5: function() {
           return h
         },
@@ -4936,6 +4933,14 @@
                   isHolder: 0,
                   tierType: 0,
                   converted: 0
+                },
+                bums: {
+                  initial: 0,
+                  converted: 0,
+                  skinNumInitial: 0,
+                  skinNumConverted: 0,
+                  levelInitial: 0,
+                  levelConverted: 0
                 },
                 total: 0
               }
@@ -5328,14 +5333,14 @@
 
         function b(e, t, n, r) {
           ! function(e, t, n, r) {
-            for (var i, o = 255 & r[0] | (255 & r[1]) << 8 | (255 & r[2]) << 16 | (255 & r[3]) << 24, a = 255 & n[0] | (255 & n[1]) << 8 | (255 & n[2]) << 16 | (255 & n[3]) << 24, s = 255 & n[4] | (255 & n[5]) << 8 | (255 & n[6]) << 16 | (255 & n[7]) << 24, l = 255 & n[8] | (255 & n[9]) << 8 | (255 & n[10]) << 16 | (255 & n[11]) << 24, c = 255 & n[12] | (255 & n[13]) << 8 | (255 & n[14]) << 16 | (255 & n[15]) << 24, u = 255 & r[4] | (255 & r[5]) << 8 | (255 & r[6]) << 16 | (255 & r[7]) << 24, d = 255 & t[0] | (255 & t[1]) << 8 | (255 & t[2]) << 16 | (255 & t[3]) << 24, p = 255 & t[4] | (255 & t[5]) << 8 | (255 & t[6]) << 16 | (255 & t[7]) << 24, h = 255 & t[8] | (255 & t[9]) << 8 | (255 & t[10]) << 16 | (255 & t[11]) << 24, f = 255 & t[12] | (255 & t[13]) << 8 | (255 & t[14]) << 16 | (255 & t[15]) << 24, g = 255 & r[8] | (255 & r[9]) << 8 | (255 & r[10]) << 16 | (255 & r[11]) << 24, m = 255 & n[16] | (255 & n[17]) << 8 | (255 & n[18]) << 16 | (255 & n[19]) << 24, y = 255 & n[20] | (255 & n[21]) << 8 | (255 & n[22]) << 16 | (255 & n[23]) << 24, v = 255 & n[24] | (255 & n[25]) << 8 | (255 & n[26]) << 16 | (255 & n[27]) << 24, b = 255 & n[28] | (255 & n[29]) << 8 | (255 & n[30]) << 16 | (255 & n[31]) << 24, w = 255 & r[12] | (255 & r[13]) << 8 | (255 & r[14]) << 16 | (255 & r[15]) << 24, x = o, k = a, C = s, S = l, E = c, O = u, _ = d, A = p, T = h, P = f, R = g, L = m, j = y, M = v, N = b, D = w, $ = 0; $ < 20; $ += 2) E ^= (i = x + j | 0) << 7 | i >>> 25, T ^= (i = E + x | 0) << 9 | i >>> 23, j ^= (i = T + E | 0) << 13 | i >>> 19, x ^= (i = j + T | 0) << 18 | i >>> 14, P ^= (i = O + k | 0) << 7 | i >>> 25, M ^= (i = P + O | 0) << 9 | i >>> 23, k ^= (i = M + P | 0) << 13 | i >>> 19, O ^= (i = k + M | 0) << 18 | i >>> 14, N ^= (i = R + _ | 0) << 7 | i >>> 25, C ^= (i = N + R | 0) << 9 | i >>> 23, _ ^= (i = C + N | 0) << 13 | i >>> 19, R ^= (i = _ + C | 0) << 18 | i >>> 14, S ^= (i = D + L | 0) << 7 | i >>> 25, A ^= (i = S + D | 0) << 9 | i >>> 23, L ^= (i = A + S | 0) << 13 | i >>> 19, D ^= (i = L + A | 0) << 18 | i >>> 14, k ^= (i = x + S | 0) << 7 | i >>> 25, C ^= (i = k + x | 0) << 9 | i >>> 23, S ^= (i = C + k | 0) << 13 | i >>> 19, x ^= (i = S + C | 0) << 18 | i >>> 14, _ ^= (i = O + E | 0) << 7 | i >>> 25, A ^= (i = _ + O | 0) << 9 | i >>> 23, E ^= (i = A + _ | 0) << 13 | i >>> 19, O ^= (i = E + A | 0) << 18 | i >>> 14, L ^= (i = R + P | 0) << 7 | i >>> 25, T ^= (i = L + R | 0) << 9 | i >>> 23, P ^= (i = T + L | 0) << 13 | i >>> 19, R ^= (i = P + T | 0) << 18 | i >>> 14, j ^= (i = D + N | 0) << 7 | i >>> 25, M ^= (i = j + D | 0) << 9 | i >>> 23, N ^= (i = M + j | 0) << 13 | i >>> 19, D ^= (i = N + M | 0) << 18 | i >>> 14;
+            for (var i, o = 255 & r[0] | (255 & r[1]) << 8 | (255 & r[2]) << 16 | (255 & r[3]) << 24, a = 255 & n[0] | (255 & n[1]) << 8 | (255 & n[2]) << 16 | (255 & n[3]) << 24, s = 255 & n[4] | (255 & n[5]) << 8 | (255 & n[6]) << 16 | (255 & n[7]) << 24, l = 255 & n[8] | (255 & n[9]) << 8 | (255 & n[10]) << 16 | (255 & n[11]) << 24, c = 255 & n[12] | (255 & n[13]) << 8 | (255 & n[14]) << 16 | (255 & n[15]) << 24, u = 255 & r[4] | (255 & r[5]) << 8 | (255 & r[6]) << 16 | (255 & r[7]) << 24, d = 255 & t[0] | (255 & t[1]) << 8 | (255 & t[2]) << 16 | (255 & t[3]) << 24, p = 255 & t[4] | (255 & t[5]) << 8 | (255 & t[6]) << 16 | (255 & t[7]) << 24, h = 255 & t[8] | (255 & t[9]) << 8 | (255 & t[10]) << 16 | (255 & t[11]) << 24, f = 255 & t[12] | (255 & t[13]) << 8 | (255 & t[14]) << 16 | (255 & t[15]) << 24, g = 255 & r[8] | (255 & r[9]) << 8 | (255 & r[10]) << 16 | (255 & r[11]) << 24, m = 255 & n[16] | (255 & n[17]) << 8 | (255 & n[18]) << 16 | (255 & n[19]) << 24, y = 255 & n[20] | (255 & n[21]) << 8 | (255 & n[22]) << 16 | (255 & n[23]) << 24, v = 255 & n[24] | (255 & n[25]) << 8 | (255 & n[26]) << 16 | (255 & n[27]) << 24, b = 255 & n[28] | (255 & n[29]) << 8 | (255 & n[30]) << 16 | (255 & n[31]) << 24, w = 255 & r[12] | (255 & r[13]) << 8 | (255 & r[14]) << 16 | (255 & r[15]) << 24, x = o, k = a, C = s, S = l, E = c, O = u, _ = d, A = p, T = h, P = f, R = g, L = m, j = y, M = v, N = b, D = w, I = 0; I < 20; I += 2) E ^= (i = x + j | 0) << 7 | i >>> 25, T ^= (i = E + x | 0) << 9 | i >>> 23, j ^= (i = T + E | 0) << 13 | i >>> 19, x ^= (i = j + T | 0) << 18 | i >>> 14, P ^= (i = O + k | 0) << 7 | i >>> 25, M ^= (i = P + O | 0) << 9 | i >>> 23, k ^= (i = M + P | 0) << 13 | i >>> 19, O ^= (i = k + M | 0) << 18 | i >>> 14, N ^= (i = R + _ | 0) << 7 | i >>> 25, C ^= (i = N + R | 0) << 9 | i >>> 23, _ ^= (i = C + N | 0) << 13 | i >>> 19, R ^= (i = _ + C | 0) << 18 | i >>> 14, S ^= (i = D + L | 0) << 7 | i >>> 25, A ^= (i = S + D | 0) << 9 | i >>> 23, L ^= (i = A + S | 0) << 13 | i >>> 19, D ^= (i = L + A | 0) << 18 | i >>> 14, k ^= (i = x + S | 0) << 7 | i >>> 25, C ^= (i = k + x | 0) << 9 | i >>> 23, S ^= (i = C + k | 0) << 13 | i >>> 19, x ^= (i = S + C | 0) << 18 | i >>> 14, _ ^= (i = O + E | 0) << 7 | i >>> 25, A ^= (i = _ + O | 0) << 9 | i >>> 23, E ^= (i = A + _ | 0) << 13 | i >>> 19, O ^= (i = E + A | 0) << 18 | i >>> 14, L ^= (i = R + P | 0) << 7 | i >>> 25, T ^= (i = L + R | 0) << 9 | i >>> 23, P ^= (i = T + L | 0) << 13 | i >>> 19, R ^= (i = P + T | 0) << 18 | i >>> 14, j ^= (i = D + N | 0) << 7 | i >>> 25, M ^= (i = j + D | 0) << 9 | i >>> 23, N ^= (i = M + j | 0) << 13 | i >>> 19, D ^= (i = N + M | 0) << 18 | i >>> 14;
             x = x + o | 0, k = k + a | 0, C = C + s | 0, S = S + l | 0, E = E + c | 0, O = O + u | 0, _ = _ + d | 0, A = A + p | 0, T = T + h | 0, P = P + f | 0, R = R + g | 0, L = L + m | 0, j = j + y | 0, M = M + v | 0, N = N + b | 0, D = D + w | 0, e[0] = x >>> 0 & 255, e[1] = x >>> 8 & 255, e[2] = x >>> 16 & 255, e[3] = x >>> 24 & 255, e[4] = k >>> 0 & 255, e[5] = k >>> 8 & 255, e[6] = k >>> 16 & 255, e[7] = k >>> 24 & 255, e[8] = C >>> 0 & 255, e[9] = C >>> 8 & 255, e[10] = C >>> 16 & 255, e[11] = C >>> 24 & 255, e[12] = S >>> 0 & 255, e[13] = S >>> 8 & 255, e[14] = S >>> 16 & 255, e[15] = S >>> 24 & 255, e[16] = E >>> 0 & 255, e[17] = E >>> 8 & 255, e[18] = E >>> 16 & 255, e[19] = E >>> 24 & 255, e[20] = O >>> 0 & 255, e[21] = O >>> 8 & 255, e[22] = O >>> 16 & 255, e[23] = O >>> 24 & 255, e[24] = _ >>> 0 & 255, e[25] = _ >>> 8 & 255, e[26] = _ >>> 16 & 255, e[27] = _ >>> 24 & 255, e[28] = A >>> 0 & 255, e[29] = A >>> 8 & 255, e[30] = A >>> 16 & 255, e[31] = A >>> 24 & 255, e[32] = T >>> 0 & 255, e[33] = T >>> 8 & 255, e[34] = T >>> 16 & 255, e[35] = T >>> 24 & 255, e[36] = P >>> 0 & 255, e[37] = P >>> 8 & 255, e[38] = P >>> 16 & 255, e[39] = P >>> 24 & 255, e[40] = R >>> 0 & 255, e[41] = R >>> 8 & 255, e[42] = R >>> 16 & 255, e[43] = R >>> 24 & 255, e[44] = L >>> 0 & 255, e[45] = L >>> 8 & 255, e[46] = L >>> 16 & 255, e[47] = L >>> 24 & 255, e[48] = j >>> 0 & 255, e[49] = j >>> 8 & 255, e[50] = j >>> 16 & 255, e[51] = j >>> 24 & 255, e[52] = M >>> 0 & 255, e[53] = M >>> 8 & 255, e[54] = M >>> 16 & 255, e[55] = M >>> 24 & 255, e[56] = N >>> 0 & 255, e[57] = N >>> 8 & 255, e[58] = N >>> 16 & 255, e[59] = N >>> 24 & 255, e[60] = D >>> 0 & 255, e[61] = D >>> 8 & 255, e[62] = D >>> 16 & 255, e[63] = D >>> 24 & 255
           }(e, t, n, r)
         }
 
         function w(e, t, n, r) {
           ! function(e, t, n, r) {
-            for (var i, o = 255 & r[0] | (255 & r[1]) << 8 | (255 & r[2]) << 16 | (255 & r[3]) << 24, a = 255 & n[0] | (255 & n[1]) << 8 | (255 & n[2]) << 16 | (255 & n[3]) << 24, s = 255 & n[4] | (255 & n[5]) << 8 | (255 & n[6]) << 16 | (255 & n[7]) << 24, l = 255 & n[8] | (255 & n[9]) << 8 | (255 & n[10]) << 16 | (255 & n[11]) << 24, c = 255 & n[12] | (255 & n[13]) << 8 | (255 & n[14]) << 16 | (255 & n[15]) << 24, u = 255 & r[4] | (255 & r[5]) << 8 | (255 & r[6]) << 16 | (255 & r[7]) << 24, d = 255 & t[0] | (255 & t[1]) << 8 | (255 & t[2]) << 16 | (255 & t[3]) << 24, p = 255 & t[4] | (255 & t[5]) << 8 | (255 & t[6]) << 16 | (255 & t[7]) << 24, h = 255 & t[8] | (255 & t[9]) << 8 | (255 & t[10]) << 16 | (255 & t[11]) << 24, f = 255 & t[12] | (255 & t[13]) << 8 | (255 & t[14]) << 16 | (255 & t[15]) << 24, g = 255 & r[8] | (255 & r[9]) << 8 | (255 & r[10]) << 16 | (255 & r[11]) << 24, m = 255 & n[16] | (255 & n[17]) << 8 | (255 & n[18]) << 16 | (255 & n[19]) << 24, y = 255 & n[20] | (255 & n[21]) << 8 | (255 & n[22]) << 16 | (255 & n[23]) << 24, v = 255 & n[24] | (255 & n[25]) << 8 | (255 & n[26]) << 16 | (255 & n[27]) << 24, b = 255 & n[28] | (255 & n[29]) << 8 | (255 & n[30]) << 16 | (255 & n[31]) << 24, w = 255 & r[12] | (255 & r[13]) << 8 | (255 & r[14]) << 16 | (255 & r[15]) << 24, x = o, k = a, C = s, S = l, E = c, O = u, _ = d, A = p, T = h, P = f, R = g, L = m, j = y, M = v, N = b, D = w, $ = 0; $ < 20; $ += 2) E ^= (i = x + j | 0) << 7 | i >>> 25, T ^= (i = E + x | 0) << 9 | i >>> 23, j ^= (i = T + E | 0) << 13 | i >>> 19, x ^= (i = j + T | 0) << 18 | i >>> 14, P ^= (i = O + k | 0) << 7 | i >>> 25, M ^= (i = P + O | 0) << 9 | i >>> 23, k ^= (i = M + P | 0) << 13 | i >>> 19, O ^= (i = k + M | 0) << 18 | i >>> 14, N ^= (i = R + _ | 0) << 7 | i >>> 25, C ^= (i = N + R | 0) << 9 | i >>> 23, _ ^= (i = C + N | 0) << 13 | i >>> 19, R ^= (i = _ + C | 0) << 18 | i >>> 14, S ^= (i = D + L | 0) << 7 | i >>> 25, A ^= (i = S + D | 0) << 9 | i >>> 23, L ^= (i = A + S | 0) << 13 | i >>> 19, D ^= (i = L + A | 0) << 18 | i >>> 14, k ^= (i = x + S | 0) << 7 | i >>> 25, C ^= (i = k + x | 0) << 9 | i >>> 23, S ^= (i = C + k | 0) << 13 | i >>> 19, x ^= (i = S + C | 0) << 18 | i >>> 14, _ ^= (i = O + E | 0) << 7 | i >>> 25, A ^= (i = _ + O | 0) << 9 | i >>> 23, E ^= (i = A + _ | 0) << 13 | i >>> 19, O ^= (i = E + A | 0) << 18 | i >>> 14, L ^= (i = R + P | 0) << 7 | i >>> 25, T ^= (i = L + R | 0) << 9 | i >>> 23, P ^= (i = T + L | 0) << 13 | i >>> 19, R ^= (i = P + T | 0) << 18 | i >>> 14, j ^= (i = D + N | 0) << 7 | i >>> 25, M ^= (i = j + D | 0) << 9 | i >>> 23, N ^= (i = M + j | 0) << 13 | i >>> 19, D ^= (i = N + M | 0) << 18 | i >>> 14;
+            for (var i, o = 255 & r[0] | (255 & r[1]) << 8 | (255 & r[2]) << 16 | (255 & r[3]) << 24, a = 255 & n[0] | (255 & n[1]) << 8 | (255 & n[2]) << 16 | (255 & n[3]) << 24, s = 255 & n[4] | (255 & n[5]) << 8 | (255 & n[6]) << 16 | (255 & n[7]) << 24, l = 255 & n[8] | (255 & n[9]) << 8 | (255 & n[10]) << 16 | (255 & n[11]) << 24, c = 255 & n[12] | (255 & n[13]) << 8 | (255 & n[14]) << 16 | (255 & n[15]) << 24, u = 255 & r[4] | (255 & r[5]) << 8 | (255 & r[6]) << 16 | (255 & r[7]) << 24, d = 255 & t[0] | (255 & t[1]) << 8 | (255 & t[2]) << 16 | (255 & t[3]) << 24, p = 255 & t[4] | (255 & t[5]) << 8 | (255 & t[6]) << 16 | (255 & t[7]) << 24, h = 255 & t[8] | (255 & t[9]) << 8 | (255 & t[10]) << 16 | (255 & t[11]) << 24, f = 255 & t[12] | (255 & t[13]) << 8 | (255 & t[14]) << 16 | (255 & t[15]) << 24, g = 255 & r[8] | (255 & r[9]) << 8 | (255 & r[10]) << 16 | (255 & r[11]) << 24, m = 255 & n[16] | (255 & n[17]) << 8 | (255 & n[18]) << 16 | (255 & n[19]) << 24, y = 255 & n[20] | (255 & n[21]) << 8 | (255 & n[22]) << 16 | (255 & n[23]) << 24, v = 255 & n[24] | (255 & n[25]) << 8 | (255 & n[26]) << 16 | (255 & n[27]) << 24, b = 255 & n[28] | (255 & n[29]) << 8 | (255 & n[30]) << 16 | (255 & n[31]) << 24, w = 255 & r[12] | (255 & r[13]) << 8 | (255 & r[14]) << 16 | (255 & r[15]) << 24, x = o, k = a, C = s, S = l, E = c, O = u, _ = d, A = p, T = h, P = f, R = g, L = m, j = y, M = v, N = b, D = w, I = 0; I < 20; I += 2) E ^= (i = x + j | 0) << 7 | i >>> 25, T ^= (i = E + x | 0) << 9 | i >>> 23, j ^= (i = T + E | 0) << 13 | i >>> 19, x ^= (i = j + T | 0) << 18 | i >>> 14, P ^= (i = O + k | 0) << 7 | i >>> 25, M ^= (i = P + O | 0) << 9 | i >>> 23, k ^= (i = M + P | 0) << 13 | i >>> 19, O ^= (i = k + M | 0) << 18 | i >>> 14, N ^= (i = R + _ | 0) << 7 | i >>> 25, C ^= (i = N + R | 0) << 9 | i >>> 23, _ ^= (i = C + N | 0) << 13 | i >>> 19, R ^= (i = _ + C | 0) << 18 | i >>> 14, S ^= (i = D + L | 0) << 7 | i >>> 25, A ^= (i = S + D | 0) << 9 | i >>> 23, L ^= (i = A + S | 0) << 13 | i >>> 19, D ^= (i = L + A | 0) << 18 | i >>> 14, k ^= (i = x + S | 0) << 7 | i >>> 25, C ^= (i = k + x | 0) << 9 | i >>> 23, S ^= (i = C + k | 0) << 13 | i >>> 19, x ^= (i = S + C | 0) << 18 | i >>> 14, _ ^= (i = O + E | 0) << 7 | i >>> 25, A ^= (i = _ + O | 0) << 9 | i >>> 23, E ^= (i = A + _ | 0) << 13 | i >>> 19, O ^= (i = E + A | 0) << 18 | i >>> 14, L ^= (i = R + P | 0) << 7 | i >>> 25, T ^= (i = L + R | 0) << 9 | i >>> 23, P ^= (i = T + L | 0) << 13 | i >>> 19, R ^= (i = P + T | 0) << 18 | i >>> 14, j ^= (i = D + N | 0) << 7 | i >>> 25, M ^= (i = j + D | 0) << 9 | i >>> 23, N ^= (i = M + j | 0) << 13 | i >>> 19, D ^= (i = N + M | 0) << 18 | i >>> 14;
             e[0] = x >>> 0 & 255, e[1] = x >>> 8 & 255, e[2] = x >>> 16 & 255, e[3] = x >>> 24 & 255, e[4] = O >>> 0 & 255, e[5] = O >>> 8 & 255, e[6] = O >>> 16 & 255, e[7] = O >>> 24 & 255, e[8] = R >>> 0 & 255, e[9] = R >>> 8 & 255, e[10] = R >>> 16 & 255, e[11] = R >>> 24 & 255, e[12] = D >>> 0 & 255, e[13] = D >>> 8 & 255, e[14] = D >>> 16 & 255, e[15] = D >>> 24 & 255, e[16] = _ >>> 0 & 255, e[17] = _ >>> 8 & 255, e[18] = _ >>> 16 & 255, e[19] = _ >>> 24 & 255, e[20] = A >>> 0 & 255, e[21] = A >>> 8 & 255, e[22] = A >>> 16 & 255, e[23] = A >>> 24 & 255, e[24] = T >>> 0 & 255, e[25] = T >>> 8 & 255, e[26] = T >>> 16 & 255, e[27] = T >>> 24 & 255, e[28] = P >>> 0 & 255, e[29] = P >>> 8 & 255, e[30] = P >>> 16 & 255, e[31] = P >>> 24 & 255
           }(e, t, n, r)
         }
@@ -5450,13 +5455,13 @@
           return M(t, e), 1 & t[0]
         }
 
-        function $(e, t) {
+        function I(e, t) {
           var n;
           for (n = 0; n < 16; n++) e[n] = t[2 * n] + (t[2 * n + 1] << 8);
           e[15] &= 32767
         }
 
-        function I(e, t, n) {
+        function $(e, t, n) {
           for (var r = 0; r < 16; r++) e[r] = t[r] + n[r]
         }
 
@@ -5497,8 +5502,8 @@
             M = 0,
             N = 0,
             D = n[0],
-            $ = n[1],
-            I = n[2],
+            I = n[1],
+            $ = n[2],
             B = n[3],
             U = n[4],
             V = n[5],
@@ -5512,7 +5517,7 @@
             Z = n[13],
             Y = n[14],
             J = n[15];
-          o += (r = t[0]) * D, a += r * $, s += r * I, l += r * B, c += r * U, u += r * V, d += r * W, p += r * G, h += r * F, f += r * H, g += r * K, m += r * q, y += r * z, v += r * Z, b += r * Y, w += r * J, a += (r = t[1]) * D, s += r * $, l += r * I, c += r * B, u += r * U, d += r * V, p += r * W, h += r * G, f += r * F, g += r * H, m += r * K, y += r * q, v += r * z, b += r * Z, w += r * Y, x += r * J, s += (r = t[2]) * D, l += r * $, c += r * I, u += r * B, d += r * U, p += r * V, h += r * W, f += r * G, g += r * F, m += r * H, y += r * K, v += r * q, b += r * z, w += r * Z, x += r * Y, k += r * J, l += (r = t[3]) * D, c += r * $, u += r * I, d += r * B, p += r * U, h += r * V, f += r * W, g += r * G, m += r * F, y += r * H, v += r * K, b += r * q, w += r * z, x += r * Z, k += r * Y, C += r * J, c += (r = t[4]) * D, u += r * $, d += r * I, p += r * B, h += r * U, f += r * V, g += r * W, m += r * G, y += r * F, v += r * H, b += r * K, w += r * q, x += r * z, k += r * Z, C += r * Y, S += r * J, u += (r = t[5]) * D, d += r * $, p += r * I, h += r * B, f += r * U, g += r * V, m += r * W, y += r * G, v += r * F, b += r * H, w += r * K, x += r * q, k += r * z, C += r * Z, S += r * Y, E += r * J, d += (r = t[6]) * D, p += r * $, h += r * I, f += r * B, g += r * U, m += r * V, y += r * W, v += r * G, b += r * F, w += r * H, x += r * K, k += r * q, C += r * z, S += r * Z, E += r * Y, O += r * J, p += (r = t[7]) * D, h += r * $, f += r * I, g += r * B, m += r * U, y += r * V, v += r * W, b += r * G, w += r * F, x += r * H, k += r * K, C += r * q, S += r * z, E += r * Z, O += r * Y, _ += r * J, h += (r = t[8]) * D, f += r * $, g += r * I, m += r * B, y += r * U, v += r * V, b += r * W, w += r * G, x += r * F, k += r * H, C += r * K, S += r * q, E += r * z, O += r * Z, _ += r * Y, A += r * J, f += (r = t[9]) * D, g += r * $, m += r * I, y += r * B, v += r * U, b += r * V, w += r * W, x += r * G, k += r * F, C += r * H, S += r * K, E += r * q, O += r * z, _ += r * Z, A += r * Y, T += r * J, g += (r = t[10]) * D, m += r * $, y += r * I, v += r * B, b += r * U, w += r * V, x += r * W, k += r * G, C += r * F, S += r * H, E += r * K, O += r * q, _ += r * z, A += r * Z, T += r * Y, P += r * J, m += (r = t[11]) * D, y += r * $, v += r * I, b += r * B, w += r * U, x += r * V, k += r * W, C += r * G, S += r * F, E += r * H, O += r * K, _ += r * q, A += r * z, T += r * Z, P += r * Y, R += r * J, y += (r = t[12]) * D, v += r * $, b += r * I, w += r * B, x += r * U, k += r * V, C += r * W, S += r * G, E += r * F, O += r * H, _ += r * K, A += r * q, T += r * z, P += r * Z, R += r * Y, L += r * J, v += (r = t[13]) * D, b += r * $, w += r * I, x += r * B, k += r * U, C += r * V, S += r * W, E += r * G, O += r * F, _ += r * H, A += r * K, T += r * q, P += r * z, R += r * Z, L += r * Y, j += r * J, b += (r = t[14]) * D, w += r * $, x += r * I, k += r * B, C += r * U, S += r * V, E += r * W, O += r * G, _ += r * F, A += r * H, T += r * K, P += r * q, R += r * z, L += r * Z, j += r * Y, M += r * J, w += (r = t[15]) * D, x += r * $, k += r * I, C += r * B, S += r * U, E += r * V, O += r * W, _ += r * G, A += r * F, T += r * H, P += r * K, R += r * q, L += r * z, j += r * Z, M += r * Y, N += r * J, o += 38 * x, a += 38 * k, s += 38 * C, l += 38 * S, c += 38 * E, u += 38 * O, d += 38 * _, p += 38 * A, h += 38 * T, f += 38 * P, g += 38 * R, m += 38 * L, y += 38 * j, v += 38 * M, b += 38 * N, i = Math.floor((r = o + (i = 1) + 65535) / 65536), o = r - 65536 * i, i = Math.floor((r = a + i + 65535) / 65536), a = r - 65536 * i, i = Math.floor((r = s + i + 65535) / 65536), s = r - 65536 * i, i = Math.floor((r = l + i + 65535) / 65536), l = r - 65536 * i, i = Math.floor((r = c + i + 65535) / 65536), c = r - 65536 * i, i = Math.floor((r = u + i + 65535) / 65536), u = r - 65536 * i, i = Math.floor((r = d + i + 65535) / 65536), d = r - 65536 * i, i = Math.floor((r = p + i + 65535) / 65536), p = r - 65536 * i, i = Math.floor((r = h + i + 65535) / 65536), h = r - 65536 * i, i = Math.floor((r = f + i + 65535) / 65536), f = r - 65536 * i, i = Math.floor((r = g + i + 65535) / 65536), g = r - 65536 * i, i = Math.floor((r = m + i + 65535) / 65536), m = r - 65536 * i, i = Math.floor((r = y + i + 65535) / 65536), y = r - 65536 * i, i = Math.floor((r = v + i + 65535) / 65536), v = r - 65536 * i, i = Math.floor((r = b + i + 65535) / 65536), b = r - 65536 * i, i = Math.floor((r = w + i + 65535) / 65536), w = r - 65536 * i, o += i - 1 + 37 * (i - 1), i = Math.floor((r = o + (i = 1) + 65535) / 65536), o = r - 65536 * i, i = Math.floor((r = a + i + 65535) / 65536), a = r - 65536 * i, i = Math.floor((r = s + i + 65535) / 65536), s = r - 65536 * i, i = Math.floor((r = l + i + 65535) / 65536), l = r - 65536 * i, i = Math.floor((r = c + i + 65535) / 65536), c = r - 65536 * i, i = Math.floor((r = u + i + 65535) / 65536), u = r - 65536 * i, i = Math.floor((r = d + i + 65535) / 65536), d = r - 65536 * i, i = Math.floor((r = p + i + 65535) / 65536), p = r - 65536 * i, i = Math.floor((r = h + i + 65535) / 65536), h = r - 65536 * i, i = Math.floor((r = f + i + 65535) / 65536), f = r - 65536 * i, i = Math.floor((r = g + i + 65535) / 65536), g = r - 65536 * i, i = Math.floor((r = m + i + 65535) / 65536), m = r - 65536 * i, i = Math.floor((r = y + i + 65535) / 65536), y = r - 65536 * i, i = Math.floor((r = v + i + 65535) / 65536), v = r - 65536 * i, i = Math.floor((r = b + i + 65535) / 65536), b = r - 65536 * i, i = Math.floor((r = w + i + 65535) / 65536), w = r - 65536 * i, o += i - 1 + 37 * (i - 1), e[0] = o, e[1] = a, e[2] = s, e[3] = l, e[4] = c, e[5] = u, e[6] = d, e[7] = p, e[8] = h, e[9] = f, e[10] = g, e[11] = m, e[12] = y, e[13] = v, e[14] = b, e[15] = w
+          o += (r = t[0]) * D, a += r * I, s += r * $, l += r * B, c += r * U, u += r * V, d += r * W, p += r * G, h += r * F, f += r * H, g += r * K, m += r * q, y += r * z, v += r * Z, b += r * Y, w += r * J, a += (r = t[1]) * D, s += r * I, l += r * $, c += r * B, u += r * U, d += r * V, p += r * W, h += r * G, f += r * F, g += r * H, m += r * K, y += r * q, v += r * z, b += r * Z, w += r * Y, x += r * J, s += (r = t[2]) * D, l += r * I, c += r * $, u += r * B, d += r * U, p += r * V, h += r * W, f += r * G, g += r * F, m += r * H, y += r * K, v += r * q, b += r * z, w += r * Z, x += r * Y, k += r * J, l += (r = t[3]) * D, c += r * I, u += r * $, d += r * B, p += r * U, h += r * V, f += r * W, g += r * G, m += r * F, y += r * H, v += r * K, b += r * q, w += r * z, x += r * Z, k += r * Y, C += r * J, c += (r = t[4]) * D, u += r * I, d += r * $, p += r * B, h += r * U, f += r * V, g += r * W, m += r * G, y += r * F, v += r * H, b += r * K, w += r * q, x += r * z, k += r * Z, C += r * Y, S += r * J, u += (r = t[5]) * D, d += r * I, p += r * $, h += r * B, f += r * U, g += r * V, m += r * W, y += r * G, v += r * F, b += r * H, w += r * K, x += r * q, k += r * z, C += r * Z, S += r * Y, E += r * J, d += (r = t[6]) * D, p += r * I, h += r * $, f += r * B, g += r * U, m += r * V, y += r * W, v += r * G, b += r * F, w += r * H, x += r * K, k += r * q, C += r * z, S += r * Z, E += r * Y, O += r * J, p += (r = t[7]) * D, h += r * I, f += r * $, g += r * B, m += r * U, y += r * V, v += r * W, b += r * G, w += r * F, x += r * H, k += r * K, C += r * q, S += r * z, E += r * Z, O += r * Y, _ += r * J, h += (r = t[8]) * D, f += r * I, g += r * $, m += r * B, y += r * U, v += r * V, b += r * W, w += r * G, x += r * F, k += r * H, C += r * K, S += r * q, E += r * z, O += r * Z, _ += r * Y, A += r * J, f += (r = t[9]) * D, g += r * I, m += r * $, y += r * B, v += r * U, b += r * V, w += r * W, x += r * G, k += r * F, C += r * H, S += r * K, E += r * q, O += r * z, _ += r * Z, A += r * Y, T += r * J, g += (r = t[10]) * D, m += r * I, y += r * $, v += r * B, b += r * U, w += r * V, x += r * W, k += r * G, C += r * F, S += r * H, E += r * K, O += r * q, _ += r * z, A += r * Z, T += r * Y, P += r * J, m += (r = t[11]) * D, y += r * I, v += r * $, b += r * B, w += r * U, x += r * V, k += r * W, C += r * G, S += r * F, E += r * H, O += r * K, _ += r * q, A += r * z, T += r * Z, P += r * Y, R += r * J, y += (r = t[12]) * D, v += r * I, b += r * $, w += r * B, x += r * U, k += r * V, C += r * W, S += r * G, E += r * F, O += r * H, _ += r * K, A += r * q, T += r * z, P += r * Z, R += r * Y, L += r * J, v += (r = t[13]) * D, b += r * I, w += r * $, x += r * B, k += r * U, C += r * V, S += r * W, E += r * G, O += r * F, _ += r * H, A += r * K, T += r * q, P += r * z, R += r * Z, L += r * Y, j += r * J, b += (r = t[14]) * D, w += r * I, x += r * $, k += r * B, C += r * U, S += r * V, E += r * W, O += r * G, _ += r * F, A += r * H, T += r * K, P += r * q, R += r * z, L += r * Z, j += r * Y, M += r * J, w += (r = t[15]) * D, x += r * I, k += r * $, C += r * B, S += r * U, E += r * V, O += r * W, _ += r * G, A += r * F, T += r * H, P += r * K, R += r * q, L += r * z, j += r * Z, M += r * Y, N += r * J, o += 38 * x, a += 38 * k, s += 38 * C, l += 38 * S, c += 38 * E, u += 38 * O, d += 38 * _, p += 38 * A, h += 38 * T, f += 38 * P, g += 38 * R, m += 38 * L, y += 38 * j, v += 38 * M, b += 38 * N, i = Math.floor((r = o + (i = 1) + 65535) / 65536), o = r - 65536 * i, i = Math.floor((r = a + i + 65535) / 65536), a = r - 65536 * i, i = Math.floor((r = s + i + 65535) / 65536), s = r - 65536 * i, i = Math.floor((r = l + i + 65535) / 65536), l = r - 65536 * i, i = Math.floor((r = c + i + 65535) / 65536), c = r - 65536 * i, i = Math.floor((r = u + i + 65535) / 65536), u = r - 65536 * i, i = Math.floor((r = d + i + 65535) / 65536), d = r - 65536 * i, i = Math.floor((r = p + i + 65535) / 65536), p = r - 65536 * i, i = Math.floor((r = h + i + 65535) / 65536), h = r - 65536 * i, i = Math.floor((r = f + i + 65535) / 65536), f = r - 65536 * i, i = Math.floor((r = g + i + 65535) / 65536), g = r - 65536 * i, i = Math.floor((r = m + i + 65535) / 65536), m = r - 65536 * i, i = Math.floor((r = y + i + 65535) / 65536), y = r - 65536 * i, i = Math.floor((r = v + i + 65535) / 65536), v = r - 65536 * i, i = Math.floor((r = b + i + 65535) / 65536), b = r - 65536 * i, i = Math.floor((r = w + i + 65535) / 65536), w = r - 65536 * i, o += i - 1 + 37 * (i - 1), i = Math.floor((r = o + (i = 1) + 65535) / 65536), o = r - 65536 * i, i = Math.floor((r = a + i + 65535) / 65536), a = r - 65536 * i, i = Math.floor((r = s + i + 65535) / 65536), s = r - 65536 * i, i = Math.floor((r = l + i + 65535) / 65536), l = r - 65536 * i, i = Math.floor((r = c + i + 65535) / 65536), c = r - 65536 * i, i = Math.floor((r = u + i + 65535) / 65536), u = r - 65536 * i, i = Math.floor((r = d + i + 65535) / 65536), d = r - 65536 * i, i = Math.floor((r = p + i + 65535) / 65536), p = r - 65536 * i, i = Math.floor((r = h + i + 65535) / 65536), h = r - 65536 * i, i = Math.floor((r = f + i + 65535) / 65536), f = r - 65536 * i, i = Math.floor((r = g + i + 65535) / 65536), g = r - 65536 * i, i = Math.floor((r = m + i + 65535) / 65536), m = r - 65536 * i, i = Math.floor((r = y + i + 65535) / 65536), y = r - 65536 * i, i = Math.floor((r = v + i + 65535) / 65536), v = r - 65536 * i, i = Math.floor((r = b + i + 65535) / 65536), b = r - 65536 * i, i = Math.floor((r = w + i + 65535) / 65536), w = r - 65536 * i, o += i - 1 + 37 * (i - 1), e[0] = o, e[1] = a, e[2] = s, e[3] = l, e[4] = c, e[5] = u, e[6] = d, e[7] = p, e[8] = h, e[9] = f, e[10] = g, e[11] = m, e[12] = y, e[13] = v, e[14] = b, e[15] = w
         }
 
         function V(e, t) {
@@ -5543,8 +5548,8 @@
             h = r(),
             f = r();
           for (o = 0; o < 31; o++) a[o] = t[o];
-          for (a[31] = 127 & t[31] | 64, a[0] &= 248, $(s, n), o = 0; o < 16; o++) u[o] = s[o], p[o] = l[o] = d[o] = 0;
-          for (o = 254, l[0] = p[0] = 1; o >= 0; --o) j(l, u, i = a[o >>> 3] >>> (7 & o) & 1), j(d, p, i), I(h, l, d), B(l, l, d), I(d, u, p), B(u, u, p), V(p, h), V(f, l), U(l, d, l), U(d, u, h), I(h, l, d), B(l, l, d), V(u, l), B(d, p, f), U(l, d, c), I(l, l, p), U(d, d, l), U(l, p, f), U(p, u, s), V(u, h), j(l, u, i), j(d, p, i);
+          for (a[31] = 127 & t[31] | 64, a[0] &= 248, I(s, n), o = 0; o < 16; o++) u[o] = s[o], p[o] = l[o] = d[o] = 0;
+          for (o = 254, l[0] = p[0] = 1; o >= 0; --o) j(l, u, i = a[o >>> 3] >>> (7 & o) & 1), j(d, p, i), $(h, l, d), B(l, l, d), $(d, u, p), B(u, u, p), V(p, h), V(f, l), U(l, d, l), U(d, u, h), $(h, l, d), B(l, l, d), V(u, l), B(d, p, f), U(l, d, c), $(l, l, p), U(d, d, l), U(l, p, f), U(p, u, s), V(u, h), j(l, u, i), j(d, p, i);
           for (o = 0; o < 16; o++) s[o + 16] = l[o], s[o + 32] = d[o], s[o + 48] = u[o], s[o + 64] = p[o];
           var g = s.subarray(32),
             m = s.subarray(16);
@@ -5564,7 +5569,7 @@
           return F(r, n, t), w(e, o, r, x)
         }
         O.prototype.blocks = function(e, t, n) {
-          for (var r, i, o, a, s, l, c, u, d, p, h, f, g, m, y, v, b, w, x, k = this.fin ? 0 : 2048, C = this.h[0], S = this.h[1], E = this.h[2], O = this.h[3], _ = this.h[4], A = this.h[5], T = this.h[6], P = this.h[7], R = this.h[8], L = this.h[9], j = this.r[0], M = this.r[1], N = this.r[2], D = this.r[3], $ = this.r[4], I = this.r[5], B = this.r[6], U = this.r[7], V = this.r[8], W = this.r[9]; n >= 16;) C += 8191 & (r = 255 & e[t + 0] | (255 & e[t + 1]) << 8), S += (r >>> 13 | (i = 255 & e[t + 2] | (255 & e[t + 3]) << 8) << 3) & 8191, E += (i >>> 10 | (o = 255 & e[t + 4] | (255 & e[t + 5]) << 8) << 6) & 8191, O += (o >>> 7 | (a = 255 & e[t + 6] | (255 & e[t + 7]) << 8) << 9) & 8191, _ += (a >>> 4 | (s = 255 & e[t + 8] | (255 & e[t + 9]) << 8) << 12) & 8191, A += s >>> 1 & 8191, T += (s >>> 14 | (l = 255 & e[t + 10] | (255 & e[t + 11]) << 8) << 2) & 8191, P += (l >>> 11 | (c = 255 & e[t + 12] | (255 & e[t + 13]) << 8) << 5) & 8191, R += (c >>> 8 | (u = 255 & e[t + 14] | (255 & e[t + 15]) << 8) << 8) & 8191, L += u >>> 5 | k, d = (p = (d = 0) + C * j + 5 * W * S + 5 * V * E + 5 * U * O + 5 * B * _) >>> 13, p &= 8191, p += 5 * I * A + 5 * $ * T + 5 * D * P + 5 * N * R + 5 * M * L, d += p >>> 13, p &= 8191, d = (h = d + C * M + S * j + 5 * W * E + 5 * V * O + 5 * U * _) >>> 13, h &= 8191, h += 5 * B * A + 5 * I * T + 5 * $ * P + 5 * D * R + 5 * N * L, d += h >>> 13, h &= 8191, d = (f = d + C * N + S * M + E * j + 5 * W * O + 5 * V * _) >>> 13, f &= 8191, f += 5 * U * A + 5 * B * T + 5 * I * P + 5 * $ * R + 5 * D * L, d += f >>> 13, f &= 8191, d = (g = d + C * D + S * N + E * M + O * j + 5 * W * _) >>> 13, g &= 8191, g += 5 * V * A + 5 * U * T + 5 * B * P + 5 * I * R + 5 * $ * L, d += g >>> 13, g &= 8191, d = (m = d + C * $ + S * D + E * N + O * M + _ * j) >>> 13, m &= 8191, m += 5 * W * A + 5 * V * T + 5 * U * P + 5 * B * R + 5 * I * L, d += m >>> 13, m &= 8191, d = (y = d + C * I + S * $ + E * D + O * N + _ * M) >>> 13, y &= 8191, y += A * j + 5 * W * T + 5 * V * P + 5 * U * R + 5 * B * L, d += y >>> 13, y &= 8191, d = (v = d + C * B + S * I + E * $ + O * D + _ * N) >>> 13, v &= 8191, v += A * M + T * j + 5 * W * P + 5 * V * R + 5 * U * L, d += v >>> 13, v &= 8191, d = (b = d + C * U + S * B + E * I + O * $ + _ * D) >>> 13, b &= 8191, b += A * N + T * M + P * j + 5 * W * R + 5 * V * L, d += b >>> 13, b &= 8191, d = (w = d + C * V + S * U + E * B + O * I + _ * $) >>> 13, w &= 8191, w += A * D + T * N + P * M + R * j + 5 * W * L, d += w >>> 13, w &= 8191, d = (x = d + C * W + S * V + E * U + O * B + _ * I) >>> 13, x &= 8191, x += A * $ + T * D + P * N + R * M + L * j, d += x >>> 13, x &= 8191, p = 8191 & (d = (d = (d << 2) + d | 0) + p | 0), d >>>= 13, h += d, C = p, S = h, E = f, O = g, _ = m, A = y, T = v, P = b, R = w, L = x, t += 16, n -= 16;
+          for (var r, i, o, a, s, l, c, u, d, p, h, f, g, m, y, v, b, w, x, k = this.fin ? 0 : 2048, C = this.h[0], S = this.h[1], E = this.h[2], O = this.h[3], _ = this.h[4], A = this.h[5], T = this.h[6], P = this.h[7], R = this.h[8], L = this.h[9], j = this.r[0], M = this.r[1], N = this.r[2], D = this.r[3], I = this.r[4], $ = this.r[5], B = this.r[6], U = this.r[7], V = this.r[8], W = this.r[9]; n >= 16;) C += 8191 & (r = 255 & e[t + 0] | (255 & e[t + 1]) << 8), S += (r >>> 13 | (i = 255 & e[t + 2] | (255 & e[t + 3]) << 8) << 3) & 8191, E += (i >>> 10 | (o = 255 & e[t + 4] | (255 & e[t + 5]) << 8) << 6) & 8191, O += (o >>> 7 | (a = 255 & e[t + 6] | (255 & e[t + 7]) << 8) << 9) & 8191, _ += (a >>> 4 | (s = 255 & e[t + 8] | (255 & e[t + 9]) << 8) << 12) & 8191, A += s >>> 1 & 8191, T += (s >>> 14 | (l = 255 & e[t + 10] | (255 & e[t + 11]) << 8) << 2) & 8191, P += (l >>> 11 | (c = 255 & e[t + 12] | (255 & e[t + 13]) << 8) << 5) & 8191, R += (c >>> 8 | (u = 255 & e[t + 14] | (255 & e[t + 15]) << 8) << 8) & 8191, L += u >>> 5 | k, d = (p = (d = 0) + C * j + 5 * W * S + 5 * V * E + 5 * U * O + 5 * B * _) >>> 13, p &= 8191, p += 5 * $ * A + 5 * I * T + 5 * D * P + 5 * N * R + 5 * M * L, d += p >>> 13, p &= 8191, d = (h = d + C * M + S * j + 5 * W * E + 5 * V * O + 5 * U * _) >>> 13, h &= 8191, h += 5 * B * A + 5 * $ * T + 5 * I * P + 5 * D * R + 5 * N * L, d += h >>> 13, h &= 8191, d = (f = d + C * N + S * M + E * j + 5 * W * O + 5 * V * _) >>> 13, f &= 8191, f += 5 * U * A + 5 * B * T + 5 * $ * P + 5 * I * R + 5 * D * L, d += f >>> 13, f &= 8191, d = (g = d + C * D + S * N + E * M + O * j + 5 * W * _) >>> 13, g &= 8191, g += 5 * V * A + 5 * U * T + 5 * B * P + 5 * $ * R + 5 * I * L, d += g >>> 13, g &= 8191, d = (m = d + C * I + S * D + E * N + O * M + _ * j) >>> 13, m &= 8191, m += 5 * W * A + 5 * V * T + 5 * U * P + 5 * B * R + 5 * $ * L, d += m >>> 13, m &= 8191, d = (y = d + C * $ + S * I + E * D + O * N + _ * M) >>> 13, y &= 8191, y += A * j + 5 * W * T + 5 * V * P + 5 * U * R + 5 * B * L, d += y >>> 13, y &= 8191, d = (v = d + C * B + S * $ + E * I + O * D + _ * N) >>> 13, v &= 8191, v += A * M + T * j + 5 * W * P + 5 * V * R + 5 * U * L, d += v >>> 13, v &= 8191, d = (b = d + C * U + S * B + E * $ + O * I + _ * D) >>> 13, b &= 8191, b += A * N + T * M + P * j + 5 * W * R + 5 * V * L, d += b >>> 13, b &= 8191, d = (w = d + C * V + S * U + E * B + O * $ + _ * I) >>> 13, w &= 8191, w += A * D + T * N + P * M + R * j + 5 * W * L, d += w >>> 13, w &= 8191, d = (x = d + C * W + S * V + E * U + O * B + _ * $) >>> 13, x &= 8191, x += A * I + T * D + P * N + R * M + L * j, d += x >>> 13, x &= 8191, p = 8191 & (d = (d = (d << 2) + d | 0) + p | 0), d >>>= 13, h += d, C = p, S = h, E = f, O = g, _ = m, A = y, T = v, P = b, R = w, L = x, t += 16, n -= 16;
           this.h[0] = C, this.h[1] = S, this.h[2] = E, this.h[3] = O, this.h[4] = _, this.h[5] = A, this.h[6] = T, this.h[7] = P, this.h[8] = R, this.h[9] = L
         }, O.prototype.finish = function(e, t) {
           var n, r, i, o, a = new Uint16Array(10);
@@ -5593,12 +5598,12 @@
         var z = [1116352408, 3609767458, 1899447441, 602891725, 3049323471, 3964484399, 3921009573, 2173295548, 961987163, 4081628472, 1508970993, 3053834265, 2453635748, 2937671579, 2870763221, 3664609560, 3624381080, 2734883394, 310598401, 1164996542, 607225278, 1323610764, 1426881987, 3590304994, 1925078388, 4068182383, 2162078206, 991336113, 2614888103, 633803317, 3248222580, 3479774868, 3835390401, 2666613458, 4022224774, 944711139, 264347078, 2341262773, 604807628, 2007800933, 770255983, 1495990901, 1249150122, 1856431235, 1555081692, 3175218132, 1996064986, 2198950837, 2554220882, 3999719339, 2821834349, 766784016, 2952996808, 2566594879, 3210313671, 3203337956, 3336571891, 1034457026, 3584528711, 2466948901, 113926993, 3758326383, 338241895, 168717936, 666307205, 1188179964, 773529912, 1546045734, 1294757372, 1522805485, 1396182291, 2643833823, 1695183700, 2343527390, 1986661051, 1014477480, 2177026350, 1206759142, 2456956037, 344077627, 2730485921, 1290863460, 2820302411, 3158454273, 3259730800, 3505952657, 3345764771, 106217008, 3516065817, 3606008344, 3600352804, 1432725776, 4094571909, 1467031594, 275423344, 851169720, 430227734, 3100823752, 506948616, 1363258195, 659060556, 3750685593, 883997877, 3785050280, 958139571, 3318307427, 1322822218, 3812723403, 1537002063, 2003034995, 1747873779, 3602036899, 1955562222, 1575990012, 2024104815, 1125592928, 2227730452, 2716904306, 2361852424, 442776044, 2428436474, 593698344, 2756734187, 3733110249, 3204031479, 2999351573, 3329325298, 3815920427, 3391569614, 3928383900, 3515267271, 566280711, 3940187606, 3454069534, 4118630271, 4000239992, 116418474, 1914138554, 174292421, 2731055270, 289380356, 3203993006, 460393269, 320620315, 685471733, 587496836, 852142971, 1086792851, 1017036298, 365543100, 1126000580, 2618297676, 1288033470, 3409855158, 1501505948, 4234509866, 1607167915, 987167468, 1816402316, 1246189591];
 
         function Z(e, t, n, r) {
-          for (var i, o, a, s, l, c, u, d, p, h, f, g, m, y, v, b, w, x, k, C, S, E, O, _, A, T, P = new Int32Array(16), R = new Int32Array(16), L = e[0], j = e[1], M = e[2], N = e[3], D = e[4], $ = e[5], I = e[6], B = e[7], U = t[0], V = t[1], W = t[2], G = t[3], F = t[4], H = t[5], K = t[6], q = t[7], Z = 0; r >= 128;) {
+          for (var i, o, a, s, l, c, u, d, p, h, f, g, m, y, v, b, w, x, k, C, S, E, O, _, A, T, P = new Int32Array(16), R = new Int32Array(16), L = e[0], j = e[1], M = e[2], N = e[3], D = e[4], I = e[5], $ = e[6], B = e[7], U = t[0], V = t[1], W = t[2], G = t[3], F = t[4], H = t[5], K = t[6], q = t[7], Z = 0; r >= 128;) {
             for (k = 0; k < 16; k++) C = 8 * k + Z, P[k] = n[C + 0] << 24 | n[C + 1] << 16 | n[C + 2] << 8 | n[C + 3], R[k] = n[C + 4] << 24 | n[C + 5] << 16 | n[C + 6] << 8 | n[C + 7];
             for (k = 0; k < 80; k++)
-              if (i = L, o = j, a = M, s = N, l = D, c = $, u = I, d = B, p = U, h = V, f = W, g = G, m = F, y = H, v = K, b = q, S = B, O = 65535 & (E = q), _ = E >>> 16, A = 65535 & S, T = S >>> 16, S = (D >>> 14 | F << 18) ^ (D >>> 18 | F << 14) ^ (F >>> 9 | D << 23), O += 65535 & (E = (F >>> 14 | D << 18) ^ (F >>> 18 | D << 14) ^ (D >>> 9 | F << 23)), _ += E >>> 16, A += 65535 & S, T += S >>> 16, S = D & $ ^ ~D & I, O += 65535 & (E = F & H ^ ~F & K), _ += E >>> 16, A += 65535 & S, T += S >>> 16, S = z[2 * k], O += 65535 & (E = z[2 * k + 1]), _ += E >>> 16, A += 65535 & S, T += S >>> 16, S = P[k % 16], O += 65535 & (E = R[k % 16]), _ += E >>> 16, A += 65535 & S, T += S >>> 16, _ += O >>> 16, A += _ >>> 16, T += A >>> 16, w = 65535 & A | T << 16, x = 65535 & O | _ << 16, S = w, O = 65535 & (E = x), _ = E >>> 16, A = 65535 & S, T = S >>> 16, S = (L >>> 28 | U << 4) ^ (U >>> 2 | L << 30) ^ (U >>> 7 | L << 25), O += 65535 & (E = (U >>> 28 | L << 4) ^ (L >>> 2 | U << 30) ^ (L >>> 7 | U << 25)), _ += E >>> 16, A += 65535 & S, T += S >>> 16, S = L & j ^ L & M ^ j & M, O += 65535 & (E = U & V ^ U & W ^ V & W), _ += E >>> 16, A += 65535 & S, T += S >>> 16, _ += O >>> 16, A += _ >>> 16, T += A >>> 16, d = 65535 & A | T << 16, b = 65535 & O | _ << 16, S = s, O = 65535 & (E = g), _ = E >>> 16, A = 65535 & S, T = S >>> 16, S = w, O += 65535 & (E = x), _ += E >>> 16, A += 65535 & S, T += S >>> 16, _ += O >>> 16, A += _ >>> 16, T += A >>> 16, s = 65535 & A | T << 16, g = 65535 & O | _ << 16, j = i, M = o, N = a, D = s, $ = l, I = c, B = u, L = d, V = p, W = h, G = f, F = g, H = m, K = y, q = v, U = b, k % 16 == 15)
+              if (i = L, o = j, a = M, s = N, l = D, c = I, u = $, d = B, p = U, h = V, f = W, g = G, m = F, y = H, v = K, b = q, S = B, O = 65535 & (E = q), _ = E >>> 16, A = 65535 & S, T = S >>> 16, S = (D >>> 14 | F << 18) ^ (D >>> 18 | F << 14) ^ (F >>> 9 | D << 23), O += 65535 & (E = (F >>> 14 | D << 18) ^ (F >>> 18 | D << 14) ^ (D >>> 9 | F << 23)), _ += E >>> 16, A += 65535 & S, T += S >>> 16, S = D & I ^ ~D & $, O += 65535 & (E = F & H ^ ~F & K), _ += E >>> 16, A += 65535 & S, T += S >>> 16, S = z[2 * k], O += 65535 & (E = z[2 * k + 1]), _ += E >>> 16, A += 65535 & S, T += S >>> 16, S = P[k % 16], O += 65535 & (E = R[k % 16]), _ += E >>> 16, A += 65535 & S, T += S >>> 16, _ += O >>> 16, A += _ >>> 16, T += A >>> 16, w = 65535 & A | T << 16, x = 65535 & O | _ << 16, S = w, O = 65535 & (E = x), _ = E >>> 16, A = 65535 & S, T = S >>> 16, S = (L >>> 28 | U << 4) ^ (U >>> 2 | L << 30) ^ (U >>> 7 | L << 25), O += 65535 & (E = (U >>> 28 | L << 4) ^ (L >>> 2 | U << 30) ^ (L >>> 7 | U << 25)), _ += E >>> 16, A += 65535 & S, T += S >>> 16, S = L & j ^ L & M ^ j & M, O += 65535 & (E = U & V ^ U & W ^ V & W), _ += E >>> 16, A += 65535 & S, T += S >>> 16, _ += O >>> 16, A += _ >>> 16, T += A >>> 16, d = 65535 & A | T << 16, b = 65535 & O | _ << 16, S = s, O = 65535 & (E = g), _ = E >>> 16, A = 65535 & S, T = S >>> 16, S = w, O += 65535 & (E = x), _ += E >>> 16, A += 65535 & S, T += S >>> 16, _ += O >>> 16, A += _ >>> 16, T += A >>> 16, s = 65535 & A | T << 16, g = 65535 & O | _ << 16, j = i, M = o, N = a, D = s, I = l, $ = c, B = u, L = d, V = p, W = h, G = f, F = g, H = m, K = y, q = v, U = b, k % 16 == 15)
                 for (C = 0; C < 16; C++) S = P[C], O = 65535 & (E = R[C]), _ = E >>> 16, A = 65535 & S, T = S >>> 16, S = P[(C + 9) % 16], O += 65535 & (E = R[(C + 9) % 16]), _ += E >>> 16, A += 65535 & S, T += S >>> 16, S = ((w = P[(C + 1) % 16]) >>> 1 | (x = R[(C + 1) % 16]) << 31) ^ (w >>> 8 | x << 24) ^ w >>> 7, O += 65535 & (E = (x >>> 1 | w << 31) ^ (x >>> 8 | w << 24) ^ (x >>> 7 | w << 25)), _ += E >>> 16, A += 65535 & S, T += S >>> 16, S = ((w = P[(C + 14) % 16]) >>> 19 | (x = R[(C + 14) % 16]) << 13) ^ (x >>> 29 | w << 3) ^ w >>> 6, O += 65535 & (E = (x >>> 19 | w << 13) ^ (w >>> 29 | x << 3) ^ (x >>> 6 | w << 26)), _ += E >>> 16, A += 65535 & S, T += S >>> 16, _ += O >>> 16, A += _ >>> 16, T += A >>> 16, P[C] = 65535 & A | T << 16, R[C] = 65535 & O | _ << 16;
-            S = L, O = 65535 & (E = U), _ = E >>> 16, A = 65535 & S, T = S >>> 16, S = e[0], O += 65535 & (E = t[0]), _ += E >>> 16, A += 65535 & S, T += S >>> 16, _ += O >>> 16, A += _ >>> 16, T += A >>> 16, e[0] = L = 65535 & A | T << 16, t[0] = U = 65535 & O | _ << 16, S = j, O = 65535 & (E = V), _ = E >>> 16, A = 65535 & S, T = S >>> 16, S = e[1], O += 65535 & (E = t[1]), _ += E >>> 16, A += 65535 & S, T += S >>> 16, _ += O >>> 16, A += _ >>> 16, T += A >>> 16, e[1] = j = 65535 & A | T << 16, t[1] = V = 65535 & O | _ << 16, S = M, O = 65535 & (E = W), _ = E >>> 16, A = 65535 & S, T = S >>> 16, S = e[2], O += 65535 & (E = t[2]), _ += E >>> 16, A += 65535 & S, T += S >>> 16, _ += O >>> 16, A += _ >>> 16, T += A >>> 16, e[2] = M = 65535 & A | T << 16, t[2] = W = 65535 & O | _ << 16, S = N, O = 65535 & (E = G), _ = E >>> 16, A = 65535 & S, T = S >>> 16, S = e[3], O += 65535 & (E = t[3]), _ += E >>> 16, A += 65535 & S, T += S >>> 16, _ += O >>> 16, A += _ >>> 16, T += A >>> 16, e[3] = N = 65535 & A | T << 16, t[3] = G = 65535 & O | _ << 16, S = D, O = 65535 & (E = F), _ = E >>> 16, A = 65535 & S, T = S >>> 16, S = e[4], O += 65535 & (E = t[4]), _ += E >>> 16, A += 65535 & S, T += S >>> 16, _ += O >>> 16, A += _ >>> 16, T += A >>> 16, e[4] = D = 65535 & A | T << 16, t[4] = F = 65535 & O | _ << 16, S = $, O = 65535 & (E = H), _ = E >>> 16, A = 65535 & S, T = S >>> 16, S = e[5], O += 65535 & (E = t[5]), _ += E >>> 16, A += 65535 & S, T += S >>> 16, _ += O >>> 16, A += _ >>> 16, T += A >>> 16, e[5] = $ = 65535 & A | T << 16, t[5] = H = 65535 & O | _ << 16, S = I, O = 65535 & (E = K), _ = E >>> 16, A = 65535 & S, T = S >>> 16, S = e[6], O += 65535 & (E = t[6]), _ += E >>> 16, A += 65535 & S, T += S >>> 16, _ += O >>> 16, A += _ >>> 16, T += A >>> 16, e[6] = I = 65535 & A | T << 16, t[6] = K = 65535 & O | _ << 16, S = B, O = 65535 & (E = q), _ = E >>> 16, A = 65535 & S, T = S >>> 16, S = e[7], O += 65535 & (E = t[7]), _ += E >>> 16, A += 65535 & S, T += S >>> 16, _ += O >>> 16, A += _ >>> 16, T += A >>> 16, e[7] = B = 65535 & A | T << 16, t[7] = q = 65535 & O | _ << 16, Z += 128, r -= 128
+            S = L, O = 65535 & (E = U), _ = E >>> 16, A = 65535 & S, T = S >>> 16, S = e[0], O += 65535 & (E = t[0]), _ += E >>> 16, A += 65535 & S, T += S >>> 16, _ += O >>> 16, A += _ >>> 16, T += A >>> 16, e[0] = L = 65535 & A | T << 16, t[0] = U = 65535 & O | _ << 16, S = j, O = 65535 & (E = V), _ = E >>> 16, A = 65535 & S, T = S >>> 16, S = e[1], O += 65535 & (E = t[1]), _ += E >>> 16, A += 65535 & S, T += S >>> 16, _ += O >>> 16, A += _ >>> 16, T += A >>> 16, e[1] = j = 65535 & A | T << 16, t[1] = V = 65535 & O | _ << 16, S = M, O = 65535 & (E = W), _ = E >>> 16, A = 65535 & S, T = S >>> 16, S = e[2], O += 65535 & (E = t[2]), _ += E >>> 16, A += 65535 & S, T += S >>> 16, _ += O >>> 16, A += _ >>> 16, T += A >>> 16, e[2] = M = 65535 & A | T << 16, t[2] = W = 65535 & O | _ << 16, S = N, O = 65535 & (E = G), _ = E >>> 16, A = 65535 & S, T = S >>> 16, S = e[3], O += 65535 & (E = t[3]), _ += E >>> 16, A += 65535 & S, T += S >>> 16, _ += O >>> 16, A += _ >>> 16, T += A >>> 16, e[3] = N = 65535 & A | T << 16, t[3] = G = 65535 & O | _ << 16, S = D, O = 65535 & (E = F), _ = E >>> 16, A = 65535 & S, T = S >>> 16, S = e[4], O += 65535 & (E = t[4]), _ += E >>> 16, A += 65535 & S, T += S >>> 16, _ += O >>> 16, A += _ >>> 16, T += A >>> 16, e[4] = D = 65535 & A | T << 16, t[4] = F = 65535 & O | _ << 16, S = I, O = 65535 & (E = H), _ = E >>> 16, A = 65535 & S, T = S >>> 16, S = e[5], O += 65535 & (E = t[5]), _ += E >>> 16, A += 65535 & S, T += S >>> 16, _ += O >>> 16, A += _ >>> 16, T += A >>> 16, e[5] = I = 65535 & A | T << 16, t[5] = H = 65535 & O | _ << 16, S = $, O = 65535 & (E = K), _ = E >>> 16, A = 65535 & S, T = S >>> 16, S = e[6], O += 65535 & (E = t[6]), _ += E >>> 16, A += 65535 & S, T += S >>> 16, _ += O >>> 16, A += _ >>> 16, T += A >>> 16, e[6] = $ = 65535 & A | T << 16, t[6] = K = 65535 & O | _ << 16, S = B, O = 65535 & (E = q), _ = E >>> 16, A = 65535 & S, T = S >>> 16, S = e[7], O += 65535 & (E = t[7]), _ += E >>> 16, A += 65535 & S, T += S >>> 16, _ += O >>> 16, A += _ >>> 16, T += A >>> 16, e[7] = B = 65535 & A | T << 16, t[7] = q = 65535 & O | _ << 16, Z += 128, r -= 128
           }
           return r
         }
@@ -5623,7 +5628,7 @@
             c = r(),
             u = r(),
             p = r();
-          B(n, e[1], e[0]), B(p, t[1], t[0]), U(n, n, p), I(i, e[0], e[1]), I(p, t[0], t[1]), U(i, i, p), U(o, e[3], t[3]), U(o, o, d), U(a, e[2], t[2]), I(a, a, a), B(s, i, n), B(l, a, o), I(c, a, o), I(u, i, n), U(e[0], s, l), U(e[1], u, c), U(e[2], c, l), U(e[3], s, u)
+          B(n, e[1], e[0]), B(p, t[1], t[0]), U(n, n, p), $(i, e[0], e[1]), $(p, t[0], t[1]), U(i, i, p), U(o, e[3], t[3]), U(o, o, d), U(a, e[2], t[2]), $(a, a, a), B(s, i, n), B(l, a, o), $(c, a, o), $(u, i, n), U(e[0], s, l), U(e[1], u, c), U(e[2], c, l), U(e[3], s, u)
         }
 
         function Q(e, t, n) {
@@ -5695,7 +5700,7 @@
             b = new Uint8Array(64),
             w = [r(), r(), r(), r()],
             x = [r(), r(), r(), r()];
-          if (n < 64 || (o = r(), a = r(), c = r(), d = r(), p = r(), h = r(), g = r(), (R(x[2], l), $(x[1], i), V(c, x[1]), U(d, c, u), B(c, c, x[2]), I(d, x[2], d), V(p, d), V(h, p), U(g, h, p), U(o, g, c), U(o, o, d), G(o, o), U(o, o, c), U(o, o, d), U(o, o, d), U(x[0], o, d), V(a, x[0]), U(a, a, d), N(a, c) && U(x[0], x[0], f), V(a, x[0]), U(a, a, d), N(a, c)) ? -1 : (D(x[0]) === i[31] >> 7 && B(x[0], s, x[0]), U(x[3], x[0], x[1]), 0))) return -1;
+          if (n < 64 || (o = r(), a = r(), c = r(), d = r(), p = r(), h = r(), g = r(), (R(x[2], l), I(x[1], i), V(c, x[1]), U(d, c, u), B(c, c, x[2]), $(d, x[2], d), V(p, d), V(h, p), U(g, h, p), U(o, g, c), U(o, o, d), G(o, o), U(o, o, c), U(o, o, d), U(o, o, d), U(x[0], o, d), V(a, x[0]), U(a, a, d), N(a, c) && U(x[0], x[0], f), V(a, x[0]), U(a, a, d), N(a, c)) ? -1 : (D(x[0]) === i[31] >> 7 && B(x[0], s, x[0]), U(x[3], x[0], x[1]), 0))) return -1;
           for (m = 0; m < n; m++) e[m] = t[m];
           for (m = 0; m < 32; m++) e[m + 32] = i[m];
           if (Y(b, e, n), eo(b), ee(w, x, b), et(x, t.subarray(32)), J(w, x), X(y, w), n -= 64, v(t, 0, y, 0)) {
@@ -5769,9 +5774,9 @@
           D: u,
           L: er,
           pack25519: M,
-          unpack25519: $,
+          unpack25519: I,
           M: U,
-          A: I,
+          A: $,
           S: V,
           Z: B,
           pow2523: G,
@@ -5926,8 +5931,8 @@
           M = "Opera",
           N = "Samsung",
           D = "Sharp",
-          $ = "Sony",
-          I = "Xiaomi",
+          I = "Sony",
+          $ = "Xiaomi",
           B = "Zebra",
           U = "Facebook",
           V = "Chromium OS",
@@ -6171,13 +6176,13 @@
               [/\b(poco[\w ]+|m2\d{3}j\d\d[a-z]{2})(?: bui|\))/i, /\b; (\w+) build\/hm\1/i, /\b(hm[-_ ]?note?[_ ]?(?:\d\w)?) bui/i, /\b(redmi[\-_ ]?(?:note|k)?[\w_ ]+)(?: bui|\))/i, /oid[^\)]+; (m?[12][0-389][01]\w{3,6}[c-y])( bui|; wv|\))/i, /\b(mi[-_ ]?(?:a\d|one|one[_ ]plus|note lte|max|cc)?[_ ]?(?:\d?\w?)[_ ]?(?:plus|se|lite)?)(?: bui|\))/i],
               [
                 [d, /_/g, " "],
-                [f, I],
+                [f, $],
                 [h, v]
               ],
               [/oid[^\)]+; (2\d{4}(283|rpbf)[cgl])( bui|\))/i, /\b(mi[-_ ]?(?:pad)(?:[\w_ ]+))(?: bui|\))/i],
               [
                 [d, /_/g, " "],
-                [f, I],
+                [f, $],
                 [h, b]
               ],
               [/; (\w+) bui.+ oppo/i, /\b(cph[12]\d{3}|p(?:af|c[al]|d\w|e[ar])[mt]\d0|x9007|a101op)\b/i],
@@ -6227,13 +6232,13 @@
                 [h, v]
               ],
               [/droid.+ (a?\d[0-2]{2}so|[c-g]\d{4}|so[-gl]\w+|xq-a\w[4-7][12])(?= bui|\).+chrome\/(?![1-6]{0,1}\d\.))/i],
-              [d, [f, $],
+              [d, [f, I],
                 [h, v]
               ],
               [/sony tablet [ps]/i, /\b(?:sony)?sgp\w+(?: bui|\))/i],
               [
                 [d, "Xperia Tablet"],
-                [f, $],
+                [f, I],
                 [h, b]
               ],
               [/ (kb2005|in20[12]5|be20[12][59])\b/i, /(?:one)?(?:plus)? (a\d0\d\d)(?: b|\))/i],
@@ -6432,11 +6437,11 @@
                 [h, w]
               ],
               [/(bravia[\w ]+)( bui|\))/i],
-              [d, [f, $],
+              [d, [f, I],
                 [h, w]
               ],
               [/(mitv-\w{5}) bui/i],
-              [d, [f, I],
+              [d, [f, $],
                 [h, w]
               ],
               [/Hbbtv.*(technisat) (.*);/i],
@@ -6458,7 +6463,7 @@
                 [h, y]
               ],
               [/(playstation [345portablevi]+)/i],
-              [d, [f, $],
+              [d, [f, I],
                 [h, y]
               ],
               [/\b(xbox(?: one)?(?!; xbox))[\); ]/i],
@@ -7010,7 +7015,7 @@
               return r ? "value" in r ? r.value : r.get?.call(e.draft_) : void 0
             }(e, n, t);
             let r = n[t];
-            return e.finalized_ || !d(r) ? r : r === I(e.base_, t) ? (V(e), e.copy_[t] = W(r, e)) : r
+            return e.finalized_ || !d(r) ? r : r === $(e.base_, t) ? (V(e), e.copy_[t] = W(r, e)) : r
           },
           has: (e, t) => t in w(e),
           ownKeys: e => Reflect.ownKeys(w(e)),
@@ -7018,7 +7023,7 @@
             let r = B(w(e), t);
             if (r?.set) return r.set.call(e.draft_, n), !0;
             if (!e.modified_) {
-              let r = I(w(e), t),
+              let r = $(w(e), t),
                 i = r?.[s];
               if (i && i.base_ === n) return e.copy_[t] = n, e.assigned_[t] = !1, !0;
               if ((n === r ? 0 !== n || 1 / n == 1 / r : n != n && r != r) && (void 0 !== n || m(e.base_, t))) return !0;
@@ -7026,7 +7031,7 @@
             }
             return !!(e.copy_[t] === n && (void 0 !== n || t in e.copy_) || Number.isNaN(n) && Number.isNaN(e.copy_[t])) || (e.copy_[t] = n, e.assigned_[t] = !0, !0)
           },
-          deleteProperty: (e, t) => (void 0 !== I(e.base_, t) || t in e.base_ ? (e.assigned_[t] = !1, V(e), U(e)) : delete e.assigned_[t], e.copy_ && delete e.copy_[t], !0),
+          deleteProperty: (e, t) => (void 0 !== $(e.base_, t) || t in e.base_ ? (e.assigned_[t] = !1, V(e), U(e)) : delete e.assigned_[t], e.copy_ && delete e.copy_[t], !0),
           getOwnPropertyDescriptor(e, t) {
             let n = w(e),
               r = Reflect.getOwnPropertyDescriptor(n, t);
@@ -7045,9 +7050,9 @@
             l(12)
           }
         },
-        $ = {};
+        I = {};
 
-      function I(e, t) {
+      function $(e, t) {
         let n = e[s];
         return (n ? w(n) : e)[t]
       }
@@ -7088,7 +7093,7 @@
             },
             o = r,
             a = D;
-          n && (o = [r], a = $);
+          n && (o = [r], a = I);
           let {
             revoke: s,
             proxy: l
@@ -7114,12 +7119,12 @@
           }(e)
       }
       f(D, (e, t) => {
-        $[e] = function() {
+        I[e] = function() {
           return arguments[0] = arguments[0][0], t.apply(this, arguments)
         }
-      }), $.deleteProperty = function(e, t) {
-        return $.set.call(this, e, t, void 0)
-      }, $.set = function(e, t, n) {
+      }), I.deleteProperty = function(e, t) {
+        return I.set.call(this, e, t, void 0)
+      }, I.set = function(e, t, n) {
         return D.set.call(this, e[0], t, n, e[0])
       };
       var F = new class {
@@ -7846,12 +7851,12 @@
         }, {
           withTypes: () => eD
         }),
-        e$ = Object.assign(em(`${eM}/add`), {
-          withTypes: () => e$
+        eI = Object.assign(em(`${eM}/add`), {
+          withTypes: () => eI
         });
       em(`${eM}/removeAll`);
-      var eI = Object.assign(em(`${eM}/remove`), {
-        withTypes: () => eI
+      var e$ = Object.assign(em(`${eM}/remove`), {
+        withTypes: () => e$
       });
 
       function eB(e) {
@@ -7989,24 +7994,24 @@
           l((r = r.apply(e, t || [])).next())
         })
       }
-      class $ extends Error {
+      class I extends Error {
         constructor(e, t) {
-          super(e, t), this.message = `${$.prefix} ${this.constructor.name}${this.info?": "+this.info:""}${e?"\n"+e:""}`, Object.setPrototypeOf(this, $.prototype)
+          super(e, t), this.message = `${I.prefix} ${this.constructor.name}${this.info?": "+this.info:""}${e?"\n"+e:""}`, Object.setPrototypeOf(this, I.prototype)
         }
         get info() {
           return ""
         }
       }
-      $.prefix = "[TON_CONNECT_SDK_ERROR]";
-      class I extends $ {
+      I.prefix = "[TON_CONNECT_SDK_ERROR]";
+      class $ extends I {
         get info() {
           return "Passed DappMetadata is in incorrect format."
         }
         constructor(...e) {
-          super(...e), Object.setPrototypeOf(this, I.prototype)
+          super(...e), Object.setPrototypeOf(this, $.prototype)
         }
       }
-      class B extends $ {
+      class B extends I {
         get info() {
           return "Passed `tonconnect-manifest.json` contains errors. Check format of your manifest. See more https://github.com/ton-connect/docs/blob/main/requests-responses.md#app-manifest"
         }
@@ -8014,7 +8019,7 @@
           super(...e), Object.setPrototypeOf(this, B.prototype)
         }
       }
-      class U extends $ {
+      class U extends I {
         get info() {
           return "Manifest not found. Make sure you added `tonconnect-manifest.json` to the root of your app or passed correct manifestUrl. See more https://github.com/ton-connect/docs/blob/main/requests-responses.md#app-manifest"
         }
@@ -8022,7 +8027,7 @@
           super(...e), Object.setPrototypeOf(this, U.prototype)
         }
       }
-      class V extends $ {
+      class V extends I {
         get info() {
           return "Wallet connection called but wallet already connected. To avoid the error, disconnect the wallet before doing a new connection."
         }
@@ -8030,7 +8035,7 @@
           super(...e), Object.setPrototypeOf(this, V.prototype)
         }
       }
-      class W extends $ {
+      class W extends I {
         get info() {
           return "Send transaction or other protocol methods called while wallet is not connected."
         }
@@ -8038,7 +8043,7 @@
           super(...e), Object.setPrototypeOf(this, W.prototype)
         }
       }
-      class G extends $ {
+      class G extends I {
         get info() {
           return "User rejects the action in the wallet."
         }
@@ -8046,7 +8051,7 @@
           super(...e), Object.setPrototypeOf(this, G.prototype)
         }
       }
-      class F extends $ {
+      class F extends I {
         get info() {
           return "Request to the wallet contains errors."
         }
@@ -8054,7 +8059,7 @@
           super(...e), Object.setPrototypeOf(this, F.prototype)
         }
       }
-      class H extends $ {
+      class H extends I {
         get info() {
           return "App tries to send rpc request to the injected wallet while not connected."
         }
@@ -8062,7 +8067,7 @@
           super(...e), Object.setPrototypeOf(this, H.prototype)
         }
       }
-      class K extends $ {
+      class K extends I {
         get info() {
           return "There is an attempt to connect to the injected wallet while it is not exists in the webpage."
         }
@@ -8070,7 +8075,7 @@
           super(...e), Object.setPrototypeOf(this, K.prototype)
         }
       }
-      class q extends $ {
+      class q extends I {
         get info() {
           return "An error occurred while fetching the wallets list."
         }
@@ -8078,7 +8083,7 @@
           super(...e), Object.setPrototypeOf(this, q.prototype)
         }
       }
-      class z extends $ {
+      class z extends I {
         get info() {
           return "Passed address is in incorrect format."
         }
@@ -8086,7 +8091,7 @@
           super(...e), Object.setPrototypeOf(this, z.prototype)
         }
       }
-      class Z extends $ {
+      class Z extends I {
         get info() {
           return "Passed hex is in incorrect format."
         }
@@ -8094,7 +8099,7 @@
           super(...e), Object.setPrototypeOf(this, Z.prototype)
         }
       }
-      class Y extends $ {
+      class Y extends I {
         constructor(...e) {
           super(...e), Object.setPrototypeOf(this, Y.prototype)
         }
@@ -8183,12 +8188,12 @@
           return new Promise((n, r) => {
             var i, o;
             if (null === (i = null == t ? void 0 : t.signal) || void 0 === i ? void 0 : i.aborted) {
-              r(new $("Delay aborted"));
+              r(new I("Delay aborted"));
               return
             }
             let a = setTimeout(() => n(), e);
             null === (o = null == t ? void 0 : t.signal) || void 0 === o || o.addEventListener("abort", () => {
-              clearTimeout(a), r(new $("Delay aborted"))
+              clearTimeout(a), r(new I("Delay aborted"))
             })
           })
         })
@@ -8208,10 +8213,10 @@
           let o = null !== (n = null == t ? void 0 : t.attempts) && void 0 !== n ? n : 10,
             a = null !== (r = null == t ? void 0 : t.delayMs) && void 0 !== r ? r : 200,
             s = ec(null == t ? void 0 : t.signal);
-          if ("function" != typeof e) throw new $(`Expected a function, got ${typeof e}`);
+          if ("function" != typeof e) throw new I(`Expected a function, got ${typeof e}`);
           let l = 0;
           for (; l < o;) {
-            if (s.signal.aborted) throw new $(`Aborted after attempts ${l}`);
+            if (s.signal.aborted) throw new I(`Aborted after attempts ${l}`);
             try {
               return yield e({
                 signal: s.signal
@@ -8244,12 +8249,12 @@
               o = null,
               a = null,
               s = (s, ...l) => D(this, void 0, void 0, function*() {
-                if (o = null != s ? s : null, null == a || a.abort(), (a = ec(s)).signal.aborted) throw new $("Resource creation was aborted");
+                if (o = null != s ? s : null, null == a || a.abort(), (a = ec(s)).signal.aborted) throw new I("Resource creation was aborted");
                 r = null != l ? l : null;
                 let c = e(a.signal, ...l);
                 i = c;
                 let u = yield c;
-                if (i !== c && u !== n) throw yield t(u), new $("Resource creation was aborted by a new resource creation");
+                if (i !== c && u !== n) throw yield t(u), new I("Resource creation was aborted by a new resource creation");
                 return n = u
               });
             return {
@@ -8273,7 +8278,7 @@
                   l = r,
                   c = o;
                 if (yield el(e), t === n && a === i && l === r && c === o) return yield s(o, ...null != l ? l : []);
-                throw new $("Resource recreation was aborted by a new resource creation")
+                throw new I("Resource recreation was aborted by a new resource creation")
               })
             }
           }((e, t) => D(this, void 0, void 0, function*() {
@@ -8295,13 +8300,13 @@
                   return new Promise((t, i) => D(this, void 0, void 0, function*() {
                     let o;
                     if (r.signal.aborted) {
-                      i(new $("Operation aborted"));
+                      i(new I("Operation aborted"));
                       return
                     }
                     void 0 !== n && (o = setTimeout(() => {
-                      r.abort(), i(new $(`Timeout after ${n}ms`))
+                      r.abort(), i(new I(`Timeout after ${n}ms`))
                     }, n)), r.signal.addEventListener("abort", () => {
-                      clearTimeout(o), i(new $("Operation aborted"))
+                      clearTimeout(o), i(new I("Operation aborted"))
                     }, {
                       once: !0
                     });
@@ -8319,20 +8324,20 @@
                   var i;
                   let o = ec(r.signal).signal;
                   if (o.aborted) {
-                    n(new $("Bridge connection aborted"));
+                    n(new I("Bridge connection aborted"));
                     return
                   }
                   let a = new URL(eo(e.bridgeUrl, e.ssePath));
                   a.searchParams.append("client_id", e.sessionId);
                   let s = yield e.bridgeGatewayStorage.getLastEventId();
                   if (s && a.searchParams.append("last_event_id", s), o.aborted) {
-                    n(new $("Bridge connection aborted"));
+                    n(new I("Bridge connection aborted"));
                     return
                   }
                   let l = new EventSource(a.toString());
                   l.onerror = r => D(this, void 0, void 0, function*() {
                     if (o.aborted) {
-                      l.close(), n(new $("Bridge connection aborted"));
+                      l.close(), n(new I("Bridge connection aborted"));
                       return
                     }
                     try {
@@ -8343,18 +8348,18 @@
                     }
                   }), l.onopen = () => {
                     if (o.aborted) {
-                      l.close(), n(new $("Bridge connection aborted"));
+                      l.close(), n(new I("Bridge connection aborted"));
                       return
                     }
                     t(l)
                   }, l.onmessage = t => {
                     if (o.aborted) {
-                      l.close(), n(new $("Bridge connection aborted"));
+                      l.close(), n(new I("Bridge connection aborted"));
                       return
                     }
                     e.messageHandler(t)
                   }, null === (i = e.signal) || void 0 === i || i.addEventListener("abort", () => {
-                    l.close(), n(new $("Bridge connection aborted"))
+                    l.close(), n(new I("Bridge connection aborted"))
                   })
                 }), {
                   timeout: e.openingDeadlineMS,
@@ -8393,7 +8398,7 @@
             let s = R.encode(e);
             yield eu(e => D(this, void 0, void 0, function*() {
               let t = yield this.post(a, s, e.signal);
-              if (!t.ok) throw new $(`Bridge send failed, status ${t.status}`)
+              if (!t.ok) throw new I(`Bridge send failed, status ${t.status}`)
             }), {
               attempts: null !== (i = null == o ? void 0 : o.attempts) && void 0 !== i ? i : Number.MAX_SAFE_INTEGER,
               delayMs: this.defaultResendDelay,
@@ -8427,13 +8432,13 @@
               body: t,
               signal: n
             });
-            if (!r.ok) throw new $(`Bridge send failed, status ${r.status}`);
+            if (!r.ok) throw new I(`Bridge send failed, status ${r.status}`);
             return r
           })
         }
         errorsHandler(e, t) {
           return D(this, void 0, void 0, function*() {
-            if (this.isConnecting) throw e.close(), new $("Bridge error, failed to connect");
+            if (this.isConnecting) throw e.close(), new I("Bridge error, failed to connect");
             if (this.isReady) {
               try {
                 this.errorsListener(t)
@@ -8441,7 +8446,7 @@
               return
             }
             if (this.isClosed) return e.close(), ed(`Bridge reconnecting, ${this.defaultReconnectDelay}ms delay`), yield this.eventSource.recreate(this.defaultReconnectDelay);
-            throw new $("Bridge error, unknown state")
+            throw new I("Bridge error, unknown state")
           })
         }
         messagesHandler(e) {
@@ -8451,7 +8456,7 @@
               try {
                 t = JSON.parse(e.data)
               } catch (e) {
-                throw new $(`Bridge message parse failed, message ${e.data}`)
+                throw new I(`Bridge message parse failed, message ${e.data}`)
               }
               this.listener(t)
             }
@@ -8527,25 +8532,25 @@
         getHttpConnection() {
           return D(this, void 0, void 0, function*() {
             let e = yield this.getConnection();
-            if (!e) throw new $("Trying to read HTTP connection source while nothing is stored");
-            if ("injected" === e.type) throw new $("Trying to read HTTP connection source while injected connection is stored");
+            if (!e) throw new I("Trying to read HTTP connection source while nothing is stored");
+            if ("injected" === e.type) throw new I("Trying to read HTTP connection source while injected connection is stored");
             return e
           })
         }
         getHttpPendingConnection() {
           return D(this, void 0, void 0, function*() {
             let e = yield this.getConnection();
-            if (!e) throw new $("Trying to read HTTP connection source while nothing is stored");
-            if ("injected" === e.type) throw new $("Trying to read HTTP connection source while injected connection is stored");
-            if (!ef(e)) throw new $("Trying to read HTTP-pending connection while http connection is stored");
+            if (!e) throw new I("Trying to read HTTP connection source while nothing is stored");
+            if ("injected" === e.type) throw new I("Trying to read HTTP connection source while injected connection is stored");
+            if (!ef(e)) throw new I("Trying to read HTTP-pending connection while http connection is stored");
             return e
           })
         }
         getInjectedConnection() {
           return D(this, void 0, void 0, function*() {
             let e = yield this.getConnection();
-            if (!e) throw new $("Trying to read Injected bridge connection source while nothing is stored");
-            if ((null == e ? void 0 : e.type) === "http") throw new $("Trying to read Injected bridge connection source while HTTP connection is stored");
+            if (!e) throw new I("Trying to read Injected bridge connection source while nothing is stored");
+            if ((null == e ? void 0 : e.type) === "http") throw new I("Trying to read Injected bridge connection source while HTTP connection is stored");
             return e
           })
         }
@@ -8640,7 +8645,7 @@
               openingDeadlineMS: o,
               signal: null == r ? void 0 : r.signal
             });
-            if (Array.isArray(this.walletConnectionSource)) throw new $("Internal error. Connection source is array while WalletConnectionSourceHTTP was expected.");
+            if (Array.isArray(this.walletConnectionSource)) throw new I("Internal error. Connection source is array while WalletConnectionSourceHTTP was expected.");
             if (this.session = i.session, this.gateway && (ed("Gateway is already opened, closing previous gateway"), yield this.gateway.close()), this.gateway = new eh(this.storage, this.walletConnectionSource.bridgeUrl, i.session.sessionCrypto.sessionId, this.gatewayListener.bind(this), this.gatewayErrorsListener.bind(this)), !r.signal.aborted) {
               this.listeners.forEach(e => e(i.connectEvent));
               try {
@@ -8665,7 +8670,7 @@
           let n = {};
           return "function" == typeof t ? n.onRequestSent = t : (n.onRequestSent = null == t ? void 0 : t.onRequestSent, n.signal = null == t ? void 0 : t.signal, n.attempts = null == t ? void 0 : t.attempts), new Promise((t, r) => D(this, void 0, void 0, function*() {
             var i;
-            if (!this.gateway || !this.session || !("walletPublicKey" in this.session)) throw new $("Trying to send bridge request without session");
+            if (!this.gateway || !this.session || !("walletPublicKey" in this.session)) throw new I("Trying to send bridge request without session");
             let o = (yield this.connectionStorage.getNextRpcRequestId()).toString();
             yield this.connectionStorage.increaseNextRpcRequestId(), ed("Send http-bridge request:", Object.assign(Object.assign({}, e), {
               id: o
@@ -8766,7 +8771,7 @@
         }
         gatewayErrorsListener(e) {
           return D(this, void 0, void 0, function*() {
-            throw new $(`Bridge error ${JSON.stringify(e)}`)
+            throw new I(`Bridge error ${JSON.stringify(e)}`)
           })
         }
         updateSession(e, t) {
@@ -9025,7 +9030,7 @@
                   return !1
                 }
               }()) return localStorage;
-            if (void 0 !== N && null != N.versions && null != N.versions.node) throw new $("`localStorage` is unavailable, but it is required for TonConnect. For more details, see https://github.com/ton-connect/sdk/tree/main/packages/sdk#init-connector");
+            if (void 0 !== N && null != N.versions && null != N.versions.node) throw new I("`localStorage` is unavailable, but it is required for TonConnect. For more details, see https://github.com/ton-connect/sdk/tree/main/packages/sdk#init-connector");
             return ev.getInstance()
           }()
         }
@@ -9287,7 +9292,7 @@
           return !r || "key" in r && !!r.key
         }
       }
-      class e_ extends $ {
+      class e_ extends I {
         get info() {
           return "Wallet doesn't support requested feature method."
         }
@@ -9369,7 +9374,7 @@
         }, eR(e, t))
       }
 
-      function e$(e, t) {
+      function eI(e, t) {
         return {
           type: "connection-restoring-error",
           is_success: !1,
@@ -9378,7 +9383,7 @@
         }
       }
 
-      function eI(e, t) {
+      function e$(e, t) {
         var n, r, i, o;
         return {
           valid_until: null !== (n = String(t.validUntil)) && void 0 !== n ? n : null,
@@ -9396,7 +9401,7 @@
       function eB(e, t, n) {
         return Object.assign(Object.assign({
           type: "transaction-sent-for-signature"
-        }, eR(e, t)), eI(t, n))
+        }, eR(e, t)), e$(t, n))
       }
 
       function eU(e, t, n, r) {
@@ -9404,7 +9409,7 @@
           type: "transaction-signed",
           is_success: !0,
           signed_transaction: r.boc
-        }, eR(e, t)), eI(t, n))
+        }, eR(e, t)), e$(t, n))
       }
 
       function eV(e, t, n, r, i) {
@@ -9413,7 +9418,7 @@
           is_success: !1,
           error_message: r,
           error_code: null != i ? i : null
-        }, eR(e, t)), eI(t, n))
+        }, eR(e, t)), e$(t, n))
       }
 
       function eW(e, t, n) {
@@ -9522,7 +9527,7 @@
         }
         trackConnectionRestoringError(...e) {
           try {
-            let t = e$(this.version, ...e);
+            let t = eI(this.version, ...e);
             this.dispatchUserActionEvent(t)
           } catch (e) {}
         }
@@ -9566,7 +9571,7 @@
             }), this.tracker = new eF({
               eventDispatcher: null == e ? void 0 : e.eventDispatcher,
               tonConnectSdkVersion: "3.0.5"
-            }), !this.dappSettings.manifestUrl) throw new I("Dapp tonconnect-manifest.json must be specified if window.location.origin is undefined. See more https://github.com/ton-connect/docs/blob/main/requests-responses.md#app-manifest");
+            }), !this.dappSettings.manifestUrl) throw new $("Dapp tonconnect-manifest.json must be specified if window.location.origin is undefined. See more https://github.com/ton-connect/docs/blob/main/requests-responses.md#app-manifest");
           this.bridgeConnectionStorage = new eg(this.dappSettings.storage), (null == e ? void 0 : e.disableAutoPauseConnection) || this.addWindowFocusAndBlurSubscriptions()
         }
         static getWallets() {
@@ -9598,7 +9603,7 @@
           let i = {};
           if ("object" == typeof t && "tonProof" in t && (i.request = t), "object" == typeof t && ("openingDeadlineMS" in t || "signal" in t || "request" in t) && (i.request = null == t ? void 0 : t.request, i.openingDeadlineMS = null == t ? void 0 : t.openingDeadlineMS, i.signal = null == t ? void 0 : t.signal), this.connected) throw new V;
           let o = ec(null == i ? void 0 : i.signal);
-          if (null === (n = this.abortController) || void 0 === n || n.abort(), this.abortController = o, o.signal.aborted) throw new $("Connection was aborted");
+          if (null === (n = this.abortController) || void 0 === n || n.abort(), this.abortController = o, o.signal.aborted) throw new I("Connection was aborted");
           return null === (r = this.provider) || void 0 === r || r.closeConnection(), this.provider = this.createProvider(e), o.signal.addEventListener("abort", () => {
             var e;
             null === (e = this.provider) || void 0 === e || e.closeConnection(), this.provider = null
@@ -9667,7 +9672,7 @@
             let n = {};
             "function" == typeof t ? n.onRequestSent = t : (n.onRequestSent = null == t ? void 0 : t.onRequestSent, n.signal = null == t ? void 0 : t.signal);
             let r = ec(null == n ? void 0 : n.signal);
-            if (r.signal.aborted) throw new $("Transaction sending was aborted");
+            if (r.signal.aborted) throw new I("Transaction sending was aborted");
             this.checkConnection(),
               function(e, t) {
                 let n = e.includes("SendTransaction"),
@@ -9726,7 +9731,7 @@
             if (!this.connected) throw new W;
             let n = ec(null == e ? void 0 : e.signal),
               r = this.abortController;
-            if (this.abortController = n, n.signal.aborted) throw new $("Disconnect was aborted");
+            if (this.abortController = n, n.signal.aborted) throw new I("Disconnect was aborted");
             this.onWalletDisconnected("dapp"), yield null === (t = this.provider) || void 0 === t ? void 0 : t.disconnect({
               signal: n.signal
             }), null == r || r.abort()
@@ -9771,7 +9776,7 @@
         onWalletConnected(e) {
           let t = e.items.find(e => "ton_addr" === e.name),
             n = e.items.find(e => "ton_proof" === e.name);
-          if (!t) throw new $("ton_addr connection item was not found");
+          if (!t) throw new I("ton_addr connection item was not found");
           let r = {
             device: e.device,
             provider: this.provider.type,
@@ -10183,20 +10188,20 @@
         return ty(() => e(t || {}))
       }
 
-      function t$() {
+      function tI() {
         return !0
       }
-      let tI = {
+      let t$ = {
         get: (e, t, n) => t === te ? n : e.get(t),
         has: (e, t) => t === te || e.has(t),
-        set: t$,
-        deleteProperty: t$,
+        set: tI,
+        deleteProperty: tI,
         getOwnPropertyDescriptor: (e, t) => ({
           configurable: !0,
           enumerable: !0,
           get: () => e.get(t),
-          set: t$,
-          deleteProperty: t$
+          set: tI,
+          deleteProperty: tI
         }),
         ownKeys: e => e.keys()
       };
@@ -10228,7 +10233,7 @@
             for (let n = 0; n < e.length; n++) t.push(...Object.keys(tB(e[n])));
             return [...new Set(t)]
           }
-        }, tI);
+        }, t$);
         let n = {};
         for (let t = e.length - 1; t >= 0; t--)
           if (e[t]) {
@@ -10252,12 +10257,12 @@
             get: n => t.includes(n) ? e[n] : void 0,
             has: n => t.includes(n) && n in e,
             keys: () => t.filter(t => t in e)
-          }, tI));
+          }, t$));
           return r.push(new Proxy({
             get: t => n.has(t) ? void 0 : e[t],
             has: t => !n.has(t) && t in e,
             keys: () => Object.keys(e).filter(e => !n.has(e))
-          }, tI)), r
+          }, t$)), r
         }
         let r = Object.getOwnPropertyDescriptors(e);
         return t.push(Object.keys(r).filter(e => !n.has(e))), t.map(t => {
@@ -10914,7 +10919,7 @@
         }
       };
       e4(nP, "instance");
-      class nR extends $ {
+      class nR extends I {
         constructor(...e) {
           super(...e), Object.setPrototypeOf(this, nR.prototype)
         }
@@ -10950,11 +10955,11 @@
         })
       }
 
-      function n$() {
+      function nI() {
         if ("undefined" != typeof window) return window
       }
 
-      function nI() {
+      function n$() {
         if (function() {
             try {
               return "undefined" != typeof localStorage
@@ -11024,7 +11029,7 @@
       }
       class nG {
         constructor() {
-          e4(this, "localStorage"), e4(this, "storageKey", "ton-connect-ui_wallet-info"), this.localStorage = nI()
+          e4(this, "localStorage"), e4(this, "storageKey", "ton-connect-ui_wallet-info"), this.localStorage = n$()
         }
         setWalletInfo(e) {
           this.localStorage.setItem(this.storageKey, JSON.stringify(e))
@@ -11039,7 +11044,7 @@
       }
       class nF {
         constructor() {
-          e4(this, "localStorage"), e4(this, "storageKey", "ton-connect-ui_preferred-wallet"), this.localStorage = nI()
+          e4(this, "localStorage"), e4(this, "storageKey", "ton-connect-ui_preferred-wallet"), this.localStorage = n$()
         }
         setPreferredWalletAppName(e) {
           this.localStorage.setItem(this.storageKey, e)
@@ -11050,7 +11055,7 @@
       }
       class nH {
         constructor() {
-          e4(this, "localStorage"), e4(this, "storageKey", "ton-connect-ui_last-selected-wallet-info"), this.localStorage = nI()
+          e4(this, "localStorage"), e4(this, "storageKey", "ton-connect-ui_last-selected-wallet-info"), this.localStorage = n$()
         }
         setLastSelectedWalletInfo(e) {
           this.localStorage.setItem(this.storageKey, JSON.stringify(e))
@@ -11601,12 +11606,12 @@
       } catch (e) {}
       let rS = "unknown";
       if ((null == rC ? void 0 : rC.tgWebAppPlatform) && (rS = null != (b = rC.tgWebAppPlatform) ? b : "unknown"), "unknown" === rS) {
-        let e = n$();
+        let e = nI();
         rS = null != (k = null == (x = null == (w = null == e ? void 0 : e.Telegram) ? void 0 : w.WebApp) ? void 0 : x.platform) ? k : "unknown"
       }
       let rE = "6.0";
       if ((null == rC ? void 0 : rC.tgWebAppVersion) && (rE = rC.tgWebAppVersion), !rE) {
-        let e = n$();
+        let e = nI();
         rE = null != (E = null == (S = null == (C = null == e ? void 0 : e.Telegram) ? void 0 : C.WebApp) ? void 0 : S.version) ? E : "6.0"
       }
 
@@ -11616,12 +11621,12 @@
 
       function r_() {
         var e;
-        return "unknown" !== rS || !!(null == (e = n$()) ? void 0 : e.TelegramWebviewProxy)
+        return "unknown" !== rS || !!(null == (e = nI()) ? void 0 : e.TelegramWebviewProxy)
       }
 
       function rA() {
         var e;
-        let t = !!(null == (e = n$()) ? void 0 : e.TelegramWebview);
+        let t = !!(null == (e = nI()) ? void 0 : e.TelegramWebview);
         return (r_() || t) && "unknown" === rS
       }
 
@@ -11657,7 +11662,7 @@
 
       function rR() {
         try {
-          let e = n$();
+          let e = nI();
           if (!e) return !1;
           return null != e.parent && e !== e.parent
         } catch (e) {
@@ -11667,7 +11672,7 @@
 
       function rL(e, t) {
         try {
-          let n = n$();
+          let n = nI();
           if (!n) throw new nR("Can't post event to parent window: window is not defined");
           if (void 0 !== n.TelegramWebviewProxy) nL("postEvent", e, t), n.TelegramWebviewProxy.postEvent(e, JSON.stringify(t));
           else if (n.external && "notify" in n.external) nL("postEvent", e, t), n.external.notify(JSON.stringify({
@@ -11703,7 +11708,7 @@
       };
 
       function rN(e) {
-        let t = n$();
+        let t = nI();
         if (!t) return "desktop" === e;
         if (rO("weba")) return !0;
         let n = t.innerWidth;
@@ -11727,8 +11732,8 @@
             return `@media (min-width: ${rM.tablet}px)`
         }
       }
-      let r$ = "@media (hover: none)",
-        rI = "@media not all and (hover: none)",
+      let rI = "@media (hover: none)",
+        r$ = "@media not all and (hover: none)",
         rB = {
           m: "100vh",
           s: "8px",
@@ -11759,7 +11764,7 @@
 
     transition: transform 0.125s ease-in-out;
 
-    ${rI} {
+    ${r$} {
         &:hover {
             transform: ${e=>e.disabled?"unset":`scale(${1+rU[e.scale]})`};
         }
@@ -11769,7 +11774,7 @@
         transform: ${e=>e.disabled?"unset":`scale(${1-rU[e.scale]})`};
     }
 
-    ${r$} {
+    ${rI} {
         &:active {
             transform: ${e=>e.disabled?"unset":`scale(${1-2*rU[e.scale]})`};
         }
@@ -12065,7 +12070,7 @@
 
     transition: transform 0.125s ease-in-out;
 
-    ${rI} {
+    ${r$} {
         &:hover {
             transform: scale(1.04);
         }
@@ -12075,7 +12080,7 @@
         transform: scale(0.96);
     }
 
-    ${r$} {
+    ${rI} {
         &:active {
             transform: scale(0.92);
         }
@@ -12480,7 +12485,7 @@
     cursor: pointer;
     border: none;
 
-    ${rI} {
+    ${r$} {
         &:hover {
             ${iv.class} {
                 transform: scale(1.04);
@@ -12494,7 +12499,7 @@
         }
     }
 
-    ${r$} {
+    ${rI} {
         &:active {
             ${iv.class} {
                 transform: scale(0.92);
@@ -13727,17 +13732,17 @@
         border-radius: inherit;
     }
 `,
-        i$ = nk(rk)`
+        iI = nk(rk)`
     width: 100%;
     height: 100%;
     border-radius: inherit;
 `,
-        iI = e => tD(iD, {
+        i$ = e => tD(iD, {
           get class() {
             return e.class
           },
           get children() {
-            return tD(i$, {
+            return tD(iI, {
               get src() {
                 return e.src
               }
@@ -13767,7 +13772,7 @@
 
     transition: transform 0.125s ease-in-out;
 
-    ${rI} {
+    ${r$} {
         &:hover {
             transform: scale(1.04);
         }
@@ -13782,13 +13787,13 @@
         width: 82px;
     }
 
-    ${r$} {
+    ${rI} {
         &:active {
             transform: scale(0.92);
         }
     }
 `,
-        iW = nk(iI)`
+        iW = nk(i$)`
     width: 60px;
     height: 60px;
     border-radius: ${e=>iB[e.theme.borderRadius]};
@@ -14354,12 +14359,12 @@
           s: "12px",
           none: "0"
         },
-        o$ = {
+        oI = {
           m: "6px",
           s: "6px",
           none: "0"
         },
-        oI = nk.div`
+        o$ = nk.div`
     width: 60px;
     height: 60px;
     padding: 8px;
@@ -14370,10 +14375,10 @@
     grid-template: 1fr 1fr / 1fr 1fr;
     gap: 4px;
 `,
-        oB = nk(iI)`
+        oB = nk(i$)`
     width: 20px;
     height: 20px;
-    border-radius: ${e=>o$[e.theme.borderRadius]};
+    border-radius: ${e=>oI[e.theme.borderRadius]};
 `,
         oU = e => tD(iq, {
           get name() {
@@ -14383,7 +14388,7 @@
             return e.labelLine2
           },
           get icon() {
-            return tD(oI, {
+            return tD(o$, {
               get children() {
                 return tD(tW, {
                   each: [0, 1, 2, 3],
@@ -14465,10 +14470,10 @@
         margin: 0;
     }
 `,
-        [oK, oq] = tp((null == (O = n$()) ? void 0 : O.innerHeight) || 0);
-      n$() && window.addEventListener("resize", () => oq(window.innerHeight));
+        [oK, oq] = tp((null == (O = nI()) ? void 0 : O.innerHeight) || 0);
+      nI() && window.addEventListener("resize", () => oq(window.innerHeight));
       let [oz, oZ] = tp(rN("mobile")), oY = () => oZ(rN("mobile"));
-      n$() && (window.addEventListener("resize", () => oY()), window.addEventListener("load", () => oY(), {
+      nI() && (window.addEventListener("resize", () => oY()), window.addEventListener("load", () => oY(), {
         once: !0
       }));
       let oJ = e => {
@@ -15140,7 +15145,7 @@
         return e instanceof t || e instanceof ShadowRoot
       }
 
-      function a$(e) {
+      function aI(e) {
         let {
           overflow: t,
           overflowX: n,
@@ -15150,7 +15155,7 @@
         return /auto|scroll|overlay|hidden/.test(t + r + n) && !["inline", "contents"].includes(i)
       }
 
-      function aI(e) {
+      function a$(e) {
         let t = /firefox/i.test(aL()),
           n = aP(e),
           r = n.backdropFilter || n.WebkitBackdropFilter;
@@ -15248,10 +15253,10 @@
         let t = aT(e),
           n = aJ(e);
         for (; n && ["table", "td", "th"].includes(aR(n)) && "static" === aP(n).position;) n = aJ(n);
-        return n && ("html" === aR(n) || "body" === aR(n) && "static" === aP(n).position && !aI(n)) ? t : n || function(e) {
+        return n && ("html" === aR(n) || "body" === aR(n) && "static" === aP(n).position && !a$(n)) ? t : n || function(e) {
           let t = aY(e);
           for (; aj(t) && !aU(t);) {
-            if (aI(t)) return t;
+            if (a$(t)) return t;
             t = aY(t)
           }
           return null
@@ -15263,11 +15268,11 @@
         void 0 === t && (t = []);
         let r = function e(t) {
             let n = aY(t);
-            return aU(n) ? t.ownerDocument.body : aj(n) && a$(n) ? n : e(n)
+            return aU(n) ? t.ownerDocument.body : aj(n) && aI(n) ? n : e(n)
           }(e),
           i = r === (null == (n = e.ownerDocument) ? void 0 : n.body),
           o = aT(r);
-        return i ? t.concat(o, o.visualViewport || [], a$(r) ? r : []) : t.concat(r, aX(r))
+        return i ? t.concat(o, o.visualViewport || [], aI(r) ? r : []) : t.concat(r, aX(r))
       }
 
       function a1(e, t, n) {
@@ -15345,7 +15350,7 @@
               a = o ? aY(e) : e;
             for (; aM(a) && !aU(a);) {
               let e = aP(a),
-                t = aI(a);
+                t = a$(a);
               (o ? t || i : !(!t && "static" === e.position && i && ["absolute", "fixed"].includes(i.position))) ? i = e: r = r.filter(e => e !== a), a = aY(a)
             }
             return t.set(e, r), r
@@ -15379,7 +15384,7 @@
               x: 0,
               y: 0
             };
-          if ((i || !i && "fixed" !== r) && (("body" !== aR(n) || a$(o)) && (a = az(n)), aj(n))) {
+          if ((i || !i && "fixed" !== r) && (("body" !== aR(n) || aI(o)) && (a = az(n)), aj(n))) {
             let e = aK(n);
             s = aH(n), l.x = e.x + n.clientLeft, l.y = e.y + n.clientTop
           }
@@ -15426,7 +15431,7 @@
                     y: 0
                   };
                 if (r || !r && "fixed" !== n) {
-                  if (("body" !== aR(t) || a$(i)) && (a = az(t)), aj(t)) {
+                  if (("body" !== aR(t) || aI(i)) && (a = az(t)), aj(t)) {
                     let e = aK(t, !0);
                     s.x = e.x + t.clientLeft, s.y = e.y + t.clientTop
                   } else i && (s.x = aZ(i))
@@ -16524,12 +16529,12 @@
           })
         },
         sD = nk.div``,
-        s$ = nk(r2)`
+        sI = nk(r2)`
     position: absolute;
     top: 16px;
     left: 16px;
 `,
-        sI = nk(iZ)`
+        s$ = nk(iZ)`
     margin-bottom: 18px;
 `,
         sB = nk.div`
@@ -16560,10 +16565,10 @@
         sF = e => tD(sD, {
           "data-tc-wallets-modal-info": "true",
           get children() {
-            return [tD(s$, {
+            return [tD(sI, {
               icon: "arrow",
               onClick: () => e.onBackClick()
-            }), tD(sI, {
+            }), tD(s$, {
               translationKey: "walletModal.infoModal.whatIsAWallet",
               children: "What is a wallet"
             }), tD(oJ, {
@@ -16981,7 +16986,7 @@
 
     transition: transform 0.1s ease-in-out;
 
-    ${rI} {
+    ${r$} {
         &:hover {
             transform: scale(1.04);
         }
@@ -16991,7 +16996,7 @@
         transform: scale(0.96);
     }
 
-    ${r$} {
+    ${rI} {
         &:active {
             transform: scale(0.92);
         }
@@ -17832,7 +17837,7 @@
           onClose: () => e.onClose(),
           "data-tc-transaction-sent-modal": "true"
         }),
-        l$ = () => tD(il, {
+        lI = () => tD(il, {
           get opened() {
             var e;
             return tm(() => null !== n5())() && (null == (e = n5()) ? void 0 : e.openModal) === !0
@@ -17877,7 +17882,7 @@
             })
           }
         }),
-        lI = () => {
+        l$ = () => {
           let {
             locale: e
           } = ij()[1];
@@ -18003,7 +18008,7 @@
                           }), tD(ni, {
                             component: nS,
                             get children() {
-                              return [tD(lO, {}), tD(lI, {}), tD(l$, {})]
+                              return [tD(lO, {}), tD(l$, {}), tD(lI, {})]
                             }
                           })]
                         }
@@ -18234,7 +18239,7 @@
         }
         trackConnectionRestoringError(...e) {
           try {
-            let t = e$(this.version, ...e);
+            let t = eI(this.version, ...e);
             this.dispatchUserActionEvent(t)
           } catch (e) {}
         }
@@ -18457,7 +18462,7 @@
                   name: "transaction-canceled",
                   showNotification: n.includes("error"),
                   openModal: r.includes("error")
-                }), e instanceof $) throw e;
+                }), e instanceof I) throw e;
               throw console.error(e), new nR("Unhandled error:" + e)
             } finally {
               l()
@@ -19383,16 +19388,16 @@
             isLoading: M,
             closeOnClick: N,
             theme: D
-          } = e, $ = i("Toastify__toast", `Toastify__toast-theme--${D}`, `Toastify__toast--${f}`, {
+          } = e, I = i("Toastify__toast", `Toastify__toast-theme--${D}`, `Toastify__toast--${f}`, {
             "Toastify__toast--rtl": P
           }, {
             "Toastify__toast--close-on-click": N
-          }), I = s(b) ? b({
+          }), $ = s(b) ? b({
             rtl: P,
             position: v,
             type: f,
-            defaultClassName: $
-          }) : i($, b), B = function(e) {
+            defaultClassName: I
+          }) : i(I, b), B = function(e) {
             let {
               theme: t,
               type: n,
@@ -19442,7 +19447,7 @@
             id: R,
             onClick: h,
             "data-in": j,
-            className: I,
+            className: $,
             ...a,
             style: x,
             ref: o
