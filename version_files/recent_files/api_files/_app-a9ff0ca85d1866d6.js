@@ -4596,7 +4596,7 @@
               content: "IE=edge"
             }, {
               name: "viewport",
-              content: "width=device-width, user-scalable=no"
+              content: "width=device-width, user-scalable=no, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
             }, {
               name: "x-ua-compatible",
               content: "IE=edge; chrome=1"
