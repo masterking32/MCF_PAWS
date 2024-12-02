@@ -154,9 +154,9 @@ class Quests:
                 continue
             if questType == "copy":  # should be auto completed
                 continue
-            mysteryWhiteList = ["love"]  # action
+            mysteryWhiteList = ["674dcb4b30dc53f7e9aec470"]  # id
             if questTitle == "Mystery Quest":
-                if quest.get("action", "N/A") not in mysteryWhiteList:
+                if quest.get("_id", "N/A") not in mysteryWhiteList:
                     continue
 
             if currentState == 0:
