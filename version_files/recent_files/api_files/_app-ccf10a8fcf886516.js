@@ -4837,7 +4837,7 @@
       "use strict";
       n.d(t, {
         C0: function() {
-          return d
+          return p
         },
         Ep: function() {
           return s
@@ -4846,16 +4846,19 @@
           return a
         },
         UD: function() {
-          return l
+          return c
         },
         av: function() {
-          return p
-        },
-        x5: function() {
           return h
         },
+        wO: function() {
+          return l
+        },
+        x5: function() {
+          return f
+        },
         x7: function() {
-          return u
+          return d
         }
       });
       var r = n(6656);
@@ -4954,7 +4957,8 @@
               year: 0,
               premium: 0,
               dogsAllocation: 0
-            }
+            },
+            tabsHistory: []
           },
           reducers: {
             setIsMobile: (e, t) => {
@@ -4977,17 +4981,21 @@
             },
             setIsWinnerModalModalOpen: (e, t) => {
               e.onboarding.isShowVoteWinner = t.payload
+            },
+            pushTabHistory: (e, t) => {
+              e.tabsHistory.push(t.payload)
             }
           }
         }),
         {
           setIsMobile: s,
-          setIsWinnerModalModalOpen: l,
-          setIsTonTxModalOpen: c,
-          incBalance: u,
-          setUserWallet: d,
-          setUser: p,
-          setOnboarding: h
+          pushTabHistory: l,
+          setIsWinnerModalModalOpen: c,
+          setIsTonTxModalOpen: u,
+          incBalance: d,
+          setUserWallet: p,
+          setUser: h,
+          setOnboarding: f
         } = a.actions
     },
     6477: function(e, t) {
