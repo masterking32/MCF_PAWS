@@ -29,7 +29,7 @@ class User:
             if (
                 response is not None
                 and response.get("success", None)
-                and "list" in response
+                and "data" in response
             ):
                 self.log.info(
                     f"<g>🔃 Successfully fetched leaderboard info for <c>{self.account_name}</c>.</g>"
@@ -46,25 +46,25 @@ class User:
             self.log.error(f"<r>❌ {str(e)}</r>")
             return False
 
-    def get_user(self):
+    def get_vote_list(self):
         try:
-            response = self.http.get("/v1/user")
+            response = self.http.get("v1/voting/list")
             if (
                 response is not None
                 and response.get("success", None)
                 and "data" in response
             ):
                 self.log.info(
-                    f"<g>🔃 Successfully fetched user info for <c>{self.account_name}</c>.</g>"
+                    f"<g>🔃 Successfully fetched vote info for <c>{self.account_name}</c>.</g>"
                 )
                 return response
             else:
                 self.log.error(
-                    f"<r>❌ Failed to fetch user info for <c>{self.account_name}</c>! RESPONSE_SECTION</r>"
+                    f"<r>❌ Failed to fetch vote info for <c>{self.account_name}</c>! RESPONSE_SECTION</r>"
                 )
         except Exception as e:
             self.log.error(
-                f"<r>❌ Failed to fetch user info for <c>{self.account_name}</c>!</r>"
+                f"<r>❌ Failed to fetch vote info for <c>{self.account_name}</c>!</r>"
             )
             self.log.error(f"<r>❌ {str(e)}</r>")
             return False
@@ -95,8 +95,5 @@ class User:
     def Complete_Requests(self):
         self.log.info(f"<y>⌛ Fetching requests for <c>{self.account_name}</c>...</y>")
 
-        self.get_transactions()
-        self.get_my_referral()
-        
-        # self.get_leaderboard()
-        # self.get_user()
+        self.get_leaderboard()
+        self.get_vote_list()

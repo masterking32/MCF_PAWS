@@ -15,7 +15,14 @@
   },
   {
     "key": "change_name",
-    "name": "Quests - Add paws emoji to name",
+    "name": "Quests - Add 🐾 to your name",
+    "type": "checkbox",
+    "default_value": "off",
+    "description": ""
+  },
+  {
+    "key": "premium_quest",
+    "name": "Quests - Claim Premium Users Quest (PAWS Emoji Status)",
     "type": "checkbox",
     "default_value": "off",
     "description": ""

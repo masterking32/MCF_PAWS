@@ -50,7 +50,7 @@ class FarmBot:
             self.http = HttpRequest(
                 self.log, self.proxy, self.user_agent, self.account_name
             )
-
+            
             start_param = ""
             if self.tgAccount is not None and self.tgAccount.NewStart:
                 start_param = "/?tgWebAppStartParam=" + self.tgAccount.ReferralToken
@@ -63,48 +63,43 @@ class FarmBot:
                 )
                 return
 
+            balance = auth.get_balance()
+            badge = auth.getBadge()
+            rank = auth.get_avatarId()
+            invite_count = auth.get_referralsCount()
+            wallet = auth.get_wallet()
+            
+            wallet_address = (
+                f"<c>{wallet}</c>"
+                if wallet is not None
+                else "<y>Not Connected</y>"
+            )
+
+            self.log.info(f"<g>┌─ 💲 Balance: <c>{balance}</c></g>")
+            self.log.info(f"<g>├─ 🏆 Badge Tier: <c>{badge}</c></g>")
+            self.log.info(f"<g>├─ 🥇 Rank: <c>{rank}</c></g>")
+            self.log.info(f"<g>├─ 👥 Friends: <c>{invite_count}</c></g>")
+            self.log.info(f"<g>└─ 💳 Wallet Address: {wallet_address}</g>")
+
+            self.log.info(
+                f"<g>Overal token allocation info for <c>{self.account_name}</c>:</g>"
+            )
+            
             hamster = auth.get_hamster_converted()
             telegram = auth.get_telegram_converted()
             paws = auth.get_paws_converted()
             dogs = auth.get_dogs_converted()
             notcoin = auth.get_notcoin_converted()
             empire = auth.get_xempire_converted()
-            badge = auth.getBadge()
-
-            total_allocation = auth.get_total_allocation()
-            today_Balance = auth.get_today_Balance()
-            claim_Streak = auth.get_claimStreak()
-
-            self.log.info(
-                f"<g>🐾 <c>{self.account_name}</c> Overal token allocation info:</g>"
-            )
+            bums = auth.get_bums_converted()
 
             self.log.info(f"<g>┌─ 🐭 Hamester Kombat: <c>{hamster}</c></g>")
             self.log.info(f"<g>├─ ✈️ Telegram Register Days: <c>{telegram}</c></g>")
             self.log.info(f"<g>├─ 🐾 Paws: <c>{paws}</c></g>")
             self.log.info(f"<g>├─ 🦴 Dogs: <c>{dogs}</c></g>")
             self.log.info(f"<g>├─ 🪙 NotCoin: <c>{notcoin}</c></g>")
-            self.log.info(f"<g>└─ 👑 Empire: <c>{empire}</c></g>")
-
-            self.log.info(
-                f"<g>🐾 <c>{self.account_name}</c> Total Claims: <c>{total_allocation}</c> Today Claim: <c>{today_Balance}</c> Daily Streak: <c>{claim_Streak} days</c></g>"
-            )
-
-            balance = auth.get_balance()
-            rank = auth.get_avatarId()
-            invite_count = auth.get_referralsCount()
-
-            self.log.info(f"<g>┌─ 💲 Tokens: <c>{balance}</c></g>")
-            self.log.info(f"<g>├─ 🏆 Badge Tier: <c>{badge}</c></g>")
-            self.log.info(f"<g>├─ 🥇 Rank: <c>{rank}</c></g>")
-            self.log.info(f"<g>├─ 👥 Friends: <c>{invite_count}</c></g>")
-
-            wallet = auth.get_wallet()
-            self.log.info(
-                f"<g>└─ 💳 Connected Wallet: <c>{wallet}</c></g>"
-                if wallet is not None
-                else f"<y>└─ 💳 No wallet connected yet!</y>"
-            )
+            self.log.info(f"<g>├─ 👑 Empire: <c>{empire}</c></g>")
+            self.log.info(f"<g>└─ 📦 Bums: <c>{bums}</c></g>")
 
             user = User(self.log, self.http, self.account_name)
             user.Complete_Requests()
@@ -117,9 +112,13 @@ class FarmBot:
                 remaining_quest = quests.get_unclaimed_quests()
                 claimed_quests = total_quests - remaining_quest
 
-                self.log.info(f"<g>┌─ 🔢 Total Quests: <c>{total_quests}</c></g>")
+                self.log.info(
+                    f"<g>┌─ 🔢 Total Quests: <c>{total_quests}</c></g>"
+                )
 
-                self.log.info(f"<g>├─ ✅ Claimed Quests: <c>{claimed_quests}</c></g>")
+                self.log.info(
+                    f"<g>├─ ✅ Claimed Quests: <c>{claimed_quests}</c></g>"
+                )
 
                 self.log.info(
                     f"<g>└─ 📋 Remaining Quests: <c>{remaining_quest}</c></g>"
