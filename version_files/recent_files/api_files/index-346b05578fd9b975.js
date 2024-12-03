@@ -1305,15 +1305,15 @@
         }, O = async t => {
           if (!E) try {
             A(!0);
-            let e = await tr("/quests/claim", {
+            let a = await tr("/quests/claim", {
               method: "POST",
               body: {
                 questId: t._id
               }
             });
-            if (e.data) {
-              var i;
-              y(m._id, "finished"), h((0, x.x7)(F)), window.dispatchEvent(new CustomEvent("transactionsHistoryUpdated")), P((null === (i = e.data) || void 0 === i ? void 0 : i.amount) || 0)
+            if (a.data) {
+              var i, e;
+              y(m._id, "finished"), h((0, x.x7)((null === (i = a.data) || void 0 === i ? void 0 : i.amount) || F || 0)), window.dispatchEvent(new CustomEvent("transactionsHistoryUpdated")), P((null === (e = a.data) || void 0 === e ? void 0 : e.amount) || F || 0)
             }
           } catch (t) {
             console.error(t)
