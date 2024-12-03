@@ -131,6 +131,7 @@ class Quests:
         try:
             quest_id = quest.get("_id", "N/A")
             quest_title = quest.get("title", "N/A")
+            rewards_amount = quest.get("rewards", [{}])[0].get("amount", 0)
 
             payload = {"questId": quest_id}
 
@@ -146,6 +147,12 @@ class Quests:
                 )
                 return False
 
+            if rewards_amount == 0:
+                rewards_amount = response.get("data", {}).get("amount", 0)
+
+            self.log.info(
+                f"<g>🎉 Quest <c>{quest_title}</c> claimed successfully! Reward Amount: <c>{rewards_amount}</c></g>"
+            )
             return True
 
         except Exception as e:
@@ -169,16 +176,12 @@ class Quests:
             questStatus = quest.get("progress", {}).get("status", None)
 
             questTitle = quest.get("title", "N/A")
-            rewards_amount = quest.get("rewards", [{}])[0].get("amount", 0)
 
             if (
                 currentState >= totalStates
                 or questStatus == "claimable"
             ):
-                if self.claim_quest(quest):
-                    self.log.info(
-                        f"<g>🎉 Quest <c>{questTitle}</c> claimed successfully! Reward Amount: <c>{rewards_amount}</c></g>"
-                    )
+                self.claim_quest(quest)
 
             questCode = quest.get("code", None)
 
@@ -215,10 +218,7 @@ class Quests:
                     await asyncio.sleep(sleep_duration)
 
             if currentState == 1:
-                if self.claim_quest(quest):
-                    self.log.info(
-                        f"<g>└─ 🎉 Quest claimed successfully! Reward Amount: <c>{rewards_amount}</c></g>"
-                    )
+                self.claim_quest(quest)
 
     def get_total_quests(self):
         return len(self.quests)
