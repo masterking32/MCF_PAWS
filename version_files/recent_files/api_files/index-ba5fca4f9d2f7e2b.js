@@ -1269,7 +1269,7 @@
           bums: "Bums Drop"
         },
         tF = "\uD83D\uDC3E",
-        tP = t => ["vote", "voteup", "votedown", "mystery", "custom"].includes(t.code);
+        tP = t => ["vote", "voteup", "votedown", "mystery", "custom"].includes(t.code) && !["customDom"].includes(t.action);
       var tT = t => {
         var i, e, r, c, n;
         let {
@@ -1280,72 +1280,75 @@
           redirectToTab: d
         } = t, h = (0, s.TL)(), v = (0, s.CG)(t => t.main.user.userData.wallet), f = (0, s.CG)(t => t.main.user.chatId), [E, A] = (0, a.useState)(!1), [g, b] = (0, a.useState)(!1), G = (null == m ? void 0 : null === (i = m.progress) || void 0 === i ? void 0 : i.status) || "calculating", [D, V] = (0, a.useState)(!1), [B, S] = (0, a.useState)(!1), {
           webApp: N
-        } = (0, to.fW)(), [w] = (0, Y.dG)(), F = m.balance || 0;
-        F || (F = (null == m ? void 0 : null === (c = m.rewards) || void 0 === c ? void 0 : null === (n = c.find(t => "balance" === t.code)) || void 0 === n ? void 0 : n.amount) || 0);
-        let P = () => {
-            "start" === G && (m.data.includes("t.me") ? N.openTelegramLink(m.data) : "page" === m.action ? d(m.data) : N.openLink(m.data, {
-              try_instant_view: !1,
-              try_browser: !0
-            }), 0 !== m.flag && "page" !== m.action && setTimeout(() => {
-              y(m._id, "check")
-            }, 1e3))
-          },
-          T = async () => {
-            if (!E) try {
-              A(!0);
-              let t = await tr("/quests/completed", {
-                method: "POST",
-                body: {
-                  questId: m._id
-                }
-              });
-              !0 === t.data ? y(m._id, "claimable") : y(m._id, "pending")
-            } catch (t) {
-              console.error(t)
-            } finally {
-              A(!1)
-            }
-          }, C = async t => {
-            if (!E) try {
-              A(!0), (await tr("/quests/claim", {
-                method: "POST",
-                body: {
-                  questId: t._id
-                }
-              })).data && (y(m._id, "finished"), h((0, x.x7)(F)), window.dispatchEvent(new CustomEvent("transactionsHistoryUpdated")))
-            } catch (t) {
-              console.error(t)
-            } finally {
-              A(!1)
-            }
-          }, O = () => {
-            "start" === G ? V(!0) : y(m._id, "start")
-          }, R = t => {
-            if ("finished" !== G) {
-              if ("claimable" === G) {
-                C(t);
-                return
+        } = (0, to.fW)(), [w] = (0, Y.dG)(), [F, P] = (0, a.useState)(m.balance || (null == m ? void 0 : null === (e = m.rewards) || void 0 === e ? void 0 : null === (r = e.find(t => "balance" === t.code)) || void 0 === r ? void 0 : r.amount) || 0), T = () => {
+          "start" === G && (m.data.includes("t.me") ? N.openTelegramLink(m.data) : "page" === m.action ? d(m.data) : N.openLink(m.data, {
+            try_instant_view: !1,
+            try_browser: !0
+          }), 0 !== m.flag && "page" !== m.action && setTimeout(() => {
+            y(m._id, "check")
+          }, 1e3))
+        }, C = async () => {
+          if (!E) try {
+            A(!0);
+            let t = await tr("/quests/completed", {
+              method: "POST",
+              body: {
+                questId: m._id
               }
-              if (["start", "check"].includes(G)) {
-                if ("customEmoji" === t.action) {
-                  var i, e, a;
-                  return null === (i = window) || void 0 === i ? void 0 : null === (e = i.Telegram) || void 0 === e ? void 0 : null === (a = e.WebApp) || void 0 === a ? void 0 : a.setEmojiStatus("".concat(t.data), null, i => {
-                    i && T(t)
-                  })
-                }
-                if ("referral" === t.type) return b(!0);
-                if (["social", "boost"].includes(t.type) || "link" === t.action) {
-                  if ("start" === G) {
-                    0 === t.flag && T(t), P();
-                    return
-                  }
-                  return T(t)
-                }
-                if ("wallet" === t.type && !v) return w.openModal();
-                "emojiName" === t.type && O()
+            });
+            !0 === t.data ? y(m._id, "claimable") : y(m._id, "pending")
+          } catch (t) {
+            console.error(t)
+          } finally {
+            A(!1)
+          }
+        }, O = async t => {
+          if (!E) try {
+            A(!0);
+            let e = await tr("/quests/claim", {
+              method: "POST",
+              body: {
+                questId: t._id
               }
+            });
+            if (e.data) {
+              var i;
+              y(m._id, "finished"), h((0, x.x7)(F)), window.dispatchEvent(new CustomEvent("transactionsHistoryUpdated")), P((null === (i = e.data) || void 0 === i ? void 0 : i.amount) || 0)
             }
-          };
+          } catch (t) {
+            console.error(t)
+          } finally {
+            A(!1)
+          }
+        }, R = () => {
+          "start" === G ? V(!0) : y(m._id, "start")
+        }, U = t => {
+          if ("finished" !== G) {
+            if ("claimable" === G) {
+              O(t);
+              return
+            }
+            if (["start", "check"].includes(G)) {
+              if (["customDom"].includes(t.action)) return C(t), !0;
+              if ("customEmoji" === t.action) {
+                var i, e, a;
+                return null === (i = window) || void 0 === i ? void 0 : null === (e = i.Telegram) || void 0 === e ? void 0 : null === (a = e.WebApp) || void 0 === a ? void 0 : a.setEmojiStatus("".concat(t.data), null, i => {
+                  i && C(t)
+                })
+              }
+              if ("referral" === t.type) return b(!0);
+              if (["social", "boost"].includes(t.type) || "link" === t.action) {
+                if ("start" === G) {
+                  0 === t.flag && C(t), T();
+                  return
+                }
+                return C(t)
+              }
+              if ("wallet" === t.type && !v) return w.openModal();
+              "emojiName" === t.type && R()
+            }
+          }
+        };
         return (0, a.useEffect)(() => {
           "wallet" === m.type && v && "finished" !== G && y(m._id, "claimable")
         }, [v]), (0, a.useEffect)(() => {
@@ -1359,9 +1362,9 @@
             } catch (t) {
               console.log(t)
             }
-            t && 15 > p()().diff(p()(t), "minutes") && y(m._id, "pending"), (r && r.includes(tF) || o && o.includes(tF)) && "start" === G && T(m)
+            t && 15 > p()().diff(p()(t), "minutes") && y(m._id, "pending"), (r && r.includes(tF) || o && o.includes(tF)) && "start" === G && C(m)
           }
-        }, [null == N ? void 0 : null === (e = N.initDataUnsafe) || void 0 === e ? void 0 : null === (r = e.user) || void 0 === r ? void 0 : r.first_name]), (0, a.useEffect)(() => {
+        }, [null == N ? void 0 : null === (c = N.initDataUnsafe) || void 0 === c ? void 0 : null === (n = c.user) || void 0 === n ? void 0 : n.first_name]), (0, a.useEffect)(() => {
           let t = null;
           return B && (t = setTimeout(() => {
             S(!1)
@@ -1377,7 +1380,7 @@
             y(m._id, "pending"), V(!1), window.localStorage.setItem("".concat(f, "-emojiName-date"), Date.now())
           }
         }), "customOr" === m.action && a.createElement(tN, {
-          onComplete: T,
+          onComplete: C,
           statusCode: G
         }), a.createElement("div", {
           className: "invite-item",
@@ -1402,16 +1405,16 @@
           className: "wallet"
         }, m.quest && m.quest.length > 0 ? "Quest reward" : m.title || tw[m.code]), m.date && a.createElement("div", {
           className: "date"
-        }, p()(m.date).format("MMMM DD"), " at ", p()(m.date).format("HH:mm")), "quests" === l && a.createElement("p", {
+        }, p()(m.date).format("MMMM DD"), " at ", p()(m.date).format("HH:mm")), "quests" === l && !!F && a.createElement("p", {
           className: "reward-count"
         }, "+ ", k(F, ","), " PAWS"))), a.createElement("div", {
           className: "points"
-        }, "quests" !== l && a.createElement(a.Fragment, null, a.createElement("p", null, "+", k(F, ","), " PAWS"), a.createElement("p", {
+        }, "quests" !== l && !!F && a.createElement(a.Fragment, null, a.createElement("p", null, "+", k(F, ","), " PAWS"), a.createElement("p", {
           className: "descr"
         }, "transactions" === l ? "Received" : "Reward")), "quests" === l && !m.availableUntil && a.createElement(a.Fragment, null, ["start", "claimable", "check"].includes(G) && a.createElement("div", {
           className: "start-btn ".concat(["claimable", "check"].includes(G) ? "claim" : ""),
           onClick: () => {
-            "quests" === l && R(m)
+            "quests" === l && U(m)
           }
         }, "start" === G && "Start", "check" === G && "Check", "claimable" === G && "Claim"), "pending" === G && a.createElement("div", {
           className: "start-btn pending"
@@ -1426,7 +1429,7 @@
           className: "progress-con"
         }, "0 / ", m.counter || 1), ["claimable", "check"].includes(G) && a.createElement("div", {
           className: "start-btn claim",
-          onClick: () => R(m)
+          onClick: () => U(m)
         }, "check" === G && "Check", "claimable" === G && "Claim"), "start" === G && a.createElement(a.Fragment, null, !m.isTimeOut && a.createElement("div", {
           className: "timer-con"
         }, a.createElement(tV, {
@@ -1449,11 +1452,11 @@
         }, "Pending...")), !tP(m) && a.createElement(a.Fragment, null, !m.isTimeOut && ["start", "check"].includes(G) && a.createElement("div", {
           className: "start-btn ".concat(["claimable", "check"].includes(G) ? "claim" : ""),
           onClick: () => {
-            "quests" === l && R(m)
+            "quests" === l && U(m)
           }
         }, "start" === G && "Start", "check" === G && "Check", "claimable" === G && "Claim"), "claimable" === G && a.createElement("div", {
           className: "start-btn claim",
-          onClick: () => R(m)
+          onClick: () => U(m)
         }, "Claim"), "pending" === G && a.createElement("div", {
           className: "start-btn pending"
         }, "Pending..."), "finished" === G && a.createElement("div", {

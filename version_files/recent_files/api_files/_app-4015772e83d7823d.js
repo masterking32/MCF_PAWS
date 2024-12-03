@@ -2245,18 +2245,11 @@
               r = () => {
                 t && !t.isExpanded && t.expand()
               };
-            if (t) {
-              t.ready(), i(t), t.expand(), t.onEvent("viewportChanged", r);
-              let e = t.themeParams.bg_color || "bg_color";
-              t.setHeaderColor(e), t.disableVerticalSwipes();
-              let o = t.themeParams.secondary_bg_color || "secondary_bg_color";
-              t.setBackgroundColor(o), t.BackButton.onClick(() => {
-                window.history.back()
-              }), n = setTimeout(() => {
-                c(!0)
-              }, 150)
-            }
-            return () => {
+            return t && (t.ready(), i(t), t.expand(), t.onEvent("viewportChanged", r), t.setBackgroundColor("#0D0D0D"), t.setHeaderColor("#0D0D0D"), t.disableVerticalSwipes(), t.BackButton.onClick(() => {
+              window.history.back()
+            }), n = setTimeout(() => {
+              c(!0)
+            }, 150)), () => {
               t.offEvent("viewportChanged", r), clearTimeout(n)
             }
           }, []), (0, r.useEffect)(() => {
