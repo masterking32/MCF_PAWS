@@ -53,7 +53,7 @@ class Quests:
 
             if quest_code == "telegram" or quest_type == "partner-channel":
                 if (
-                    getConfig("join_channels", False) == False
+                    getConfig("join_channels", False) == True
                     and self.tgAccount is not None
                     and not "+" in quest_data
                     and not quest_data.endswith("bot")
