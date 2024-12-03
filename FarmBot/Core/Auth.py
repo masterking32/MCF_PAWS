@@ -55,7 +55,7 @@ class Auth:
             self.http.authToken = self.get_token()
 
             self.log.info(
-                f"<g>└─ ✅ Authorization complete for <c>{self.account_name}</c>!</g>"
+                f"<g>✅ Authorization complete for <c>{self.account_name}</c>!</g>"
             )
             return True
         except Exception as e:
@@ -132,7 +132,10 @@ class Auth:
 
     def get_xempire_converted(self):
         return self.get_allocationData().get("empire", {}).get("converted", 0)
-
+    
+    def get_bums_converted(self):
+        return self.get_allocationData().get("bums", {}).get("converted", 0)
+    
     def getBadge(self):
         return self.data[1].get("badgeTier", 0)
 
