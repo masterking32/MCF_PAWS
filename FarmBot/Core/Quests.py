@@ -14,7 +14,7 @@ class Quests:
         self.account_name = account_name
         self.quests = []
         self.whitelist_quests = ["674dcb4b30dc53f7e9aec470", "N/A"]  # id's
-        self.blocklist_quests = ["675067faaae81a10ba5a3c4f", "N/A"]
+        self.blacklist_quests = ["675067faaae81a10ba5a3c4f", "N/A"]
 
     def get_quests(self):
         try:
@@ -119,7 +119,7 @@ class Quests:
                 )
                 return False
             
-            data = f" <c>({quest_data}/10M TAPS)</c>" if quest_id in self.blocklist_quests else ""
+            data = f" <c>({quest_data}/10M TAPS)</c>" if quest_id in self.blacklist_quests else ""
 
             self.log.info(
                 f"<g>✅ Completed quest <c>{quest_title}</c> successfully!{data}</g>"
@@ -137,7 +137,7 @@ class Quests:
             quest_title = quest.get("title", "N/A")
             quest_data = quest.get("data", 0)
 
-            if quest_id in self.blocklist_quests:
+            if quest_id in self.blacklist_quests:
                 self.log.info(
                     f"<y>⚠️ Cannot claim quest <c>{quest_title}</c> right now! wait for server allow it for all users. <c>({quest_data}/10M TAPS)</c></y>"
                 )
@@ -221,7 +221,7 @@ class Quests:
                 continue
 
             if current_state == 0:
-                if await self.complete_quest(quest) and quest_id not in self.blocklist_quests:
+                if await self.complete_quest(quest) and quest_id not in self.blacklist_quests:
                     current_state = 1
                     sleep_duration = random.randint(5, 10)
                     self.log.info(
