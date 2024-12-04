@@ -13,7 +13,8 @@ class Quests:
         self.tgAccount = tgAccount
         self.account_name = account_name
         self.quests = []
-        self.whitelist_quests = ["674dcb4b30dc53f7e9aec470"]  # id's
+        self.whitelist_quests = ["674dcb4b30dc53f7e9aec470", "N/A"]  # id's
+        self.blocklist_quests = ["675067faaae81a10ba5a3c4f", "N/A"]
 
     def get_quests(self):
         try:
@@ -117,10 +118,13 @@ class Quests:
                     f"<y>⚠️ Quest <c>{quest_title}</c> bugged and cannot complete now! (SERVER SIDE)</y>"
                 )
                 return False
+            
+            data = f" <c>({quest_data}/10M TAPS)</c>" if quest_id in self.blocklist_quests else ""
 
             self.log.info(
-                f"<g>✅ Completed quest <c>{quest_title}</c> successfully!</g>"
+                f"<g>✅ Completed quest <c>{quest_title}</c> successfully!{data}</g>"
             )
+
             return True
         except Exception as e:
             self.log.error(f"<r>┌─ ❌ Failed to complete quest <c>{quest_title}</c>!</r>")
@@ -131,6 +135,14 @@ class Quests:
         try:
             quest_id = quest.get("_id", "N/A")
             quest_title = quest.get("title", "N/A")
+            quest_data = quest.get("data", 0)
+
+            if quest_id in self.blocklist_quests:
+                self.log.info(
+                    f"<y>⚠️ Cannot claim quest <c>{quest_title}</c> right now! wait for server allow it for all users. <c>({quest_data}/10M TAPS)</c></y>"
+                )
+                return None
+
             rewards_amount = quest.get("rewards", [{}])[0].get("amount", 0)
 
             payload = {"questId": quest_id}
@@ -148,7 +160,7 @@ class Quests:
                 return False
 
             if rewards_amount == 0:
-                rewards_amount = response.get("data", {}).get("amount", 0)
+                rewards_amount = response.get("data", [{}]).get("amount", 0)
 
             self.log.info(
                 f"<g>🎉 Quest <c>{quest_title}</c> claimed successfully! Reward Amount: <c>{rewards_amount}</c></g>"
@@ -166,58 +178,58 @@ class Quests:
         self.log.info(f"<y>⌛ Checking remaining quests...</y>")
 
         for quest in self.quests:
-            isClaimed = quest.get("progress", {}).get("claimed", False)
+            is_claimed = quest.get("progress", [{}]).get("claimed", False)
 
-            if isClaimed:
+            if is_claimed:
                 continue
 
-            currentState = quest.get("progress", {}).get("current", 0)
-            totalStates = quest.get("progress", {}).get("total", 0)
-            questStatus = quest.get("progress", {}).get("status", None)
-
-            questTitle = quest.get("title", "N/A")
-
+            current_state = quest.get("progress", [{}]).get("current", 0)
+            total_states = quest.get("progress", [{}]).get("total", 0)
+            quest_status = quest.get("progress", [{}]).get("status", None)
+            quest_title = quest.get("title", "N/A")
+            quest_code = quest.get("code", None)
+            quest_id = quest.get("_id", "N/A")
+            
             if (
-                currentState >= totalStates
-                or questStatus == "claimable"
+                current_state >= total_states
+                or quest_status == "claimable"
             ):
                 self.claim_quest(quest)
+                continue
 
-            questCode = quest.get("code", None)
 
             if (
-                questCode is None
-                or questCode in ["wallet", "boost", "invite"]
+                quest_code is None
+                or quest_code in ["wallet", "boost", "invite"]
             ):
                 continue
 
             if (
-                questCode == "emoji"
+                quest_code == "emoji"
                 and getConfig("premium_quest", False) == False
             ):
                 continue
 
-            if questTitle == "Mystery Quest":
-                quest_id = quest.get("_id", "N/A")
+            if quest_title == "Mystery Quest":
                 if quest_id not in self.whitelist_quests:
                     continue
 
-            if currentState == 0:
-                if questStatus == "pending":
-                    self.log.info(
-                        f"<y>└─ ⌛ Pending quest <c>{questTitle}</c> needs to be completed from bot's server...</y>"
-                    )
-                    continue
+            if quest_status == "pending":
+                self.log.info(
+                    f"<y>└─ ⌛ Pending quest <c>{quest_title}</c> needs to be completed from bot's server...</y>"
+                )
+                continue
 
-                if await self.complete_quest(quest):
-                    currentState = 1
+            if current_state == 0:
+                if await self.complete_quest(quest) and quest_id not in self.blocklist_quests:
+                    current_state = 1
                     sleep_duration = random.randint(5, 10)
                     self.log.info(
                         f"<y>├─ ⌛ Claiming quest after {sleep_duration}s...</y>"
                     )
                     await asyncio.sleep(sleep_duration)
 
-            if currentState == 1:
+            if current_state == 1:
                 self.claim_quest(quest)
 
     def get_total_quests(self):
