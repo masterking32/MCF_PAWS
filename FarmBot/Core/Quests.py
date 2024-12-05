@@ -135,9 +135,12 @@ class Quests:
         try:
             quest_id = quest.get("_id", "N/A")
             quest_title = quest.get("title", "N/A")
-            quest_data = quest.get("data", 0)
+            quest_data = quest.get("data", "0")
 
-            if quest_id in self.blacklist_quests:
+            if (
+                quest_id in self.blacklist_quests
+                and quest_data != "10000000"
+            ):
                 self.log.info(
                     f"<y>⚠️ Cannot claim quest <c>{quest_title}</c> right now! wait for server allow it for all users. <c>({quest_data}/10M TAPS)</c></y>"
                 )
@@ -186,9 +189,6 @@ class Quests:
             current_state = quest.get("progress", [{}]).get("current", 0)
             total_states = quest.get("progress", [{}]).get("total", 0)
             quest_status = quest.get("progress", [{}]).get("status", None)
-            quest_title = quest.get("title", "N/A")
-            quest_code = quest.get("code", None)
-            quest_id = quest.get("_id", "N/A")
             
             if (
                 current_state >= total_states
@@ -197,6 +197,9 @@ class Quests:
                 self.claim_quest(quest)
                 continue
 
+            quest_title = quest.get("title", "N/A")
+            quest_code = quest.get("code", None)
+            quest_id = quest.get("_id", "N/A")
 
             if (
                 quest_code is None
