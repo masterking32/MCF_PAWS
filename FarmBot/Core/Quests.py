@@ -14,7 +14,11 @@ class Quests:
         self.account_name = account_name
         self.quests = []
         self.whitelist_quests = ["674dcb4b30dc53f7e9aec470", "N/A"]  # id's
-        self.blacklist_quests = ["675067faaae81a10ba5a3c4f", "N/A"]
+        self.blacklist_quests = [
+            "675067faaae81a10ba5a3c4f", # TAP
+            "67532ea5a3770d4f94e38f6f", # REACT
+            "N/A"
+        ]
 
     def get_quests(self):
         try:
@@ -49,10 +53,13 @@ class Quests:
             quest_id = quest.get("_id", "")
             quest_code = quest.get("code", "")
             quest_type = quest.get("type", "")
-            quest_data = quest.get("data", "")
+            quest_data:str = quest.get("data", "")
             quest_title = quest.get("title", "N/A")
 
-            if quest_code == "telegram" or quest_type == "partner-channel":
+            if (
+                quest_code == "telegram"
+                or quest_type == "partner-channel"
+            ):
                 if (
                     getConfig("join_channels", False) == True
                     and self.tgAccount is not None
@@ -106,20 +113,24 @@ class Quests:
                 data=json.dumps(payload),
                 valid_response_code=[200, 201],
             )
+
             if response is None:
                 self.log.error(
                     f"<r>❌ Failed to complete quest <c>{quest_title}</c>! NULL_RESPONSE</r>"
                 )
                 return False
+            
             if quest_data == "vote" and response.get("success", False) == False:
                 return False
+            
             elif response.get("data", False) == False:
                 self.log.error(
                     f"<y>⚠️ Quest <c>{quest_title}</c> bugged and cannot complete now! (SERVER SIDE)</y>"
                 )
                 return False
             
-            data = f" <c>({quest_data}/10M TAPS)</c>" if quest_id in self.blacklist_quests else ""
+            reactions = quest_data.split(',')[0]
+            data = f" <c>({self.format_number(reactions)}/10M REACTED)</c>" if quest_id in self.blacklist_quests else ""
 
             self.log.info(
                 f"<g>✅ Completed quest <c>{quest_title}</c> successfully!{data}</g>"
@@ -135,16 +146,16 @@ class Quests:
         try:
             quest_id = quest.get("_id", "N/A")
             quest_title = quest.get("title", "N/A")
-            quest_data = quest.get("data", "0")
+            quest_data:str = quest.get("data", "0")
 
-            if (
-                quest_id in self.blacklist_quests
-                and quest_data != "10000000"
-            ):
-                self.log.info(
-                    f"<y>⚠️ Cannot claim quest <c>{quest_title}</c> right now! wait for server allow it for all users. <c>({quest_data}/10M TAPS)</c></y>"
-                )
-                return None
+            if quest_id in self.blacklist_quests:
+                reactions = quest_data.split(',')[0]
+
+                if reactions != "10000000":
+                    self.log.info(
+                        f"<y>⚠️ Cannot claim quest <c>{quest_title}</c> right now! wait for server allow it for all users. <c>({self.format_number(reactions)}/10M REACTED)</c></y>"
+                    )
+                    return None
 
             rewards_amount = quest.get("rewards", [{}])[0].get("amount", 0)
 
@@ -197,6 +208,12 @@ class Quests:
                 self.claim_quest(quest)
                 continue
 
+            if quest_status == "pending":
+                self.log.info(
+                    f"<y>⌛ Pending quest <c>{quest_title}</c> needs to be completed from bot's server...</y>"
+                )
+                continue
+
             quest_title = quest.get("title", "N/A")
             quest_code = quest.get("code", None)
             quest_id = quest.get("_id", "N/A")
@@ -216,12 +233,6 @@ class Quests:
             if quest_title == "Mystery Quest":
                 if quest_id not in self.whitelist_quests:
                     continue
-
-            if quest_status == "pending":
-                self.log.info(
-                    f"<y>└─ ⌛ Pending quest <c>{quest_title}</c> needs to be completed from bot's server...</y>"
-                )
-                continue
 
             if current_state == 0:
                 if await self.complete_quest(quest) and quest_id not in self.blacklist_quests:
@@ -245,3 +256,12 @@ class Quests:
             if not quest.get("progress", {}).get("claimed")
         ]
         return len(unclaimed_quests)
+
+    def format_number(self, value):
+        value = int(value)
+        if value >= 1_000_000:
+            return f"{value / 1_000_000:.1f}M"
+        elif value >= 1_000:
+            return f"{value / 1_000:.1f}k"
+        else:
+            return value
