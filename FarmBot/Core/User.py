@@ -96,4 +96,4 @@ class User:
         self.log.info(f"<y>⌛ Fetching requests for <c>{self.account_name}</c>...</y>")
 
         self.get_leaderboard()
-        self.get_vote_list()
+        self.get_my_referral()
