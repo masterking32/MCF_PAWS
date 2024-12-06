@@ -197,12 +197,6 @@ class Quests:
             if is_claimed:
                 continue
 
-            elif quest_status == "pending":
-                self.log.info(
-                    f"<y>⌛ Pending quest <c>{quest_title}</c> needs to be completed from bot's server...</y>"
-                )
-                continue
-
             current_state = quest.get("progress", [{}]).get("current", 0)
             total_states = quest.get("progress", [{}]).get("total", 0)
             quest_status = quest.get("progress", [{}]).get("status", None)
@@ -212,6 +206,12 @@ class Quests:
                 or quest_status == "claimable"
             ):
                 self.claim_quest(quest)
+                continue
+
+            if quest_status == "pending":
+                self.log.info(
+                    f"<y>⌛ Pending quest <c>{quest_title}</c> needs to be completed from bot's server...</y>"
+                )
                 continue
 
             quest_title = quest.get("title", "N/A")
