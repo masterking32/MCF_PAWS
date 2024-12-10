@@ -2277,47 +2277,27 @@
         },
         c = () => (0, r.useContext)(s)
     },
-    2783: function(e, t, n) {
-      "use strict";
-      var r = n(7294),
-        i = n(5152),
-        o = n.n(i),
-        a = n(3725);
-      let s = o()(() => Promise.all([n.e(296), n.e(260)]).then(n.t.bind(n, 9260, 23)).then(e => e), {
-        ssr: !1
-      });
-      t.Z = e => {
-        let {
-          isShow: t
-        } = e, n = (0, r.useRef)(null);
-        return (0, r.useEffect)(() => {
-          let e = null;
-          return n.current && (t ? n.current.goToAndPlay(0, !0) : e = setTimeout(() => {
-            n.current.goToAndStop(0, !0)
-          }, 3e3)), () => () => {
-            clearTimeout(e)
-          }
-        }, [t, n.current]), r.createElement(s, {
-          lottieRef: n,
-          animationData: a,
-          loop: !0
-        })
-      }
-    },
-    7009: function(e, t, n) {
+    1513: function(e, t, n) {
       "use strict";
       n.d(t, {
         Z: function() {
-          return u
+          return p
         }
       });
       var r = n(7294),
         i = n(4173),
         o = n(5675),
         a = n.n(o),
-        s = n(4441);
+        s = n(4441),
+        l = {
+          src: "/_next/static/media/attention.1402a270.svg",
+          height: 28,
+          width: 28,
+          blurWidth: 0,
+          blurHeight: 0
+        };
       n(9962);
-      let l = {
+      let c = {
           book: {
             src: "/_next/static/media/book.6b267324.png",
             height: 55,
@@ -2328,7 +2308,7 @@
           },
           cross: s.Z
         },
-        c = e => {
+        u = e => {
           let {
             data: t
           } = e, {
@@ -2340,10 +2320,10 @@
             className: "custom-toast-content".concat("error" === n ? " error" : "")
           }, r.createElement("div", {
             className: "content-wrapper"
-          }, l[o] && r.createElement("div", {
+          }, c[o] && r.createElement("div", {
             className: "img-con"
           }, r.createElement(a(), {
-            src: l[o],
+            src: c[o],
             alt: "",
             width: 26,
             height: 29
@@ -2355,15 +2335,53 @@
               __html: i
             }
           }))))
+        },
+        d = e => {
+          let {
+            closeToast: t
+          } = e;
+          return r.createElement("div", {
+            className: "custom-toast-content success-tx"
+          }, r.createElement("div", {
+            className: "content-wrapper"
+          }, r.createElement("div", {
+            className: "img-con"
+          }, r.createElement(a(), {
+            src: l,
+            alt: "",
+            width: 28,
+            height: 28
+          })), r.createElement("div", {
+            className: "descr-con"
+          }, r.createElement("p", {
+            className: "descr bold"
+          }, "If you made a transaction but haven't received your reward, no worries."), r.createElement("p", {
+            className: "descr"
+          }, "Rewards are being processed, and you'll get credited soon.")), r.createElement("div", {
+            className: "got-it",
+            onClick: t
+          }, "Got it")))
         };
-      var u = e => {
+      var p = e => {
         let {
           toastId: t,
           type: n,
           message: r,
           imgCode: o
         } = e;
-        (0, i.Am)(c, {
+        if ("tonTxSuccess" === t) return (0, i.Am)(d, {
+          autoClose: 1e6,
+          className: "custom-toast",
+          closeButton: !1,
+          hideProgressBar: !0,
+          toastId: null != t ? t : "custom-toast",
+          data: {
+            type: n,
+            message: r,
+            imgCode: o
+          }
+        });
+        (0, i.Am)(u, {
           autoClose: 4e3,
           className: "custom-toast",
           closeButton: !1,
@@ -2417,11 +2435,11 @@
         }, t))
       }
     },
-    8367: function(e, t, n) {
+    4402: function(e, t, n) {
       "use strict";
       n.r(t), n.d(t, {
         default: function() {
-          return eZ
+          return eX
         }
       });
       var r = n(6656),
@@ -4623,10 +4641,32 @@
           })
         },
         eN = n(9155),
-        eD = n(7009),
-        eI = n(2783);
+        eD = n(1513),
+        eI = n(5152),
+        e$ = n.n(eI),
+        eB = n(3725);
+      let eU = e$()(() => Promise.all([n.e(296), n.e(260)]).then(n.t.bind(n, 9260, 23)).then(e => e), {
+        ssr: !1
+      });
+      var eV = e => {
+        let {
+          isShow: t
+        } = e, n = (0, o.useRef)(null);
+        return (0, o.useEffect)(() => {
+          let e = null;
+          return n.current && (t ? n.current.goToAndPlay(0, !0) : e = setTimeout(() => {
+            n.current.goToAndStop(0, !0)
+          }, 3e3)), () => () => {
+            clearTimeout(e)
+          }
+        }, [t, n.current]), o.createElement(eU, {
+          lottieRef: n,
+          animationData: eB,
+          loop: !0
+        })
+      };
       n(6649);
-      var e$ = () => {
+      var eW = () => {
         let {
           webApp: e
         } = (0, ew.fW)();
@@ -4636,7 +4676,7 @@
           className: "main-wrap"
         }, o.createElement("div", {
           className: "anim-wrap"
-        }, o.createElement(eI.Z, {
+        }, o.createElement(eV, {
           isShow: !0
         })), o.createElement("div", {
           className: "title"
@@ -4645,11 +4685,11 @@
           onClick: () => e.openTelegramLink("https://t.me/pawsupfam")
         }, "Stay tuned")))
       };
-      let eB = ["Component"];
-      var eU = e => {
+      let eG = ["Component"];
+      var eF = e => {
           let {
             Component: t
-          } = e, n = (0, m.Z)(e, eB), r = (0, eb.TL)(), [i, a] = (0, o.useState)(!1), [s, l] = (0, o.useState)(!1), c = async () => {
+          } = e, n = (0, m.Z)(e, eG), r = (0, eb.TL)(), [i, a] = (0, o.useState)(!1), [s, l] = (0, o.useState)(!1), c = async () => {
             try {
               var e, t, n, i, o, s, c, u;
               let d = await (0, eN.Z)("/user/auth", {
@@ -4681,20 +4721,19 @@
           };
           return (0, o.useEffect)(() => {
             c()
-          }, []), o.createElement(o.Fragment, null, s && o.createElement(e$, null), i && !s && o.createElement(o.Fragment, null, o.createElement(t, n)))
+          }, []), o.createElement(o.Fragment, null, s && o.createElement(eW, null), i && !s && o.createElement(o.Fragment, null, o.createElement(t, n)))
         },
-        eV = n(4298),
-        eW = n.n(eV),
-        eG = () => o.createElement("div", null, o.createElement(eW(), {
-          defer: !0,
-          "data-domain": "app.paws.community",
-          src: "https://plausible.io/js/script.js"
+        eH = n(4298),
+        eK = n.n(eH),
+        eq = () => o.createElement("div", null, o.createElement(eK(), {
+          async: !0,
+          src: "https://scripts.simpleanalyticscdn.com/latest.js"
         }));
       n(8231), n(1691), n(5389), n(5889);
-      var eF = n(2959),
-        eH = n(3454);
+      var ez = n(2959),
+        eZ = n(3454);
 
-      function eK(e, t) {
+      function eY(e, t) {
         var n = Object.keys(e);
         if (Object.getOwnPropertySymbols) {
           var r = Object.getOwnPropertySymbols(e);
@@ -4705,18 +4744,18 @@
         return n
       }
 
-      function eq(e) {
+      function eJ(e) {
         for (var t = 1; t < arguments.length; t++) {
           var n = null != arguments[t] ? arguments[t] : {};
-          t % 2 ? eK(Object(n), !0).forEach(function(t) {
+          t % 2 ? eY(Object(n), !0).forEach(function(t) {
             (0, r.Z)(e, t, n[t])
-          }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : eK(Object(n)).forEach(function(t) {
+          }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : eY(Object(n)).forEach(function(t) {
             Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
           })
         }
         return e
       }
-      class ez extends s() {
+      class eQ extends s() {
         constructor(e) {
           super(e), this.state = {
             isLoading: !0,
@@ -4730,19 +4769,19 @@
             initialReduxState: n,
             clientSideDispatches: r
           } = this.props;
-          return o.createElement(ew.Eo, null, o.createElement(eF.LD, {
+          return o.createElement(ew.Eo, null, o.createElement(ez.LD, {
             manifestUrl: "https://storage.googleapis.com/p-a-w-s/tonconnect-manifest-production.json"
           }, o.createElement(ek, {
             initialReduxState: n,
             clientSideDispatches: r
           }, o.createElement("div", {
             id: "next-app"
-          }, o.createElement(eM, t), o.createElement(eU, (0, i.Z)({
+          }, o.createElement(eM, t), o.createElement(eF, (0, i.Z)({
             Component: e
-          }, t)), o.createElement(eG, null), o.createElement(ey.Ix, null)))))
+          }, t)), o.createElement(eq, null), o.createElement(ey.Ix, null)))))
         }
       }
-      ez.getInitialProps = async e => {
+      eQ.getInitialProps = async e => {
         let {
           ctx: t
         } = e;
@@ -4751,17 +4790,17 @@
           accessToken: n,
           refreshToken: r
         } = t.query;
-        return (n || r) && (await (0, em.setCookie)("".concat("paws", "-accessToken"), n, eq(eq({}, t), {}, {
-          domain: eH.env.APP_DOMAIN
-        })), await (0, em.setCookie)("".concat("paws", "-refreshToken"), r, eq(eq({}, t), {}, {
-          domain: eH.env.APP_DOMAIN
-        }))), eq(eq({}, await s().getInitialProps(e)), {}, {
+        return (n || r) && (await (0, em.setCookie)("".concat("paws", "-accessToken"), n, eJ(eJ({}, t), {}, {
+          domain: eZ.env.APP_DOMAIN
+        })), await (0, em.setCookie)("".concat("paws", "-refreshToken"), r, eJ(eJ({}, t), {}, {
+          domain: eZ.env.APP_DOMAIN
+        }))), eJ(eJ({}, await s().getInitialProps(e)), {}, {
           pathname: t.pathname,
           initialReduxState: null,
           clientSideDispatches: [(0, ev.Ep)(!0)]
         })
       };
-      var eZ = function(e) {
+      var eX = function(e) {
         var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : null;
         return d()(function(n) {
           var r, a, s = (n.pageProps || {})._nextI18Next,
@@ -4794,7 +4833,7 @@
             key: l
           }, n))
         }, e)
-      }(ez)
+      }(eQ)
     },
     9195: function(e, t, n) {
       "use strict";
@@ -4999,7 +5038,7 @@
     },
     1118: function(e, t, n) {
       (window.__NEXT_P = window.__NEXT_P || []).push(["/_app", function() {
-        return n(8367)
+        return n(4402)
       }])
     },
     4441: function(e, t) {

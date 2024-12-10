@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width" />
   <meta name="next-head-count" content="2" />
   <link data-next-font="" rel="preconnect" href="/" crossorigin="anonymous" />
-  <style data-href="/_next/static/css/e98255243ddef19d.css" data-n-g="">
+  <style data-href="/_next/static/css/88877215dc901123.css" data-n-g="">
     @charset "UTF-8";
 
     .Toastify__toast-container {
@@ -46,6 +46,38 @@
       font-weight: 400;
       line-height: 18px;
       color: #fff
+    }
+
+    .Toastify__toast-container .custom-toast .Toastify__toast-body .custom-toast-content.success-tx .img-con {
+      width: 28px;
+      min-width: 28px;
+      margin-right: 13px
+    }
+
+    .Toastify__toast-container .custom-toast .Toastify__toast-body .custom-toast-content.success-tx .content-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center
+    }
+
+    .Toastify__toast-container .custom-toast .Toastify__toast-body .custom-toast-content.success-tx .descr {
+      text-align: justify;
+      font-weight: 400
+    }
+
+    .Toastify__toast-container .custom-toast .Toastify__toast-body .custom-toast-content.success-tx .descr.bold {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 4px
+    }
+
+    .Toastify__toast-container .custom-toast .Toastify__toast-body .custom-toast-content.success-tx .got-it {
+      min-width: max-content;
+      margin-left: 24px;
+      color: #0095fd;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 22px
     }
 
     .maintenance-screen-con {
@@ -13301,7 +13333,7 @@
       color: #000
     }
   </style>
-  <style data-href="/_next/static/css/49ab6186b44b9641.css" data-n-p="">
+  <style data-href="/_next/static/css/f0d5786cd5cc9894.css" data-n-p="">
     .preloader-continaer {
       display: flex;
       flex-direction: column;
@@ -15913,7 +15945,121 @@
       }
     }
 
-    .votes-tab-con {
+    .winner-splash-screen-con .descr-con .title {
+      font-size: 43px;
+      line-height: 85%;
+      margin: 0
+    }
+
+    .winner-splash-screen-con .descr-con .descr {
+      font-size: 102px;
+      font-weight: 700;
+      line-height: 85%;
+      color: #fff;
+      margin: 0
+    }
+
+    .winner-splash-screen-con .img-con {
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-grow: 1;
+      overflow: hidden;
+      pointer-events: none
+    }
+
+    .winner-splash-screen-con .img-con .img-wrap {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 650px
+    }
+
+    @media screen and (max-height:650px) {
+      .winner-splash-screen-con .img-con .img-wrap {
+        width: 550px
+      }
+    }
+
+    .winner-splash-screen-con .shapes-con {
+      position: absolute;
+      top: -17vw;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 1
+    }
+
+    .winner-splash-screen-con .shapes-con .shape-item {
+      position: absolute;
+      width: 70%
+    }
+
+    .winner-splash-screen-con .shapes-con .shape-item.item-1 {
+      top: 20%;
+      left: 45%
+    }
+
+    .winner-splash-screen-con .shapes-con .shape-item.item-5 {
+      top: 52%;
+      left: 40%
+    }
+
+    .winner-splash-screen-con .shapes-con .shape-item.item-7 {
+      top: 10%;
+      left: 0
+    }
+
+    .winner-splash-screen-con .shapes-con .shape-item.item-8 {
+      top: 45%;
+      left: 0
+    }
+
+    .winner-allocation-screen .btn-next {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      width: calc(100% - 32px);
+      margin-bottom: 40px;
+      height: 55px;
+      border-radius: 12px;
+      background: #4c9ce2;
+      font-size: 18px;
+      font-weight: 400
+    }
+
+    .winner-allocation-screen .custom-slider-window {
+      flex-direction: column;
+      align-items: center
+    }
+
+    .winner-allocation-screen .custom-slider-window .default-wrapper {
+      padding-bottom: 16px
+    }
+
+    .winner-paws-allocation-screen {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0
+    }
+
+    .winner-paws-allocation-screen.is-hide {
+      animation: is-hide-anim .25s ease-in-out forwards
+    }
+
+    .winner-paws-allocation-screen.is-show {
+      animation: is-show-anim .25s ease-in-out forwards
+    }
+
+    .milestones-tab-con {
       position: absolute;
       top: 0;
       left: 0;
@@ -15928,34 +16074,33 @@
       scrollbar-width: none
     }
 
-    .votes-tab-con::-webkit-scrollbar {
+    .milestones-tab-con::-webkit-scrollbar {
       display: none
     }
 
-    .votes-tab-con.is-hide {
+    .milestones-tab-con.is-hide {
       animation: is-hide-anim .25s ease-in-out forwards
     }
 
-    .votes-tab-con.is-show {
+    .milestones-tab-con.is-show {
       animation: is-show-anim .25s ease-in-out forwards
     }
 
-    .votes-tab-con .section-con {
+    .milestones-tab-con .section-con {
       width: 100%;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      margin-bottom: 25px
+      align-items: center
     }
 
-    .votes-tab-con .section-con .heading-con {
+    .milestones-tab-con .section-con .heading-con {
       width: 100%;
       text-align: left;
       margin-bottom: 18px
     }
 
-    .votes-tab-con .section-con .heading-con .heading-text {
-      margin-bottom: 12px;
+    .milestones-tab-con .section-con .heading-con .heading-text {
+      margin-bottom: 4px;
       color: #fff;
       font-size: 35px;
       font-weight: 400;
@@ -15963,19 +16108,19 @@
       text-transform: uppercase
     }
 
-    @media screen and (min-height:650px) {
-      .votes-tab-con .section-con .heading-con .heading-text {
-        font-size: 45px
-      }
-    }
-
     @media screen and (max-width:360px) {
-      .votes-tab-con .section-con .heading-con .heading-text {
+      .milestones-tab-con .section-con .heading-con .heading-text {
         font-size: 38px
       }
     }
 
-    .votes-tab-con .section-con .heading-con .heading-descr {
+    @media screen and (min-height:760px) {
+      .milestones-tab-con .section-con .heading-con .heading-text {
+        font-size: 45px
+      }
+    }
+
+    .milestones-tab-con .section-con .heading-con .heading-descr {
       margin-bottom: 6px;
       display: flex;
       align-items: center;
@@ -15986,266 +16131,420 @@
       text-transform: uppercase
     }
 
-    .votes-tab-con .section-con .heading-con .heading-descr .strong {
-      margin-right: 7px;
+    .milestones-tab-con .section-con .heading-con .heading-descr .strong {
+      margin-left: 7px;
       color: #fff
     }
 
-    .votes-tab-con .section-con .heading-con .heading-descr .strong.with-ml {
+    .milestones-tab-con .section-con .heading-con .heading-descr .strong.with-ml {
       margin-left: 7px
     }
 
-    @media screen and (min-height:650px) {
-      .votes-tab-con .section-con .heading-con .heading-descr {
-        font-size: 32px
-      }
-    }
-
     @media screen and (max-width:400px) {
-      .votes-tab-con .section-con .heading-con .heading-descr {
+      .milestones-tab-con .section-con .heading-con .heading-descr {
         font-size: 26px
       }
     }
 
-    .votes-tab-con .section-con .type-select {
+    @media screen and (min-height:760px) {
+      .milestones-tab-con .section-con .heading-con .heading-descr {
+        font-size: 32px
+      }
+    }
+
+    .milestones-tab-con .btns-con {
+      display: flex
+    }
+
+    .milestones-tab-con .btns-con .btn-item {
       display: flex;
-      background: hsla(240, 5%, 48%, .08);
-      border-radius: 9px;
+      justify-content: center;
+      align-items: center;
+      min-height: 50px;
       width: 100%;
-      margin-bottom: 18px
-    }
-
-    .votes-tab-con .section-con .type-select .type-item {
-      padding: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-grow: 1;
-      border-radius: 9px;
-      color: #fff;
-      transition: all .5s
-    }
-
-    .votes-tab-con .section-con .type-select .type-item.active {
-      background: #fff;
-      color: #000
-    }
-
-    .votes-tab-con .section-con .type-select .type-item .count {
-      margin-left: 5px;
-      padding: 0 5px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
-      color: #fff;
-      background-color: #5a5a5a;
-      min-width: 18px;
-      min-height: 18px;
-      border-radius: 16px
-    }
-
-    .votes-tab-con .section-con .section-items-con {
-      padding: 16px;
-      border-radius: 16px;
-      background: #151516;
-      width: 100%
-    }
-
-    .votes-tab-con .section-con .section-items-con.no-active .lottie-con {
-      margin: 0 auto 20px;
-      width: 74px;
-      height: 74px
-    }
-
-    .votes-tab-con .section-con .section-items-con.no-active .descr {
-      font-size: 24px;
-      font-weight: 700;
-      line-height: 125%;
-      text-align: center
-    }
-
-    .votes-tab-con .section-con .section-items-con .list-heading-con {
-      position: relative;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      margin-bottom: 18px
-    }
-
-    .votes-tab-con .section-con .section-items-con .list-heading-con .total-votes-con {
-      position: absolute;
-      left: 0;
-      top: 0;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 22px
-    }
-
-    .votes-tab-con .section-con .section-items-con .list-heading-con .total-votes-con .descr {
-      font-weight: 600
-    }
-
-    .votes-tab-con .section-con .section-items-con .list-heading-con .timer-con {
-      position: absolute;
-      right: 0;
-      top: 0;
-      min-width: 70px;
-      border-radius: 100px;
-      text-align: right;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 22px
-    }
-
-    .votes-tab-con .section-con .section-items-con .list-heading-con .timer-con .descr {
-      font-weight: 600
-    }
-
-    .votes-tab-con .section-con .section-items-con .list-heading-con .timer-con.end {
-      font-size: 14px;
-      padding: 4px 12px;
-      border-radius: 100px;
-      background: #fff;
-      color: #090809
-    }
-
-    .votes-tab-con .section-con .section-items-con .list-heading-con .logo-con {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 96px;
-      height: 96px;
-      border-radius: 50%;
-      overflow: hidden
-    }
-
-    .votes-tab-con .section-con .section-items-con .event-info-con {
-      text-align: center;
-      margin-bottom: 22px
-    }
-
-    .votes-tab-con .section-con .section-items-con .event-info-con .title {
-      font-size: 22px;
-      font-style: normal;
-      font-weight: 700;
-      margin-bottom: 4px
-    }
-
-    .votes-tab-con .section-con .section-items-con .event-info-con .descr {
-      font-size: 17px;
-      font-style: normal;
+      border-radius: 12px;
+      background: #4c9ce2;
+      font-size: 20px;
       font-weight: 600;
-      line-height: 22px
-    }
-
-    .votes-tab-con .section-con .section-items-con .options-list-con {
-      width: 100%
-    }
-
-    .votes-tab-con .section-con .section-items-con .options-list-con .options-list-item {
-      position: relative;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 10px;
-      padding: 5px 0 9px
-    }
-
-    .votes-tab-con .section-con .section-items-con .options-list-con .options-list-item:last-child {
-      margin-bottom: 0
-    }
-
-    .votes-tab-con .section-con .section-items-con .options-list-con .options-list-item:last-child .line {
-      display: none
-    }
-
-    .votes-tab-con .section-con .section-items-con .options-list-con .options-list-item .main-wrap {
-      display: flex;
-      align-items: center;
-      margin-right: 10px;
+      color: #fff;
       flex-grow: 1
     }
 
-    .votes-tab-con .section-con .section-items-con .options-list-con .options-list-item .main-wrap .icon-con {
-      width: 40px;
-      min-width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      overflow: hidden;
-      margin-right: 10px
+    .milestones-tab-con .btns-con .info-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 12px;
+      background: #243d53;
+      height: 100%;
+      aspect-ratio: 1;
+      margin-left: 12px
     }
 
-    .votes-tab-con .section-con .section-items-con .options-list-con .options-list-item .main-wrap .descr-con {
+    .milestones-tab-con .milestone-info-con {
+      position: relative;
+      margin-bottom: 16px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between
+    }
+
+    .milestones-tab-con .milestone-info-con .info-btn {
+      border-radius: 6px;
+      background: #fff;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      bottom: 45px;
+      right: 0;
+      z-index: 3
+    }
+
+    .milestones-tab-con .milestone-info-con .general-stats-con {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: space-between;
+      width: 100%
+    }
+
+    .milestones-tab-con .milestone-info-con .general-stats-con .stat-item {
+      text-align: left;
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 18px
+    }
+
+    .milestones-tab-con .milestone-info-con .general-stats-con .stat-item .descr {
+      font-weight: 400
+    }
+
+    .milestones-tab-con .milestone-info-con .general-stats-con .stat-item.align-right {
+      text-align: right
+    }
+
+    .milestones-tab-con .milestone-info-con .round-progress-con {
+      position: relative;
+      width: 80%;
+      aspect-ratio: 1;
+      margin: -15px auto 10px;
+      max-width: 250px
+    }
+
+    @media screen and (min-height:700px) {
+      .milestones-tab-con .milestone-info-con .round-progress-con {
+        width: 90%;
+        max-width: 300px
+      }
+    }
+
+    @media screen and (min-height:760px) {
+      .milestones-tab-con .milestone-info-con .round-progress-con {
+        width: 100%;
+        max-width: 350px
+      }
+    }
+
+    .milestones-tab-con .milestone-info-con .round-progress-con .circular-border {
+      width: 100%;
+      height: 100%;
+      transform: rotate(90deg)
+    }
+
+    .milestones-tab-con .milestone-info-con .round-progress-con .circular-border .CircularProgressbar-trail {
+      stroke-dasharray: 301px, 301px;
+      stroke-dashoffset: 0
+    }
+
+    .milestones-tab-con .milestone-info-con .round-progress-con .CircularProgressbar {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      transform: rotate(90deg);
+      z-index: 2
+    }
+
+    .milestones-tab-con .milestone-info-con .round-progress-con .CircularProgressbar .CircularProgressbar-path {
+      stroke-linecap: round;
+      stroke-dasharray: 301px, 301px;
+      transition: all 1.5s ease-in-out
+    }
+
+    .milestones-tab-con .milestone-info-con .round-progress-con .CircularProgressbar.round {
+      transition: all 1.5s ease-in-out;
+      z-index: 1;
+      animation: dot-indicator-animated 5s ease-in-out infinite
+    }
+
+    @keyframes dot-indicator-animated {
+      0% {
+        opacity: .5
+      }
+
+      50% {
+        opacity: 1
+      }
+
+      to {
+        opacity: .5
+      }
+    }
+
+    .milestones-tab-con .milestone-info-con .round-progress-con .current-milestone-info {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center
+    }
+
+    .milestones-tab-con .milestone-info-con .round-progress-con .current-milestone-info .descr {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 125%;
+      opacity: .3
+    }
+
+    @media screen and (min-width:390px) {
+      .milestones-tab-con .milestone-info-con .round-progress-con .current-milestone-info .descr {
+        font-size: 16px
+      }
+    }
+
+    @media screen and (max-height:760px) {
+      .milestones-tab-con .milestone-info-con .round-progress-con .current-milestone-info .descr {
+        font-size: 14px
+      }
+    }
+
+    .milestones-tab-con .milestone-info-con .round-progress-con .current-milestone-info .reward {
+      font-size: 25px;
+      font-weight: 700;
+      line-height: 125%
+    }
+
+    .milestones-tab-con .milestone-info-con .round-progress-con .current-milestone-info .line {
+      width: 50%;
+      margin: 4px auto 0;
+      height: 1px;
+      background-color: #1a2a37
+    }
+
+    .milestones-tab-con .milestone-info-con .round-progress-con .current-milestone-info .current-amount {
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 125%
+    }
+
+    @media screen and (min-width:390px) {
+      .milestones-tab-con .milestone-info-con .round-progress-con .current-milestone-info .current-amount {
+        font-size: 54px
+      }
+    }
+
+    @media screen and (max-height:760px) {
+      .milestones-tab-con .milestone-info-con .round-progress-con .current-milestone-info .current-amount {
+        font-size: 30px
+      }
+    }
+
+    .milestones-tab-con .milestone-info-con .round-progress-con .current-milestone-info .current-milestone {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 125%;
+      opacity: .3
+    }
+
+    @media screen and (min-width:390px) {
+      .milestones-tab-con .milestone-info-con .round-progress-con .current-milestone-info .current-milestone {
+        font-size: 16px
+      }
+    }
+
+    @media screen and (max-height:760px) {
+      .milestones-tab-con .milestone-info-con .round-progress-con .current-milestone-info .current-milestone {
+        font-size: 14px
+      }
+    }
+
+    .milestones-tab-con .milestone-info-con .round-progress-con .current-milestone-info .currency {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 125%
+    }
+
+    @media screen and (min-width:390px) {
+      .milestones-tab-con .milestone-info-con .round-progress-con .current-milestone-info .currency {
+        font-size: 16px
+      }
+    }
+
+    @media screen and (max-height:760px) {
+      .milestones-tab-con .milestone-info-con .round-progress-con .current-milestone-info .currency {
+        font-size: 14px
+      }
+    }
+
+    .milestones-tab-con .milestone-info-con .only-con {
+      width: 100%;
+      text-align: center;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 105%;
+      margin-top: -15px;
+      color: #5a5a5a
+    }
+
+    .milestones-tab-con .milestone-info-con .only-con .strong {
+      font-weight: 400;
+      color: #fff
+    }
+
+    .stars-animation-con {
+      position: absolute;
+      inset: 0;
+      line-height: 1;
+      pointer-events: none
+    }
+
+    .stars-animation-con .star-animation-item {
+      position: absolute;
+      width: .5rem;
+      height: .5rem;
+      animation: stars-animation 5s forwards;
+      animation-delay: var(--_duration-shift);
+      color: #d7b180;
+      font-size: 8px;
+      opacity: 0;
+      transform: translate(0);
+      pointer-events: none
+    }
+
+    @keyframes stars-animation {
+      0% {
+        opacity: 0;
+        transform: translate(0)
+      }
+
+      15% {
+        opacity: 1
+      }
+
+      to {
+        opacity: 0;
+        transform: translate(var(--_shift-x), var(--_shift-y))
+      }
+    }
+
+    .ton-tx-modal-content {
+      padding: 25px 16px 40px;
+      width: 100%;
+      position: relative
+    }
+
+    .ton-tx-modal-content .cross-con {
+      position: absolute;
+      top: 20px;
+      right: 30px
+    }
+
+    .ton-tx-modal-content .confirmation-wrapper {
+      width: 100%;
+      padding-top: 30px
+    }
+
+    .ton-tx-modal-content .confirmation-wrapper .confirmation-con {
+      display: flex;
+      flex-direction: column;
+      text-align: center
+    }
+
+    .ton-tx-modal-content .confirmation-wrapper .confirmation-con .line {
+      width: 80%;
+      height: 1px;
+      background: #252527;
+      margin: 0 auto 20px
+    }
+
+    .ton-tx-modal-content .confirmation-wrapper .confirmation-con .contriburion-con {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 36px
+    }
+
+    .ton-tx-modal-content .confirmation-wrapper .confirmation-con .contriburion-con .desrc {
+      color: #8e8e93;
       font-size: 16px;
+      font-style: normal;
       font-weight: 400;
       line-height: 22px
     }
 
-    .votes-tab-con .section-con .section-items-con .options-list-con .options-list-item .main-wrap .descr-con .votes-count {
-      display: flex;
-      align-items: center;
-      font-size: 11px;
-      font-style: normal;
-      font-weight: 590;
-      line-height: 14px
+    @media screen and (min-width:370px) {
+      .ton-tx-modal-content .confirmation-wrapper .confirmation-con .contriburion-con .desrc {
+        font-size: 18px
+      }
     }
 
-    .votes-tab-con .section-con .section-items-con .options-list-con .options-list-item .main-wrap .descr-con .votes-count .star-con {
-      margin-left: 3px;
-      margin-right: 5px;
-      width: 12px;
-      max-width: 12px;
-      padding-bottom: 3px
+    .ton-tx-modal-content .confirmation-wrapper .confirmation-con .contriburion-con .amount {
+      font-size: 28px;
+      font-weight: 400
     }
 
-    .votes-tab-con .section-con .section-items-con .options-list-con .options-list-item .main-wrap .descr-con .votes-count .sub-descr {
-      color: #444445
+    @media screen and (min-width:370px) {
+      .ton-tx-modal-content .confirmation-wrapper .confirmation-con .contriburion-con .amount {
+        font-size: 36px
+      }
     }
 
-    .votes-tab-con .section-con .section-items-con .options-list-con .options-list-item .vote-btn {
-      padding: 6px 21px;
-      font-size: 12px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 18px;
-      background-color: #fff;
-      color: #000;
-      border-radius: 75px
+    .ton-tx-modal-content .confirmation-wrapper .confirmation-con .contriburion-con .amount .dif {
+      color: #8e8e93;
+      font-size: 16px;
+      margin-left: 10px
     }
 
-    .votes-tab-con .section-con .section-items-con .options-list-con .options-list-item .line {
-      position: absolute;
-      bottom: 0;
-      right: -16px;
-      width: calc(100% - 34px);
-      height: 1px;
-      background: #5a5a5a;
-      opacity: .5
+    @media screen and (min-width:370px) {
+      .ton-tx-modal-content .confirmation-wrapper .confirmation-con .contriburion-con .amount .dif {
+        font-size: 18px
+      }
     }
 
-    .votes-tab-con .section-con .section-items-con .calculation-block .line {
-      margin: 16px auto;
-      width: calc(100% - 34px);
-      height: 1px;
-      background: #5a5a5a;
-      opacity: .5
+    .ton-tx-modal-content .confirmation-wrapper .confirmation-con .heading {
+      font-size: 17px;
+      margin-bottom: 32px;
+      font-weight: 400
     }
 
-    .votes-tab-con .section-con .section-items-con .calculation-block .lottie-con {
-      margin: 0 auto 11px;
-      width: 74px;
-      height: 74px
+    .ton-tx-modal-content .confirmation-wrapper .confirmation-con .main-img-con {
+      margin-bottom: 18px
     }
 
-    .votes-tab-con .section-con .section-items-con .calculation-block .descr {
-      text-align: center
+    .ton-tx-modal-content .confirmation-wrapper .confirmation-con .title {
+      font-size: 22px;
+      margin-bottom: 9px;
+      font-weight: 400
     }
 
-    .votes-tab-con .section-con .section-items-con .calculation-block .link,
-    .votes-tab-con .section-con .section-items-con .terms {
-      padding-top: 10px;
+    .ton-tx-modal-content .confirmation-wrapper .confirmation-con .descr {
+      font-size: 16px;
+      margin-bottom: 16px;
+      font-weight: 600;
+      line-height: 20px
+    }
+
+    .ton-tx-modal-content .confirmation-wrapper .confirmation-con .link {
+      margin-top: 20px;
+      margin-bottom: 15px;
       text-align: center;
       color: #4ba4ff;
       font-size: 15px;
@@ -16256,72 +16555,102 @@
       text-decoration-line: underline
     }
 
-    .votes-tab-con .section-con .section-items-con .terms .descr {
-      margin: 0 auto;
-      width: -moz-fit-content;
-      width: fit-content
-    }
-
-    .votes-tab-con .section-con .section-items-con.completed-list .completed-list-item {
+    .ton-tx-modal-content .confirmation-wrapper .confirmation-con .btn-item {
       display: flex;
+      justify-content: center;
       align-items: center;
-      margin-bottom: 16px
-    }
-
-    .votes-tab-con .section-con .section-items-con.completed-list .completed-list-item:last-child {
-      margin-bottom: 0
-    }
-
-    .votes-tab-con .section-con .section-items-con.completed-list .completed-list-item .img-con {
-      display: flex;
-      align-items: center;
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      overflow: hidden;
-      margin-right: 10px
-    }
-
-    .votes-tab-con .section-con .section-items-con.completed-list .completed-list-item .title {
-      font-size: 16px;
-      font-weight: 600;
-      line-height: 22px
-    }
-
-    .vote-modal-con {
-      padding: 24px 16px 40px;
+      min-height: 50px;
       width: 100%;
-      position: relative
+      border-radius: 12px;
+      background: #4c9ce2;
+      font-size: 20px;
+      font-weight: 600;
+      color: #fff
     }
 
-    .vote-modal-con .cross-con {
-      position: absolute;
-      top: 30px;
-      right: 30px
+    .ton-tx-modal-content .purchase-content-con {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      text-align: center
     }
 
-    .vote-modal-con .main-info-con {
+    .ton-tx-modal-content .purchase-content-con .main-info-con {
       display: flex;
       flex-direction: column;
       align-items: center
     }
 
-    .vote-modal-con .main-info-con .img-con {
-      margin-bottom: 8px;
-      width: 96px;
-      height: 96px;
-      border-radius: 50%;
-      overflow: hidden
-    }
-
-    .vote-modal-con .main-info-con .descr {
-      font-size: 19px;
+    .ton-tx-modal-content .purchase-content-con .main-info-con .descr {
+      font-size: 16px;
       font-weight: 600;
       margin-bottom: 20px
     }
 
-    .vote-modal-con .vote-descr {
-      font-size: 17px;
+    .ton-tx-modal-content .purchase-content-con .vote-descr {
+      font-size: 17px
+    }
+
+    .ton-tx-modal-content .purchase-content-con .vote-descr .bold {
+      margin-left: 5px;
+      font-weight: 700
+    }
+
+    .ton-tx-modal-content .purchase-content-con .input-wrapper {
+      margin-bottom: 18px;
+      width: 100%;
+      padding: 0 35px
+    }
+
+    .ton-tx-modal-content .purchase-content-con .input-wrapper .start-range-con .custom-range-wrapper {
+      background-color: rgba(76, 156, 226, .5)
+    }
+
+    .ton-tx-modal-content .purchase-content-con .input-wrapper .start-range-con .custom-range-wrapper .custom-range-con .progress-indicator-con {
+      background: #4c9ce2
+    }
+
+    .ton-tx-modal-content .purchase-content-con .input-wrapper .start-range-con .custom-range-wrapper .custom-range-con .progress-indicator-con .progress-indicator-item {
+      border: 2px solid #4c9ce2
+    }
+
+    .ton-tx-modal-content .purchase-content-con .input-wrapper .start-range-con .custom-range-wrapper .custom-range-con .progress-indicator-con .star-animation-item path {
+      fill: #fff
+    }
+
+    .ton-tx-modal-content .purchase-content-con .input-wrapper .start-range-con .bubble-wrapper .bubble-con {
+      background: #4c9ce2
+    }
+
+    .ton-tx-modal-content .purchase-content-con .input-wrapper .start-range-con .bubble-wrapper .bubble-con .star-animation-item {
+      color: #4c9ce2
+    }
+
+    .ton-tx-modal-content .purchase-content-con .input-wrapper .start-range-con .bubble-wrapper .bubble-con .speedo-wrap:after,
+    .ton-tx-modal-content .purchase-content-con .input-wrapper .start-range-con .bubble-wrapper .bubble-con .speedo-wrap:before {
+      background: linear-gradient(180deg, #4c9ce2, transparent)
+    }
+
+    .ton-tx-modal-content .purchase-content-con .input-wrapper .start-range-con .bubble-wrapper .bubble-con .angle-con path {
+      fill: #4c9ce2
+    }
+
+    .ton-tx-modal-content .purchase-content-con .input-wrapper .line {
+      margin-top: 24px;
+      width: 100%;
+      height: 1px;
+      background: #252527
+    }
+
+    .ton-tx-modal-content .purchase-content-con .w-paws {
+      color: #9f9f9f;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px
+    }
+
+    .ton-tx-modal-content .purchase-content-con .vote-descr {
+      font-size: 14px;
       font-style: normal;
       font-weight: 600;
       line-height: 120%;
@@ -16330,12 +16659,11 @@
       margin: 0 auto 34px
     }
 
-    .vote-modal-con .vote-descr .bold {
-      margin-left: 5px;
+    .ton-tx-modal-content .purchase-content-con .vote-descr .bold-text {
       font-weight: 700
     }
 
-    .vote-modal-con .top-senders-heading {
+    .ton-tx-modal-content .purchase-content-con .top-senders-heading {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -16344,10 +16672,10 @@
       margin: 0 auto 16px
     }
 
-    .vote-modal-con .top-senders-heading .top-senders-title {
-      padding: 5px 11px;
+    .ton-tx-modal-content .purchase-content-con .top-senders-heading .top-senders-title {
+      padding: 4px 11px;
       border-radius: 56.25px;
-      background: #fdb725;
+      background: #4c9ce2;
       font-size: 12px;
       line-height: 23.625px;
       font-weight: 400;
@@ -16356,7 +16684,7 @@
       z-index: 2
     }
 
-    .vote-modal-con .top-senders-heading .line {
+    .ton-tx-modal-content .purchase-content-con .top-senders-heading .line {
       width: 100%;
       height: 1px;
       background: #252527;
@@ -16366,20 +16694,7 @@
       z-index: 1
     }
 
-    .vote-modal-con .input-wrapper {
-      margin-bottom: 18px;
-      width: 100%;
-      padding: 0 35px
-    }
-
-    .vote-modal-con .input-wrapper .line {
-      margin-top: 24px;
-      width: 100%;
-      height: 1px;
-      background: #252527
-    }
-
-    .vote-modal-con .top-senders-con {
+    .ton-tx-modal-content .purchase-content-con .top-senders-con {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -16387,11 +16702,11 @@
       width: 100%
     }
 
-    .vote-modal-con .top-senders-con .sender-item-wrapper {
+    .ton-tx-modal-content .purchase-content-con .top-senders-con .sender-item-wrapper {
       width: 25%
     }
 
-    .vote-modal-con .top-senders-con .sender-item-wrapper .sender-item {
+    .ton-tx-modal-content .purchase-content-con .top-senders-con .sender-item-wrapper .sender-item {
       display: flex;
       align-items: center;
       flex-direction: column;
@@ -16399,12 +16714,12 @@
       font-weight: 600
     }
 
-    .vote-modal-con .top-senders-con .sender-item-wrapper .sender-item .avatar-con {
+    .ton-tx-modal-content .purchase-content-con .top-senders-con .sender-item-wrapper .sender-item .avatar-con {
       position: relative;
       margin-bottom: 20px
     }
 
-    .vote-modal-con .top-senders-con .sender-item-wrapper .sender-item .avatar-con .img-con {
+    .ton-tx-modal-content .purchase-content-con .top-senders-con .sender-item-wrapper .sender-item .avatar-con .img-con {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -16415,11 +16730,11 @@
       font-size: 18px
     }
 
-    .vote-modal-con .top-senders-con .sender-item-wrapper .sender-item .avatar-con .count-con {
+    .ton-tx-modal-content .purchase-content-con .top-senders-con .sender-item-wrapper .sender-item .avatar-con .count-con {
       display: flex;
       align-items: center;
       border-radius: 22.196px;
-      background: #fdb725;
+      background: #4c9ce2;
       font-size: 10.556px;
       font-style: normal;
       font-weight: 700;
@@ -16432,12 +16747,12 @@
       transform: translateX(-50%)
     }
 
-    .vote-modal-con .top-senders-con .sender-item-wrapper .sender-item .avatar-con .count-con .icon-con {
+    .ton-tx-modal-content .purchase-content-con .top-senders-con .sender-item-wrapper .sender-item .avatar-con .count-con .icon-con {
       margin-left: 3px;
       padding-bottom: 1px
     }
 
-    .vote-modal-con .top-senders-con .sender-item-wrapper .sender-item .name-con {
+    .ton-tx-modal-content .purchase-content-con .top-senders-con .sender-item-wrapper .sender-item .name-con {
       overflow: hidden;
       text-overflow: ellipsis;
       width: 100%;
@@ -16446,49 +16761,51 @@
       font-size: 12.667px
     }
 
-    .vote-modal-con .line {
+    .ton-tx-modal-content .purchase-content-con .line {
       width: calc(100% - 70px);
       margin: 0 auto 16px;
       height: 1px;
       background: #252527
     }
 
-    .vote-modal-con .show-me-con {
+    .ton-tx-modal-content .purchase-content-con .send-btn {
+      margin-bottom: 22px;
+      min-height: 50px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 20px
+      border-radius: 10px;
+      background: #4c9ce2;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 22px
     }
 
-    .vote-modal-con .show-me-con .check-con path,
-    .vote-modal-con .show-me-con .check-con rect {
-      transition: .2s
-    }
-
-    .vote-modal-con .show-me-con .check-con circle {
-      opacity: 0;
-      transition: .2s
-    }
-
-    .vote-modal-con .show-me-con .check-con.disabled circle {
-      opacity: 1
-    }
-
-    .vote-modal-con .show-me-con .check-con.disabled path,
-    .vote-modal-con .show-me-con .check-con.disabled rect {
-      opacity: 0
-    }
-
-    .vote-modal-con .show-me-con .descr {
+    .ton-tx-modal-content .purchase-content-con .send-btn .icon-con {
+      line-height: 0;
       margin-left: 8px;
-      margin-bottom: 0;
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 510;
-      line-height: 120%
+      margin-right: 3px
     }
 
-    .vote-modal-con .ton-icon-con {
+    .ton-tx-modal-content .purchase-content-con .send-btn .loader-con {
+      width: 50px
+    }
+
+    .ton-tx-modal-content .purchase-content-con .sub-descr {
+      color: #9f9f9f;
+      font-size: 12px
+    }
+
+    .ton-tx-modal-content .purchase-content-con .sub-descr .link {
+      color: #4c9ce2
+    }
+
+    .ton-tx-modal-content .success-content-con {
+      width: 100%;
+      text-align: center
+    }
+
+    .ton-tx-modal-content .success-content-con .ton-icon-con {
       width: 96px;
       height: 96px;
       border-radius: 50%;
@@ -16496,78 +16813,56 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 18px
+      margin: 0 auto 36px
     }
 
-    .vote-modal-con .ton-icon-con.check {
+    .ton-tx-modal-content .success-content-con .ton-icon-con.check {
       background-color: #34c759
     }
 
-    .vote-modal-con .title {
-      text-align: center;
+    .ton-tx-modal-content .success-content-con .title {
       margin-bottom: 8px;
       font-size: 22px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 28px
+      font-weight: 60
     }
 
-    .vote-modal-con .descr {
-      text-align: center;
-      margin-bottom: 28px;
-      font-size: 17px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: 22px
+    .ton-tx-modal-content .success-content-con .descr {
+      margin-bottom: 27px;
+      font-size: 17px
     }
 
-    .vote-modal-con .send-btn {
-      min-height: 50px;
+    .ton-tx-modal-content .success-content-con .values-con {
+      width: 100%;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 10px;
-      background: #3f88f7;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 22px
+      justify-content: space-around;
+      margin-bottom: 24px
     }
 
-    .vote-modal-con .send-btn .icon-con {
-      line-height: 0;
-      margin-left: 8px;
-      margin-right: 3px;
-      padding-bottom: 3px
-    }
-
-    .vote-modal-con .send-btn .loader-con {
-      width: 50px
-    }
-
-    .vote-modal-con .you-pay-con {
-      margin-bottom: 16px;
-      text-align: center
-    }
-
-    .vote-modal-con .you-pay-con .deacr-small {
+    .ton-tx-modal-content .success-content-con .values-con .value-item .descr {
       margin-bottom: 4px;
-      font-size: 12px;
-      font-weight: 600;
-      line-height: 100%
+      font-size: 12px
     }
 
-    .vote-modal-con .you-pay-con .pay-amount {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .ton-tx-modal-content .success-content-con .values-con .value-item .amount {
       font-size: 22px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 28px
+      font-weight: 400
     }
 
-    .vote-modal-con .you-pay-con .pay-amount .icon-con {
-      margin-left: 3px
+    .ton-tx-modal-content .success-content-con .stars-animation-con .star-animation-item {
+      color: #62acff
+    }
+
+    .ton-tx-modal-content .success-content-con .btn-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 50px;
+      width: 100%;
+      border-radius: 12px;
+      background: #4c9ce2;
+      font-size: 20px;
+      font-weight: 600;
+      color: #fff
     }
 
     .speedo-wrap {
@@ -16598,6 +16893,19 @@
       user-select: none;
       border-radius: 100px;
       overflow: hidden
+    }
+
+    .start-range-con .custom-range-wrapper .min-max-con {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      padding: 0 10px;
+      z-index: 1;
+      pointer-events: none
     }
 
     .start-range-con .custom-range-wrapper .custom-range-con {
@@ -16746,167 +17054,17 @@
       bottom: -1px;
       transform: rotate(180deg)
     }
-
-    .stars-animation-con {
-      position: absolute;
-      inset: 0;
-      line-height: 1;
-      pointer-events: none
-    }
-
-    .stars-animation-con .star-animation-item {
-      position: absolute;
-      width: .5rem;
-      height: .5rem;
-      animation: stars-animation 5s forwards;
-      animation-delay: var(--_duration-shift);
-      color: #d7b180;
-      font-size: 8px;
-      opacity: 0;
-      transform: translate(0);
-      pointer-events: none
-    }
-
-    @keyframes stars-animation {
-      0% {
-        opacity: 0;
-        transform: translate(0)
-      }
-
-      15% {
-        opacity: 1
-      }
-
-      to {
-        opacity: 0;
-        transform: translate(var(--_shift-x), var(--_shift-y))
-      }
-    }
-
-    .winner-splash-screen-con .descr-con .title {
-      font-size: 43px;
-      line-height: 85%;
-      margin: 0
-    }
-
-    .winner-splash-screen-con .descr-con .descr {
-      font-size: 102px;
-      font-weight: 700;
-      line-height: 85%;
-      color: #fff;
-      margin: 0
-    }
-
-    .winner-splash-screen-con .img-con {
-      width: 100%;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      flex-grow: 1;
-      overflow: hidden;
-      pointer-events: none
-    }
-
-    .winner-splash-screen-con .img-con .img-wrap {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 650px
-    }
-
-    @media screen and (max-height:650px) {
-      .winner-splash-screen-con .img-con .img-wrap {
-        width: 550px
-      }
-    }
-
-    .winner-splash-screen-con .shapes-con {
-      position: absolute;
-      top: -17vw;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      pointer-events: none;
-      z-index: 1
-    }
-
-    .winner-splash-screen-con .shapes-con .shape-item {
-      position: absolute;
-      width: 70%
-    }
-
-    .winner-splash-screen-con .shapes-con .shape-item.item-1 {
-      top: 20%;
-      left: 45%
-    }
-
-    .winner-splash-screen-con .shapes-con .shape-item.item-5 {
-      top: 52%;
-      left: 40%
-    }
-
-    .winner-splash-screen-con .shapes-con .shape-item.item-7 {
-      top: 10%;
-      left: 0
-    }
-
-    .winner-splash-screen-con .shapes-con .shape-item.item-8 {
-      top: 45%;
-      left: 0
-    }
-
-    .winner-allocation-screen .btn-next {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #fff;
-      width: calc(100% - 32px);
-      margin-bottom: 40px;
-      height: 55px;
-      border-radius: 12px;
-      background: #4c9ce2;
-      font-size: 18px;
-      font-weight: 400
-    }
-
-    .winner-allocation-screen .custom-slider-window {
-      flex-direction: column;
-      align-items: center
-    }
-
-    .winner-allocation-screen .custom-slider-window .default-wrapper {
-      padding-bottom: 16px
-    }
-
-    .winner-paws-allocation-screen {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      opacity: 0
-    }
-
-    .winner-paws-allocation-screen.is-hide {
-      animation: is-hide-anim .25s ease-in-out forwards
-    }
-
-    .winner-paws-allocation-screen.is-show {
-      animation: is-show-anim .25s ease-in-out forwards
-    }
   </style><noscript data-n-css=""></noscript>
   <script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script>
   <script src="/telegram-web-app.js" defer="" data-nscript="beforeInteractive"></script>
-  <script src="/_next/static/chunks/webpack-999dda19c4148124.js" defer=""></script>
+  <script src="/_next/static/chunks/webpack-234a408de47f65b2.js" defer=""></script>
   <script src="/_next/static/chunks/framework-5429a50ba5373c56.js" defer=""></script>
   <script src="/_next/static/chunks/main-7cfd392e3607cf8f.js" defer=""></script>
-  <script src="/_next/static/chunks/pages/_app-cd9e28b7155cda4f.js" defer=""></script>
-  <script src="/_next/static/chunks/810-9a92dad5b384cff9.js" defer=""></script>
-  <script src="/_next/static/chunks/pages/index-e0dc7363a8504db7.js" defer=""></script>
-  <script src="/_next/static/sjeYx6XRXmkNU2AOt83Lg/_buildManifest.js" defer=""></script>
-  <script src="/_next/static/sjeYx6XRXmkNU2AOt83Lg/_ssgManifest.js" defer=""></script>
+  <script src="/_next/static/chunks/pages/_app-67cd323945b2cced.js" defer=""></script>
+  <script src="/_next/static/chunks/832-78cf7dd7bae1ce96.js" defer=""></script>
+  <script src="/_next/static/chunks/pages/index-977a520a082c0ddb.js" defer=""></script>
+  <script src="/_next/static/vqz6qBWtaL3S840_jvUfO/_buildManifest.js" defer=""></script>
+  <script src="/_next/static/vqz6qBWtaL3S840_jvUfO/_ssgManifest.js" defer=""></script>
 </head>
 
 <body>
@@ -16958,7 +17116,7 @@
       },
       "page": "/",
       "query": {},
-      "buildId": "sjeYx6XRXmkNU2AOt83Lg",
+      "buildId": "vqz6qBWtaL3S840_jvUfO",
       "isFallback": false,
       "isExperimentalCompile": false,
       "gssp": true,
