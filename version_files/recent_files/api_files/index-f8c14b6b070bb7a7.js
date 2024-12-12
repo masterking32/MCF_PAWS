@@ -1404,7 +1404,7 @@
           className: "date"
         }, p()(m.date).format("MMMM DD"), " at ", p()(m.date).format("HH:mm")), "quests" === l && !!F && a.createElement("p", {
           className: "reward-count"
-        }, "+ ", k(F, ","), " PAWS"))), a.createElement("div", {
+        }, "+ ", -1 === F ? "???" : k(F, ","), " PAWS"))), a.createElement("div", {
           className: "points"
         }, "quests" !== l && !!F && a.createElement(a.Fragment, null, a.createElement("p", null, "+", k(F, ","), " PAWS"), a.createElement("p", {
           className: "descr"
@@ -3140,7 +3140,7 @@
         ["#E2BC4C", "#FFF89D"],
         ["#B8561C", "#FFB26E"],
         ["#b8391c", "#ff846e"],
-        ["#0084FF", "rgba(0,0,0,0)"]
+        ["#0084FFFF", "#EF34AF7F"]
       ];
       var iB = t => {
         let {
@@ -3153,7 +3153,7 @@
         return (0, a.useEffect)(() => {
           if (!i) return h(301), () => {};
           let t = Object.keys(s).findIndex(t => t > e && s[t] > 0);
-          y(t);
+          if (y(t), -1 === t) return c(0), l(0), h(150), () => {};
           let a = Object.keys(s)[t] || Object.keys(s)[Object.keys(s).length - 1];
           l(a), c(s[a] || s[Object.keys(s)[Object.keys(s).length - 1]]);
           let r = Object.keys(s)[t - 1] || 0,
@@ -3180,7 +3180,9 @@
           withSymbols: !1,
           onComplete: () => {}
         })))), a.createElement("span", null), a.createElement("div", {
-          className: "round-progress-con"
+          className: "round-progress-con ".concat(x ? "" : "infinity")
+        }, a.createElement("div", {
+          className: "circle-con"
         }, a.createElement("svg", {
           className: "circular-border",
           viewBox: "0 0 100 100"
@@ -3194,7 +3196,7 @@
         })), a.createElement("svg", {
           className: "CircularProgressbar",
           viewBox: "0 0 100 100"
-        }, a.createElement("defs", null, a.createElement("linearGradient", {
+        }, a.createElement("defs", null, x && a.createElement("linearGradient", {
           id: "paint0_linear_2870_570",
           x1: "100",
           y1: "100",
@@ -3206,6 +3208,26 @@
         }), a.createElement("stop", {
           offset: "1",
           stopColor: d
+        })), !x && a.createElement("linearGradient", {
+          id: "paint0_linear_2870_570",
+          x1: "0",
+          y1: "100",
+          x2: "10",
+          y2: "0",
+          gradientUnits: "userSpaceOnUse"
+        }, a.createElement("stop", {
+          stopColor: "#0084FF"
+        }), a.createElement("stop", {
+          offset: "0.38092",
+          stopColor: "#6B5EF7"
+        }), a.createElement("stop", {
+          offset: "0.700187",
+          stopColor: "#EF34AF",
+          stopOpacity: "0.5"
+        }), a.createElement("stop", {
+          offset: "1",
+          stopColor: "#953CFA",
+          stopOpacity: "0"
         }))), a.createElement("path", {
           className: "CircularProgressbar-path",
           d: "M 50,50 m 0,-48 a 48,48 0 1 1 0,96 a 48,48 0 1 1 0,-96",
@@ -3247,25 +3269,25 @@
             strokeDashoffset: "".concat(301, "px")
           },
           transform: "scale(0.87) translate(9, 8)"
-        })), a.createElement("div", {
+        }))), a.createElement("div", {
           className: "current-milestone-info"
         }, a.createElement("div", {
           className: "descr"
         }, "Reward"), a.createElement("div", {
           className: "reward"
-        }, k(x, ","), " PAWS"), a.createElement("div", {
+        }, x ? k(x, ",") : "?? ???", " PAWS"), a.createElement("div", {
           className: "line"
         }), a.createElement("div", {
           className: "current-amount"
         }, T(e, 2, ",")), a.createElement("div", {
           className: "current-milestone"
-        }, "/ ", k(n, ",")), a.createElement("div", {
+        }, "/ ", n ? k(n, ",") : "∞"), a.createElement("div", {
           className: "currency"
-        }, "wPAWS"))), e < n && a.createElement("div", {
+        }, "wPAWS"))), a.createElement("div", {
           className: "only-con"
         }, "Only ", a.createElement("span", {
           className: "strong"
-        }, k(Math.ceil(n - e), ","), " wPAWS"), " remaining to unlock", a.createElement("br", null), " the next milestone reward"))
+        }, x ? k(Math.ceil(n - e), ",") : "?? ???", " wPAWS"), " remaining to unlock", a.createElement("br", null), " the next milestone reward"))
       };
 
       function iV(t, i) {

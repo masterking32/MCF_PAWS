@@ -13333,7 +13333,7 @@
       color: #000
     }
   </style>
-  <style data-href="/_next/static/css/f0d5786cd5cc9894.css" data-n-p="">
+  <style data-href="/_next/static/css/445342179c0db4f3.css" data-n-p="">
     .preloader-continaer {
       display: flex;
       flex-direction: column;
@@ -16258,7 +16258,8 @@
 
     .milestones-tab-con .milestone-info-con .round-progress-con .circular-border .CircularProgressbar-trail {
       stroke-dasharray: 301px, 301px;
-      stroke-dashoffset: 0
+      stroke-dashoffset: 0;
+      stroke-linecap: round
     }
 
     .milestones-tab-con .milestone-info-con .round-progress-con .CircularProgressbar {
@@ -16294,6 +16295,20 @@
 
       to {
         opacity: .5
+      }
+    }
+
+    .milestones-tab-con .milestone-info-con .round-progress-con.infinity .circle-con {
+      animation: inf-round-circle 100s linear infinite
+    }
+
+    @keyframes inf-round-circle {
+      0% {
+        transform: rotate(0deg)
+      }
+
+      to {
+        transform: rotate(1turn)
       }
     }
 
@@ -17057,14 +17072,14 @@
   </style><noscript data-n-css=""></noscript>
   <script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script>
   <script src="/telegram-web-app.js" defer="" data-nscript="beforeInteractive"></script>
-  <script src="/_next/static/chunks/webpack-234a408de47f65b2.js" defer=""></script>
+  <script src="/_next/static/chunks/webpack-ea3cc4a332a95e0d.js" defer=""></script>
   <script src="/_next/static/chunks/framework-5429a50ba5373c56.js" defer=""></script>
   <script src="/_next/static/chunks/main-7cfd392e3607cf8f.js" defer=""></script>
   <script src="/_next/static/chunks/pages/_app-67cd323945b2cced.js" defer=""></script>
   <script src="/_next/static/chunks/832-78cf7dd7bae1ce96.js" defer=""></script>
-  <script src="/_next/static/chunks/pages/index-0990bac52b4ad971.js" defer=""></script>
-  <script src="/_next/static/D9rLaOOL8wM7iT1JcNfcW/_buildManifest.js" defer=""></script>
-  <script src="/_next/static/D9rLaOOL8wM7iT1JcNfcW/_ssgManifest.js" defer=""></script>
+  <script src="/_next/static/chunks/pages/index-f8c14b6b070bb7a7.js" defer=""></script>
+  <script src="/_next/static/yZMwNYaHK-UmVjIwAS5d0/_buildManifest.js" defer=""></script>
+  <script src="/_next/static/yZMwNYaHK-UmVjIwAS5d0/_ssgManifest.js" defer=""></script>
 </head>
 
 <body>
@@ -17116,7 +17131,7 @@
       },
       "page": "/",
       "query": {},
-      "buildId": "D9rLaOOL8wM7iT1JcNfcW",
+      "buildId": "yZMwNYaHK-UmVjIwAS5d0",
       "isFallback": false,
       "isExperimentalCompile": false,
       "gssp": true,
