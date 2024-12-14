@@ -13004,7 +13004,7 @@
         value: !0
       }), t.newSecureWords = void 0;
       let n = r(7983),
-        i = r(3731);
+        i = r(7829);
       async function o(e = 6) {
         let t = [];
         for (let r = 0; r < e; r++) t.push(i.wordlist[await (0, n.getSecureRandomNumber)(0, i.wordlist.length)]);
@@ -13012,7 +13012,7 @@
       }
       t.newSecureWords = o
     },
-    3731: function(e, t) {
+    7829: function(e, t) {
       "use strict";
       Object.defineProperty(t, "__esModule", {
         value: !0
