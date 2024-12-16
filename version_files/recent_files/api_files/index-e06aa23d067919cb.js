@@ -2403,20 +2403,23 @@
           }, d[i.id])))), !x && !m[n].length && a.createElement("div", {
             className: "empty-list"
           }, "No quests yet"), x && a.createElement(i$, null), !x && a.createElement(a.Fragment, null, Object.keys(h).map(i => {
-            var t, r, s, x;
+            var t, r, s, x, c, n;
             return a.createElement("div", {
               key: "questsGroups".concat(i),
-              className: "section-items-con quests quests-group"
+              className: "section-items-con quests quests-group",
+              style: {
+                backgroundImage: "url(".concat(null === (t = h[i]) || void 0 === t ? void 0 : null === (r = t[0]) || void 0 === r ? void 0 : r.groupBgUrl, ")")
+              }
             }, a.createElement("div", {
               className: "group-heading-con"
             }, a.createElement("div", {
               className: "icon-con"
             }, a.createElement(o(), {
-              src: null === (t = h[i]) || void 0 === t ? void 0 : null === (r = t[0]) || void 0 === r ? void 0 : r.groupIconUrl,
+              src: null === (s = h[i]) || void 0 === s ? void 0 : null === (x = s[0]) || void 0 === x ? void 0 : x.groupIconUrl,
               alt: "",
               width: 27,
               height: 27
-            })), null === (s = h[i]) || void 0 === s ? void 0 : null === (x = s[0]) || void 0 === x ? void 0 : x.groupTitle), h[i].map(i => a.createElement(a.Fragment, {
+            })), null === (c = h[i]) || void 0 === c ? void 0 : null === (n = c[0]) || void 0 === n ? void 0 : n.groupTitle), a.createElement("div", null, h[i].map(i => a.createElement(a.Fragment, {
               key: "questsGroupsItem".concat(i._id)
             }, "customScroll" !== i.action && a.createElement(iw, {
               type: "quests",
@@ -2424,7 +2427,7 @@
               onStatusChange: u,
               onTimeOut: p,
               redirectToTab: e
-            }))))
+            })))))
           }), a.createElement("div", {
             className: "section-items-con quests"
           }, !!m[n].length && m[n].map(i => void 0 === i.groupId && a.createElement(a.Fragment, {
