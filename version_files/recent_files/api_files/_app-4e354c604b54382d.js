@@ -2280,11 +2280,38 @@
         },
         u = () => (0, r.useContext)(l)
     },
+    2783: function(e, t, n) {
+      "use strict";
+      var r = n(7294),
+        i = n(5152),
+        o = n.n(i),
+        a = n(3725);
+      let s = o()(() => Promise.all([n.e(296), n.e(260)]).then(n.t.bind(n, 9260, 23)).then(e => e), {
+        ssr: !1
+      });
+      t.Z = e => {
+        let {
+          isShow: t
+        } = e, n = (0, r.useRef)(null);
+        return (0, r.useEffect)(() => {
+          let e = null;
+          return n.current && (t ? n.current.goToAndPlay(0, !0) : e = setTimeout(() => {
+            n.current.goToAndStop(0, !0)
+          }, 3e3)), () => () => {
+            clearTimeout(e)
+          }
+        }, [t, n.current]), r.createElement(s, {
+          lottieRef: n,
+          animationData: a,
+          loop: !0
+        })
+      }
+    },
     1513: function(e, t, n) {
       "use strict";
       n.d(t, {
         Z: function() {
-          return p
+          return h
         }
       });
       var r = n(7294),
@@ -2292,7 +2319,8 @@
         o = n(5675),
         a = n.n(o),
         s = n(4441),
-        l = {
+        l = n(9486),
+        c = {
           src: "/_next/static/media/attention.1402a270.svg",
           height: 28,
           width: 28,
@@ -2300,7 +2328,7 @@
           blurHeight: 0
         };
       n(9962);
-      let c = {
+      let u = {
           book: {
             src: "/_next/static/media/book.6b267324.png",
             height: 55,
@@ -2309,9 +2337,10 @@
             blurWidth: 6,
             blurHeight: 8
           },
-          cross: s.Z
+          cross: s.Z,
+          check: l.Z
         },
-        u = e => {
+        d = e => {
           let {
             data: t
           } = e, {
@@ -2323,10 +2352,10 @@
             className: "custom-toast-content".concat("error" === n ? " error" : "")
           }, r.createElement("div", {
             className: "content-wrapper"
-          }, c[o] && r.createElement("div", {
+          }, u[o] && r.createElement("div", {
             className: "img-con"
           }, r.createElement(a(), {
-            src: c[o],
+            src: u[o],
             alt: "",
             width: 26,
             height: 29
@@ -2339,7 +2368,7 @@
             }
           }))))
         },
-        d = e => {
+        p = e => {
           let {
             closeToast: t
           } = e;
@@ -2350,7 +2379,7 @@
           }, r.createElement("div", {
             className: "img-con"
           }, r.createElement(a(), {
-            src: l,
+            src: c,
             alt: "",
             width: 28,
             height: 28
@@ -2365,14 +2394,14 @@
             onClick: t
           }, "Got it")))
         };
-      var p = e => {
+      var h = e => {
         let {
           toastId: t,
           type: n,
           message: r,
           imgCode: o
         } = e;
-        if ("tonTxSuccess" === t) return (0, i.Am)(d, {
+        if ("tonTxSuccess" === t) return (0, i.Am)(p, {
           autoClose: 1e6,
           className: "custom-toast",
           closeButton: !1,
@@ -2384,7 +2413,7 @@
             imgCode: o
           }
         });
-        (0, i.Am)(u, {
+        (0, i.Am)(d, {
           autoClose: 4e3,
           className: "custom-toast",
           closeButton: !1,
@@ -2438,11 +2467,11 @@
         }, t))
       }
     },
-    4402: function(e, t, n) {
+    8367: function(e, t, n) {
       "use strict";
       n.r(t), n.d(t, {
         default: function() {
-          return eX
+          return eZ
         }
       });
       var r = n(7462),
@@ -4646,31 +4675,9 @@
         eN = n(1163),
         eD = n(9155),
         eI = n(1513),
-        e$ = n(5152),
-        eB = n.n(e$),
-        eU = n(3725);
-      let eV = eB()(() => Promise.all([n.e(296), n.e(260)]).then(n.t.bind(n, 9260, 23)).then(e => e), {
-        ssr: !1
-      });
-      var eW = e => {
-        let {
-          isShow: t
-        } = e, n = (0, o.useRef)(null);
-        return (0, o.useEffect)(() => {
-          let e = null;
-          return n.current && (t ? n.current.goToAndPlay(0, !0) : e = setTimeout(() => {
-            n.current.goToAndStop(0, !0)
-          }, 3e3)), () => () => {
-            clearTimeout(e)
-          }
-        }, [t, n.current]), o.createElement(eV, {
-          lottieRef: n,
-          animationData: eU,
-          loop: !0
-        })
-      };
+        e$ = n(2783);
       n(6649);
-      var eG = () => {
+      var eB = () => {
         let {
           webApp: e
         } = (0, ew.fW)();
@@ -4680,7 +4687,7 @@
           className: "main-wrap"
         }, o.createElement("div", {
           className: "anim-wrap"
-        }, o.createElement(eW, {
+        }, o.createElement(e$.Z, {
           isShow: !0
         })), o.createElement("div", {
           className: "title"
@@ -4689,11 +4696,11 @@
           onClick: () => e.openTelegramLink("https://t.me/pawsupfam")
         }, "Stay tuned")))
       };
-      let eF = ["Component"];
-      var eH = e => {
+      let eU = ["Component"];
+      var eV = e => {
           let {
             Component: t
-          } = e, n = (0, m.Z)(e, eF), r = (0, eb.TL)(), {
+          } = e, n = (0, m.Z)(e, eU), r = (0, eb.TL)(), {
             pathname: i
           } = (0, eN.useRouter)(), [a, s] = (0, o.useState)(!1), [l, c] = (0, o.useState)(!1), u = async () => {
             try {
@@ -4728,18 +4735,18 @@
           return (0, o.useEffect)(() => {
             if ("/" === i) return u(), () => {};
             s(!0)
-          }, []), o.createElement(o.Fragment, null, l && o.createElement(eG, null), a && !l && o.createElement(o.Fragment, null, o.createElement(t, n)))
+          }, []), o.createElement(o.Fragment, null, l && o.createElement(eB, null), a && !l && o.createElement(o.Fragment, null, o.createElement(t, n)))
         },
-        eK = n(4298),
-        eq = n.n(eK),
-        ez = () => o.createElement("div", null, o.createElement(eq(), {
+        eW = n(4298),
+        eG = n.n(eW),
+        eF = () => o.createElement("div", null, o.createElement(eG(), {
           async: !0,
           src: "https://scripts.simpleanalyticscdn.com/latest.js"
         }));
       n(8231), n(1691), n(5389), n(5889);
-      var eZ = n(3454);
+      var eH = n(3454);
 
-      function eY(e, t) {
+      function eK(e, t) {
         var n = Object.keys(e);
         if (Object.getOwnPropertySymbols) {
           var r = Object.getOwnPropertySymbols(e);
@@ -4750,18 +4757,18 @@
         return n
       }
 
-      function eJ(e) {
+      function eq(e) {
         for (var t = 1; t < arguments.length; t++) {
           var n = null != arguments[t] ? arguments[t] : {};
-          t % 2 ? eY(Object(n), !0).forEach(function(t) {
+          t % 2 ? eK(Object(n), !0).forEach(function(t) {
             (0, i.Z)(e, t, n[t])
-          }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : eY(Object(n)).forEach(function(t) {
+          }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : eK(Object(n)).forEach(function(t) {
             Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
           })
         }
         return e
       }
-      class eQ extends s() {
+      class ez extends s() {
         constructor(e) {
           super(e), (0, i.Z)(this, "appWrapper", () => {
             let {
@@ -4785,12 +4792,12 @@
             clientSideDispatches: i
           }, o.createElement("div", {
             id: "next-app"
-          }, o.createElement(eM, t), o.createElement(eH, (0, r.Z)({
+          }, o.createElement(eM, t), o.createElement(eV, (0, r.Z)({
             Component: e
-          }, t)), o.createElement(ez, null), o.createElement(ey.Ix, null))))
+          }, t)), o.createElement(eF, null), o.createElement(ey.Ix, null))))
         }
       }
-      eQ.getInitialProps = async e => {
+      ez.getInitialProps = async e => {
         let {
           ctx: t
         } = e;
@@ -4799,17 +4806,17 @@
           accessToken: n,
           refreshToken: r
         } = t.query;
-        return (n || r) && (await (0, em.setCookie)("".concat("paws", "-accessToken"), n, eJ(eJ({}, t), {}, {
-          domain: eZ.env.APP_DOMAIN
-        })), await (0, em.setCookie)("".concat("paws", "-refreshToken"), r, eJ(eJ({}, t), {}, {
-          domain: eZ.env.APP_DOMAIN
-        }))), eJ(eJ({}, await s().getInitialProps(e)), {}, {
+        return (n || r) && (await (0, em.setCookie)("".concat("paws", "-accessToken"), n, eq(eq({}, t), {}, {
+          domain: eH.env.APP_DOMAIN
+        })), await (0, em.setCookie)("".concat("paws", "-refreshToken"), r, eq(eq({}, t), {}, {
+          domain: eH.env.APP_DOMAIN
+        }))), eq(eq({}, await s().getInitialProps(e)), {}, {
           pathname: t.pathname,
           initialReduxState: null,
           clientSideDispatches: [(0, ev.Ep)(!0)]
         })
       };
-      var eX = function(e) {
+      var eZ = function(e) {
         var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : null;
         return d()(function(n) {
           var i, a, s = (n.pageProps || {})._nextI18Next,
@@ -4842,7 +4849,7 @@
             key: l
           }, n))
         }, e)
-      }(eQ)
+      }(ez)
     },
     9195: function(e, t, n) {
       "use strict";
@@ -4878,7 +4885,7 @@
       "use strict";
       n.d(t, {
         C0: function() {
-          return p
+          return f
         },
         Ep: function() {
           return s
@@ -4887,19 +4894,25 @@
           return a
         },
         UD: function() {
-          return c
+          return d
+        },
+        W2: function() {
+          return l
         },
         av: function() {
-          return h
-        },
-        r7: function() {
-          return f
-        },
-        x5: function() {
           return g
         },
+        r7: function() {
+          return m
+        },
+        uf: function() {
+          return c
+        },
+        x5: function() {
+          return y
+        },
         x7: function() {
-          return d
+          return h
         }
       });
       var r = n(6656);
@@ -4931,6 +4944,7 @@
           initialState: {
             isMobile: !1,
             isTonTxModalOpen: !1,
+            isSolWalletModalOpen: !1,
             chatId: 0,
             user: {
               badgeTier: 0,
@@ -5006,6 +5020,9 @@
             setIsMobile: (e, t) => {
               e.isMobile = t.payload
             },
+            setIsSolWalletModalOpen: (e, t) => {
+              e.isSolWalletModalOpen = t.payload
+            },
             setUser: (e, t) => {
               e.user = o(o({}, e.user), t.payload)
             },
@@ -5014,6 +5031,9 @@
             },
             setUserWallet: (e, t) => {
               e.user.userData.wallet = t.payload
+            },
+            setUserSolWallet: (e, t) => {
+              e.user.userData.solanaWallet = t.payload
             },
             setOnboarding: (e, t) => {
               e.onboarding = o(o({}, e.onboarding), t.payload)
@@ -5034,14 +5054,16 @@
         }),
         {
           setIsMobile: s,
-          pushTabHistory: l,
-          setIsWinnerModalModalOpen: c,
-          setIsTonTxModalOpen: u,
-          incBalance: d,
-          setUserWallet: p,
-          setUser: h,
-          setUserWPaws: f,
-          setOnboarding: g
+          setIsSolWalletModalOpen: l,
+          setUserSolWallet: c,
+          pushTabHistory: u,
+          setIsWinnerModalModalOpen: d,
+          setIsTonTxModalOpen: p,
+          incBalance: h,
+          setUserWallet: f,
+          setUser: g,
+          setUserWPaws: m,
+          setOnboarding: y
         } = a.actions
     },
     6477: function(e, t) {
@@ -5055,8 +5077,18 @@
     },
     1118: function(e, t, n) {
       (window.__NEXT_P = window.__NEXT_P || []).push(["/_app", function() {
-        return n(4402)
+        return n(8367)
       }])
+    },
+    9486: function(e, t) {
+      "use strict";
+      t.Z = {
+        src: "/_next/static/media/check.8fba744c.svg",
+        height: 15,
+        width: 17,
+        blurWidth: 0,
+        blurHeight: 0
+      }
     },
     4441: function(e, t) {
       "use strict";

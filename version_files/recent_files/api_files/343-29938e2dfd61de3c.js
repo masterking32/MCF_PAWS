@@ -1,5 +1,5 @@
 (self.webpackChunk_N_E = self.webpackChunk_N_E || []).push([
-  [832], {
+  [343], {
     9892: function(e, t, r) {
       e = r.nmd(e);
       var n, i, o, a = r(1876).Buffer;
@@ -13004,7 +13004,7 @@
         value: !0
       }), t.newSecureWords = void 0;
       let n = r(7983),
-        i = r(7829);
+        i = r(3731);
       async function o(e = 6) {
         let t = [];
         for (let r = 0; r < e; r++) t.push(i.wordlist[await (0, n.getSecureRandomNumber)(0, i.wordlist.length)]);
@@ -13012,7 +13012,7 @@
       }
       t.newSecureWords = o
     },
-    7829: function(e, t) {
+    3731: function(e, t) {
       "use strict";
       Object.defineProperty(t, "__esModule", {
         value: !0
@@ -13198,6 +13198,87 @@
         for (; e.length > 0;) t.push(parseInt(e.slice(0, 8), 2)), e = e.slice(8);
         return n.from(t)
       }
+    },
+    9578: function(e, t, r) {
+      "use strict";
+      r.d(t, {
+        Z: function() {
+          return n
+        }
+      });
+      var n = function(e) {
+        if (e.length >= 255) throw TypeError("Alphabet too long");
+        let t = new Uint8Array(256);
+        for (let e = 0; e < t.length; e++) t[e] = 255;
+        for (let r = 0; r < e.length; r++) {
+          let n = e.charAt(r),
+            i = n.charCodeAt(0);
+          if (255 !== t[i]) throw TypeError(n + " is ambiguous");
+          t[i] = r
+        }
+        let r = e.length,
+          n = e.charAt(0),
+          i = Math.log(r) / Math.log(256),
+          o = Math.log(256) / Math.log(r);
+
+        function a(e) {
+          if ("string" != typeof e) throw TypeError("Expected String");
+          if (0 === e.length) return new Uint8Array;
+          let o = 0,
+            a = 0,
+            s = 0;
+          for (; e[o] === n;) a++, o++;
+          let l = (e.length - o) * i + 1 >>> 0,
+            u = new Uint8Array(l);
+          for (; e[o];) {
+            let n = t[e.charCodeAt(o)];
+            if (255 === n) return;
+            let i = 0;
+            for (let e = l - 1;
+              (0 !== n || i < s) && -1 !== e; e--, i++) n += r * u[e] >>> 0, u[e] = n % 256 >>> 0, n = n / 256 >>> 0;
+            if (0 !== n) throw Error("Non-zero carry");
+            s = i, o++
+          }
+          let c = l - s;
+          for (; c !== l && 0 === u[c];) c++;
+          let d = new Uint8Array(a + (l - c)),
+            f = a;
+          for (; c !== l;) d[f++] = u[c++];
+          return d
+        }
+        return {
+          encode: function(t) {
+            if (t instanceof Uint8Array || (ArrayBuffer.isView(t) ? t = new Uint8Array(t.buffer, t.byteOffset, t.byteLength) : Array.isArray(t) && (t = Uint8Array.from(t))), !(t instanceof Uint8Array)) throw TypeError("Expected Uint8Array");
+            if (0 === t.length) return "";
+            let i = 0,
+              a = 0,
+              s = 0,
+              l = t.length;
+            for (; s !== l && 0 === t[s];) s++, i++;
+            let u = (l - s) * o + 1 >>> 0,
+              c = new Uint8Array(u);
+            for (; s !== l;) {
+              let e = t[s],
+                n = 0;
+              for (let t = u - 1;
+                (0 !== e || n < a) && -1 !== t; t--, n++) e += 256 * c[t] >>> 0, c[t] = e % r >>> 0, e = e / r >>> 0;
+              if (0 !== e) throw Error("Non-zero carry");
+              a = n, s++
+            }
+            let d = u - a;
+            for (; d !== u && 0 === c[d];) d++;
+            let f = n.repeat(i);
+            for (; d < u; ++d) f += e.charAt(c[d]);
+            return f
+          },
+          decodeUnsafe: a,
+          decode: function(e) {
+            let t = a(e);
+            if (t) return t;
+            throw Error("Non-base" + r + " character")
+          }
+        }
+      }("123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz")
     }
   }
 ]);
