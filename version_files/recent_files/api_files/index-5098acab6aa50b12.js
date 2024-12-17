@@ -4,10 +4,10 @@
       "use strict";
       e.r(t), e.d(t, {
         __N_SSP: function() {
-          return tj
+          return tZ
         },
         default: function() {
-          return tZ
+          return tj
         }
       });
       var a = e(7294),
@@ -267,7 +267,7 @@
             }
           }))
         },
-        w = i => {
+        F = i => {
           let {
             isStart: t
           } = i, e = (0, s.CG)(i => i.main.user.allocationData.telegram.age), r = (0, s.CG)(i => i.main.user.allocationData.telegram.premium), [o, x] = (0, a.useState)(0);
@@ -305,7 +305,7 @@
             className: "strong"
           }, p(9e8, ","))))
         },
-        F = {
+        w = {
           src: "/_next/static/media/xEmpire.68a2efdf.svg",
           height: 38,
           width: 50,
@@ -353,7 +353,7 @@
           }, a.createElement("div", {
             className: "img-con"
           }, a.createElement(o(), {
-            src: F,
+            src: w,
             alt: "",
             width: 48,
             height: 48
@@ -476,7 +476,7 @@
         let {
           onDone: t,
           isShow: e
-        } = i, r = (0, a.useRef)(), s = (0, a.useRef)(null), x = (0, a.useRef)(null), c = (0, a.useRef)(null), n = (0, a.useRef)(null), l = (0, a.useRef)(null), m = (0, a.useRef)(null), [y, k] = (0, a.useState)(!1), [u, p] = (0, a.useState)(-1), [d, v] = (0, a.useState)(-1), [A, F] = (0, a.useState)(0), [P, T] = (0, a.useState)(!1), R = [{
+        } = i, r = (0, a.useRef)(), s = (0, a.useRef)(null), x = (0, a.useRef)(null), c = (0, a.useRef)(null), n = (0, a.useRef)(null), l = (0, a.useRef)(null), m = (0, a.useRef)(null), [y, k] = (0, a.useState)(!1), [u, p] = (0, a.useState)(-1), [d, v] = (0, a.useState)(-1), [A, w] = (0, a.useState)(0), [P, T] = (0, a.useState)(!1), R = [{
           imgSrc: G,
           ref: s,
           left: -5,
@@ -536,7 +536,7 @@
           onAnimationEnd: W
         })))), a.createElement(N, {
           animPauseTime: A,
-          setAnimPauseTime: F,
+          setAnimPauseTime: w,
           onNext: () => H(1),
           onPrev: () => H(-1)
         }), a.createElement("div", {
@@ -593,7 +593,7 @@
           isStart: 3 === u
         }), a.createElement(U, {
           isStart: 4 === u
-        }), a.createElement(w, {
+        }), a.createElement(F, {
           isStart: 5 === u
         }))))
       };
@@ -667,7 +667,7 @@
           fill: "white"
         }))
       }];
-      var L = i => {
+      var M = i => {
           let {
             activeTab: t,
             setActiveTab: e
@@ -691,10 +691,10 @@
             }, o))
           }))
         },
-        M = e(7462),
+        L = e(7462),
         Y = e(6066),
-        j = e(2894),
-        Z = {
+        Z = e(2894),
+        j = {
           src: "/_next/static/media/community.cd7fff3f.svg",
           height: 32,
           width: 32,
@@ -889,7 +889,7 @@
             close: e
           } = i, {
             webApp: r
-          } = (0, j.fW)(), x = (0, s.CG)(i => i.main.user.referralData.code), c = "https://t.me/PAWSOG_bot/PAWS?startapp=".concat(x), n = "https://t.me/share/url?url=".concat(c, "&text=").concat("LFG!%0APAWS is the new top dog! \uD83D\uDC3E"), l = () => {
+          } = (0, Z.fW)(), x = (0, s.CG)(i => i.main.user.referralData.code), c = "https://t.me/PAWSOG_bot/PAWS?startapp=".concat(x), n = "https://t.me/share/url?url=".concat(c, "&text=").concat("LFG!%0APAWS is the new top dog! \uD83D\uDC3E"), l = () => {
             try {
               navigator.clipboard.writeText(c)
             } catch (i) {
@@ -1230,7 +1230,7 @@
         },
         iC = "\uD83D\uDC3E",
         iN = i => ["vote", "voteup", "votedown", "mystery", "custom", "customTon"].includes(i.code) && !["customDom"].includes(i.action);
-      var iw = i => {
+      var iF = i => {
         var t, e, r, c, n;
         let {
           type: l,
@@ -1239,9 +1239,9 @@
           onTimeOut: k,
           redirectToTab: d
         } = i, h = (0, s.TL)(), v = (0, s.CG)(i => i.main.user.userData.wallet), f = (0, s.CG)(i => i.main.user.userData.solanaWallet), A = (0, s.CG)(i => i.main.user.referralData.referralsCount), E = (0, s.CG)(i => i.main.user.chatId), [g, b] = (0, a.useState)(!1), [G, D] = (0, a.useState)(!1), B = (null == m ? void 0 : null === (t = m.progress) || void 0 === t ? void 0 : t.status) || "calculating", [V, S] = (0, a.useState)(!1), [C, N] = (0, a.useState)(!1), {
-          webApp: w
-        } = (0, j.fW)(), [F] = (0, ik.dG)(), [P, T] = (0, a.useState)(m.balance || (null == m ? void 0 : null === (e = m.rewards) || void 0 === e ? void 0 : null === (r = e.find(i => "balance" === i.code)) || void 0 === r ? void 0 : r.amount) || 0), O = () => {
-          "start" === B && (m.data.includes("t.me") ? w.openTelegramLink(m.data) : "page" === m.action ? d(m.data) : w.openLink(m.data, {
+          webApp: F
+        } = (0, Z.fW)(), [w] = (0, ik.dG)(), [P, T] = (0, a.useState)(m.balance || (null == m ? void 0 : null === (e = m.rewards) || void 0 === e ? void 0 : null === (r = e.find(i => "balance" === i.code)) || void 0 === r ? void 0 : r.amount) || 0), O = () => {
+          "start" === B && (m.data.includes("t.me") ? F.openTelegramLink(m.data) : "page" === m.action ? d(m.data) : F.openLink(m.data, {
             try_instant_view: !1,
             try_browser: !0
           }), 0 !== m.flag && "page" !== m.action && setTimeout(() => {
@@ -1305,7 +1305,7 @@
                 return R(i)
               }
               if ("soll-wallet" === i.type && !f) return h((0, x.W2)(!0));
-              if ("wallet" === i.type && !v) return F.openModal();
+              if ("wallet" === i.type && !v) return w.openModal();
               "emojiName" === i.type && I()
             }
           }
@@ -1316,8 +1316,8 @@
           "soll-wallet" === m.type && f && "start" === B && R(m)
         }, [f]), (0, a.useEffect)(() => {
           var i, t, e, a;
-          let r = null == w ? void 0 : null === (i = w.initDataUnsafe) || void 0 === i ? void 0 : null === (t = i.user) || void 0 === t ? void 0 : t.first_name,
-            o = null == w ? void 0 : null === (e = w.initDataUnsafe) || void 0 === e ? void 0 : null === (a = e.user) || void 0 === a ? void 0 : a.last_name;
+          let r = null == F ? void 0 : null === (i = F.initDataUnsafe) || void 0 === i ? void 0 : null === (t = i.user) || void 0 === t ? void 0 : t.first_name,
+            o = null == F ? void 0 : null === (e = F.initDataUnsafe) || void 0 === e ? void 0 : null === (a = e.user) || void 0 === a ? void 0 : a.last_name;
           if ("emojiName" === m.type && "finished" !== B) {
             let i = null;
             try {
@@ -1327,7 +1327,7 @@
             }
             i && 15 > u()().diff(u()(i), "minutes") && y(m._id, "pending"), (r && r.includes(iC) || o && o.includes(iC)) && "start" === B && R(m)
           }
-        }, [null == w ? void 0 : null === (c = w.initDataUnsafe) || void 0 === c ? void 0 : null === (n = c.user) || void 0 === n ? void 0 : n.first_name]), (0, a.useEffect)(() => {
+        }, [null == F ? void 0 : null === (c = F.initDataUnsafe) || void 0 === c ? void 0 : null === (n = c.user) || void 0 === n ? void 0 : n.first_name]), (0, a.useEffect)(() => {
           "referral" === m.type && "start" === B && m.counter && A >= m.counter && R(m)
         }, [A]), (0, a.useEffect)(() => {
           let i = null;
@@ -1443,7 +1443,7 @@
         }, "Time's up")))))))
       };
       e(1798);
-      var iF = i => {
+      var iw = i => {
           let {
             isOpen: t,
             close: e
@@ -1481,7 +1481,7 @@
             className: "inter title"
           }, "Your Rewards"), a.createElement("div", {
             className: "section-items-con transactions"
-          }, !!r.length && r.map((i, t) => a.createElement(iw, {
+          }, !!r.length && r.map((i, t) => a.createElement(iF, {
             key: "QuestsItem".concat(t),
             type: "transactions",
             item: i,
@@ -1555,8 +1555,8 @@
           blurWidth: 8,
           blurHeight: 8
         },
-        iL = e(5706),
-        iM = e(5201),
+        iM = e(5706),
+        iL = e(5201),
         iY = {
           src: "/_next/static/media/tonSolana.9a49cbdb.svg",
           height: 24,
@@ -1564,14 +1564,14 @@
           blurWidth: 0,
           blurHeight: 0
         },
-        ij = {
+        iZ = {
           src: "/_next/static/media/ton.21f7012b.svg",
           height: 48,
           width: 48,
           blurWidth: 0,
           blurHeight: 0
         },
-        iZ = {
+        ij = {
           src: "/_next/static/media/solana.43ffe93a.svg",
           height: 24,
           width: 24,
@@ -1605,7 +1605,7 @@
               if (!m) {
                 try {
                   y(!0);
-                  let e = i ? iM.Address.parseRaw(i).toString({
+                  let e = i ? iL.Address.parseRaw(i).toString({
                       urlSafe: !0,
                       bounceable: !1,
                       testOnly: !1
@@ -1658,14 +1658,14 @@
           let h = [{
               id: "ton",
               name: "TON",
-              icon: ij,
+              icon: iZ,
               wallet: r || "",
               onClick: () => !r && k.openModal(),
               onDisconnect: () => p("")
             }, {
               id: "sol",
               name: "SOL",
-              icon: iZ,
+              icon: ij,
               wallet: c || "",
               onClick: () => !c && t((0, x.W2)(!0)),
               onDisconnect: () => (localStorage.removeItem("phantom-".concat(e, "-address")), localStorage.removeItem("phantom-".concat(e, "-session")), d(""))
@@ -1697,7 +1697,7 @@
             className: "not-connected-indicator"
           })), a.createElement("div", {
             className: "wallet-collapse-wrapper"
-          }, a.createElement(iL.Z, {
+          }, a.createElement(iM.Z, {
             isOpen: n,
             className: "wallet-collapse"
           }, !!f.length && a.createElement("div", {
@@ -1774,7 +1774,7 @@
             openDetailInfo: e
           } = i, r = (0, s.CG)(i => i.main.user.gameData.balance), x = (0, s.CG)(i => i.main.user.gameData.wPaws), n = (0, s.CG)(i => i.main.user.badgeTier), l = (0, s.CG)(i => i.main.user.allocationData.notcoin.converted), m = (0, s.CG)(i => i.main.user.allocationData.dogs.converted), [y, k] = (0, a.useState)(!1), {
             webApp: u
-          } = (0, j.fW)(), d = a.createElement("div", {
+          } = (0, Z.fW)(), d = a.createElement("div", {
             className: "count step-2"
           }, a.createElement("div", {
             className: "text"
@@ -1858,7 +1858,7 @@
             height: 75
           }))))), a.createElement("div", {
             className: "text-carousel-con"
-          }, !!x && a.createElement(Y.Z, (0, M.Z)({
+          }, !!x && a.createElement(Y.Z, (0, L.Z)({
             className: "balance-slider"
           }, {
             arrows: !1,
@@ -1921,7 +1921,7 @@
           }, a.createElement("div", {
             className: "img-con"
           }, a.createElement(o(), {
-            src: Z,
+            src: j,
             alt: "",
             width: 32,
             height: 32
@@ -1951,7 +1951,7 @@
             alt: "",
             width: 24,
             height: 24
-          })))), a.createElement(iF, {
+          })))), a.createElement(iw, {
             isOpen: y,
             close: () => k(!1)
           }))
@@ -2206,7 +2206,7 @@
             onTimeOut: l
           } = i, {
             webApp: m
-          } = (0, j.fW)(), y = (0, s.TL)(), [k, u] = (0, a.useState)(!1), d = (null == c ? void 0 : null === (t = c.progress) || void 0 === t ? void 0 : t.status) || "calculating", [h, v] = c.data.split(","), f = 1e7 <= +h, A = c.balance || 0;
+          } = (0, Z.fW)(), y = (0, s.TL)(), [k, u] = (0, a.useState)(!1), d = (null == c ? void 0 : null === (t = c.progress) || void 0 === t ? void 0 : t.status) || "calculating", [h, v] = c.data.split(","), f = 1e7 <= +h, A = c.balance || 0;
           A || (A = (null == c ? void 0 : null === (e = c.rewards) || void 0 === e ? void 0 : null === (r = e.find(i => "balance" === i.code)) || void 0 === r ? void 0 : r.amount) || 0);
           let E = async () => {
             if (!k && "start" === d) try {
@@ -2421,7 +2421,7 @@
               height: 27
             })), null === (c = h[i]) || void 0 === c ? void 0 : null === (n = c[0]) || void 0 === n ? void 0 : n.groupTitle), a.createElement("div", null, h[i].map(i => a.createElement(a.Fragment, {
               key: "questsGroupsItem".concat(i._id)
-            }, "customScroll" !== i.action && a.createElement(iw, {
+            }, "customScroll" !== i.action && a.createElement(iF, {
               type: "quests",
               item: i,
               onStatusChange: u,
@@ -2432,7 +2432,7 @@
             className: "section-items-con quests"
           }, !!m[n].length && m[n].map(i => void 0 === i.groupId && a.createElement(a.Fragment, {
             key: "questsList".concat(i._id)
-          }, !["customScroll", "customCode", "click", "customReaction"].includes(i.action) && a.createElement(iw, {
+          }, !["customScroll", "customCode", "click", "customReaction"].includes(i.action) && a.createElement(iF, {
             type: "quests",
             item: i,
             onStatusChange: u,
@@ -2484,7 +2484,7 @@
           className: "text-carousel-wrap"
         }, a.createElement("div", {
           className: "text-carousel-con"
-        }, a.createElement(Y.Z, (0, M.Z)({
+        }, a.createElement(Y.Z, (0, L.Z)({
           className: "cat-slider"
         }, {
           arrows: !1,
@@ -3361,13 +3361,13 @@
           blurWidth: 0,
           blurHeight: 0
         };
-      let tw = ["src", "fallbackSrc"];
-      var tF = i => {
+      let tF = ["src", "fallbackSrc"];
+      var tw = i => {
         let {
           src: t,
           fallbackSrc: e = tN
-        } = i, r = (0, tC.Z)(i, tw), [s, x] = (0, a.useState)(t);
-        return a.createElement(o(), (0, M.Z)({
+        } = i, r = (0, tC.Z)(i, tF), [s, x] = (0, a.useState)(t);
+        return a.createElement(o(), (0, L.Z)({
           src: s,
           onError: () => {
             x(e)
@@ -3476,7 +3476,7 @@
               className: "avatar-con"
             }, !!e && a.createElement("div", {
               className: "img-con"
-            }, a.createElement(tF, {
+            }, a.createElement(tw, {
               src: "https://t.me/i/userpic/160/".concat(e, ".jpg"),
               width: 96,
               height: 96
@@ -3516,7 +3516,7 @@
             className: "count-con"
           }, "+", o.length - 3)), a.createElement("div", {
             className: "name-con"
-          }, "View More"))))), a.createElement(iL.Z, {
+          }, "View More"))))), a.createElement(iM.Z, {
             isOpen: n
           }, a.createElement("div", {
             className: "top-senders-con"
@@ -3535,7 +3535,7 @@
               className: "avatar-con"
             }, !!e && a.createElement("div", {
               className: "img-con"
-            }, a.createElement(tF, {
+            }, a.createElement(tw, {
               src: "https://t.me/i/userpic/160/".concat(e, ".jpg"),
               width: 96,
               height: 96
@@ -3587,7 +3587,7 @@
           blurHeight: 0
         },
         tW = e(2783);
-      let tL = i => {
+      let tM = i => {
           let {
             userId: t,
             onReceiveWalletData: e,
@@ -3611,14 +3611,14 @@
               console.error(i)
             }
           }, o.onerror = () => {
-            o.close(), a(tL({
+            o.close(), a(tM({
               userId: t,
               onReceiveWalletData: e,
               onError: a
             }))
           }, o
         },
-        tM = i => {
+        tL = i => {
           let {
             isActive: t,
             onStartConnect: e,
@@ -3643,7 +3643,7 @@
                 publicKey: e,
                 secretKey: a
               } = tU().box.keyPair();
-            return i = tL({
+            return i = tM({
               userId: x,
               onConnected: () => {
                 c(tI.Z.encode(e))
@@ -3740,36 +3740,6 @@
           }), a.createElement("div", {
             className: "name"
           }, "Connect Phantom wallet")), a.createElement("svg", {
-            xmlns: "http://www.w3.org/2000/svg",
-            width: "21",
-            height: "22",
-            viewBox: "0 0 21 22",
-            fill: "none"
-          }, a.createElement("path", {
-            d: "M7.42567 17.0349L12.8872 11.5734L7.42567 6.11182",
-            stroke: "#FFFDF8",
-            strokeWidth: "2",
-            strokeLinecap: "round",
-            strokeLinejoin: "round"
-          })))), a.createElement("div", {
-            className: "option-descr"
-          }, "Create a new Phantom wallet"), a.createElement("div", {
-            className: "options-list"
-          }, a.createElement("div", {
-            className: "option-con",
-            onClick: () => {
-              window.Telegram.WebApp.openLink("https://phantom.com/download", {
-                try_instant_view: !1,
-                try_browser: !0
-              })
-            }
-          }, a.createElement("div", {
-            className: "side-block"
-          }, a.createElement("div", {
-            className: "icon-con"
-          }), a.createElement("div", {
-            className: "name"
-          }, "Install Phantom wallet")), a.createElement("svg", {
             xmlns: "http://www.w3.org/2000/svg",
             width: "21",
             height: "22",
@@ -3909,13 +3879,13 @@
             })))
           }))), a.createElement("div", {
             className: "custom-carousel-item"
-          }, [1, 2].includes(e) && a.createElement(tM, {
+          }, [1, 2].includes(e) && a.createElement(tL, {
             isActive: 2 === e,
             onStartConnect: () => r(2),
             onSolConnect: k
           })), a.createElement("div", {
             className: "custom-carousel-item"
-          }, [1, 2].includes(e) && a.createElement(a.Fragment, null, a.createElement("div", {
+          }, [2].includes(e) && a.createElement(a.Fragment, null, a.createElement("div", {
             className: "modal-title"
           }, "Continue in Phantom"), a.createElement("div", {
             className: "modal-descr"
@@ -3928,8 +3898,8 @@
             onClick: () => r(1)
           }, "Retry")))))))
         },
-        tj = !0,
-        tZ = () => {
+        tZ = !0,
+        tj = () => {
           let i = (0, s.TL)(),
             [t, e] = (0, a.useState)("home"),
             r = (0, s.CG)(i => i.main.onboarding.isShowing),
@@ -4012,7 +3982,7 @@
             redirectToTab: e
           }), a.createElement(tO, {
             isShow: "milestones" === t
-          })), a.createElement(L, {
+          })), a.createElement(M, {
             activeTab: t,
             setActiveTab: e
           })))
