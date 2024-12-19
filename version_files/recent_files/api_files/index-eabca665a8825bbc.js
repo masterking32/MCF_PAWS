@@ -1231,40 +1231,40 @@
         iC = "\uD83D\uDC3E",
         iN = i => ["vote", "voteup", "votedown", "mystery", "custom", "customTon"].includes(i.code) && !["customDom"].includes(i.action);
       var iF = i => {
-        var t, e, r, c, n;
+        var t, e, r, c, n, l;
         let {
-          type: l,
-          item: m,
-          onStatusChange: y,
-          onTimeOut: k,
-          redirectToTab: d
-        } = i, h = (0, s.TL)(), v = (0, s.CG)(i => i.main.user.userData.wallet), f = (0, s.CG)(i => i.main.user.userData.solanaWallet), A = (0, s.CG)(i => i.main.user.referralData.referralsCount), E = (0, s.CG)(i => i.main.user.chatId), [g, b] = (0, a.useState)(!1), [G, D] = (0, a.useState)(!1), B = (null == m ? void 0 : null === (t = m.progress) || void 0 === t ? void 0 : t.status) || "calculating", [V, S] = (0, a.useState)(!1), [C, N] = (0, a.useState)(!1), {
-          webApp: F
-        } = (0, Z.fW)(), [w] = (0, ik.dG)(), [P, T] = (0, a.useState)(m.balance || (null == m ? void 0 : null === (e = m.rewards) || void 0 === e ? void 0 : null === (r = e.find(i => "balance" === i.code)) || void 0 === r ? void 0 : r.amount) || 0), O = () => {
-          "start" === B && (m.data.includes("t.me") ? F.openTelegramLink(m.data) : "page" === m.action ? d(m.data) : F.openLink(m.data, {
+          type: m,
+          item: y,
+          onStatusChange: k,
+          onTimeOut: d,
+          redirectToTab: h
+        } = i, v = (0, s.TL)(), f = (0, s.CG)(i => i.main.user.userData.wallet), A = (0, s.CG)(i => i.main.user.userData.solanaWallet), E = (0, s.CG)(i => i.main.user.referralData.referralsCount), g = (0, s.CG)(i => i.main.user.chatId), [b, G] = (0, a.useState)(!1), [D, B] = (0, a.useState)(!1), V = (null == y ? void 0 : null === (t = y.progress) || void 0 === t ? void 0 : t.status) || "calculating", [S, C] = (0, a.useState)(!1), [N, F] = (0, a.useState)(!1), {
+          webApp: w
+        } = (0, Z.fW)(), [P] = (0, ik.dG)(), [T, O] = (0, a.useState)(y.balance || (null == y ? void 0 : null === (e = y.rewards) || void 0 === e ? void 0 : null === (r = e.find(i => "balance" === i.code)) || void 0 === r ? void 0 : r.amount) || 0), R = () => {
+          "start" === V && (y.data.includes("t.me") ? w.openTelegramLink(y.data) : "page" === y.action ? h(y.data) : w.openLink(y.data, {
             try_instant_view: !1,
             try_browser: !0
-          }), 0 !== m.flag && "page" !== m.action && setTimeout(() => {
-            y(m._id, "check")
+          }), 0 !== y.flag && "page" !== y.action && setTimeout(() => {
+            k(y._id, "check")
           }, 1e3))
-        }, R = async () => {
-          if (!g) try {
-            b(!0);
+        }, U = async () => {
+          if (!b) try {
+            G(!0);
             let i = await im("/quests/completed", {
               method: "POST",
               body: {
-                questId: m._id
+                questId: y._id
               }
             });
-            !0 === i.data ? y(m._id, "claimable") : y(m._id, "pending")
+            !0 === i.data ? k(y._id, "claimable") : k(y._id, "pending")
           } catch (i) {
             console.error(i)
           } finally {
-            b(!1)
+            G(!1)
           }
-        }, U = async i => {
-          if (!g) try {
-            b(!0);
+        }, I = async i => {
+          if (!b) try {
+            G(!0);
             let a = await im("/quests/claim", {
               method: "POST",
               body: {
@@ -1273,94 +1273,94 @@
             });
             if (a.data) {
               var t, e;
-              y(m._id, "finished"), h((0, x.x7)((null === (t = a.data) || void 0 === t ? void 0 : t.amount) || P || 0)), window.dispatchEvent(new CustomEvent("transactionsHistoryUpdated")), T((null === (e = a.data) || void 0 === e ? void 0 : e.amount) || P || 0)
+              k(y._id, "finished"), v((0, x.x7)((null === (t = a.data) || void 0 === t ? void 0 : t.amount) || T || 0)), window.dispatchEvent(new CustomEvent("transactionsHistoryUpdated")), O((null === (e = a.data) || void 0 === e ? void 0 : e.amount) || T || 0)
             }
           } catch (i) {
             console.error(i)
           } finally {
-            b(!1)
+            G(!1)
           }
-        }, I = () => {
-          "start" === B ? S(!0) : y(m._id, "start")
-        }, H = i => {
-          if ("finished" !== B) {
-            if ("claimable" === B) {
-              U(i);
+        }, H = () => {
+          "start" === V ? C(!0) : k(y._id, "start")
+        }, W = i => {
+          if ("finished" !== V) {
+            if ("claimable" === V) {
+              I(i);
               return
             }
-            if (["start", "check"].includes(B)) {
-              if (["customDom"].includes(i.action)) return R(i), !0;
+            if (["start", "check"].includes(V)) {
+              if (["customDom"].includes(i.action)) return U(i), !0;
               if ("customEmoji" === i.action) {
                 var t, e, a;
                 return null === (t = window) || void 0 === t ? void 0 : null === (e = t.Telegram) || void 0 === e ? void 0 : null === (a = e.WebApp) || void 0 === a ? void 0 : a.setEmojiStatus("".concat(i.data), null, t => {
-                  t && R(i)
+                  t && U(i)
                 })
               }
-              if ("referral" === i.type) return D(!0);
+              if ("referral" === i.type) return B(!0);
               if (["social", "boost", "ton"].includes(i.type) || "link" === i.action) {
-                if ("start" === B) {
-                  0 === i.flag && R(i), O();
+                if ("start" === V) {
+                  0 === i.flag && U(i), R();
                   return
                 }
-                return R(i)
+                return U(i)
               }
-              if ("soll-wallet" === i.type && !f) return h((0, x.W2)(!0));
-              if ("wallet" === i.type && !v) return w.openModal();
-              "emojiName" === i.type && I()
+              if ("soll-wallet" === i.type && !A) return v((0, x.W2)(!0));
+              if ("wallet" === i.type && !f) return P.openModal();
+              "emojiName" === i.type && H()
             }
           }
         };
         return (0, a.useEffect)(() => {
-          "wallet" === m.type && v && "finished" !== B && y(m._id, "claimable")
-        }, [v]), (0, a.useEffect)(() => {
-          "soll-wallet" === m.type && f && "start" === B && R(m)
+          "wallet" === y.type && f && "finished" !== V && k(y._id, "claimable")
         }, [f]), (0, a.useEffect)(() => {
+          "soll-wallet" === y.type && A && "start" === V && U(y)
+        }, [A]), (0, a.useEffect)(() => {
           var i, t, e, a;
-          let r = null == F ? void 0 : null === (i = F.initDataUnsafe) || void 0 === i ? void 0 : null === (t = i.user) || void 0 === t ? void 0 : t.first_name,
-            o = null == F ? void 0 : null === (e = F.initDataUnsafe) || void 0 === e ? void 0 : null === (a = e.user) || void 0 === a ? void 0 : a.last_name;
-          if ("emojiName" === m.type && "finished" !== B) {
+          let r = null == w ? void 0 : null === (i = w.initDataUnsafe) || void 0 === i ? void 0 : null === (t = i.user) || void 0 === t ? void 0 : t.first_name,
+            o = null == w ? void 0 : null === (e = w.initDataUnsafe) || void 0 === e ? void 0 : null === (a = e.user) || void 0 === a ? void 0 : a.last_name;
+          if ("emojiName" === y.type && "finished" !== V) {
             let i = null;
             try {
-              i = +window.localStorage.getItem("".concat(E, "-emojiName-date"))
+              i = +window.localStorage.getItem("".concat(g, "-emojiName-date"))
             } catch (i) {
               console.log(i)
             }
-            i && 15 > u()().diff(u()(i), "minutes") && y(m._id, "pending"), (r && r.includes(iC) || o && o.includes(iC)) && "start" === B && R(m)
+            i && 15 > u()().diff(u()(i), "minutes") && k(y._id, "pending"), (r && r.includes(iC) || o && o.includes(iC)) && "start" === V && U(y)
           }
-        }, [null == F ? void 0 : null === (c = F.initDataUnsafe) || void 0 === c ? void 0 : null === (n = c.user) || void 0 === n ? void 0 : n.first_name]), (0, a.useEffect)(() => {
-          "referral" === m.type && "start" === B && m.counter && A >= m.counter && R(m)
-        }, [A]), (0, a.useEffect)(() => {
+        }, [null == w ? void 0 : null === (c = w.initDataUnsafe) || void 0 === c ? void 0 : null === (n = c.user) || void 0 === n ? void 0 : n.first_name]), (0, a.useEffect)(() => {
+          "referral" === y.type && "start" === V && y.counter && E >= y.counter && U(y)
+        }, [E]), (0, a.useEffect)(() => {
           let i = null;
-          return C && (i = setTimeout(() => {
-            N(!1)
+          return N && (i = setTimeout(() => {
+            F(!1)
           }, 4e3)), () => {
             clearTimeout(i)
           }
-        }, [C]), a.createElement(a.Fragment, null, a.createElement(iv, {
-          isOpen: G,
-          close: () => D(!1)
-        }), V && a.createElement(ig, {
-          close: () => S(!1),
+        }, [N]), a.createElement(a.Fragment, null, a.createElement(iv, {
+          isOpen: D,
+          close: () => B(!1)
+        }), S && a.createElement(ig, {
+          close: () => C(!1),
           onCopy: () => {
-            y(m._id, "pending"), S(!1), window.localStorage.setItem("".concat(E, "-emojiName-date"), Date.now())
+            k(y._id, "pending"), C(!1), window.localStorage.setItem("".concat(g, "-emojiName-date"), Date.now())
           }
-        }), "customOr" === m.action && a.createElement(iV, {
-          onComplete: R,
-          statusCode: B
+        }), "customOr" === y.action && a.createElement(iV, {
+          onComplete: U,
+          statusCode: V
         }), a.createElement("div", {
           className: "invite-item",
-          onClick: () => m.hint && "start" === B && N(!0)
-        }, m.hint && a.createElement(iu.Z, {
-          isOpen: C,
-          target: "TooltipExample".concat(m._id),
-          toggle: () => N(!1)
-        }, m.hint), a.createElement("div", {
+          onClick: () => y.hint && "start" === V && F(!0)
+        }, y.hint && a.createElement(iu.Z, {
+          isOpen: N,
+          target: "TooltipExample".concat(y._id),
+          toggle: () => F(!1)
+        }, y.hint), a.createElement("div", {
           className: "main-info",
-          id: "TooltipExample".concat(m._id)
+          id: "TooltipExample".concat(y._id)
         }, a.createElement("div", {
           className: "icon-con"
         }, a.createElement(o(), {
-          src: iB[m.code] || m.iconUrl || iB.paws,
+          src: iB[y.code] || y.iconUrl || iB.paws,
           alt: "",
           width: 40,
           height: 40,
@@ -1369,76 +1369,76 @@
           className: "wallet-con"
         }, a.createElement("div", {
           className: "wallet"
-        }, m.quest && m.quest.length > 0 ? "Quest reward" : m.title || iS[m.code]), m.date && a.createElement("div", {
+        }, y.quest && y.quest.length > 0 ? "Quest reward" : y.title || iS[y.code]), y.date && a.createElement("div", {
           className: "date"
-        }, u()(m.date).format("MMMM DD"), " at ", u()(m.date).format("HH:mm")), "quests" === l && !!P && a.createElement("p", {
+        }, u()(y.date).format("MMMM DD"), " at ", u()(y.date).format("HH:mm")), "quests" === m && !!T && a.createElement("p", {
           className: "reward-count"
-        }, "+ ", -1 === P ? "???" : p(P, ","), " PAWS"))), a.createElement("div", {
+        }, "+ ", -1 === T ? "???" : p(T, ","), " PAWS"))), a.createElement("div", {
           className: "points"
-        }, "quests" !== l && !!P && a.createElement(a.Fragment, null, a.createElement("p", null, "+", p(P, ","), " PAWS"), a.createElement("p", {
+        }, "quests" !== m && !!T && a.createElement(a.Fragment, null, a.createElement("p", null, "+", p(T, ","), " PAWS"), a.createElement("p", {
           className: "descr"
-        }, "transactions" === l ? "Received" : "Reward")), "quests" === l && !m.availableUntil && a.createElement(a.Fragment, null, ["start", "claimable", "check"].includes(B) && a.createElement("div", {
-          className: "start-btn ".concat(["claimable", "check"].includes(B) ? "claim" : ""),
+        }, "transactions" === m ? "Received" : "Reward")), "quests" === m && !y.availableUntil && a.createElement(a.Fragment, null, ["start", "claimable", "check"].includes(V) && a.createElement("div", {
+          className: "start-btn ".concat(["claimable", "check"].includes(V) ? "claim" : ""),
           onClick: () => {
-            "quests" === l && H(m)
+            "quests" === m && W(y)
           }
-        }, "start" === B && "Start", "check" === B && "Check", "claimable" === B && "Claim"), "pending" === B && a.createElement("div", {
+        }, "start" === V && "Start", "check" === V && "Check", "claimable" === V && "Claim"), "pending" === V && a.createElement("div", {
           className: "start-btn pending"
-        }, "Pending..."), "finished" === B && a.createElement("div", {
+        }, "Pending..."), "finished" === V && a.createElement("div", {
           className: "check-con"
         }, a.createElement(o(), {
           src: ip.Z,
           alt: "",
           width: 16,
           height: 14
-        }))), "quests" === l && m.availableUntil && a.createElement(a.Fragment, null, iN(m) && a.createElement(a.Fragment, null, "start" === B && a.createElement("div", {
+        }))), "quests" === m && y.availableUntil && a.createElement(a.Fragment, null, iN(y) && a.createElement(a.Fragment, null, "start" === V && a.createElement("div", {
           className: "progress-con"
-        }, "0 / ", m.counter || 1), ["claimable", "check"].includes(B) && a.createElement("div", {
+        }, (null === (l = y.progress) || void 0 === l ? void 0 : l.current) || 0, " / ", y.counter || 1), ["claimable", "check"].includes(V) && a.createElement("div", {
           className: "start-btn claim",
-          onClick: () => H(m)
-        }, "check" === B && "Check", "claimable" === B && "Claim"), "start" === B && a.createElement(a.Fragment, null, !m.isTimeOut && a.createElement("div", {
+          onClick: () => W(y)
+        }, "check" === V && "Check", "claimable" === V && "Claim"), "start" === V && a.createElement(a.Fragment, null, !y.isTimeOut && a.createElement("div", {
           className: "timer-con"
         }, a.createElement(iG, {
           withSymbols: !1,
-          date: m.availableUntil,
-          onComplete: () => k(m._id)
-        })), m.isTimeOut && a.createElement("div", {
+          date: y.availableUntil,
+          onComplete: () => d(y._id)
+        })), y.isTimeOut && a.createElement("div", {
           className: "timer-out-con small"
-        }, "Calculating")), "calculating" === B && a.createElement("div", {
+        }, "Calculating")), "calculating" === V && a.createElement("div", {
           className: "timer-out-con small"
-        }, "Calculating"), "finished" === B && a.createElement("div", {
+        }, "Calculating"), "finished" === V && a.createElement("div", {
           className: "check-con"
         }, a.createElement(o(), {
           src: ip.Z,
           alt: "",
           width: 16,
           height: 14
-        })), "pending" === B && a.createElement("div", {
+        })), "pending" === V && a.createElement("div", {
           className: "start-btn pending"
-        }, "Pending...")), !iN(m) && a.createElement(a.Fragment, null, !m.isTimeOut && ["start", "check"].includes(B) && a.createElement("div", {
-          className: "start-btn ".concat(["claimable", "check"].includes(B) ? "claim" : ""),
+        }, "Pending...")), !iN(y) && a.createElement(a.Fragment, null, !y.isTimeOut && ["start", "check"].includes(V) && a.createElement("div", {
+          className: "start-btn ".concat(["claimable", "check"].includes(V) ? "claim" : ""),
           onClick: () => {
-            "quests" === l && H(m)
+            "quests" === m && W(y)
           }
-        }, "start" === B && "Start", "check" === B && "Check", "claimable" === B && "Claim"), "claimable" === B && a.createElement("div", {
+        }, "start" === V && "Start", "check" === V && "Check", "claimable" === V && "Claim"), "claimable" === V && a.createElement("div", {
           className: "start-btn claim",
-          onClick: () => H(m)
-        }, "Claim"), "pending" === B && a.createElement("div", {
+          onClick: () => W(y)
+        }, "Claim"), "pending" === V && a.createElement("div", {
           className: "start-btn pending"
-        }, "Pending..."), "finished" === B && a.createElement("div", {
+        }, "Pending..."), "finished" === V && a.createElement("div", {
           className: "check-con"
         }, a.createElement(o(), {
           src: ip.Z,
           alt: "",
           width: 16,
           height: 14
-        })), "start" === B && a.createElement(a.Fragment, null, !m.isTimeOut && a.createElement("div", {
+        })), "start" === V && a.createElement(a.Fragment, null, !y.isTimeOut && a.createElement("div", {
           className: "timer-con"
         }, a.createElement(iG, {
           withSymbols: !1,
-          date: m.availableUntil,
-          onComplete: () => k(m._id)
-        })), m.isTimeOut && a.createElement("div", {
+          date: y.availableUntil,
+          onComplete: () => d(y._id)
+        })), y.isTimeOut && a.createElement("div", {
           className: "timer-out-con"
         }, "Time's up")))))))
       };
@@ -2216,13 +2216,11 @@
             item: c,
             onStatusChange: n,
             onTimeOut: l
-          } = i, {
-            webApp: m
-          } = (0, Z.fW)(), y = (0, s.TL)(), [k, u] = (0, a.useState)(!1), d = (null == c ? void 0 : null === (t = c.progress) || void 0 === t ? void 0 : t.status) || "calculating", [h, v] = c.data.split(","), f = 1e7 <= +h, A = c.balance || 0;
-          A || (A = (null == c ? void 0 : null === (e = c.rewards) || void 0 === e ? void 0 : null === (r = e.find(i => "balance" === i.code)) || void 0 === r ? void 0 : r.amount) || 0);
-          let E = async () => {
-            if (!k && "start" === d) try {
-              u(!0), m.openTelegramLink(v);
+          } = i, m = (0, s.TL)(), [y, k] = (0, a.useState)(!1), u = (null == c ? void 0 : null === (t = c.progress) || void 0 === t ? void 0 : t.status) || "calculating", d = "claimable" === u, h = c.balance || 0;
+          h || (h = (null == c ? void 0 : null === (e = c.rewards) || void 0 === e ? void 0 : null === (r = e.find(i => "balance" === i.code)) || void 0 === r ? void 0 : r.amount) || 0);
+          let v = async () => {
+            if (!y && "start" === u) try {
+              k(!0);
               let i = await im("/quests/completed", {
                 method: "POST",
                 body: {
@@ -2233,23 +2231,26 @@
             } catch (i) {
               console.error(i)
             } finally {
-              u(!1)
+              k(!1)
             }
-          }, g = async () => {
-            if (!k && "claimable" === d) try {
-              u(!0), (await im("/quests/claim", {
+          }, f = async () => {
+            if (!y && "claimable" === u) try {
+              k(!0), (await im("/quests/claim", {
                 method: "POST",
                 body: {
                   questId: c._id
                 }
-              })).data && (n(c._id, "finished"), y((0, x.x7)(A)), window.dispatchEvent(new CustomEvent("transactionsHistoryUpdated")))
+              })).data && (n(c._id, "finished"), m((0, x.x7)(h)), window.dispatchEvent(new CustomEvent("transactionsHistoryUpdated")))
             } catch (i) {
               console.error(i)
             } finally {
-              u(!1)
+              k(!1)
             }
           };
-          return a.createElement("div", {
+          return (0, a.useEffect)(() => {
+            var i;
+            "social" === c.type && "secret" === c.action && null !== (i = c.progress) && void 0 !== i && i.current && c.progress.current >= c.progress.total && "start" === u && v(c)
+          }, [c.type]), a.createElement("div", {
             className: "invite-item taps-quest"
           }, a.createElement("div", {
             className: "main-info"
@@ -2266,11 +2267,11 @@
             className: "wallet"
           }, c.title), a.createElement("p", {
             className: "reward-count"
-          }, "+ ", p(A, ","), " PAWS", " ", a.createElement("span", {
+          }, "+ ", p(h, ","), " PAWS", " ", a.createElement("span", {
             className: "taps-count-con"
-          }, h ? T(+h) : "?", " ", a.createElement("span", {
+          }, c.progress.current, " ", a.createElement("span", {
             className: "total-taps"
-          }, "/ ", T(1e7)), a.createElement("span", {
+          }, "/ ", c.progress.total), a.createElement("span", {
             className: "people-icon"
           }, a.createElement(o(), {
             src: i4,
@@ -2279,24 +2280,19 @@
             height: 10
           })))))), a.createElement("div", {
             className: "points"
-          }, ["start"].includes(d) && a.createElement("div", {
-            className: "start-btn",
+          }, ["start", "claimable"].includes(u) && a.createElement("div", {
+            className: "start-btn ".concat(d ? "claim" : "disabled"),
             onClick: () => {
-              E()
+              d && f()
             }
-          }, "Go"), ["claimable"].includes(d) && a.createElement("div", {
-            className: "start-btn ".concat(f ? "claim" : "disabled"),
-            onClick: () => {
-              f && g(), f || m.openTelegramLink(v)
-            }
-          }, f ? "Claim" : "Reacted"), "finished" === d && a.createElement("div", {
+          }, "Claim"), "finished" === u && a.createElement("div", {
             className: "check-con"
           }, a.createElement(o(), {
             src: ip.Z,
             alt: "",
             width: 16,
             height: 14
-          })), c.availableUntil && !c.isTimeOut && "finished" !== d && a.createElement("div", {
+          })), c.availableUntil && !c.isTimeOut && "finished" !== u && a.createElement("div", {
             className: "timer-con"
           }, a.createElement(iG, {
             withSymbols: !1,
@@ -2444,13 +2440,13 @@
             className: "section-items-con quests"
           }, !!m[n].length && m[n].map(i => void 0 === i.groupId && a.createElement(a.Fragment, {
             key: "questsList".concat(i._id)
-          }, !["customScroll", "customCode", "click", "customReaction"].includes(i.action) && a.createElement(iF, {
+          }, !["customScroll", "customCode", "click", "customReaction", "secret"].includes(i.action) && a.createElement(iF, {
             type: "quests",
             item: i,
             onStatusChange: u,
             onTimeOut: p,
             redirectToTab: e
-          }), "customReaction" === i.action && a.createElement(i8, {
+          }), "secret" === i.action && a.createElement(i8, {
             type: "quests",
             item: i,
             onStatusChange: u,
