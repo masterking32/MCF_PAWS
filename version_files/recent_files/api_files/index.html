@@ -13333,7 +13333,7 @@
       color: #000
     }
   </style>
-  <style data-href="/_next/static/css/5029af0c57c5ca5e.css" data-n-p="">
+  <style data-href="/_next/static/css/a7934d7cc7c4fbca.css" data-n-p="">
     .preloader-continaer {
       display: flex;
       flex-direction: column;
@@ -14094,23 +14094,40 @@
     }
 
     .home-tab-con .main-con {
-      flex-grow: 1
-    }
-
-    .home-tab-con .main-con,
-    .home-tab-con .main-con .balance-wrap {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center
+      justify-content: center;
+      flex-grow: 1
+    }
+
+    .home-tab-con .main-con .rive-con {
+      position: absolute;
+      width: 100%;
+      aspect-ratio: .5;
+      left: 0;
+      bottom: -5.5%;
+      z-index: 9;
+      pointer-events: none
     }
 
     .home-tab-con .main-con .balance-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
       width: 100%
     }
 
     .home-tab-con .main-con .balance-wrap .img-con {
       position: relative
+    }
+
+    .home-tab-con .main-con .balance-wrap .img-con .main-logo.hidden {
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0
     }
 
     .home-tab-con .main-con .balance-wrap .img-con .user-mark {
@@ -14270,7 +14287,8 @@
     .home-tab-con .btns-con {
       width: 100%;
       display: flex;
-      flex-direction: column
+      flex-direction: column;
+      z-index: 2
     }
 
     .home-tab-con .btns-con .btn-item {
@@ -14774,6 +14792,11 @@
       background: rgba(255, 162, 69, .1);
       border-radius: 0;
       border-bottom: none
+    }
+
+    .leaderboard-tab .leaders-list .leader-icon-con.grinch {
+      background: rgba(26, 255, 0, .15);
+      border-radius: 12px 12px 0 0
     }
 
     .friends-tab-con {
@@ -16224,440 +16247,6 @@
       animation: is-show-anim .25s ease-in-out forwards
     }
 
-    .milestones-tab-con {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      flex-grow: 1;
-      padding: 15px 16px 24px;
-      overflow: auto;
-      -ms-overflow-style: none;
-      scrollbar-width: none
-    }
-
-    .milestones-tab-con::-webkit-scrollbar {
-      display: none
-    }
-
-    .milestones-tab-con.is-hide {
-      animation: is-hide-anim .25s ease-in-out forwards
-    }
-
-    .milestones-tab-con.is-show {
-      animation: is-show-anim .25s ease-in-out forwards
-    }
-
-    .milestones-tab-con .section-con {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center
-    }
-
-    .milestones-tab-con .section-con .heading-con {
-      width: 100%;
-      text-align: left;
-      margin-bottom: 18px
-    }
-
-    .milestones-tab-con .section-con .heading-con .heading-text {
-      margin-bottom: 12px;
-      color: #fff;
-      font-size: 35px;
-      font-weight: 400;
-      line-height: 125%;
-      text-transform: uppercase
-    }
-
-    @media screen and (min-height:650px) {
-      .milestones-tab-con .section-con .heading-con .heading-text {
-        font-size: 45px
-      }
-    }
-
-    @media screen and (max-width:360px) {
-      .milestones-tab-con .section-con .heading-con .heading-text {
-        font-size: 38px
-      }
-    }
-
-    .milestones-tab-con .section-con .heading-con .heading-descr {
-      margin-bottom: 6px;
-      align-items: center;
-      color: #5a5a5a;
-      font-size: 24px;
-      font-weight: 500;
-      line-height: 1;
-      text-transform: uppercase
-    }
-
-    .milestones-tab-con .section-con .heading-con .heading-descr .strong {
-      margin-right: 7px;
-      color: #fff
-    }
-
-    @media screen and (min-width:400px) {
-      .milestones-tab-con .section-con .heading-con .heading-descr {
-        font-size: 26px
-      }
-    }
-
-    .milestones-tab-con .btns-con {
-      display: flex
-    }
-
-    .milestones-tab-con .btns-con .btn-item {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 50px;
-      width: 100%;
-      border-radius: 12px;
-      background: #4c9ce2;
-      font-size: 20px;
-      font-weight: 600;
-      color: #fff;
-      flex-grow: 1
-    }
-
-    .milestones-tab-con .btns-con .info-btn {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 12px;
-      background: #243d53;
-      height: 100%;
-      aspect-ratio: 1;
-      margin-left: 12px
-    }
-
-    .milestones-tab-con .top-senders-heading {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      width: calc(100% - 70px);
-      margin: 0 auto 16px
-    }
-
-    .milestones-tab-con .top-senders-heading .top-senders-title {
-      padding: 4px 11px;
-      border-radius: 56.25px;
-      background: #4c9ce2;
-      font-size: 12px;
-      line-height: 23.625px;
-      font-weight: 400;
-      width: -moz-fit-content;
-      width: fit-content;
-      z-index: 2
-    }
-
-    .milestones-tab-con .top-senders-heading .line {
-      width: 100%;
-      height: 1px;
-      background: #252527;
-      position: absolute;
-      top: 50%;
-      left: 0;
-      z-index: 1
-    }
-
-    .milestones-tab-con .top-senders-con {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      margin-bottom: 16px;
-      width: 100%
-    }
-
-    .milestones-tab-con .top-senders-con .sender-item-wrapper {
-      width: 25%
-    }
-
-    .milestones-tab-con .top-senders-con .sender-item-wrapper.show-more-con .name-con {
-      opacity: .5
-    }
-
-    .milestones-tab-con .top-senders-con .sender-item-wrapper .sender-item {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      font-size: 9.47px;
-      font-weight: 600;
-      margin-bottom: 14px
-    }
-
-    .milestones-tab-con .top-senders-con .sender-item-wrapper .sender-item .avatar-con {
-      position: relative;
-      margin-bottom: 20px
-    }
-
-    .milestones-tab-con .top-senders-con .sender-item-wrapper .sender-item .avatar-con.show-more .img-con {
-      background-color: #252527
-    }
-
-    .milestones-tab-con .top-senders-con .sender-item-wrapper .sender-item .avatar-con .img-con {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      overflow: hidden;
-      font-size: 18px
-    }
-
-    .milestones-tab-con .top-senders-con .sender-item-wrapper .sender-item .avatar-con .count-con {
-      display: flex;
-      align-items: center;
-      border-radius: 22.196px;
-      background: #4c9ce2;
-      font-size: 10.556px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 9.322px;
-      width: max-content;
-      padding: 4px 5px 3px;
-      position: absolute;
-      bottom: -7px;
-      left: 50%;
-      transform: translateX(-50%)
-    }
-
-    .milestones-tab-con .top-senders-con .sender-item-wrapper .sender-item .avatar-con .count-con .icon-con {
-      margin-left: 3px;
-      padding-bottom: 1px
-    }
-
-    .milestones-tab-con .top-senders-con .sender-item-wrapper .sender-item .name-con {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      width: 100%;
-      padding: 0 7px;
-      text-align: center;
-      font-size: 12.667px
-    }
-
-    .milestones-tab-con .milestone-info-con {
-      position: relative;
-      margin-bottom: 16px;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between
-    }
-
-    .milestones-tab-con .milestone-info-con .info-btn {
-      border-radius: 6px;
-      background: #fff;
-      width: 24px;
-      height: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      bottom: 45px;
-      right: 0;
-      z-index: 3
-    }
-
-    .milestones-tab-con .milestone-info-con .general-stats-con {
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: flex;
-      justify-content: space-between;
-      width: 100%
-    }
-
-    .milestones-tab-con .milestone-info-con .general-stats-con .stat-item {
-      text-align: left;
-      font-size: 15px;
-      font-weight: 600;
-      line-height: 18px
-    }
-
-    .milestones-tab-con .milestone-info-con .general-stats-con .stat-item .descr {
-      font-weight: 400
-    }
-
-    .milestones-tab-con .milestone-info-con .general-stats-con .stat-item.align-right {
-      text-align: right
-    }
-
-    .milestones-tab-con .milestone-info-con .round-progress-con {
-      position: relative;
-      width: 80%;
-      aspect-ratio: 1;
-      margin: 0 auto 10px;
-      max-width: 250px;
-      overflow: hidden
-    }
-
-    @media screen and (min-height:700px) {
-      .milestones-tab-con .milestone-info-con .round-progress-con {
-        width: 90%;
-        max-width: 300px
-      }
-    }
-
-    @media screen and (min-height:760px) {
-      .milestones-tab-con .milestone-info-con .round-progress-con {
-        width: 100%;
-        max-width: 350px
-      }
-    }
-
-    .milestones-tab-con .milestone-info-con .round-progress-con .circular-border {
-      width: 100%;
-      height: 100%;
-      transform: rotate(90deg)
-    }
-
-    .milestones-tab-con .milestone-info-con .round-progress-con .circular-border .CircularProgressbar-trail {
-      stroke-dasharray: 301px, 301px;
-      stroke-dashoffset: 0;
-      stroke-linecap: round
-    }
-
-    .milestones-tab-con .milestone-info-con .round-progress-con .CircularProgressbar {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      left: 0;
-      top: 0;
-      transform: rotate(90deg);
-      z-index: 2
-    }
-
-    .milestones-tab-con .milestone-info-con .round-progress-con .CircularProgressbar .CircularProgressbar-path {
-      stroke-linecap: round;
-      stroke-dasharray: 301px, 301px;
-      transition: all 1.5s ease-in-out
-    }
-
-    .milestones-tab-con .milestone-info-con .round-progress-con .CircularProgressbar.round {
-      transition: all 1.5s ease-in-out;
-      z-index: 1;
-      animation: dot-indicator-animated 5s ease-in-out infinite
-    }
-
-    @keyframes dot-indicator-animated {
-      0% {
-        opacity: .5
-      }
-
-      50% {
-        opacity: 1
-      }
-
-      to {
-        opacity: .5
-      }
-    }
-
-    .milestones-tab-con .milestone-info-con .round-progress-con.infinity .circle-con {
-      animation: inf-round-circle 100s linear infinite
-    }
-
-    @keyframes inf-round-circle {
-      0% {
-        transform: rotate(0deg)
-      }
-
-      to {
-        transform: rotate(1turn)
-      }
-    }
-
-    .milestones-tab-con .milestone-info-con .round-progress-con .current-milestone-info {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center
-    }
-
-    .milestones-tab-con .milestone-info-con .round-progress-con .current-milestone-info .descr {
-      font-size: 16px;
-      font-weight: 700;
-      line-height: 125%;
-      color: #5a5a5a
-    }
-
-    .milestones-tab-con .milestone-info-con .round-progress-con .current-milestone-info .reward {
-      font-size: 25px;
-      font-weight: 700;
-      line-height: 125%
-    }
-
-    .milestones-tab-con .milestone-info-con .round-progress-con .current-milestone-info .line {
-      width: 50%;
-      margin: 4px auto 0;
-      height: 1px;
-      background-color: #1a2a37
-    }
-
-    .milestones-tab-con .milestone-info-con .round-progress-con .current-milestone-info .current-amount {
-      font-size: 60px;
-      font-weight: 700;
-      line-height: 125%
-    }
-
-    .milestones-tab-con .milestone-info-con .round-progress-con .current-milestone-info .current-amount.medium {
-      font-size: 50px
-    }
-
-    .milestones-tab-con .milestone-info-con .round-progress-con .current-milestone-info .current-amount.small {
-      font-size: 40px
-    }
-
-    .milestones-tab-con .milestone-info-con .round-progress-con .current-milestone-info .current-milestone {
-      font-size: 16px;
-      font-weight: 700;
-      line-height: 125%;
-      color: #5a5a5a
-    }
-
-    .milestones-tab-con .milestone-info-con .round-progress-con .current-milestone-info .currency {
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 125%
-    }
-
-    @media screen and (min-width:390px) {
-      .milestones-tab-con .milestone-info-con .round-progress-con .current-milestone-info .currency {
-        font-size: 16px
-      }
-    }
-
-    @media screen and (max-height:760px) {
-      .milestones-tab-con .milestone-info-con .round-progress-con .current-milestone-info .currency {
-        font-size: 14px
-      }
-    }
-
-    .milestones-tab-con .milestone-info-con .only-con {
-      width: 100%;
-      text-align: center;
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 500;
-      line-height: 135%;
-      color: #5a5a5a
-    }
-
-    .milestones-tab-con .milestone-info-con .only-con .strong {
-      font-weight: 400;
-      color: #fff
-    }
-
     .custom-connect-wallet-modal {
       padding: 10px 0 40px;
       width: 100%;
@@ -16769,17 +16358,527 @@
     .custom-connect-wallet-modal .options-list .option-con .side-block .icon-con {
       margin-right: 10px
     }
+
+    .pawsmas-tab-con {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      flex-grow: 1;
+      padding: 15px 16px 24px;
+      overflow: auto;
+      -ms-overflow-style: none;
+      scrollbar-width: none
+    }
+
+    .pawsmas-tab-con::-webkit-scrollbar {
+      display: none
+    }
+
+    .pawsmas-tab-con.is-hide {
+      animation: is-hide-anim .25s ease-in-out forwards
+    }
+
+    .pawsmas-tab-con.is-hide .quests-list-con .invite-item .main-info .closed-quest:after,
+    .pawsmas-tab-con.is-hide .quests-list-con .invite-item .main-info .closed-quest:before {
+      animation: none
+    }
+
+    .pawsmas-tab-con.is-show {
+      animation: is-show-anim .25s ease-in-out forwards
+    }
+
+    .pawsmas-tab-con .section-con {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 10px
+    }
+
+    .pawsmas-tab-con .section-con .main-img-con {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 25%;
+      z-index: 1
+    }
+
+    .pawsmas-tab-con .section-con .heading-con {
+      width: 100%;
+      text-align: left;
+      margin-bottom: 18px
+    }
+
+    .pawsmas-tab-con .section-con .heading-con .heading-text {
+      margin-bottom: 12px;
+      color: #fff;
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 125%;
+      text-transform: uppercase
+    }
+
+    @media screen and (min-width:360px) {
+      .pawsmas-tab-con .section-con .heading-con .heading-text {
+        font-size: 38px
+      }
+    }
+
+    .pawsmas-tab-con .section-con .heading-con .heading-descr {
+      margin-bottom: 6px;
+      align-items: center;
+      color: #5a5a5a;
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 1;
+      text-transform: uppercase
+    }
+
+    .pawsmas-tab-con .section-con .heading-con .heading-descr .strong {
+      color: #fff
+    }
+
+    @media screen and (min-width:400px) {
+      .pawsmas-tab-con .section-con .heading-con .heading-descr {
+        font-size: 26px
+      }
+    }
+
+    .pawsmas-tab-con .descr-con-bordered {
+      position: relative;
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 4px;
+      margin-bottom: 16px;
+      background-image: url(/_next/static/media/descrBg.17e7217a.png);
+      background-color: rgba(76, 156, 226, .1);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 50%;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 20px
+    }
+
+    .pawsmas-tab-con .descr-con-bordered .border-con {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+      background-image: url(/_next/static/media/border.f31cbd87.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 50%;
+      z-index: 11
+    }
+
+    .pawsmas-tab-con .descr-con-bordered .img-con {
+      position: absolute;
+      top: 10px;
+      right: 10px
+    }
+
+    .pawsmas-tab-con .progress-indicator-con {
+      width: 100%;
+      position: relative;
+      margin-bottom: 20px
+    }
+
+    .pawsmas-tab-con .progress-indicator-con .line-wrapper {
+      position: relative;
+      width: 100%;
+      height: 3px;
+      background-color: #646464
+    }
+
+    .pawsmas-tab-con .progress-indicator-con .line-wrapper .line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background-color: #4c9ce2;
+      transition: .2s
+    }
+
+    .pawsmas-tab-con .progress-indicator-con .dots-con {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      display: flex;
+      justify-content: space-between
+    }
+
+    .pawsmas-tab-con .progress-indicator-con .dots-con .dot-item {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      transition: .2s;
+      border: 5px solid #0d0d0d;
+      background-color: #646464
+    }
+
+    .pawsmas-tab-con .progress-indicator-con .dots-con .dot-item.active {
+      background-color: #4c9ce2
+    }
+
+    .pawsmas-tab-con .quests-list-con {
+      border-radius: 16px;
+      background: #151516;
+      width: 100%
+    }
+
+    .pawsmas-tab-con .quests-list-con .invite-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      padding: 18px 16px
+    }
+
+    .pawsmas-tab-con .quests-list-con .invite-item:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: calc(100% - 65px);
+      height: 1px;
+      background: #8e8e93;
+      opacity: .5
+    }
+
+    .pawsmas-tab-con .quests-list-con .invite-item:first-child:before {
+      display: none
+    }
+
+    .pawsmas-tab-con .quests-list-con .invite-item.angry-quest .animated-con {
+      position: fixed;
+      right: 0;
+      transform: scaleX(-1);
+      pointer-events: none;
+      opacity: 0;
+      transition: .2s;
+      z-index: 2
+    }
+
+    .pawsmas-tab-con .quests-list-con .invite-item.angry-quest .animated-con.show {
+      opacity: 1
+    }
+
+    .pawsmas-tab-con .quests-list-con .invite-item .main-info {
+      display: flex;
+      align-items: center;
+      margin-right: 15px;
+      flex-grow: 1;
+      position: relative
+    }
+
+    .pawsmas-tab-con .quests-list-con .invite-item .main-info .closed-quest {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #151516;
+      background-image: url(/_next/static/media/dots.288a3759.png);
+      background-size: 256px 256px;
+      border-radius: 6px;
+      transition: .5s;
+      z-index: 1;
+      background-position: 128px 128px
+    }
+
+    .pawsmas-tab-con .quests-list-con .invite-item .main-info .closed-quest.disabled {
+      opacity: 0;
+      pointer-events: none
+    }
+
+    .pawsmas-tab-con .quests-list-con .invite-item .main-info .closed-quest.disabled:after,
+    .pawsmas-tab-con .quests-list-con .invite-item .main-info .closed-quest.disabled:before {
+      animation: none
+    }
+
+    .pawsmas-tab-con .quests-list-con .invite-item .main-info .closed-quest:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(/_next/static/media/dots.288a3759.png);
+      background-size: 256px 256px;
+      animation: blur-effect-1 21s linear -7s infinite;
+      background-position: 128px 128px
+    }
+
+    .pawsmas-tab-con .quests-list-con .invite-item .main-info .closed-quest:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(/_next/static/media/dots.288a3759.png);
+      background-size: 256px 256px;
+      animation: blur-effect-2 30s linear -7s infinite;
+      background-position: -128px -128px
+    }
+
+    @keyframes blur-effect-1 {
+      0% {
+        background-position: 0 0
+      }
+
+      to {
+        background-position: 256px 256px
+      }
+    }
+
+    @keyframes blur-effect-2 {
+      0% {
+        background-position: 0 0
+      }
+
+      to {
+        background-position: 256px -256px
+      }
+    }
+
+    .pawsmas-tab-con .quests-list-con .invite-item .main-info .icon-con {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 12px;
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      border-radius: 9px;
+      overflow: hidden
+    }
+
+    .pawsmas-tab-con .quests-list-con .invite-item .main-info .wallet-con {
+      line-height: 120%
+    }
+
+    .pawsmas-tab-con .quests-list-con .invite-item .main-info .wallet-con .wallet {
+      font-size: 17px
+    }
+
+    .pawsmas-tab-con .quests-list-con .invite-item .main-info .wallet-con .date {
+      color: #8e8e93;
+      font-size: 14px
+    }
+
+    .pawsmas-tab-con .quests-list-con .invite-item .main-info .wallet-con .reward-count {
+      margin-top: 4px;
+      color: #8e8e93;
+      display: flex;
+      align-items: center;
+      width: max-content;
+      font-size: 12px
+    }
+
+    .pawsmas-tab-con .quests-list-con .invite-item .main-info .wallet-con .reward-count .taps-count-con {
+      position: relative;
+      display: flex;
+      align-items: center
+    }
+
+    .pawsmas-tab-con .quests-list-con .invite-item .main-info .wallet-con .reward-count .taps-count-con .total-taps {
+      color: hsla(0, 2%, 58%, .251);
+      margin-left: 4px
+    }
+
+    .pawsmas-tab-con .quests-list-con .invite-item .main-info .wallet-con .reward-count .taps-count-con .people-icon {
+      display: flex;
+      align-items: flex-end;
+      margin-left: 2px
+    }
+
+    .pawsmas-tab-con .quests-list-con .invite-item .points {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      flex-direction: column;
+      font-size: 17px;
+      line-height: 120%;
+      color: #fff
+    }
+
+    .pawsmas-tab-con .quests-list-con .invite-item .points .diff-descr {
+      color: #5a5a5a;
+      text-align: center;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 600
+    }
+
+    .pawsmas-tab-con .quests-list-con .invite-item .points .descr {
+      font-size: 14px;
+      color: #34c759;
+      opacity: .75
+    }
+
+    .pawsmas-tab-con .quests-list-con .invite-item .points .progress-con {
+      padding: 6px 16px;
+      font-size: 14px
+    }
+
+    .pawsmas-tab-con .quests-list-con .invite-item .points .start-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      background-color: #fff;
+      color: #000;
+      border-radius: 750px;
+      padding: 6px 16px;
+      transition: .2s;
+      min-width: 69px;
+      min-height: 33px
+    }
+
+    .pawsmas-tab-con .quests-list-con .invite-item .points .start-btn.claim {
+      background-color: #4c9ce2;
+      color: #fff
+    }
+
+    .pawsmas-tab-con .quests-list-con .invite-item .points .start-btn.pending {
+      background-color: #5a5a5a;
+      color: #fff
+    }
+
+    .pawsmas-tab-con .quests-list-con .invite-item .points .start-btn.disabled {
+      background: #5a5a5a;
+      color: #969292;
+      pointer-events: none
+    }
+
+    .pawsmas-tab-con .quests-list-con .invite-item .points .check-con {
+      margin: 0 20px;
+      min-width: 16px;
+      width: 16px;
+      min-height: 16px
+    }
+
+    .pawsmas-tab-con .quests-list-con .invite-item .points .timer-con {
+      margin-top: 4px;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 18px;
+      text-align: center;
+      min-width: 100%
+    }
+
+    .pawsmas-tab-con .quests-list-con .invite-item .points .timer-out-con {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 14px;
+      text-align: center;
+      min-width: 100%
+    }
+
+    .pawsmas-tab-con .quests-list-con .invite-item .points .timer-out-con.small {
+      font-size: 12px
+    }
+
+    .box-reward-modal-con .modal-dialog {
+      height: 100%;
+      margin: 0
+    }
+
+    .box-reward-modal-con .modal-content {
+      border: none;
+      background-color: transparent;
+      height: 100%
+    }
+
+    .box-reward-modal-con .modal-backdrop {
+      background-color: rgba(6, 8, 6, .2);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px)
+    }
+
+    .box-reward-modal-con .modal-backdrop.show {
+      opacity: 1;
+      transition: opacity .1s linear
+    }
+
+    .box-reward-modal-con .box-reward-content {
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center
+    }
+
+    .box-reward-modal-con .box-reward-content .counter {
+      position: absolute;
+      top: 30%;
+      left: 0;
+      text-align: center;
+      width: 100%;
+      font-size: 40px;
+      font-weight: 700;
+      color: #fff;
+      opacity: 0;
+      transition: .2s;
+      text-shadow: 0 0 5px #fff, 0 0 30px #e60073, 0 0 40px #ff4da6, 0 0 50px #ff4da6
+    }
+
+    .box-reward-modal-con .box-reward-content .counter.show {
+      opacity: 1
+    }
+
+    .box-reward-modal-con .box-reward-content .counter .descr {
+      font-size: 24px;
+      font-weight: 500;
+      opacity: .5
+    }
+
+    .box-reward-modal-con .box-reward-content .lottie-con {
+      width: 100%;
+      max-width: 400px;
+      animation: show-box-reward .5s ease-in-out .5s forwards;
+      transform: translateY(100%) scale(.5)
+    }
+
+    @keyframes show-box-reward {
+      0% {
+        opacity: 0;
+        transform: translateY(100%) scale(.5)
+      }
+
+      90% {
+        opacity: 1;
+        transform: translateY(-10%) scale(1)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1)
+      }
+    }
   </style><noscript data-n-css=""></noscript>
   <script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script>
   <script src="/telegram-web-app.js" defer="" data-nscript="beforeInteractive"></script>
-  <script src="/_next/static/chunks/webpack-fc67f297e5a8289b.js" defer=""></script>
+  <script src="/_next/static/chunks/webpack-34b297b88751ac54.js" defer=""></script>
   <script src="/_next/static/chunks/framework-5429a50ba5373c56.js" defer=""></script>
   <script src="/_next/static/chunks/main-7cfd392e3607cf8f.js" defer=""></script>
-  <script src="/_next/static/chunks/pages/_app-4e354c604b54382d.js" defer=""></script>
-  <script src="/_next/static/chunks/343-29938e2dfd61de3c.js" defer=""></script>
-  <script src="/_next/static/chunks/pages/index-7966f6d643d269f1.js" defer=""></script>
-  <script src="/_next/static/kxYGepnf1ZoF223l0cs9S/_buildManifest.js" defer=""></script>
-  <script src="/_next/static/kxYGepnf1ZoF223l0cs9S/_ssgManifest.js" defer=""></script>
+  <script src="/_next/static/chunks/pages/_app-35516d2af41bbaff.js" defer=""></script>
+  <script src="/_next/static/chunks/434-7247ec40f46a7c4b.js" defer=""></script>
+  <script src="/_next/static/chunks/pages/index-6d8a1a03d7553350.js" defer=""></script>
+  <script src="/_next/static/--xZu7l0od4QqKPtwmSXX/_buildManifest.js" defer=""></script>
+  <script src="/_next/static/--xZu7l0od4QqKPtwmSXX/_ssgManifest.js" defer=""></script>
 </head>
 
 <body>
@@ -16831,7 +16930,7 @@
       },
       "page": "/",
       "query": {},
-      "buildId": "kxYGepnf1ZoF223l0cs9S",
+      "buildId": "--xZu7l0od4QqKPtwmSXX",
       "isFallback": false,
       "isExperimentalCompile": false,
       "gssp": true,
