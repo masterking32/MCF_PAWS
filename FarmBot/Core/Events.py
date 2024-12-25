@@ -45,7 +45,6 @@ class Events:
         try:
             task_id = task.get("_id")
             task_title = task.get("title")
-            rewards_amount = task.get("rewards", [{}])[0].get("amount", 0)
 
             payload = {"questId": task_id}
 
@@ -61,8 +60,7 @@ class Events:
                 )
                 return False
 
-            if rewards_amount == 0:
-                rewards_amount = response.get("data", [{}]).get("amount", 0)
+            rewards_amount = response.get("data", [{}]).get("amount", 0)
 
             data = f" Reward Amount: <c>{rewards_amount}</c></g>" if rewards_amount != 0 else "</g>"
 
