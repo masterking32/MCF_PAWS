@@ -80,20 +80,20 @@ class User:
                 self.log.info(
                     f"<g>🔃 Successfully fetched transactions info for <c>{self.account_name}</c>.</g>"
                 )
-                return response
+                return response["data"]
             else:
                 self.log.error(
                     f"<r>❌ Failed to fetch transactions info for <c>{self.account_name}</c>! RESPONSE_SECTION</r>"
                 )
+                return None
         except Exception as e:
             self.log.error(
                 f"<r>❌ Failed to fetch transactions info for <c>{self.account_name}</c>!</r>"
             )
             self.log.error(f"<r>❌ {str(e)}</r>")
-            return False
+            return None
 
     def Complete_Requests(self):
         self.log.info(f"<y>⌛ Fetching requests for <c>{self.account_name}</c>...</y>")
 
-        self.get_leaderboard()
-        self.get_my_referral()
+        return self.get_leaderboard(), self.get_transactions()
