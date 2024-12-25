@@ -116,18 +116,19 @@ class FarmBot:
 
             grinch_Removed = auth.get_grinch_Removed()
             
-            if grinch_Removed != True:
+            christmas_balance = 0
+            
+            for transaction in transactions:
+                transaction_code = transaction.get("code", "")
+                if transaction_code == "christmas6":
+                    christmas_balance = transaction.get("balance", 0)
+                    break
+
+            if grinch_Removed and christmas_balance != 0:
+                self.log.info(f"<g>🎅 Grinch gone! Merry Christmas <c>{self.account_name}</c>! Christmas Miracle: <c>{christmas_balance}</c></g>")
+            else:
                 event = Events(self.log, self.http, self.account_name)
                 event.PAWSMAS()
-            else:
-                christmas_balance = 0
-
-                for transaction in transactions:
-                    transaction_code = transaction.get("code", "")
-                    if transaction_code == "christmas6":
-                        christmas_balance = transaction.get("balance", 0)
-
-                self.log.info(f"<g>🎅 Grinch gone! Merry Christmas <c>{self.account_name}</c>! Christmas Miracle: <c>{christmas_balance}</c></g>")
 
             quests = Quests(self.log, self.http, self.tgAccount, self.account_name)
             quests_list = quests.get_quests()
