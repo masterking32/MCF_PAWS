@@ -12,6 +12,8 @@ from .Core.Auth import Auth
 from .Core.User import User
 from .Core.Quests import Quests
 
+from .Core.Events import Events
+
 MasterCryptoFarmBot_Dir = os.path.dirname(
     os.path.dirname(os.path.abspath(__file__ + "/../../"))
 )
@@ -67,11 +69,18 @@ class FarmBot:
             badge = auth.getBadge()
             rank = auth.get_avatarId()
             invite_count = auth.get_referralsCount()
-            wallet = auth.get_wallet()
-            
-            wallet_address = (
-                f"<c>{wallet}</c>"
-                if wallet is not None
+            ton_wallet = auth.get_ton_wallet()
+            sol_wallet = auth.get_sol_wallet()
+
+            ton_address = (
+                f"<c>{auth.mask_wallet_address(ton_wallet)}</c>"
+                if ton_wallet is not None
+                else "<y>Not Connected</y>"
+            )
+
+            sol_address  = (
+                f"<c>{auth.mask_wallet_address(sol_wallet)}</c>"
+                if sol_wallet is not None
                 else "<y>Not Connected</y>"
             )
 
@@ -79,7 +88,8 @@ class FarmBot:
             self.log.info(f"<g>├─ 🏆 Badge Tier: <c>{badge}</c></g>")
             self.log.info(f"<g>├─ 🥇 Rank: <c>{rank}</c></g>")
             self.log.info(f"<g>├─ 👥 Friends: <c>{invite_count}</c></g>")
-            self.log.info(f"<g>└─ 💳 Wallet Address: {wallet_address}</g>")
+            self.log.info(f"<g>└─ 🟦 TON Wallet: {ton_address}</g>")
+            self.log.info(f"<g>└─ 🟪 SOLANA Wallet: {sol_address}</g>")
 
             self.log.info(
                 f"<g>Overal token allocation info for <c>{self.account_name}</c>:</g>"
@@ -102,7 +112,22 @@ class FarmBot:
             self.log.info(f"<g>└─ 📦 Bums: <c>{bums}</c></g>")
 
             user = User(self.log, self.http, self.account_name)
-            user.Complete_Requests()
+            leaderboard, transactions = user.Complete_Requests()
+
+            grinch_Removed = auth.get_grinch_Removed()
+            
+            if grinch_Removed != True:
+                event = Events(self.log, self.http, self.account_name)
+                event.PAWSMAS()
+            else:
+                christmas_balance = 0
+
+                for transaction in transactions:
+                    transaction_code = transaction.get("code", "")
+                    if transaction_code == "christmas6":
+                        christmas_balance = transaction.get("balance", 0)
+
+                self.log.info(f"<g>🎅 Grinch gone! Merry Christmas <c>{self.account_name}</c>! Christmas Miracle: <c>{christmas_balance}</c></g>")
 
             quests = Quests(self.log, self.http, self.tgAccount, self.account_name)
             quests_list = quests.get_quests()
@@ -124,7 +149,7 @@ class FarmBot:
                     f"<g>└─ 📋 Remaining Quests: <c>{remaining_quest}</c></g>"
                 )
 
-                if getConfig("start_quests", True):
+                if getConfig("start_quests", True) and remaining_quest > 0:
                     await quests.complete_and_claim_all_quests()
 
         except Exception as e:

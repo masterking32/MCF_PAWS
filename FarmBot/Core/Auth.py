@@ -68,6 +68,9 @@ class Auth:
     def get_token(self):
         return self.data[0]
 
+    def get_grinch_Removed(self):
+        return self.data[1].get("grinchRemoved", True)
+
     def get_userData(self):
         return self.data[1].get("userData", {})
 
@@ -80,11 +83,17 @@ class Auth:
         masked = start + "************" + end
         return masked
 
-    def get_wallet(self):
+    def get_ton_wallet(self):
         wallet = self.get_userData().get("wallet", None)
         if wallet is not None and wallet != "":
-            masked_address = self.mask_wallet_address(wallet)
-            return masked_address
+            return wallet
+        else:
+            return None
+        
+    def get_sol_wallet(self):
+        wallet = self.get_userData().get("solanaWallet", None)
+        if wallet is not None and wallet != "":
+            return wallet
         else:
             return None
 
