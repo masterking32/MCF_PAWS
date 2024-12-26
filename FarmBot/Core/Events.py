@@ -61,7 +61,7 @@ class Events:
                 )
                 return False
 
-            rewards_amount = response.get("data", [{}]).get("amount", 0)
+            rewards_amount = response.get("data", {}).get("amount", 0)
 
             data = f" Reward Amount: <c>{rewards_amount}</c>" if rewards_amount != 0 else ""
 
@@ -98,7 +98,7 @@ class Events:
             self.tasks = response["data"]
 
             for task in self.tasks:
-                task_claimed = task.get("progress", [{}]).get("claimed", False)
+                task_claimed = task.get("progress", {}).get("claimed", False)
 
                 if task_claimed:
                     continue
