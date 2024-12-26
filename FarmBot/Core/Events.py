@@ -11,6 +11,7 @@ class Events:
         self.log = log
         self.http = httpRequest
         self.account_name = account_name
+        self.tasks = []
 
     def complete_task(self, task):
         try:
@@ -62,10 +63,10 @@ class Events:
 
             rewards_amount = response.get("data", [{}]).get("amount", 0)
 
-            data = f" Reward Amount: <c>{rewards_amount}</c></g>" if rewards_amount != 0 else "</g>"
+            data = f" Reward Amount: <c>{rewards_amount}</c>" if rewards_amount != 0 else ""
 
             self.log.info(
-                f"<g>🎁 Task <c>{task_title}</c> claimed successfully!{data}"
+                f"<g>🎁 Task <c>{task_title}</c> claimed successfully!{data}</g>"
             )
             return True
 
@@ -82,7 +83,6 @@ class Events:
 
             if (
                 response is None
-                or not response.get("success", False)
                 or "data" not in response
             ):
                 self.log.error(
@@ -90,18 +90,17 @@ class Events:
                 )
                 return
             
+
             self.log.info(
                 f"<g>🪄 Successfully fetched pawsmas tasks for <c>{self.account_name}</c>.</g>"
             )
 
-            for task in response["data"]:
-                quest_status = task.get("progress", [{}]).get("status", None)
+            self.tasks = response["data"]
 
-                if (
-                    quest_status == None
-                    or quest_status == "finished"
-                    or quest_status == "closed"
-                ):
+            for task in self.tasks:
+                task_claimed = task.get("progress", [{}]).get("claimed", False)
+
+                if task_claimed:
                     continue
 
                 self.complete_task(task)
