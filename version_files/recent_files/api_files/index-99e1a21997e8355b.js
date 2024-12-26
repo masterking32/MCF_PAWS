@@ -3886,9 +3886,14 @@
           } = t, m = (0, r.CG)(t => t.main.user.referralData.code), [k, u] = (0, e.useState)(!1), {
             webApp: d
           } = (0, Y.fW)(), h = async () => {
-            if (d.shareToStory(s, {
+            try {
+              d.shareToStory(s, {
                 text: "https://t.me/PAWSOG_bot/PAWS?startapp=".concat(m, "\n#PAWSMAS")
-              }), !k && "finished" !== n) {
+              })
+            } catch (t) {
+              console.error(t)
+            }
+            if (!k && "finished" !== n) {
               var t, e, o, r;
               u(!0), "start" === n && (await a(i), l.current >= l.total && await new Promise(t => setTimeout(t, 3e3))), l.current >= l.total && await x(i), u(!1), null !== (t = window) && void 0 !== t && null !== (e = t.Telegram) && void 0 !== e && null !== (o = e.WebApp) && void 0 !== o && null !== (r = o.HapticFeedback) && void 0 !== r && r.impactOccurred && window.Telegram.WebApp.HapticFeedback.impactOccurred("soft")
             }
@@ -3967,10 +3972,15 @@
           } = t, [l, m] = (0, e.useState)(!1), {
             webApp: k
           } = (0, Y.fW)(), u = async () => {
-            k.openLink(x, {
-              try_instant_view: !1,
-              try_browser: !0
-            }), l || "finished" === c || (m(!0), "start" === c && (await a(i), (!y.total || y.current >= y.total) && await new Promise(t => setTimeout(t, 1e3))), (!y.total || y.current >= y.total) && await s(i), m(!1))
+            try {
+              k.openLink(x, {
+                try_instant_view: !1,
+                try_browser: !0
+              })
+            } catch (t) {
+              console.error(t)
+            }
+            l || "finished" === c || (m(!0), "start" === c && (await a(i), (!y.total || y.current >= y.total) && await new Promise(t => setTimeout(t, 1e3))), (!y.total || y.current >= y.total) && await s(i), m(!1))
           };
           return (0, e.useEffect)(() => {
             (!y.total || y.current >= y.total) && "claimable" === c && s(i)
