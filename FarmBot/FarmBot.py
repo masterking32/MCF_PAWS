@@ -48,6 +48,8 @@ class FarmBot:
             self.log.info(
                 f"<g>🐾 PAWS is starting for account <cyan>{self.account_name}</cyan>...</g>"
             )
+            self.log.info(f"needs update")
+            return
 
             self.http = HttpRequest(
                 self.log, self.proxy, self.user_agent, self.account_name
