@@ -174,7 +174,7 @@ class Quests:
                 return False
 
             if rewards_amount == 0:
-                rewards_amount = response.get("data", [{}]).get("amount", 0)
+                rewards_amount = response.get("data", {}).get("amount", 0)
 
             self.log.info(
                 f"<g>🎉 Quest <c>{quest_title}</c> claimed successfully! Reward Amount: <c>{rewards_amount}</c></g>"
@@ -192,14 +192,14 @@ class Quests:
         self.log.info(f"<y>⌛ Checking remaining quests...</y>")
 
         for quest in self.quests:
-            is_claimed = quest.get("progress", [{}]).get("claimed", False)
+            is_claimed = quest.get("progress", {}).get("claimed", False)
 
             if is_claimed:
                 continue
 
-            current_state = quest.get("progress", [{}]).get("current", 0)
-            total_states = quest.get("progress", [{}]).get("total", 0)
-            quest_status = quest.get("progress", [{}]).get("status", None)
+            current_state = quest.get("progress", {}).get("current", 0)
+            total_states = quest.get("progress", {}).get("total", 0)
+            quest_status = quest.get("progress", {}).get("status", None)
             
             if (
                 current_state >= total_states
