@@ -48,13 +48,11 @@ class FarmBot:
             self.log.info(
                 f"<g>🐾 PAWS is starting for account <cyan>{self.account_name}</cyan>...</g>"
             )
-            self.log.info(f"needs update")
-            return
 
             self.http = HttpRequest(
                 self.log, self.proxy, self.user_agent, self.account_name
             )
-            
+
             start_param = ""
             if self.tgAccount is not None and self.tgAccount.NewStart:
                 start_param = "/?tgWebAppStartParam=" + self.tgAccount.ReferralToken
@@ -80,7 +78,7 @@ class FarmBot:
                 else "<y>Not Connected</y>"
             )
 
-            sol_address  = (
+            sol_address = (
                 f"<c>{auth.mask_wallet_address(sol_wallet)}</c>"
                 if sol_wallet is not None
                 else "<y>Not Connected</y>"
@@ -96,7 +94,7 @@ class FarmBot:
             self.log.info(
                 f"<g>Overal token allocation info for <c>{self.account_name}</c>:</g>"
             )
-            
+
             hamster = auth.get_hamster_converted()
             telegram = auth.get_telegram_converted()
             paws = auth.get_paws_converted()
@@ -117,9 +115,9 @@ class FarmBot:
             leaderboard, transactions = user.Complete_Requests()
 
             grinch_Removed = auth.get_grinch_Removed()
-            
+
             christmas_balance = 0
-            
+
             for transaction in transactions:
                 transaction_code = transaction.get("code", "")
                 if transaction_code == "christmas6":
@@ -127,7 +125,9 @@ class FarmBot:
                     break
 
             if grinch_Removed and christmas_balance != 0:
-                self.log.info(f"<g>🎅 Grinch gone! Merry Christmas <c>{self.account_name}</c>! Christmas Miracle: <c>{christmas_balance}</c></g>")
+                self.log.info(
+                    f"<g>🎅 Grinch gone! Merry Christmas <c>{self.account_name}</c>! Christmas Miracle: <c>{christmas_balance}</c></g>"
+                )
             else:
                 event = Events(self.log, self.http, self.account_name)
                 event.PAWSMAS()
@@ -140,13 +140,9 @@ class FarmBot:
                 remaining_quest = quests.get_unclaimed_quests()
                 claimed_quests = total_quests - remaining_quest
 
-                self.log.info(
-                    f"<g>┌─ 🔢 Total Quests: <c>{total_quests}</c></g>"
-                )
+                self.log.info(f"<g>┌─ 🔢 Total Quests: <c>{total_quests}</c></g>")
 
-                self.log.info(
-                    f"<g>├─ ✅ Claimed Quests: <c>{claimed_quests}</c></g>"
-                )
+                self.log.info(f"<g>├─ ✅ Claimed Quests: <c>{claimed_quests}</c></g>")
 
                 self.log.info(
                     f"<g>└─ 📋 Remaining Quests: <c>{remaining_quest}</c></g>"
