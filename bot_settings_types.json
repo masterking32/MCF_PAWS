@@ -15,7 +15,7 @@
   },
   {
     "key": "change_name",
-    "name": "Quests - Add 🐾 to your name",
+    "name": "Quests - Add Emoji to your name",
     "type": "checkbox",
     "default_value": "off",
     "description": ""
