@@ -27,8 +27,8 @@
           blurHeight: 0
         },
         g = a(2783),
-        p = a(247),
-        w = a(6139),
+        w = a(247),
+        p = a(6139),
         v = a(1876).Buffer;
       let E = (e, t) => {
         if (!t) throw Error("missing shared secret");
@@ -39,8 +39,8 @@
           encryptedPayload: n
         }
       };
-      var b = a(1876).Buffer;
-      let f = e => {
+      var f = a(1876).Buffer;
+      let b = e => {
         let {
           openPhantom: t
         } = e;
@@ -126,7 +126,7 @@
             }
           }],
           S = () => {
-            e((0, w.W2)(!1)), k(!1)
+            e((0, p.W2)(!1)), k(!1)
           };
         (0, n.useEffect)(() => {
           t || setTimeout(() => {
@@ -144,7 +144,7 @@
             let {
               success: t,
               error: c
-            } = await (0, p.Z)("/wallet/solana/check_proof", {
+            } = await (0, w.Z)("/wallet/solana/check_proof", {
               method: "POST",
               body: {
                 signature: a,
@@ -168,7 +168,7 @@
               });
               return
             }
-            return e((0, w.M)({
+            return e((0, p.M)({
               proofSolanaWallet: n
             })), !0
           } catch (e) {
@@ -182,7 +182,7 @@
             let {
               success: e,
               data: t
-            } = await (0, p.Z)("/wallet/solana/payload");
+            } = await (0, w.Z)("/wallet/solana/payload");
             if (!e) {
               (0, A.Z)({
                 toastId: "solConnect",
@@ -299,22 +299,22 @@
           }
           let h = i.Z.decode(s),
             g = c().box.before(h, u),
-            p = await Z();
-          if (!p) return;
-          localStorage.setItem("phantom-payload", p);
+            w = await Z();
+          if (!w) return;
+          localStorage.setItem("phantom-payload", w);
           let {
-            nonce: w,
+            nonce: p,
             encryptedPayload: v
           } = E({
             session: l,
-            message: i.Z.encode(b.from(p))
-          }, g), f = new URLSearchParams({
+            message: i.Z.encode(f.from(w))
+          }, g), b = new URLSearchParams({
             dapp_encryption_public_key: i.Z.encode(d),
-            nonce: i.Z.encode(w),
+            nonce: i.Z.encode(p),
             redirect_link: "".concat("https://paws.community", "/app"),
             payload: i.Z.encode(v)
           });
-          window.location.href = "https://phantom.app/ul/v1/signMessage?".concat(f), setTimeout(() => {
+          window.location.href = "https://phantom.app/ul/v1/signMessage?".concat(b), setTimeout(() => {
             window.close()
           }, 100)
         };
@@ -324,7 +324,7 @@
             data: a,
             phantom_encryption_public_key: n
           } = D;
-          t && a && n && (k(!0), e((0, w.W2)(!0))), t && a && !n && x()
+          t && a && n && (k(!0), e((0, p.W2)(!0))), t && a && !n && x()
         }, []), n.createElement(m.Z, {
           isOpen: t,
           close: S
@@ -418,7 +418,7 @@
           })))
         }))), n.createElement("div", {
           className: "custom-carousel-item"
-        }, [1, 2].includes(r) && n.createElement(f, {
+        }, [1, 2].includes(r) && n.createElement(b, {
           openPhantom: I
         })), n.createElement("div", {
           className: "custom-carousel-item"
@@ -436,44 +436,11 @@
         }, "Retry"))))))))
       }
     },
-    5498: function(e, t, a) {
-      "use strict";
-      var n = a(7294),
-        r = a(5719);
-      a(2077), t.Z = e => {
-        let {
-          isOpen: t,
-          isCloseAble: a = !0,
-          close: c,
-          children: i
-        } = e, [s, o] = (0, n.useState)(!1), [l, m] = (0, n.useState)(!1), d = async () => {
-          a && (o(!1), m(!1), await new Promise(e => {
-            setTimeout(() => {
-              c(), e()
-            }, 250)
-          }))
-        };
-        return (0, n.useEffect)(() => {
-          t && (m(!0), setTimeout(() => {
-            o(!0)
-          }, 250)), !t && s && d()
-        }, [t]), n.createElement(r.Z, {
-          isOpen: l,
-          toggle: d,
-          backdropClassName: "swipe-able-popup-backdrop",
-          modalClassName: "swipe-able-popup-modal",
-          className: "swipe-able-popup-wrapper",
-          zIndex: 900
-        }, n.createElement("div", {
-          className: "swipe-able-popup-container ".concat(s ? "is-open" : "is-close")
-        }, i))
-      }
-    },
     4650: function(e, t, a) {
       "use strict";
       a.d(t, {
         Z: function() {
-          return O
+          return P
         }
       });
       var n = a(7462),
@@ -482,16 +449,15 @@
         i = a.n(c),
         s = a(6066),
         o = a(9163),
-        l = a(673),
-        m = a(2924),
-        d = a(742),
-        A = a(1881),
-        u = a(3129),
-        h = a(970),
-        g = a(383),
-        p = a(713),
+        l = a(2924),
+        m = a(742),
+        d = a(1881),
+        A = a(3129),
+        u = a(970),
+        h = a(383),
+        g = a(713),
         w = a(2121),
-        v = {
+        p = {
           src: "/_next/static/media/hat.75e21873.png",
           height: 422,
           width: 495,
@@ -499,12 +465,12 @@
           blurWidth: 8,
           blurHeight: 7
         },
-        E = a(9195),
-        b = a(1249),
+        v = a(9195),
+        E = a(1249),
         f = a(7914),
-        N = a(6361),
-        y = a(3750),
-        k = {
+        b = a(6361),
+        N = a(3750),
+        y = {
           src: "/_next/static/media/starAnimatedSilver.b469545a.svg",
           height: 200,
           width: 200,
@@ -512,13 +478,13 @@
           blurHeight: 0
         };
       a(1106);
-      let D = {
-          1: b.Z,
+      let k = {
+          1: E.Z,
           2: f.Z,
-          3: N.Z,
-          4: y.Z
+          3: b.Z,
+          4: N.Z
         },
-        P = {
+        D = {
           1: {
             src: "/_next/static/media/starAnimatedBronze.256bb892.svg",
             height: 200,
@@ -526,7 +492,7 @@
             blurWidth: 0,
             blurHeight: 0
           },
-          2: k,
+          2: y,
           3: {
             src: "/_next/static/media/starAnimatedGold.c0ea8ebe.svg",
             height: 200,
@@ -534,54 +500,53 @@
             blurWidth: 0,
             blurHeight: 0
           },
-          4: k
+          4: y
         };
-      var O = e => {
+      var P = e => {
         let {
-          isBalanceHidden: t,
-          isShow: a,
-          openDetailInfo: c = () => {}
-        } = e, b = (0, E.CG)(e => e.main.isMobile), f = (0, E.CG)(e => e.main.user.gameData.balance), N = (0, E.CG)(e => e.main.user.gameData.wPaws), y = (0, E.CG)(e => e.main.user.badgeTier), k = (0, E.CG)(e => e.main.user.allocationData.notcoin.converted), O = (0, E.CG)(e => e.main.user.allocationData.dogs.converted), S = r.createElement("div", {
+          isShow: t,
+          openDetailInfo: a = () => {}
+        } = e, c = (0, v.CG)(e => e.main.isMobile), E = (0, v.CG)(e => e.main.user.gameData.balance), f = (0, v.CG)(e => e.main.user.gameData.wPaws), b = (0, v.CG)(e => e.main.user.badgeTier), N = !(0, v.CG)(e => e.main.user.grinchRemoved), y = (0, v.CG)(e => e.main.user.allocationData.notcoin.converted), P = (0, v.CG)(e => e.main.user.allocationData.dogs.converted), O = r.createElement("div", {
           className: "count step-2"
         }, r.createElement("div", {
           className: "text"
         }, "Newcomer"), r.createElement("div", {
           className: "img-con"
         }, r.createElement(i(), {
-          src: h.Z,
+          src: u.Z,
           alt: "",
-          width: b ? 18 : 35,
-          height: b ? 18 : 35
+          width: c ? 18 : 35,
+          height: c ? 18 : 35
         })), r.createElement("div", {
           className: "text"
         }, "RANK"));
-        return k && !O && (S = r.createElement("div", {
+        return y && !P && (O = r.createElement("div", {
           className: "count step-2"
         }, r.createElement("div", {
           className: "text"
         }, "Pioneer"), r.createElement("div", {
           className: "img-con"
         }, r.createElement(i(), {
-          src: g.Z,
+          src: h.Z,
           alt: "",
-          width: b ? 18 : 35,
-          height: b ? 18 : 35
+          width: c ? 18 : 35,
+          height: c ? 18 : 35
         })), r.createElement("div", {
           className: "text"
-        }, "RANK"))), !k && O && (S = r.createElement("div", {
+        }, "RANK"))), !y && P && (O = r.createElement("div", {
           className: "count step-2"
         }, r.createElement("div", {
           className: "text"
         }, "Legend"), r.createElement("div", {
           className: "img-con"
         }, r.createElement(i(), {
-          src: p.Z,
+          src: g.Z,
           alt: "",
-          width: b ? 18 : 35,
-          height: b ? 18 : 35
+          width: c ? 18 : 35,
+          height: c ? 18 : 35
         })), r.createElement("div", {
           className: "text"
-        }, "RANK"))), k && O && (S = r.createElement("div", {
+        }, "RANK"))), y && P && (O = r.createElement("div", {
           className: "count step-2"
         }, r.createElement("div", {
           className: "text"
@@ -590,8 +555,8 @@
         }, r.createElement(i(), {
           src: w.Z,
           alt: "",
-          width: b ? 18 : 35,
-          height: b ? 18 : 35
+          width: c ? 18 : 35,
+          height: c ? 18 : 35
         })), r.createElement("div", {
           className: "text"
         }, "RANK"))), r.createElement("div", {
@@ -599,44 +564,37 @@
         }, r.createElement("div", {
           className: "img-con"
         }, r.createElement("div", {
-          className: "main-logo ".concat(t ? "hidden" : "")
+          className: "main-logo"
         }, r.createElement(i(), {
           src: o.Z,
           alt: "",
-          width: b ? 120 : 170,
-          height: b ? 120 : 170
+          width: c ? 120 : 170,
+          height: c ? 120 : 170
         }), r.createElement("div", {
           className: "hat-con"
         }, r.createElement(i(), {
-          src: v,
+          src: p,
           alt: "",
           width: 250
-        }))), r.createElement("div", {
-          className: "main-logo ".concat(t ? "" : "hidden")
-        }, r.createElement(i(), {
-          src: l.Z,
-          alt: "",
-          width: b ? 120 : 170,
-          height: b ? 120 : 170
-        })), D[y] && r.createElement("div", {
-          className: "user-mark tier-".concat(y)
+        }))), k[b] && r.createElement("div", {
+          className: "user-mark tier-".concat(b)
         }, r.createElement("div", {
           className: "icon-con"
         }, r.createElement(i(), {
-          src: D[y],
+          src: k[b],
           alt: "",
-          width: b ? 22 : 49,
-          height: b ? 22 : 49
-        }), a && r.createElement("div", {
+          width: c ? 22 : 49,
+          height: c ? 22 : 49
+        }), t && r.createElement("div", {
           className: "animated-icon"
         }, r.createElement(i(), {
-          src: P[y],
+          src: D[b],
           alt: "",
-          width: b ? 75 : 150,
-          height: b ? 75 : 150
+          width: c ? 75 : 150,
+          height: c ? 75 : 150
         }))))), r.createElement("div", {
           className: "text-carousel-con"
-        }, !!N && r.createElement(s.Z, (0, n.Z)({
+        }, !!f && r.createElement(s.Z, (0, n.Z)({
           className: "balance-slider"
         }, {
           arrows: !1,
@@ -660,13 +618,13 @@
           className: "my-wrap"
         }, r.createElement("div", {
           className: "count"
-        }, !t && (f > 1e5 ? (0, m.i)(f) : (0, d.Z)(f, ",")), t && r.createElement("div", {
+        }, !N && (E > 1e5 ? (0, l.i)(E) : (0, m.Z)(E, ",")), N && r.createElement("div", {
           className: "d-flex align-items-center pt-2"
         }, r.createElement(i(), {
-          src: A.Z,
+          src: d.Z,
           alt: "",
-          width: 50,
-          height: 50
+          width: c ? 50 : 80,
+          height: c ? 50 : 80
         }))), r.createElement("div", {
           className: "currency"
         }, "PAWS"))), r.createElement("div", {
@@ -675,30 +633,30 @@
           className: "my-wrap"
         }, r.createElement("div", {
           className: "count"
-        }, N > 1e5 ? (0, m.i)(N) : (0, d.Z)(N, ",")), r.createElement("div", {
+        }, f > 1e5 ? (0, l.i)(f) : (0, m.Z)(f, ",")), r.createElement("div", {
           className: "currency"
-        }, "wPAWS")))), !N && r.createElement("div", {
+        }, "wPAWS")))), !f && r.createElement("div", {
           className: "currect-balance-wrap"
         }, r.createElement("div", {
           className: "my-wrap"
         }, r.createElement("div", {
           className: "count"
-        }, !t && (f > 1e5 ? (0, m.i)(f) : (0, d.Z)(f, ",")), t && r.createElement("div", {
+        }, !N && (E > 1e5 ? (0, l.i)(E) : (0, m.Z)(E, ",")), N && r.createElement("div", {
           className: "d-flex align-items-center pt-2"
         }, r.createElement(i(), {
-          src: A.Z,
+          src: d.Z,
           alt: "",
-          width: 50,
-          height: 50
+          width: c ? 50 : 80,
+          height: c ? 50 : 80
         }))), r.createElement("div", {
           className: "currency"
         }, "PAWS")))), r.createElement("div", {
           className: "view-score",
-          onClick: c
-        }, S, !!c && r.createElement("div", {
+          onClick: a
+        }, O, !!a && r.createElement("div", {
           className: "icon-con"
         }, r.createElement(i(), {
-          src: u.Z,
+          src: A.Z,
           alt: "",
           width: 24,
           height: 24
@@ -1001,17 +959,6 @@
         blurHeight: 0
       }
     },
-    673: function(e, t) {
-      "use strict";
-      t.Z = {
-        src: "/_next/static/media/pawsLogoGrinch.ddf51c5a.png",
-        height: 1058,
-        width: 1058,
-        blurDataURL: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAA8UlEQVR42mOYekibaeVZTSYGKGjdp8s3/6S2DYi96pwWMwMMLDqlNXXtBc2z265qbl57Qev/kjPaCmCJ6Ye1bWYe1Z6w7YrG5UO31T+duKe28PBt9Z8bLml2LT6trc0w/Yj2mmVntP4fvK2ud/WJavi1x2pF//8zsGy9ovl+yWmtlwyzj2m7rDyn1Xf8rlrihUdqR64+Vjt66bFq09YrGrnLz2j5MIDAghNa87df0fh/5LbazjP31SIO3VT/v+qs5tO8Tbo8YAUzjmj3ARXdXX9BczoQr195RvPAnGNax6Ye1hZkQAate3Q45x3X0kEWAwA4YmykDqZdbgAAAABJRU5ErkJggg==",
-        blurWidth: 8,
-        blurHeight: 8
-      }
-    },
     1881: function(e, t) {
       "use strict";
       t.Z = {
@@ -1024,7 +971,6 @@
       }
     },
     2480: function() {},
-    2077: function() {},
     1106: function() {}
   }
 ]);
