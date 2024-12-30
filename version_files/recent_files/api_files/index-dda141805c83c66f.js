@@ -2048,7 +2048,9 @@
             className: "wallet-con"
           }, e.createElement("div", {
             className: "wallet"
-          }, a.title))), e.createElement("div", {
+          }, a.title), e.createElement("div", {
+            className: "descr"
+          }, "Mandatory*"))), e.createElement("div", {
             className: "points"
           }, "start" === x && e.createElement(ig.Z, {
             href: "".concat("https://paws.community", "/app?initData=").concat(window.btoa(n.initData)),
