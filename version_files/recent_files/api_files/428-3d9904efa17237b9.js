@@ -15,8 +15,8 @@
         o = a.n(s),
         l = a(1163),
         m = a(5498),
-        A = a(9195),
-        d = a(1513);
+        d = a(9195),
+        A = a(1513);
       a(2480);
       var u = a(4441),
         h = {
@@ -107,9 +107,9 @@
         })))))
       };
       var N = () => {
-        let e = (0, A.TL)(),
-          t = (0, A.CG)(e => e.main.isSolWalletModalOpen),
-          a = (0, A.CG)(e => e.main.isMobile),
+        let e = (0, d.TL)(),
+          t = (0, d.CG)(e => e.main.isSolWalletModalOpen),
+          a = (0, d.CG)(e => e.main.isMobile),
           [r, s] = (0, n.useState)(0),
           [v, N] = (0, n.useState)(!1),
           [y, k] = (0, n.useState)(!1),
@@ -153,7 +153,7 @@
               }
             });
             if ("Wallet already exists" === c) {
-              (0, d.Z)({
+              (0, A.Z)({
                 toastId: "solConnect",
                 imgCode: "cross",
                 message: "Wallet already connected"
@@ -161,7 +161,7 @@
               return
             }
             if (!t) {
-              (0, d.Z)({
+              (0, A.Z)({
                 toastId: "solConnect",
                 imgCode: "cross",
                 message: "Something went wrong. Try again"
@@ -184,7 +184,7 @@
               data: t
             } = await (0, p.Z)("/wallet/solana/payload");
             if (!e) {
-              (0, d.Z)({
+              (0, A.Z)({
                 toastId: "solConnect",
                 imgCode: "cross",
                 message: "Something went wrong while connect wallet. Try again"
@@ -201,19 +201,21 @@
           try {
             var e, t;
             if (null !== (e = window) && void 0 !== e && null !== (t = e.phantom) && void 0 !== t && t.solana) {
-              let e = await Z();
-              if (!e) return;
-              let t = new TextEncoder().encode(e),
+              let e = await window.phantom.solana.connect();
+              if (!(null != e && e.publicKey)) return;
+              let t = await Z();
+              if (!t) return;
+              let a = new TextEncoder().encode(t),
                 {
-                  signature: a,
-                  publicKey: n
-                } = await window.phantom.solana.signMessage(t),
-                r = i.Z.encode(a),
-                c = n.toBase58();
+                  signature: n,
+                  publicKey: r
+                } = await window.phantom.solana.signMessage(a),
+                c = i.Z.encode(n),
+                s = r.toBase58();
               await C({
-                signature: r,
-                publicKey: c,
-                token: e
+                signature: c,
+                publicKey: s,
+                token: t
               }), S();
               return
             }
@@ -225,7 +227,7 @@
               r = i.Z.encode(a.publicKey);
             localStorage.setItem("phantom-keypair", n), window.location.href = "https://phantom.app/ul/v1/connect?app_url=".concat("https://paws.community", "&redirect_link=").concat("https://paws.community", "/app?&dapp_encryption_public_key=").concat(r)
           } catch (e) {
-            (0, d.Z)({
+            (0, A.Z)({
               toastId: "solConnect",
               imgCode: "cross",
               message: "Something went wrong. Try again"
@@ -242,7 +244,7 @@
             {
               phantom_encryption_public_key: s
             } = D;
-          if (s && localStorage.setItem("phantom-phantom_encryption_public_key", s), s || (s = localStorage.getItem("phantom-phantom_encryption_public_key")), n || r) return (0, d.Z)({
+          if (s && localStorage.setItem("phantom-phantom_encryption_public_key", s), s || (s = localStorage.getItem("phantom-phantom_encryption_public_key")), n || r) return (0, A.Z)({
             toastId: "solConnect",
             imgCode: "cross",
             message: "Something went wrong while connect wallet. Try again"
@@ -252,7 +254,7 @@
             address: o,
             session: l,
             signature: m,
-            publicKey: A,
+            publicKey: d,
             secretKey: u
           } = function(e, t) {
             let a = e => {
@@ -268,10 +270,10 @@
                 o = i.Z.decode(t.nonce),
                 l = i.Z.decode(t.data),
                 m = c().box.before(s, r),
-                A = c().box.open.after(l, o, m);
-              if (!A) throw Error("Failed to decrypt the data.");
-              let d = new TextDecoder().decode(A),
-                u = JSON.parse(d);
+                d = c().box.open.after(l, o, m);
+              if (!d) throw Error("Failed to decrypt the data.");
+              let A = new TextDecoder().decode(d),
+                u = JSON.parse(A);
               return {
                 address: u.public_key,
                 session: u.session,
@@ -307,7 +309,7 @@
             session: l,
             message: i.Z.encode(b.from(p))
           }, g), f = new URLSearchParams({
-            dapp_encryption_public_key: i.Z.encode(A),
+            dapp_encryption_public_key: i.Z.encode(d),
             nonce: i.Z.encode(w),
             redirect_link: "".concat("https://paws.community", "/app"),
             payload: i.Z.encode(v)
@@ -356,7 +358,7 @@
         })), n.createElement("div", {
           className: "retry-btn",
           onClick: x
-        }, "Sing message"))))), !y && n.createElement(n.Fragment, null, n.createElement("div", {
+        }, "Sign message"))))), !y && n.createElement(n.Fragment, null, n.createElement("div", {
           className: "cross-con",
           onClick: S
         }, n.createElement(o(), {
@@ -444,7 +446,7 @@
           isCloseAble: a = !0,
           close: c,
           children: i
-        } = e, [s, o] = (0, n.useState)(!1), [l, m] = (0, n.useState)(!1), A = async () => {
+        } = e, [s, o] = (0, n.useState)(!1), [l, m] = (0, n.useState)(!1), d = async () => {
           a && (o(!1), m(!1), await new Promise(e => {
             setTimeout(() => {
               c(), e()
@@ -454,10 +456,10 @@
         return (0, n.useEffect)(() => {
           t && (m(!0), setTimeout(() => {
             o(!0)
-          }, 250)), !t && s && A()
+          }, 250)), !t && s && d()
         }, [t]), n.createElement(r.Z, {
           isOpen: l,
-          toggle: A,
+          toggle: d,
           backdropClassName: "swipe-able-popup-backdrop",
           modalClassName: "swipe-able-popup-modal",
           className: "swipe-able-popup-wrapper",
@@ -482,8 +484,8 @@
         o = a(9163),
         l = a(673),
         m = a(2924),
-        A = a(742),
-        d = a(1881),
+        d = a(742),
+        A = a(1881),
         u = a(3129),
         h = a(970),
         g = a(383),
@@ -539,7 +541,7 @@
           isBalanceHidden: t,
           isShow: a,
           openDetailInfo: c = () => {}
-        } = e, b = (0, E.CG)(e => e.main.isMobile), f = (0, E.CG)(e => e.main.user.gameData.balance), N = (0, E.CG)(e => e.main.user.badgeTier), y = (0, E.CG)(e => e.main.user.allocationData.notcoin.converted), k = (0, E.CG)(e => e.main.user.allocationData.dogs.converted), O = r.createElement("div", {
+        } = e, b = (0, E.CG)(e => e.main.isMobile), f = (0, E.CG)(e => e.main.user.gameData.balance), N = (0, E.CG)(e => e.main.user.gameData.wPaws), y = (0, E.CG)(e => e.main.user.badgeTier), k = (0, E.CG)(e => e.main.user.allocationData.notcoin.converted), O = (0, E.CG)(e => e.main.user.allocationData.dogs.converted), S = r.createElement("div", {
           className: "count step-2"
         }, r.createElement("div", {
           className: "text"
@@ -553,7 +555,7 @@
         })), r.createElement("div", {
           className: "text"
         }, "RANK"));
-        return y && !k && (O = r.createElement("div", {
+        return k && !O && (S = r.createElement("div", {
           className: "count step-2"
         }, r.createElement("div", {
           className: "text"
@@ -566,7 +568,7 @@
           height: b ? 18 : 35
         })), r.createElement("div", {
           className: "text"
-        }, "RANK"))), !y && k && (O = r.createElement("div", {
+        }, "RANK"))), !k && O && (S = r.createElement("div", {
           className: "count step-2"
         }, r.createElement("div", {
           className: "text"
@@ -579,7 +581,7 @@
           height: b ? 18 : 35
         })), r.createElement("div", {
           className: "text"
-        }, "RANK"))), y && k && (O = r.createElement("div", {
+        }, "RANK"))), k && O && (S = r.createElement("div", {
           className: "count step-2"
         }, r.createElement("div", {
           className: "text"
@@ -616,25 +618,25 @@
           alt: "",
           width: b ? 120 : 170,
           height: b ? 120 : 170
-        })), D[N] && r.createElement("div", {
-          className: "user-mark tier-".concat(N)
+        })), D[y] && r.createElement("div", {
+          className: "user-mark tier-".concat(y)
         }, r.createElement("div", {
           className: "icon-con"
         }, r.createElement(i(), {
-          src: D[N],
+          src: D[y],
           alt: "",
           width: b ? 22 : 49,
           height: b ? 22 : 49
         }), a && r.createElement("div", {
           className: "animated-icon"
         }, r.createElement(i(), {
-          src: P[N],
+          src: P[y],
           alt: "",
           width: b ? 75 : 150,
           height: b ? 75 : 150
         }))))), r.createElement("div", {
           className: "text-carousel-con"
-        }, r.createElement(s.Z, (0, n.Z)({
+        }, !!N && r.createElement(s.Z, (0, n.Z)({
           className: "balance-slider"
         }, {
           arrows: !1,
@@ -658,10 +660,10 @@
           className: "my-wrap"
         }, r.createElement("div", {
           className: "count"
-        }, !t && (f > 1e5 ? (0, m.i)(f) : (0, A.Z)(f, ",")), t && r.createElement("div", {
+        }, !t && (f > 1e5 ? (0, m.i)(f) : (0, d.Z)(f, ",")), t && r.createElement("div", {
           className: "d-flex align-items-center pt-2"
         }, r.createElement(i(), {
-          src: d.Z,
+          src: A.Z,
           alt: "",
           width: 50,
           height: 50
@@ -673,12 +675,27 @@
           className: "my-wrap"
         }, r.createElement("div", {
           className: "count"
-        }, (0, A.Z)(1e3, ",")), r.createElement("div", {
+        }, N > 1e5 ? (0, m.i)(N) : (0, d.Z)(N, ",")), r.createElement("div", {
           className: "currency"
-        }, "wPAWS")))), !1), r.createElement("div", {
+        }, "wPAWS")))), !N && r.createElement("div", {
+          className: "currect-balance-wrap"
+        }, r.createElement("div", {
+          className: "my-wrap"
+        }, r.createElement("div", {
+          className: "count"
+        }, !t && (f > 1e5 ? (0, m.i)(f) : (0, d.Z)(f, ",")), t && r.createElement("div", {
+          className: "d-flex align-items-center pt-2"
+        }, r.createElement(i(), {
+          src: A.Z,
+          alt: "",
+          width: 50,
+          height: 50
+        }))), r.createElement("div", {
+          className: "currency"
+        }, "PAWS")))), r.createElement("div", {
           className: "view-score",
           onClick: c
-        }, O, !!c && r.createElement("div", {
+        }, S, !!c && r.createElement("div", {
           className: "icon-con"
         }, r.createElement(i(), {
           src: u.Z,
@@ -725,12 +742,12 @@
           o = {},
           m = await (0, c.Z)(n);
         m && (o.Authorization = "Bearer ".concat(m));
-        let A = await (0, i.Z)(e, l({}, t), a, o);
-        return 401 === A.status ? (await (0, r.deleteCookie)("".concat("paws", "-accessToken"), l(l({}, n), {}, {
+        let d = await (0, i.Z)(e, l({}, t), a, o);
+        return 401 === d.status ? (await (0, r.deleteCookie)("".concat("paws", "-accessToken"), l(l({}, n), {}, {
           domain: s.env.APP_DOMAIN
         })), await (0, r.deleteCookie)("".concat("paws", "-refreshToken"), l(l({}, n), {}, {
           domain: s.env.APP_DOMAIN
-        })), window.location.href = window.location.pathname, null) : await A.json()
+        })), window.location.href = window.location.pathname, null) : await d.json()
       };
       t.Z = m
     },
@@ -769,7 +786,7 @@
       "use strict";
       a.d(t, {
         Z: function() {
-          return d
+          return A
         }
       });
       var n = a(6656),
@@ -798,7 +815,7 @@
         return a
       }
 
-      function A(e) {
+      function d(e) {
         for (var t = 1; t < arguments.length; t++) {
           var a = null != arguments[t] ? arguments[t] : {};
           t % 2 ? m(Object(a), !0).forEach(function(t) {
@@ -809,23 +826,23 @@
         }
         return e
       }
-      var d = async function() {
+      var A = async function() {
         let e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
           t = "",
           a = "";
-        if ((0, r.hasCookie)("refreshToken", A(A({}, e), {}, {
+        if ((0, r.hasCookie)("refreshToken", d(d({}, e), {}, {
             domain: l.env.APP_DOMAIN
-          })) && s(t = await (0, r.getCookie)("refreshToken", A(A({}, e), {}, {
+          })) && s(t = await (0, r.getCookie)("refreshToken", d(d({}, e), {}, {
             domain: l.env.APP_DOMAIN
-          }))) && (await (0, r.deleteCookie)("refreshToken", A(A({}, e), {}, {
+          }))) && (await (0, r.deleteCookie)("refreshToken", d(d({}, e), {}, {
             domain: l.env.APP_DOMAIN
-          })), t = ""), (window.sessionStorage.getItem("accessToken") || (0, r.hasCookie)("".concat("paws", "-accessToken"), A(A({}, e), {}, {
+          })), t = ""), (window.sessionStorage.getItem("accessToken") || (0, r.hasCookie)("".concat("paws", "-accessToken"), d(d({}, e), {}, {
             domain: l.env.APP_DOMAIN
-          }))) && s(a = window.sessionStorage.getItem("accessToken") || await (0, r.getCookie)("".concat("paws", "-accessToken"), A(A({}, e), {}, {
+          }))) && s(a = window.sessionStorage.getItem("accessToken") || await (0, r.getCookie)("".concat("paws", "-accessToken"), d(d({}, e), {}, {
             domain: l.env.APP_DOMAIN
           })))) {
           var n, c, i, m;
-          await (0, r.deleteCookie)("".concat("paws", "-accessToken"), A(A({}, e), {}, {
+          await (0, r.deleteCookie)("".concat("paws", "-accessToken"), d(d({}, e), {}, {
             domain: l.env.APP_DOMAIN
           })), null === (n = window) || void 0 === n || null === (c = n.sessionStorage) || void 0 === c || c.removeItem("accessToken"), null === (i = window) || void 0 === i || null === (m = i.location) || void 0 === m || m.reload(), a = ""
         }
@@ -838,7 +855,7 @@
           });
           if (a = (await n.json()).data.accessToken || "") {
             let t = new Date;
-            t = new Date(t.getUTCFullYear() + 1, t.getUTCMonth(), t.getUTCDate()), await (0, r.setCookie)("accessToken", a, A(A({}, e), {}, {
+            t = new Date(t.getUTCFullYear() + 1, t.getUTCMonth(), t.getUTCDate()), await (0, r.setCookie)("accessToken", a, d(d({}, e), {}, {
               expires: t,
               domain: l.env.APP_DOMAIN
             }))

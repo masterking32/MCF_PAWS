@@ -12,4 +12,4 @@ self.__BUILD_MANIFEST = function(s, c) {
     "/phantom-connect": ["static/css/088adeff40e15ab7.css", "static/chunks/pages/phantom-connect-bbac7ed9a94256b4.js"],
     sortedPages: ["/", "/404", "/_app", "/_error", "/app", "/phantom-connect"]
   }
-}("static/chunks/650-619dcabc37a05f8c.js", "static/chunks/428-47e250218f089129.js"), self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB();
+}("static/chunks/650-619dcabc37a05f8c.js", "static/chunks/428-3d9904efa17237b9.js"), self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB();
