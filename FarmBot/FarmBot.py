@@ -44,6 +44,7 @@ class FarmBot:
         self.tgAccount = tgAccount
 
     async def run(self):
+        return
         try:
             self.log.info(
                 f"<g>🐾 PAWS is starting for account <cyan>{self.account_name}</cyan>...</g>"
