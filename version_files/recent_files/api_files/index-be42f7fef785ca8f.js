@@ -1163,13 +1163,18 @@
           isOpen: N,
           target: "TooltipExample".concat(m._id),
           toggle: () => w(!1)
-        }, m.hint), e.createElement("div", {
+        }, e.createElement("p", {
+          className: "custom-tooltip-descr",
+          dangerouslySetInnerHTML: {
+            __html: m.hint
+          }
+        })), e.createElement("div", {
           className: "main-info",
           id: "TooltipExample".concat(m._id)
         }, e.createElement("div", {
           className: "icon-con"
         }, e.createElement(r(), {
-          src: ix[m.code] || m.iconUrl || ix.paws,
+          src: m.iconUrl || ix[m.code] || ix.paws,
           alt: "",
           width: 40,
           height: 40,
@@ -1177,8 +1182,11 @@
         })), e.createElement("div", {
           className: "wallet-con"
         }, e.createElement("div", {
-          className: "wallet"
-        }, m.quest && m.quest.length > 0 ? "Quest reward" : m.title || ic[m.code]), m.date && e.createElement("div", {
+          className: "wallet",
+          dangerouslySetInnerHTML: {
+            __html: m.quest && m.quest.length > 0 ? "Quest reward" : m.title || ic[m.code]
+          }
+        }), m.date && e.createElement("div", {
           className: "date"
         }, u()(m.date).format("MMMM DD"), " at ", u()(m.date).format("HH:mm")), "quests" === y && !!C && e.createElement("p", {
           className: "reward-count"
