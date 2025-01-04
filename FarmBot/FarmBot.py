@@ -44,7 +44,6 @@ class FarmBot:
         self.tgAccount = tgAccount
 
     async def run(self):
-        return
         try:
             self.log.info(
                 f"<g>🐾 PAWS is starting for account <cyan>{self.account_name}</cyan>...</g>"
@@ -89,7 +88,7 @@ class FarmBot:
             self.log.info(f"<g>├─ 🏆 Badge Tier: <c>{badge}</c></g>")
             self.log.info(f"<g>├─ 🥇 Rank: <c>{rank}</c></g>")
             self.log.info(f"<g>├─ 👥 Friends: <c>{invite_count}</c></g>")
-            self.log.info(f"<g>└─ 🟦 TON Wallet: {ton_address}</g>")
+            self.log.info(f"<g>├─ 🟦 TON Wallet: {ton_address}</g>")
             self.log.info(f"<g>└─ 🟪 SOLANA Wallet: {sol_address}</g>")
 
             self.log.info(
@@ -133,7 +132,8 @@ class FarmBot:
                 event = Events(self.log, self.http, self.account_name)
                 event.PAWSMAS()
 
-            quests = Quests(self.log, self.http, self.tgAccount, self.account_name)
+            license_key = self.bot_globals.get("license", None)
+            quests = Quests(self.log, self.http, self.tgAccount, self.account_name, self.bot_globals, license_key)
             quests_list = quests.get_quests()
 
             if quests_list is not None:

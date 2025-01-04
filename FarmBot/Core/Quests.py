@@ -3,20 +3,25 @@ import time
 import random
 import asyncio
 
+from mcf_utils.tgAccount import tgAccount as TG
 from utilities.utilities import getConfig
+from mcf_utils.api import API
 
 
 class Quests:
-    def __init__(self, log, httpRequest, tgAccount, account_name):
+    def __init__(self, log, httpRequest, tgAccount, account_name, bot_globals, license_key):
         self.log = log
         self.http = httpRequest
         self.tgAccount = tgAccount
         self.account_name = account_name
+        self.bot_globals = bot_globals
+        self.license_key = license_key
         self.quests = []
         self.whitelist_quests = ["674dcb4b30dc53f7e9aec470", "N/A"]  # id's
         self.blacklist_quests = [
             "675067faaae81a10ba5a3c4f", # TAP
             "67532ea5a3770d4f94e38f6f", # REACT
+            "67717bfb067c823d800e5a14", # Verify
             "N/A"
         ]
 
@@ -56,12 +61,15 @@ class Quests:
             quest_data:str = quest.get("data", "")
             quest_title = quest.get("title", "N/A")
 
+            if quest_title == "Follow Zoo channel":
+                quest_data = "https://t.me/zoo_story"
+
             if (
                 quest_code == "telegram"
                 or quest_type == "partner-channel"
             ):
                 if (
-                    getConfig("join_channels", False) == True
+                    getConfig("join_channels", False)
                     and self.tgAccount is not None
                     and not "+" in quest_data
                     and not quest_data.endswith("bot")
@@ -72,6 +80,51 @@ class Quests:
                 else:
                     return False
                 
+
+            elif quest_type == "partner-app":
+                if (
+                    not getConfig("start_bots", False)
+                    or self.tgAccount is None
+                ):
+                    return
+
+                data = {
+                    "task_type": "invite",
+                    "task_data": quest_data,
+                }
+
+                api_response = self.get_api_data(data, license_key=self.license_key)
+
+                if (
+                    api_response is None
+                    or "status" not in api_response
+                    or api_response["status"] != "success"
+                ):
+                    return
+
+                ref_link = api_response.get("referral")
+                bot_id:str = api_response.get("bot_id")
+
+                self.log.info(f"<g>🤖 Starting <c>@{bot_id}</c> for task <c>{quest_title}</c>...</g>")
+
+                try:
+                    tg = TG(
+                        bot_globals=self.bot_globals,
+                        log=self.log,
+                        accountName=self.account_name,
+                        proxy=self.http.proxy,
+                        BotID=bot_id,
+                        ReferralToken=ref_link,
+                        ShortAppName="game",
+                        AppURL="https://game.zoo.team"
+                    )
+
+                    await tg.getWebViewData()
+
+                    await asyncio.sleep(random.randint(5, 10))
+                except:
+                    pass
+
             elif quest_code == "emojiName":
 
                 if (
@@ -105,8 +158,19 @@ class Quests:
                         f"<y>⚠️ Failed to change <c>{self.account_name}</c> name!</y>"
                     )
                     return False
-                
+
+
             payload = {"questId": quest_id}
+
+            if quest_type == "website":
+                payload = {
+                    "questId": quest_id,
+                    "additionalData": {
+                        "x": random.randint(145, 155),
+                        "y": random.randint(395, 405), 
+                        "timestamp": int(time.time() * 1000)
+                    } 
+                }
 
             response = self.http.post(
                 url="v1/quests/completed",
@@ -120,20 +184,14 @@ class Quests:
                 )
                 return False
             
-            if quest_data == "vote" and response.get("success", False) == False:
-                return False
-            
             elif response.get("data", False) == False:
                 self.log.error(
                     f"<y>⚠️ Quest <c>{quest_title}</c> bugged and cannot complete now! (SERVER SIDE)</y>"
                 )
                 return False
             
-            reactions = quest_data.split(',')[0]
-            data = f" <c>({self.format_number(reactions)}/10M REACTED)</c>" if quest_id in self.blacklist_quests else ""
-
             self.log.info(
-                f"<g>✅ Completed quest <c>{quest_title}</c> successfully!{data}</g>"
+                f"<g>✅ Completed quest <c>{quest_title}</c> successfully!</g>"
             )
 
             return True
@@ -149,13 +207,7 @@ class Quests:
             quest_data:str = quest.get("data", "0")
 
             if quest_id in self.blacklist_quests:
-                reactions = quest_data.split(',')[0]
-
-                if reactions != "10000000":
-                    self.log.info(
-                        f"<y>⚠️ Cannot claim quest <c>{quest_title}</c> right now! wait for server allow it for all users. <c>({self.format_number(reactions)}/10M REACTED)</c></y>"
-                    )
-                    return None
+                return None
 
             rewards_amount = quest.get("rewards", [{}])[0].get("amount", 0)
 
@@ -265,3 +317,30 @@ class Quests:
             return f"{value / 1_000:.1f}k"
         else:
             return value
+        
+    def get_api_data(self, data, license_key):
+        if license_key is None:
+            return None
+
+        apiObj = API(self.log)
+        data["game_name"] = "time_farm"
+        data["action"] = "get_task"
+        response = apiObj.get_task_answer(license_key, data)
+        time.sleep(3)
+        if "error" in response:
+            self.log.error(f"<y>⭕ API Error: {response['error']}</y>")
+            return None
+        elif "status" in response and response["status"] == "success":
+            return response
+        elif (
+            "status" in response
+            and response["status"] == "error"
+            and "message" in response
+        ):
+            self.log.info(f"<y>🟡 {response['message']}</y>")
+            return None
+        else:
+            self.log.error(
+                f"<y>🟡 Unable to get task answer, please try again later</y>"
+            )
+            return None
