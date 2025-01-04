@@ -56,10 +56,10 @@
           K = function(e) {
             return e.toLowerCase()
           },
-          q = function(e, t) {
+          z = function(e, t) {
             if (typeof e === c) return e = e.replace(/^\s\s*/, ""), typeof t === s ? e : e.substring(0, 500)
           },
-          z = function(e, t) {
+          q = function(e, t) {
             for (var n, r, i, s, c, u, d = 0; d < t.length && !c;) {
               var p = t[d],
                 h = t[d + 1];
@@ -560,8 +560,8 @@
               [f, d, [h, w]],
               [/\b(roku)[\dx]*[\)\/]((?:dvp-)?[\d\.]*)/i, /hbbtv\/\d+\.\d+\.\d+ +\([\w\+ ]*; *([\w\d][^;]*);([^;]*)/i],
               [
-                [f, q],
-                [d, q],
+                [f, z],
+                [d, z],
                 [h, w]
               ],
               [/\b(android tv|smart[- ]?tv|opera tv|tv; rv:)\b/i],
@@ -690,19 +690,19 @@
               x = n && n.userAgent == r;
             return this.getBrowser = function() {
               var e, t = {};
-              return t[p] = o, t[g] = o, z.call(t, r, w.browser), t[u] = typeof(e = t[g]) === c ? e.replace(/[^\d\.]/g, "").split(".")[0] : o, x && n && n.brave && typeof n.brave.isBrave == a && (t[p] = "Brave"), t
+              return t[p] = o, t[g] = o, q.call(t, r, w.browser), t[u] = typeof(e = t[g]) === c ? e.replace(/[^\d\.]/g, "").split(".")[0] : o, x && n && n.brave && typeof n.brave.isBrave == a && (t[p] = "Brave"), t
             }, this.getCPU = function() {
               var e = {};
-              return e[m] = o, z.call(e, r, w.cpu), e
+              return e[m] = o, q.call(e, r, w.cpu), e
             }, this.getDevice = function() {
               var e = {};
-              return e[f] = o, e[d] = o, e[h] = o, z.call(e, r, w.device), x && !e[h] && y && y.mobile && (e[h] = b), x && "Macintosh" == e[d] && n && typeof n.standalone !== s && n.maxTouchPoints && n.maxTouchPoints > 2 && (e[d] = "iPad", e[h] = v), e
+              return e[f] = o, e[d] = o, e[h] = o, q.call(e, r, w.device), x && !e[h] && y && y.mobile && (e[h] = b), x && "Macintosh" == e[d] && n && typeof n.standalone !== s && n.maxTouchPoints && n.maxTouchPoints > 2 && (e[d] = "iPad", e[h] = v), e
             }, this.getEngine = function() {
               var e = {};
-              return e[p] = o, e[g] = o, z.call(e, r, w.engine), e
+              return e[p] = o, e[g] = o, q.call(e, r, w.engine), e
             }, this.getOS = function() {
               var e = {};
-              return e[p] = o, e[g] = o, z.call(e, r, w.os), x && !e[p] && y && y.platform && "Unknown" != y.platform && (e[p] = y.platform.replace(/chrome os/i, V).replace(/macos/i, W)), e
+              return e[p] = o, e[g] = o, q.call(e, r, w.os), x && !e[p] && y && y.platform && "Unknown" != y.platform && (e[p] = y.platform.replace(/chrome os/i, V).replace(/macos/i, W)), e
             }, this.getResult = function() {
               return {
                 ua: this.getUA(),
@@ -715,7 +715,7 @@
             }, this.getUA = function() {
               return r
             }, this.setUA = function(e) {
-              return r = typeof e === c && e.length > 500 ? q(e, 500) : e, this
+              return r = typeof e === c && e.length > 500 ? z(e, 500) : e, this
             }, this.setUA(r), this
           };
         Q.VERSION = "1.0.38", Q.BROWSER = G([p, g, u]), Q.CPU = G([m]), Q.DEVICE = G([d, f, h, y, b, w, v, x, k]), Q.ENGINE = Q.OS = G([p, g]), typeof t !== s ? (e.exports && (t = e.exports = Q), t.UAParser = Q) : n.amdO ? o !== (r = (function() {
@@ -1069,7 +1069,8 @@
       "use strict";
       var r = n(2238),
         i = (n(7294), ["\\+https:\\/\\/developers.google.com\\/\\+\\/web\\/snippet\\/", "googlebot", "baiduspider", "gurujibot", "yandexbot", "slurp", "msnbot", "bingbot", "facebookexternalhit", "linkedinbot", "twitterbot", "slackbot", "telegrambot", "applebot", "pingdom", "tumblr"]);
-      t.Qc = function(e) {
+
+      function o(e) {
         var t = new r.UAParser(e).getResult(),
           n = RegExp("(" + i.join("|") + ")", "ig"),
           o = !!e && n.test(e.toLowerCase()),
@@ -1108,6 +1109,9 @@
           isAndroid: "Android" === l,
           isBot: o
         })
+      }
+      t.Qc = o, t.FS = function(e) {
+        return o(e)
       }
     },
     7544: function(e, t, n) {
@@ -1638,8 +1642,8 @@
         }
         let K = !y && ("lazy" === b || void 0 === b);
         (!(f = "string" == typeof f ? f : F) || f.startsWith("data:") || f.startsWith("blob:")) && (m = !0, K = !1), r.unoptimized && (m = !0), W && f.endsWith(".svg") && !r.dangerouslyAllowSVG && (m = !0), y && (A = "high");
-        let q = h(w),
-          z = Object.assign(C ? {
+        let z = h(w),
+          q = Object.assign(C ? {
             position: "absolute",
             height: "100%",
             width: "100%",
@@ -1658,11 +1662,11 @@
             blurWidth: i,
             blurHeight: l,
             blurDataURL: T || "",
-            objectFit: z.objectFit
+            objectFit: q.objectFit
           }) + '")' : 'url("' + _ + '")',
           Y = Z ? {
-            backgroundSize: z.objectFit || "cover",
-            backgroundPosition: z.objectPosition || "50% 50%",
+            backgroundSize: q.objectFit || "cover",
+            backgroundPosition: q.objectPosition || "50% 50%",
             backgroundRepeat: "no-repeat",
             backgroundImage: Z
           } : {},
@@ -1733,7 +1737,7 @@
             src: f,
             unoptimized: m,
             width: G,
-            quality: q,
+            quality: z,
             sizes: g,
             loader: V
           });
@@ -1745,7 +1749,7 @@
             height: H,
             decoding: "async",
             className: v,
-            style: c(c({}, z), Y),
+            style: c(c({}, q), Y),
             sizes: J.sizes,
             srcSet: J.srcSet,
             src: J.src
@@ -2659,11 +2663,11 @@
         }, t))
       }
     },
-    4324: function(e, t, n) {
+    4627: function(e, t, n) {
       "use strict";
       n.r(t), n.d(t, {
         default: function() {
-          return eJ
+          return eQ
         }
       });
       var r = n(7462),
@@ -3420,10 +3424,10 @@
         }
       }
 
-      function q(e) {
+      function z(e) {
         return e.charAt(0).toUpperCase() + e.slice(1)
       }
-      class z {
+      class q {
         constructor(e) {
           this.options = e, this.supportedLngs = this.options.supportedLngs || !1, this.logger = _.create("languageUtils")
         }
@@ -3441,7 +3445,7 @@
           if ("string" == typeof e && e.indexOf("-") > -1) {
             let t = ["hans", "hant", "latn", "cyrl", "cans", "mong", "arab"],
               n = e.split("-");
-            return this.options.lowerCaseLng ? n = n.map(e => e.toLowerCase()) : 2 === n.length ? (n[0] = n[0].toLowerCase(), n[1] = n[1].toUpperCase(), t.indexOf(n[1].toLowerCase()) > -1 && (n[1] = q(n[1].toLowerCase()))) : 3 === n.length && (n[0] = n[0].toLowerCase(), 2 === n[1].length && (n[1] = n[1].toUpperCase()), "sgn" !== n[0] && 2 === n[2].length && (n[2] = n[2].toUpperCase()), t.indexOf(n[1].toLowerCase()) > -1 && (n[1] = q(n[1].toLowerCase())), t.indexOf(n[2].toLowerCase()) > -1 && (n[2] = q(n[2].toLowerCase()))), n.join("-")
+            return this.options.lowerCaseLng ? n = n.map(e => e.toLowerCase()) : 2 === n.length ? (n[0] = n[0].toLowerCase(), n[1] = n[1].toUpperCase(), t.indexOf(n[1].toLowerCase()) > -1 && (n[1] = z(n[1].toLowerCase()))) : 3 === n.length && (n[0] = n[0].toLowerCase(), 2 === n[1].length && (n[1] = n[1].toUpperCase()), "sgn" !== n[0] && 2 === n[2].length && (n[2] = n[2].toUpperCase()), t.indexOf(n[1].toLowerCase()) > -1 && (n[1] = z(n[1].toLowerCase())), t.indexOf(n[2].toLowerCase()) > -1 && (n[2] = z(n[2].toLowerCase()))), n.join("-")
           }
           return this.options.cleanCode || this.options.lowerCaseLng ? e.toLowerCase() : e
         }
@@ -4187,7 +4191,7 @@
             }), void 0 !== t.keySeparator && (this.options.userDefinedKeySeparator = t.keySeparator), void 0 !== t.nsSeparator && (this.options.userDefinedNsSeparator = t.nsSeparator), !this.options.isClone) {
             let t;
             this.modules.logger ? _.init(i(this.modules.logger), this.options) : _.init(null, this.options), this.modules.formatter ? t = this.modules.formatter : "undefined" != typeof Intl && (t = ei);
-            let n = new z(this.options);
+            let n = new q(this.options);
             this.store = new F(this.options.resources, this.options);
             let o = this.services;
             o.logger = _, o.resourceStore = this.store, o.languageUtils = n, o.pluralResolver = new ee(n, {
@@ -4352,7 +4356,7 @@
           }), n) : (t && t(), Promise.resolve())
         }
         dir(e) {
-          return (e || (e = this.resolvedLanguage || (this.languages && this.languages.length > 0 ? this.languages[0] : this.language)), e) ? ["ar", "shu", "sqr", "ssh", "xaa", "yhd", "yud", "aao", "abh", "abv", "acm", "acq", "acw", "acx", "acy", "adf", "ads", "aeb", "aec", "afb", "ajp", "apc", "apd", "arb", "arq", "ars", "ary", "arz", "auz", "avl", "ayh", "ayl", "ayn", "ayp", "bbz", "pga", "he", "iw", "ps", "pbt", "pbu", "pst", "prp", "prd", "ug", "ur", "ydd", "yds", "yih", "ji", "yi", "hbo", "men", "xmn", "fa", "jpr", "peo", "pes", "prs", "dv", "sam", "ckb"].indexOf((this.services && this.services.languageUtils || new z(ea())).getLanguagePartFromCode(e)) > -1 || e.toLowerCase().indexOf("-arab") > 1 ? "rtl" : "ltr" : "rtl"
+          return (e || (e = this.resolvedLanguage || (this.languages && this.languages.length > 0 ? this.languages[0] : this.language)), e) ? ["ar", "shu", "sqr", "ssh", "xaa", "yhd", "yud", "aao", "abh", "abv", "acm", "acq", "acw", "acx", "acy", "adf", "ads", "aeb", "aec", "afb", "ajp", "apc", "apd", "arb", "arq", "ars", "ary", "arz", "auz", "avl", "ayh", "ayl", "ayn", "ayp", "bbz", "pga", "he", "iw", "ps", "pbt", "pbu", "pst", "prp", "prd", "ug", "ur", "ydd", "yds", "yih", "ji", "yi", "hbo", "men", "xmn", "fa", "jpr", "peo", "pes", "prs", "dv", "sam", "ckb"].indexOf((this.services && this.services.languageUtils || new q(ea())).getLanguagePartFromCode(e)) > -1 || e.toLowerCase().indexOf("-arab") > 1 ? "rtl" : "ltr" : "rtl"
         }
         static createInstance() {
           let e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
@@ -4851,17 +4855,40 @@
             }, {
               property: "twitter:description",
               content: "Animals are done! It’s PAWS Season"
+            }, {
+              property: "application-name",
+              content: "PAWS"
+            }, {
+              property: "apple-mobile-web-app-capable",
+              content: "yes"
+            }, {
+              property: "apple-mobile-web-app-status-bar-style",
+              content: "default"
+            }, {
+              property: "apple-mobile-web-app-title",
+              content: "PAWS"
+            }, {
+              property: "format-detection",
+              content: "telephone=no"
+            }, {
+              property: "mobile-web-app-capable",
+              content: "yes"
+            }, {
+              property: "msapplication-config",
+              content: "/icons/browserconfig.xml"
+            }, {
+              property: "msapplication-tap-highlight",
+              content: "no"
+            }, {
+              property: "theme-color",
+              content: "#0D0D0D"
+            }, {
+              property: "msapplication-TileImage",
+              content: "/icons/144.png"
             }],
             additionalLinkTags: [{
               rel: "dns-prefetch",
               href: "https://fonts.googleapis.com"
-            }, {
-              rel: "icon",
-              href: "/static/favicon-32x32.png",
-              sizes: "32x32"
-            }, {
-              rel: "icon",
-              href: "/favicon.ico"
             }, {
               rel: "preconnect",
               href: "https://www.google-analytics.com"
@@ -4871,6 +4898,36 @@
             }, {
               rel: "preconnect",
               href: "https://fonts.googleapis.com"
+            }, {
+              rel: "icon",
+              href: "/favicon.ico"
+            }, {
+              rel: "icon",
+              href: "/static/favicon-32x32.png",
+              sizes: "32x32"
+            }, {
+              rel: "icon",
+              href: "/icons/72.png",
+              sizes: "72x72"
+            }, {
+              rel: "icon",
+              href: "/icons/96.png",
+              sizes: "96x96"
+            }, {
+              rel: "icon",
+              href: "/icons/144.png",
+              sizes: "144x144"
+            }, {
+              rel: "icon",
+              href: "/icons/192.png",
+              sizes: "192x192"
+            }, {
+              rel: "apple-touch-icon",
+              href: "/icons/512.png",
+              sizes: "512x512"
+            }, {
+              rel: "manifest",
+              href: "/manifest.json"
             }],
             twitter: {
               site: "@PawsUpCult",
@@ -4966,9 +5023,19 @@
             window.removeEventListener("resize", n)
           }), [t]), o.createElement(o.Fragment, null)
         },
+        ez = e => {
+          let {
+            children: t
+          } = e;
+          return (0, o.useEffect)(() => {
+            navigator.serviceWorker && navigator.serviceWorker.register("/sw.js", {
+              scope: "/"
+            })
+          }, []), o.createElement(o.Fragment, null, t)
+        },
         eq = n(3454);
 
-      function ez(e, t) {
+      function eZ(e, t) {
         var n = Object.keys(e);
         if (Object.getOwnPropertySymbols) {
           var r = Object.getOwnPropertySymbols(e);
@@ -4979,24 +5046,24 @@
         return n
       }
 
-      function eZ(e) {
+      function eY(e) {
         for (var t = 1; t < arguments.length; t++) {
           var n = null != arguments[t] ? arguments[t] : {};
-          t % 2 ? ez(Object(n), !0).forEach(function(t) {
+          t % 2 ? eZ(Object(n), !0).forEach(function(t) {
             (0, i.Z)(e, t, n[t])
-          }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : ez(Object(n)).forEach(function(t) {
+          }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : eZ(Object(n)).forEach(function(t) {
             Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
           })
         }
         return e
       }
-      class eY extends s() {
+      class eJ extends s() {
         constructor(e) {
           super(e), (0, i.Z)(this, "appWrapper", () => {
             let {
               pathname: e
             } = this.props;
-            return "/" === e ? e$.Eo : o.Fragment
+            return "/" === e ? e$.Eo : ez
           }), this.state = {
             isLoading: !0,
             url: ""
@@ -5021,7 +5088,7 @@
           }, t)), o.createElement(eI, null), o.createElement(ey.Ix, null)))))
         }
       }
-      eY.getInitialProps = async e => {
+      eJ.getInitialProps = async e => {
         let {
           ctx: t
         } = e;
@@ -5030,17 +5097,17 @@
           accessToken: n,
           refreshToken: r
         } = t.query;
-        return (n || r) && (await (0, em.setCookie)("".concat("paws", "-accessToken"), n, eZ(eZ({}, t), {}, {
+        return (n || r) && (await (0, em.setCookie)("".concat("paws", "-accessToken"), n, eY(eY({}, t), {}, {
           domain: eq.env.APP_DOMAIN
-        })), await (0, em.setCookie)("".concat("paws", "-refreshToken"), r, eZ(eZ({}, t), {}, {
+        })), await (0, em.setCookie)("".concat("paws", "-refreshToken"), r, eY(eY({}, t), {}, {
           domain: eq.env.APP_DOMAIN
-        }))), eZ(eZ({}, await s().getInitialProps(e)), {}, {
+        }))), eY(eY({}, await s().getInitialProps(e)), {}, {
           pathname: t.pathname,
           initialReduxState: null,
           clientSideDispatches: [(0, ev.Ep)(!0)]
         })
       };
-      var eJ = function(e) {
+      var eQ = function(e) {
         var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : null;
         return d()(function(n) {
           var i, a, s = (n.pageProps || {})._nextI18Next,
@@ -5073,7 +5140,7 @@
             key: l
           }, n))
         }, e)
-      }(eY)
+      }(eJ)
     },
     9195: function(e, t, n) {
       "use strict";
@@ -5317,7 +5384,7 @@
     },
     1118: function(e, t, n) {
       (window.__NEXT_P = window.__NEXT_P || []).push(["/_app", function() {
-        return n(4324)
+        return n(4627)
       }])
     },
     9486: function(e, t) {
@@ -6894,12 +6961,12 @@
             G = n[8],
             H = n[9],
             K = n[10],
-            q = n[11],
-            z = n[12],
+            z = n[11],
+            q = n[12],
             Z = n[13],
             Y = n[14],
             J = n[15];
-          o += (r = t[0]) * D, a += r * I, s += r * $, l += r * B, c += r * U, u += r * V, d += r * W, p += r * F, h += r * G, f += r * H, g += r * K, m += r * q, y += r * z, b += r * Z, v += r * Y, w += r * J, a += (r = t[1]) * D, s += r * I, l += r * $, c += r * B, u += r * U, d += r * V, p += r * W, h += r * F, f += r * G, g += r * H, m += r * K, y += r * q, b += r * z, v += r * Z, w += r * Y, x += r * J, s += (r = t[2]) * D, l += r * I, c += r * $, u += r * B, d += r * U, p += r * V, h += r * W, f += r * F, g += r * G, m += r * H, y += r * K, b += r * q, v += r * z, w += r * Z, x += r * Y, k += r * J, l += (r = t[3]) * D, c += r * I, u += r * $, d += r * B, p += r * U, h += r * V, f += r * W, g += r * F, m += r * G, y += r * H, b += r * K, v += r * q, w += r * z, x += r * Z, k += r * Y, C += r * J, c += (r = t[4]) * D, u += r * I, d += r * $, p += r * B, h += r * U, f += r * V, g += r * W, m += r * F, y += r * G, b += r * H, v += r * K, w += r * q, x += r * z, k += r * Z, C += r * Y, S += r * J, u += (r = t[5]) * D, d += r * I, p += r * $, h += r * B, f += r * U, g += r * V, m += r * W, y += r * F, b += r * G, v += r * H, w += r * K, x += r * q, k += r * z, C += r * Z, S += r * Y, E += r * J, d += (r = t[6]) * D, p += r * I, h += r * $, f += r * B, g += r * U, m += r * V, y += r * W, b += r * F, v += r * G, w += r * H, x += r * K, k += r * q, C += r * z, S += r * Z, E += r * Y, O += r * J, p += (r = t[7]) * D, h += r * I, f += r * $, g += r * B, m += r * U, y += r * V, b += r * W, v += r * F, w += r * G, x += r * H, k += r * K, C += r * q, S += r * z, E += r * Z, O += r * Y, _ += r * J, h += (r = t[8]) * D, f += r * I, g += r * $, m += r * B, y += r * U, b += r * V, v += r * W, w += r * F, x += r * G, k += r * H, C += r * K, S += r * q, E += r * z, O += r * Z, _ += r * Y, T += r * J, f += (r = t[9]) * D, g += r * I, m += r * $, y += r * B, b += r * U, v += r * V, w += r * W, x += r * F, k += r * G, C += r * H, S += r * K, E += r * q, O += r * z, _ += r * Z, T += r * Y, A += r * J, g += (r = t[10]) * D, m += r * I, y += r * $, b += r * B, v += r * U, w += r * V, x += r * W, k += r * F, C += r * G, S += r * H, E += r * K, O += r * q, _ += r * z, T += r * Z, A += r * Y, P += r * J, m += (r = t[11]) * D, y += r * I, b += r * $, v += r * B, w += r * U, x += r * V, k += r * W, C += r * F, S += r * G, E += r * H, O += r * K, _ += r * q, T += r * z, A += r * Z, P += r * Y, R += r * J, y += (r = t[12]) * D, b += r * I, v += r * $, w += r * B, x += r * U, k += r * V, C += r * W, S += r * F, E += r * G, O += r * H, _ += r * K, T += r * q, A += r * z, P += r * Z, R += r * Y, j += r * J, b += (r = t[13]) * D, v += r * I, w += r * $, x += r * B, k += r * U, C += r * V, S += r * W, E += r * F, O += r * G, _ += r * H, T += r * K, A += r * q, P += r * z, R += r * Z, j += r * Y, L += r * J, v += (r = t[14]) * D, w += r * I, x += r * $, k += r * B, C += r * U, S += r * V, E += r * W, O += r * F, _ += r * G, T += r * H, A += r * K, P += r * q, R += r * z, j += r * Z, L += r * Y, M += r * J, w += (r = t[15]) * D, x += r * I, k += r * $, C += r * B, S += r * U, E += r * V, O += r * W, _ += r * F, T += r * G, A += r * H, P += r * K, R += r * q, j += r * z, L += r * Z, M += r * Y, N += r * J, o += 38 * x, a += 38 * k, s += 38 * C, l += 38 * S, c += 38 * E, u += 38 * O, d += 38 * _, p += 38 * T, h += 38 * A, f += 38 * P, g += 38 * R, m += 38 * j, y += 38 * L, b += 38 * M, v += 38 * N, i = Math.floor((r = o + (i = 1) + 65535) / 65536), o = r - 65536 * i, i = Math.floor((r = a + i + 65535) / 65536), a = r - 65536 * i, i = Math.floor((r = s + i + 65535) / 65536), s = r - 65536 * i, i = Math.floor((r = l + i + 65535) / 65536), l = r - 65536 * i, i = Math.floor((r = c + i + 65535) / 65536), c = r - 65536 * i, i = Math.floor((r = u + i + 65535) / 65536), u = r - 65536 * i, i = Math.floor((r = d + i + 65535) / 65536), d = r - 65536 * i, i = Math.floor((r = p + i + 65535) / 65536), p = r - 65536 * i, i = Math.floor((r = h + i + 65535) / 65536), h = r - 65536 * i, i = Math.floor((r = f + i + 65535) / 65536), f = r - 65536 * i, i = Math.floor((r = g + i + 65535) / 65536), g = r - 65536 * i, i = Math.floor((r = m + i + 65535) / 65536), m = r - 65536 * i, i = Math.floor((r = y + i + 65535) / 65536), y = r - 65536 * i, i = Math.floor((r = b + i + 65535) / 65536), b = r - 65536 * i, i = Math.floor((r = v + i + 65535) / 65536), v = r - 65536 * i, i = Math.floor((r = w + i + 65535) / 65536), w = r - 65536 * i, o += i - 1 + 37 * (i - 1), i = Math.floor((r = o + (i = 1) + 65535) / 65536), o = r - 65536 * i, i = Math.floor((r = a + i + 65535) / 65536), a = r - 65536 * i, i = Math.floor((r = s + i + 65535) / 65536), s = r - 65536 * i, i = Math.floor((r = l + i + 65535) / 65536), l = r - 65536 * i, i = Math.floor((r = c + i + 65535) / 65536), c = r - 65536 * i, i = Math.floor((r = u + i + 65535) / 65536), u = r - 65536 * i, i = Math.floor((r = d + i + 65535) / 65536), d = r - 65536 * i, i = Math.floor((r = p + i + 65535) / 65536), p = r - 65536 * i, i = Math.floor((r = h + i + 65535) / 65536), h = r - 65536 * i, i = Math.floor((r = f + i + 65535) / 65536), f = r - 65536 * i, i = Math.floor((r = g + i + 65535) / 65536), g = r - 65536 * i, i = Math.floor((r = m + i + 65535) / 65536), m = r - 65536 * i, i = Math.floor((r = y + i + 65535) / 65536), y = r - 65536 * i, i = Math.floor((r = b + i + 65535) / 65536), b = r - 65536 * i, i = Math.floor((r = v + i + 65535) / 65536), v = r - 65536 * i, i = Math.floor((r = w + i + 65535) / 65536), w = r - 65536 * i, o += i - 1 + 37 * (i - 1), e[0] = o, e[1] = a, e[2] = s, e[3] = l, e[4] = c, e[5] = u, e[6] = d, e[7] = p, e[8] = h, e[9] = f, e[10] = g, e[11] = m, e[12] = y, e[13] = b, e[14] = v, e[15] = w
+          o += (r = t[0]) * D, a += r * I, s += r * $, l += r * B, c += r * U, u += r * V, d += r * W, p += r * F, h += r * G, f += r * H, g += r * K, m += r * z, y += r * q, b += r * Z, v += r * Y, w += r * J, a += (r = t[1]) * D, s += r * I, l += r * $, c += r * B, u += r * U, d += r * V, p += r * W, h += r * F, f += r * G, g += r * H, m += r * K, y += r * z, b += r * q, v += r * Z, w += r * Y, x += r * J, s += (r = t[2]) * D, l += r * I, c += r * $, u += r * B, d += r * U, p += r * V, h += r * W, f += r * F, g += r * G, m += r * H, y += r * K, b += r * z, v += r * q, w += r * Z, x += r * Y, k += r * J, l += (r = t[3]) * D, c += r * I, u += r * $, d += r * B, p += r * U, h += r * V, f += r * W, g += r * F, m += r * G, y += r * H, b += r * K, v += r * z, w += r * q, x += r * Z, k += r * Y, C += r * J, c += (r = t[4]) * D, u += r * I, d += r * $, p += r * B, h += r * U, f += r * V, g += r * W, m += r * F, y += r * G, b += r * H, v += r * K, w += r * z, x += r * q, k += r * Z, C += r * Y, S += r * J, u += (r = t[5]) * D, d += r * I, p += r * $, h += r * B, f += r * U, g += r * V, m += r * W, y += r * F, b += r * G, v += r * H, w += r * K, x += r * z, k += r * q, C += r * Z, S += r * Y, E += r * J, d += (r = t[6]) * D, p += r * I, h += r * $, f += r * B, g += r * U, m += r * V, y += r * W, b += r * F, v += r * G, w += r * H, x += r * K, k += r * z, C += r * q, S += r * Z, E += r * Y, O += r * J, p += (r = t[7]) * D, h += r * I, f += r * $, g += r * B, m += r * U, y += r * V, b += r * W, v += r * F, w += r * G, x += r * H, k += r * K, C += r * z, S += r * q, E += r * Z, O += r * Y, _ += r * J, h += (r = t[8]) * D, f += r * I, g += r * $, m += r * B, y += r * U, b += r * V, v += r * W, w += r * F, x += r * G, k += r * H, C += r * K, S += r * z, E += r * q, O += r * Z, _ += r * Y, T += r * J, f += (r = t[9]) * D, g += r * I, m += r * $, y += r * B, b += r * U, v += r * V, w += r * W, x += r * F, k += r * G, C += r * H, S += r * K, E += r * z, O += r * q, _ += r * Z, T += r * Y, A += r * J, g += (r = t[10]) * D, m += r * I, y += r * $, b += r * B, v += r * U, w += r * V, x += r * W, k += r * F, C += r * G, S += r * H, E += r * K, O += r * z, _ += r * q, T += r * Z, A += r * Y, P += r * J, m += (r = t[11]) * D, y += r * I, b += r * $, v += r * B, w += r * U, x += r * V, k += r * W, C += r * F, S += r * G, E += r * H, O += r * K, _ += r * z, T += r * q, A += r * Z, P += r * Y, R += r * J, y += (r = t[12]) * D, b += r * I, v += r * $, w += r * B, x += r * U, k += r * V, C += r * W, S += r * F, E += r * G, O += r * H, _ += r * K, T += r * z, A += r * q, P += r * Z, R += r * Y, j += r * J, b += (r = t[13]) * D, v += r * I, w += r * $, x += r * B, k += r * U, C += r * V, S += r * W, E += r * F, O += r * G, _ += r * H, T += r * K, A += r * z, P += r * q, R += r * Z, j += r * Y, L += r * J, v += (r = t[14]) * D, w += r * I, x += r * $, k += r * B, C += r * U, S += r * V, E += r * W, O += r * F, _ += r * G, T += r * H, A += r * K, P += r * z, R += r * q, j += r * Z, L += r * Y, M += r * J, w += (r = t[15]) * D, x += r * I, k += r * $, C += r * B, S += r * U, E += r * V, O += r * W, _ += r * F, T += r * G, A += r * H, P += r * K, R += r * z, j += r * q, L += r * Z, M += r * Y, N += r * J, o += 38 * x, a += 38 * k, s += 38 * C, l += 38 * S, c += 38 * E, u += 38 * O, d += 38 * _, p += 38 * T, h += 38 * A, f += 38 * P, g += 38 * R, m += 38 * j, y += 38 * L, b += 38 * M, v += 38 * N, i = Math.floor((r = o + (i = 1) + 65535) / 65536), o = r - 65536 * i, i = Math.floor((r = a + i + 65535) / 65536), a = r - 65536 * i, i = Math.floor((r = s + i + 65535) / 65536), s = r - 65536 * i, i = Math.floor((r = l + i + 65535) / 65536), l = r - 65536 * i, i = Math.floor((r = c + i + 65535) / 65536), c = r - 65536 * i, i = Math.floor((r = u + i + 65535) / 65536), u = r - 65536 * i, i = Math.floor((r = d + i + 65535) / 65536), d = r - 65536 * i, i = Math.floor((r = p + i + 65535) / 65536), p = r - 65536 * i, i = Math.floor((r = h + i + 65535) / 65536), h = r - 65536 * i, i = Math.floor((r = f + i + 65535) / 65536), f = r - 65536 * i, i = Math.floor((r = g + i + 65535) / 65536), g = r - 65536 * i, i = Math.floor((r = m + i + 65535) / 65536), m = r - 65536 * i, i = Math.floor((r = y + i + 65535) / 65536), y = r - 65536 * i, i = Math.floor((r = b + i + 65535) / 65536), b = r - 65536 * i, i = Math.floor((r = v + i + 65535) / 65536), v = r - 65536 * i, i = Math.floor((r = w + i + 65535) / 65536), w = r - 65536 * i, o += i - 1 + 37 * (i - 1), i = Math.floor((r = o + (i = 1) + 65535) / 65536), o = r - 65536 * i, i = Math.floor((r = a + i + 65535) / 65536), a = r - 65536 * i, i = Math.floor((r = s + i + 65535) / 65536), s = r - 65536 * i, i = Math.floor((r = l + i + 65535) / 65536), l = r - 65536 * i, i = Math.floor((r = c + i + 65535) / 65536), c = r - 65536 * i, i = Math.floor((r = u + i + 65535) / 65536), u = r - 65536 * i, i = Math.floor((r = d + i + 65535) / 65536), d = r - 65536 * i, i = Math.floor((r = p + i + 65535) / 65536), p = r - 65536 * i, i = Math.floor((r = h + i + 65535) / 65536), h = r - 65536 * i, i = Math.floor((r = f + i + 65535) / 65536), f = r - 65536 * i, i = Math.floor((r = g + i + 65535) / 65536), g = r - 65536 * i, i = Math.floor((r = m + i + 65535) / 65536), m = r - 65536 * i, i = Math.floor((r = y + i + 65535) / 65536), y = r - 65536 * i, i = Math.floor((r = b + i + 65535) / 65536), b = r - 65536 * i, i = Math.floor((r = v + i + 65535) / 65536), v = r - 65536 * i, i = Math.floor((r = w + i + 65535) / 65536), w = r - 65536 * i, o += i - 1 + 37 * (i - 1), e[0] = o, e[1] = a, e[2] = s, e[3] = l, e[4] = c, e[5] = u, e[6] = d, e[7] = p, e[8] = h, e[9] = f, e[10] = g, e[11] = m, e[12] = y, e[13] = b, e[14] = v, e[15] = w
         }
 
         function V(e, t) {
@@ -6946,7 +7013,7 @@
           return i(t, 32), H(e, t)
         }
 
-        function q(e, t, n) {
+        function z(e, t, n) {
           var r = new Uint8Array(32);
           return G(r, n, t), w(e, o, r, x)
         }
@@ -6977,15 +7044,15 @@
             this.leftover += n
           }
         };
-        var z = [1116352408, 3609767458, 1899447441, 602891725, 3049323471, 3964484399, 3921009573, 2173295548, 961987163, 4081628472, 1508970993, 3053834265, 2453635748, 2937671579, 2870763221, 3664609560, 3624381080, 2734883394, 310598401, 1164996542, 607225278, 1323610764, 1426881987, 3590304994, 1925078388, 4068182383, 2162078206, 991336113, 2614888103, 633803317, 3248222580, 3479774868, 3835390401, 2666613458, 4022224774, 944711139, 264347078, 2341262773, 604807628, 2007800933, 770255983, 1495990901, 1249150122, 1856431235, 1555081692, 3175218132, 1996064986, 2198950837, 2554220882, 3999719339, 2821834349, 766784016, 2952996808, 2566594879, 3210313671, 3203337956, 3336571891, 1034457026, 3584528711, 2466948901, 113926993, 3758326383, 338241895, 168717936, 666307205, 1188179964, 773529912, 1546045734, 1294757372, 1522805485, 1396182291, 2643833823, 1695183700, 2343527390, 1986661051, 1014477480, 2177026350, 1206759142, 2456956037, 344077627, 2730485921, 1290863460, 2820302411, 3158454273, 3259730800, 3505952657, 3345764771, 106217008, 3516065817, 3606008344, 3600352804, 1432725776, 4094571909, 1467031594, 275423344, 851169720, 430227734, 3100823752, 506948616, 1363258195, 659060556, 3750685593, 883997877, 3785050280, 958139571, 3318307427, 1322822218, 3812723403, 1537002063, 2003034995, 1747873779, 3602036899, 1955562222, 1575990012, 2024104815, 1125592928, 2227730452, 2716904306, 2361852424, 442776044, 2428436474, 593698344, 2756734187, 3733110249, 3204031479, 2999351573, 3329325298, 3815920427, 3391569614, 3928383900, 3515267271, 566280711, 3940187606, 3454069534, 4118630271, 4000239992, 116418474, 1914138554, 174292421, 2731055270, 289380356, 3203993006, 460393269, 320620315, 685471733, 587496836, 852142971, 1086792851, 1017036298, 365543100, 1126000580, 2618297676, 1288033470, 3409855158, 1501505948, 4234509866, 1607167915, 987167468, 1816402316, 1246189591];
+        var q = [1116352408, 3609767458, 1899447441, 602891725, 3049323471, 3964484399, 3921009573, 2173295548, 961987163, 4081628472, 1508970993, 3053834265, 2453635748, 2937671579, 2870763221, 3664609560, 3624381080, 2734883394, 310598401, 1164996542, 607225278, 1323610764, 1426881987, 3590304994, 1925078388, 4068182383, 2162078206, 991336113, 2614888103, 633803317, 3248222580, 3479774868, 3835390401, 2666613458, 4022224774, 944711139, 264347078, 2341262773, 604807628, 2007800933, 770255983, 1495990901, 1249150122, 1856431235, 1555081692, 3175218132, 1996064986, 2198950837, 2554220882, 3999719339, 2821834349, 766784016, 2952996808, 2566594879, 3210313671, 3203337956, 3336571891, 1034457026, 3584528711, 2466948901, 113926993, 3758326383, 338241895, 168717936, 666307205, 1188179964, 773529912, 1546045734, 1294757372, 1522805485, 1396182291, 2643833823, 1695183700, 2343527390, 1986661051, 1014477480, 2177026350, 1206759142, 2456956037, 344077627, 2730485921, 1290863460, 2820302411, 3158454273, 3259730800, 3505952657, 3345764771, 106217008, 3516065817, 3606008344, 3600352804, 1432725776, 4094571909, 1467031594, 275423344, 851169720, 430227734, 3100823752, 506948616, 1363258195, 659060556, 3750685593, 883997877, 3785050280, 958139571, 3318307427, 1322822218, 3812723403, 1537002063, 2003034995, 1747873779, 3602036899, 1955562222, 1575990012, 2024104815, 1125592928, 2227730452, 2716904306, 2361852424, 442776044, 2428436474, 593698344, 2756734187, 3733110249, 3204031479, 2999351573, 3329325298, 3815920427, 3391569614, 3928383900, 3515267271, 566280711, 3940187606, 3454069534, 4118630271, 4000239992, 116418474, 1914138554, 174292421, 2731055270, 289380356, 3203993006, 460393269, 320620315, 685471733, 587496836, 852142971, 1086792851, 1017036298, 365543100, 1126000580, 2618297676, 1288033470, 3409855158, 1501505948, 4234509866, 1607167915, 987167468, 1816402316, 1246189591];
 
         function Z(e, t, n, r) {
-          for (var i, o, a, s, l, c, u, d, p, h, f, g, m, y, b, v, w, x, k, C, S, E, O, _, T, A, P = new Int32Array(16), R = new Int32Array(16), j = e[0], L = e[1], M = e[2], N = e[3], D = e[4], I = e[5], $ = e[6], B = e[7], U = t[0], V = t[1], W = t[2], F = t[3], G = t[4], H = t[5], K = t[6], q = t[7], Z = 0; r >= 128;) {
+          for (var i, o, a, s, l, c, u, d, p, h, f, g, m, y, b, v, w, x, k, C, S, E, O, _, T, A, P = new Int32Array(16), R = new Int32Array(16), j = e[0], L = e[1], M = e[2], N = e[3], D = e[4], I = e[5], $ = e[6], B = e[7], U = t[0], V = t[1], W = t[2], F = t[3], G = t[4], H = t[5], K = t[6], z = t[7], Z = 0; r >= 128;) {
             for (k = 0; k < 16; k++) C = 8 * k + Z, P[k] = n[C + 0] << 24 | n[C + 1] << 16 | n[C + 2] << 8 | n[C + 3], R[k] = n[C + 4] << 24 | n[C + 5] << 16 | n[C + 6] << 8 | n[C + 7];
             for (k = 0; k < 80; k++)
-              if (i = j, o = L, a = M, s = N, l = D, c = I, u = $, d = B, p = U, h = V, f = W, g = F, m = G, y = H, b = K, v = q, S = B, O = 65535 & (E = q), _ = E >>> 16, T = 65535 & S, A = S >>> 16, S = (D >>> 14 | G << 18) ^ (D >>> 18 | G << 14) ^ (G >>> 9 | D << 23), O += 65535 & (E = (G >>> 14 | D << 18) ^ (G >>> 18 | D << 14) ^ (D >>> 9 | G << 23)), _ += E >>> 16, T += 65535 & S, A += S >>> 16, S = D & I ^ ~D & $, O += 65535 & (E = G & H ^ ~G & K), _ += E >>> 16, T += 65535 & S, A += S >>> 16, S = z[2 * k], O += 65535 & (E = z[2 * k + 1]), _ += E >>> 16, T += 65535 & S, A += S >>> 16, S = P[k % 16], O += 65535 & (E = R[k % 16]), _ += E >>> 16, T += 65535 & S, A += S >>> 16, _ += O >>> 16, T += _ >>> 16, A += T >>> 16, w = 65535 & T | A << 16, x = 65535 & O | _ << 16, S = w, O = 65535 & (E = x), _ = E >>> 16, T = 65535 & S, A = S >>> 16, S = (j >>> 28 | U << 4) ^ (U >>> 2 | j << 30) ^ (U >>> 7 | j << 25), O += 65535 & (E = (U >>> 28 | j << 4) ^ (j >>> 2 | U << 30) ^ (j >>> 7 | U << 25)), _ += E >>> 16, T += 65535 & S, A += S >>> 16, S = j & L ^ j & M ^ L & M, O += 65535 & (E = U & V ^ U & W ^ V & W), _ += E >>> 16, T += 65535 & S, A += S >>> 16, _ += O >>> 16, T += _ >>> 16, A += T >>> 16, d = 65535 & T | A << 16, v = 65535 & O | _ << 16, S = s, O = 65535 & (E = g), _ = E >>> 16, T = 65535 & S, A = S >>> 16, S = w, O += 65535 & (E = x), _ += E >>> 16, T += 65535 & S, A += S >>> 16, _ += O >>> 16, T += _ >>> 16, A += T >>> 16, s = 65535 & T | A << 16, g = 65535 & O | _ << 16, L = i, M = o, N = a, D = s, I = l, $ = c, B = u, j = d, V = p, W = h, F = f, G = g, H = m, K = y, q = b, U = v, k % 16 == 15)
+              if (i = j, o = L, a = M, s = N, l = D, c = I, u = $, d = B, p = U, h = V, f = W, g = F, m = G, y = H, b = K, v = z, S = B, O = 65535 & (E = z), _ = E >>> 16, T = 65535 & S, A = S >>> 16, S = (D >>> 14 | G << 18) ^ (D >>> 18 | G << 14) ^ (G >>> 9 | D << 23), O += 65535 & (E = (G >>> 14 | D << 18) ^ (G >>> 18 | D << 14) ^ (D >>> 9 | G << 23)), _ += E >>> 16, T += 65535 & S, A += S >>> 16, S = D & I ^ ~D & $, O += 65535 & (E = G & H ^ ~G & K), _ += E >>> 16, T += 65535 & S, A += S >>> 16, S = q[2 * k], O += 65535 & (E = q[2 * k + 1]), _ += E >>> 16, T += 65535 & S, A += S >>> 16, S = P[k % 16], O += 65535 & (E = R[k % 16]), _ += E >>> 16, T += 65535 & S, A += S >>> 16, _ += O >>> 16, T += _ >>> 16, A += T >>> 16, w = 65535 & T | A << 16, x = 65535 & O | _ << 16, S = w, O = 65535 & (E = x), _ = E >>> 16, T = 65535 & S, A = S >>> 16, S = (j >>> 28 | U << 4) ^ (U >>> 2 | j << 30) ^ (U >>> 7 | j << 25), O += 65535 & (E = (U >>> 28 | j << 4) ^ (j >>> 2 | U << 30) ^ (j >>> 7 | U << 25)), _ += E >>> 16, T += 65535 & S, A += S >>> 16, S = j & L ^ j & M ^ L & M, O += 65535 & (E = U & V ^ U & W ^ V & W), _ += E >>> 16, T += 65535 & S, A += S >>> 16, _ += O >>> 16, T += _ >>> 16, A += T >>> 16, d = 65535 & T | A << 16, v = 65535 & O | _ << 16, S = s, O = 65535 & (E = g), _ = E >>> 16, T = 65535 & S, A = S >>> 16, S = w, O += 65535 & (E = x), _ += E >>> 16, T += 65535 & S, A += S >>> 16, _ += O >>> 16, T += _ >>> 16, A += T >>> 16, s = 65535 & T | A << 16, g = 65535 & O | _ << 16, L = i, M = o, N = a, D = s, I = l, $ = c, B = u, j = d, V = p, W = h, F = f, G = g, H = m, K = y, z = b, U = v, k % 16 == 15)
                 for (C = 0; C < 16; C++) S = P[C], O = 65535 & (E = R[C]), _ = E >>> 16, T = 65535 & S, A = S >>> 16, S = P[(C + 9) % 16], O += 65535 & (E = R[(C + 9) % 16]), _ += E >>> 16, T += 65535 & S, A += S >>> 16, S = ((w = P[(C + 1) % 16]) >>> 1 | (x = R[(C + 1) % 16]) << 31) ^ (w >>> 8 | x << 24) ^ w >>> 7, O += 65535 & (E = (x >>> 1 | w << 31) ^ (x >>> 8 | w << 24) ^ (x >>> 7 | w << 25)), _ += E >>> 16, T += 65535 & S, A += S >>> 16, S = ((w = P[(C + 14) % 16]) >>> 19 | (x = R[(C + 14) % 16]) << 13) ^ (x >>> 29 | w << 3) ^ w >>> 6, O += 65535 & (E = (x >>> 19 | w << 13) ^ (w >>> 29 | x << 3) ^ (x >>> 6 | w << 26)), _ += E >>> 16, T += 65535 & S, A += S >>> 16, _ += O >>> 16, T += _ >>> 16, A += T >>> 16, P[C] = 65535 & T | A << 16, R[C] = 65535 & O | _ << 16;
-            S = j, O = 65535 & (E = U), _ = E >>> 16, T = 65535 & S, A = S >>> 16, S = e[0], O += 65535 & (E = t[0]), _ += E >>> 16, T += 65535 & S, A += S >>> 16, _ += O >>> 16, T += _ >>> 16, A += T >>> 16, e[0] = j = 65535 & T | A << 16, t[0] = U = 65535 & O | _ << 16, S = L, O = 65535 & (E = V), _ = E >>> 16, T = 65535 & S, A = S >>> 16, S = e[1], O += 65535 & (E = t[1]), _ += E >>> 16, T += 65535 & S, A += S >>> 16, _ += O >>> 16, T += _ >>> 16, A += T >>> 16, e[1] = L = 65535 & T | A << 16, t[1] = V = 65535 & O | _ << 16, S = M, O = 65535 & (E = W), _ = E >>> 16, T = 65535 & S, A = S >>> 16, S = e[2], O += 65535 & (E = t[2]), _ += E >>> 16, T += 65535 & S, A += S >>> 16, _ += O >>> 16, T += _ >>> 16, A += T >>> 16, e[2] = M = 65535 & T | A << 16, t[2] = W = 65535 & O | _ << 16, S = N, O = 65535 & (E = F), _ = E >>> 16, T = 65535 & S, A = S >>> 16, S = e[3], O += 65535 & (E = t[3]), _ += E >>> 16, T += 65535 & S, A += S >>> 16, _ += O >>> 16, T += _ >>> 16, A += T >>> 16, e[3] = N = 65535 & T | A << 16, t[3] = F = 65535 & O | _ << 16, S = D, O = 65535 & (E = G), _ = E >>> 16, T = 65535 & S, A = S >>> 16, S = e[4], O += 65535 & (E = t[4]), _ += E >>> 16, T += 65535 & S, A += S >>> 16, _ += O >>> 16, T += _ >>> 16, A += T >>> 16, e[4] = D = 65535 & T | A << 16, t[4] = G = 65535 & O | _ << 16, S = I, O = 65535 & (E = H), _ = E >>> 16, T = 65535 & S, A = S >>> 16, S = e[5], O += 65535 & (E = t[5]), _ += E >>> 16, T += 65535 & S, A += S >>> 16, _ += O >>> 16, T += _ >>> 16, A += T >>> 16, e[5] = I = 65535 & T | A << 16, t[5] = H = 65535 & O | _ << 16, S = $, O = 65535 & (E = K), _ = E >>> 16, T = 65535 & S, A = S >>> 16, S = e[6], O += 65535 & (E = t[6]), _ += E >>> 16, T += 65535 & S, A += S >>> 16, _ += O >>> 16, T += _ >>> 16, A += T >>> 16, e[6] = $ = 65535 & T | A << 16, t[6] = K = 65535 & O | _ << 16, S = B, O = 65535 & (E = q), _ = E >>> 16, T = 65535 & S, A = S >>> 16, S = e[7], O += 65535 & (E = t[7]), _ += E >>> 16, T += 65535 & S, A += S >>> 16, _ += O >>> 16, T += _ >>> 16, A += T >>> 16, e[7] = B = 65535 & T | A << 16, t[7] = q = 65535 & O | _ << 16, Z += 128, r -= 128
+            S = j, O = 65535 & (E = U), _ = E >>> 16, T = 65535 & S, A = S >>> 16, S = e[0], O += 65535 & (E = t[0]), _ += E >>> 16, T += 65535 & S, A += S >>> 16, _ += O >>> 16, T += _ >>> 16, A += T >>> 16, e[0] = j = 65535 & T | A << 16, t[0] = U = 65535 & O | _ << 16, S = L, O = 65535 & (E = V), _ = E >>> 16, T = 65535 & S, A = S >>> 16, S = e[1], O += 65535 & (E = t[1]), _ += E >>> 16, T += 65535 & S, A += S >>> 16, _ += O >>> 16, T += _ >>> 16, A += T >>> 16, e[1] = L = 65535 & T | A << 16, t[1] = V = 65535 & O | _ << 16, S = M, O = 65535 & (E = W), _ = E >>> 16, T = 65535 & S, A = S >>> 16, S = e[2], O += 65535 & (E = t[2]), _ += E >>> 16, T += 65535 & S, A += S >>> 16, _ += O >>> 16, T += _ >>> 16, A += T >>> 16, e[2] = M = 65535 & T | A << 16, t[2] = W = 65535 & O | _ << 16, S = N, O = 65535 & (E = F), _ = E >>> 16, T = 65535 & S, A = S >>> 16, S = e[3], O += 65535 & (E = t[3]), _ += E >>> 16, T += 65535 & S, A += S >>> 16, _ += O >>> 16, T += _ >>> 16, A += T >>> 16, e[3] = N = 65535 & T | A << 16, t[3] = F = 65535 & O | _ << 16, S = D, O = 65535 & (E = G), _ = E >>> 16, T = 65535 & S, A = S >>> 16, S = e[4], O += 65535 & (E = t[4]), _ += E >>> 16, T += 65535 & S, A += S >>> 16, _ += O >>> 16, T += _ >>> 16, A += T >>> 16, e[4] = D = 65535 & T | A << 16, t[4] = G = 65535 & O | _ << 16, S = I, O = 65535 & (E = H), _ = E >>> 16, T = 65535 & S, A = S >>> 16, S = e[5], O += 65535 & (E = t[5]), _ += E >>> 16, T += 65535 & S, A += S >>> 16, _ += O >>> 16, T += _ >>> 16, A += T >>> 16, e[5] = I = 65535 & T | A << 16, t[5] = H = 65535 & O | _ << 16, S = $, O = 65535 & (E = K), _ = E >>> 16, T = 65535 & S, A = S >>> 16, S = e[6], O += 65535 & (E = t[6]), _ += E >>> 16, T += 65535 & S, A += S >>> 16, _ += O >>> 16, T += _ >>> 16, A += T >>> 16, e[6] = $ = 65535 & T | A << 16, t[6] = K = 65535 & O | _ << 16, S = B, O = 65535 & (E = z), _ = E >>> 16, T = 65535 & S, A = S >>> 16, S = e[7], O += 65535 & (E = t[7]), _ += E >>> 16, T += 65535 & S, A += S >>> 16, _ += O >>> 16, T += _ >>> 16, A += T >>> 16, e[7] = B = 65535 & T | A << 16, t[7] = z = 65535 & O | _ << 16, Z += 128, r -= 128
           }
           return r
         }
@@ -7120,15 +7187,15 @@
           crypto_secretbox_open: P,
           crypto_scalarmult: G,
           crypto_scalarmult_base: H,
-          crypto_box_beforenm: q,
+          crypto_box_beforenm: z,
           crypto_box_afternm: A,
           crypto_box: function(e, t, n, r, i, o) {
             var a = new Uint8Array(32);
-            return q(a, i, o), A(e, t, n, r, a)
+            return z(a, i, o), A(e, t, n, r, a)
           },
           crypto_box_open: function(e, t, n, r, i, o) {
             var a = new Uint8Array(32);
-            return q(a, i, o), P(e, t, n, r, a)
+            return z(a, i, o), P(e, t, n, r, a)
           },
           crypto_box_keypair: K,
           crypto_hash: Y,
@@ -7197,7 +7264,7 @@
               if (32 !== t.length) throw Error("bad secret key size")
             }(e, t);
           var n = new Uint8Array(32);
-          return q(n, e, t), n
+          return z(n, e, t), n
         }, e.box.after = e.secretbox, e.box.open = function(t, n, r, i) {
           var o = e.box.before(r, i);
           return e.secretbox.open(t, n, o)
@@ -7334,10 +7401,10 @@
           K = function(e) {
             return e.toLowerCase()
           },
-          q = function(e, t) {
+          z = function(e, t) {
             if (typeof e === c) return e = e.replace(/^\s\s*/, ""), typeof t === s ? e : e.substring(0, 500)
           },
-          z = function(e, t) {
+          q = function(e, t) {
             for (var n, r, i, s, c, u, d = 0; d < t.length && !c;) {
               var p = t[d],
                 h = t[d + 1];
@@ -7830,8 +7897,8 @@
               [f, d, [h, w]],
               [/\b(roku)[\dx]*[\)\/]((?:dvp-)?[\d\.]*)/i, /hbbtv\/\d+\.\d+\.\d+ +\([\w\+ ]*; *([\w\d][^;]*);([^;]*)/i],
               [
-                [f, q],
-                [d, q],
+                [f, z],
+                [d, z],
                 [h, w]
               ],
               [/\b(android tv|smart[- ]?tv|opera tv|tv; rv:)\b/i],
@@ -7960,19 +8027,19 @@
               x = n && n.userAgent == r;
             return this.getBrowser = function() {
               var e, t = {};
-              return t[p] = o, t[g] = o, z.call(t, r, w.browser), t[u] = typeof(e = t[g]) === c ? e.replace(/[^\d\.]/g, "").split(".")[0] : o, x && n && n.brave && typeof n.brave.isBrave == a && (t[p] = "Brave"), t
+              return t[p] = o, t[g] = o, q.call(t, r, w.browser), t[u] = typeof(e = t[g]) === c ? e.replace(/[^\d\.]/g, "").split(".")[0] : o, x && n && n.brave && typeof n.brave.isBrave == a && (t[p] = "Brave"), t
             }, this.getCPU = function() {
               var e = {};
-              return e[m] = o, z.call(e, r, w.cpu), e
+              return e[m] = o, q.call(e, r, w.cpu), e
             }, this.getDevice = function() {
               var e = {};
-              return e[f] = o, e[d] = o, e[h] = o, z.call(e, r, w.device), x && !e[h] && y && y.mobile && (e[h] = b), x && "Macintosh" == e[d] && n && typeof n.standalone !== s && n.maxTouchPoints && n.maxTouchPoints > 2 && (e[d] = "iPad", e[h] = v), e
+              return e[f] = o, e[d] = o, e[h] = o, q.call(e, r, w.device), x && !e[h] && y && y.mobile && (e[h] = b), x && "Macintosh" == e[d] && n && typeof n.standalone !== s && n.maxTouchPoints && n.maxTouchPoints > 2 && (e[d] = "iPad", e[h] = v), e
             }, this.getEngine = function() {
               var e = {};
-              return e[p] = o, e[g] = o, z.call(e, r, w.engine), e
+              return e[p] = o, e[g] = o, q.call(e, r, w.engine), e
             }, this.getOS = function() {
               var e = {};
-              return e[p] = o, e[g] = o, z.call(e, r, w.os), x && !e[p] && y && "Unknown" != y.platform && (e[p] = y.platform.replace(/chrome os/i, V).replace(/macos/i, W)), e
+              return e[p] = o, e[g] = o, q.call(e, r, w.os), x && !e[p] && y && "Unknown" != y.platform && (e[p] = y.platform.replace(/chrome os/i, V).replace(/macos/i, W)), e
             }, this.getResult = function() {
               return {
                 ua: this.getUA(),
@@ -7985,7 +8052,7 @@
             }, this.getUA = function() {
               return r
             }, this.setUA = function(e) {
-              return r = typeof e === c && e.length > 500 ? q(e, 500) : e, this
+              return r = typeof e === c && e.length > 500 ? z(e, 500) : e, this
             }, this.setUA(r), this
           };
         Q.VERSION = "0.7.37", Q.BROWSER = G([p, g, u]), Q.CPU = G([m]), Q.DEVICE = G([d, f, h, y, b, w, v, x, k]), Q.ENGINE = Q.OS = G([p, g]), typeof t !== s ? (e.exports && (t = e.exports = Q), t.UAParser = Q) : n.amdO ? o !== (r = (function() {
@@ -8585,9 +8652,9 @@
         H = G.produce;
       G.produceWithPatches.bind(G), G.setAutoFreeze.bind(G), G.setUseStrictShallowCopy.bind(G), G.applyPatches.bind(G), G.createDraft.bind(G), G.finishDraft.bind(G);
       var K = e => Array.isArray(e) ? e : [e],
-        q = 0,
-        z = class {
-          revision = q;
+        z = 0,
+        q = class {
+          revision = z;
           _value;
           _lastValue;
           _isEqual = Z;
@@ -8598,7 +8665,7 @@
             return this._value
           }
           set value(e) {
-            this.value !== e && (this._value = e, this.revision = ++q)
+            this.value !== e && (this._value = e, this.revision = ++z)
           }
         };
 
@@ -8607,13 +8674,13 @@
       }
 
       function Y(e) {
-        return e instanceof z || console.warn("Not a valid cell! ", e), e.value
+        return e instanceof q || console.warn("Not a valid cell! ", e), e.value
       }
       var J = (e, t) => !1;
 
       function Q() {
         return function(e, t = Z) {
-          return new z(null, t)
+          return new q(null, t)
         }(0, J)
       }
       var X = e => {
@@ -9457,20 +9524,20 @@
           super(...e), Object.setPrototypeOf(this, K.prototype)
         }
       }
-      class q extends I {
+      class z extends I {
         get info() {
           return "An error occurred while fetching the wallets list."
         }
         constructor(...e) {
-          super(...e), Object.setPrototypeOf(this, q.prototype)
+          super(...e), Object.setPrototypeOf(this, z.prototype)
         }
       }
-      class z extends I {
+      class q extends I {
         get info() {
           return "Passed address is in incorrect format."
         }
         constructor(...e) {
-          super(...e), Object.setPrototypeOf(this, z.prototype)
+          super(...e), Object.setPrototypeOf(this, q.prototype)
         }
       }
       class Z extends I {
@@ -10624,7 +10691,7 @@
             let e = [];
             try {
               let t = yield fetch(this.walletsListSource);
-              if (e = yield t.json(), !Array.isArray(e)) throw new q("Wrong wallets list format, wallets list must be an array.");
+              if (e = yield t.json(), !Array.isArray(e)) throw new z("Wrong wallets list format, wallets list must be an array.");
               let n = e.filter(e => !this.isCorrectWalletConfigDTO(e));
               n.length && (ep(`Wallet(s) ${n.map(e=>e.name).join(", ")} config format is wrong. They were removed from the wallets list.`), e = e.filter(e => this.isCorrectWalletConfigDTO(e)))
             } catch (t) {
@@ -11202,13 +11269,13 @@
           wc: n,
           hex: r
         } = function(e) {
-          if (!e.includes(":")) throw new z(`Wrong address ${e}. Address must include ":".`);
+          if (!e.includes(":")) throw new q(`Wrong address ${e}. Address must include ":".`);
           let t = e.split(":");
-          if (2 !== t.length) throw new z(`Wrong address ${e}. Address must include ":" only once.`);
+          if (2 !== t.length) throw new q(`Wrong address ${e}. Address must include ":" only once.`);
           let n = parseInt(t[0]);
-          if (0 !== n && -1 !== n) throw new z(`Wrong address ${e}. WC must be eq 0 or -1, but ${n} received.`);
+          if (0 !== n && -1 !== n) throw new q(`Wrong address ${e}. WC must be eq 0 or -1, but ${n} received.`);
           let r = t[1];
-          if ((null == r ? void 0 : r.length) !== 64) throw new z(`Wrong address ${e}. Hex part must be 64bytes length, but ${null==r?void 0:r.length} received.`);
+          if ((null == r ? void 0 : r.length) !== 64) throw new q(`Wrong address ${e}. Hex part must be 64bytes length, but ${null==r?void 0:r.length} received.`);
           return {
             wc: n,
             hex: function(e) {
@@ -11219,8 +11286,8 @@
               for (let t = 0; t < n; t++) {
                 let n = 2 * t,
                   i = e.substring(n, n + 2);
-                if (!eq.hasOwnProperty(i)) throw new Z("Invalid hex character: " + i);
-                r[t] = eq[i]
+                if (!ez.hasOwnProperty(i)) throw new Z("Invalid hex character: " + i);
+                r[t] = ez[i]
               }
               return r
             }(r)
@@ -11241,12 +11308,12 @@
         }(o), 34), R.encode(a).replace(/\+/g, "-").replace(/\//g, "_")
       }
       eH.walletsList = new eO, eH.isWalletInjected = e => ew.isWalletInjected(e), eH.isInsideWalletBrowser = e => ew.isInsideWalletBrowser(e);
-      let eq = {};
+      let ez = {};
       for (let e = 0; e <= 255; e++) {
         let t = e.toString(16);
-        t.length < 2 && (t = "0" + t), eq[t] = e
+        t.length < 2 && (t = "0" + t), ez[t] = e
       }
-      var ez = n(9108),
+      var eq = n(9108),
         eZ = n(9996),
         eY = n(3967),
         eJ = n(3454),
@@ -11747,8 +11814,8 @@
         return e
       }
       let tK = new Set(["className", "value", "readOnly", "formNoValidate", "isMap", "noModule", "playsInline", "allowfullscreen", "async", "autofocus", "autoplay", "checked", "controls", "default", "disabled", "formnovalidate", "hidden", "indeterminate", "ismap", "loop", "multiple", "muted", "nomodule", "novalidate", "open", "playsinline", "readonly", "required", "reversed", "seamless", "selected"]),
-        tq = new Set(["innerHTML", "textContent", "innerText", "children"]),
-        tz = Object.assign(Object.create(null), {
+        tz = new Set(["innerHTML", "textContent", "innerText", "children"]),
+        tq = Object.assign(Object.create(null), {
           className: "class",
           htmlFor: "for"
         }),
@@ -11869,10 +11936,10 @@
               n.has(i) || (n.add(i), t.addEventListener(i, t7))
             }
           }([i]))
-        } else if ((l = tq.has(t)) || !i && (tZ[t] || (s = tK.has(t))) || (a = e.nodeName.includes("-"))) "class" === t || "className" === t ? t2(e, n) : !a || s || l ? e[tZ[t] || t] = n : e[t.toLowerCase().replace(/-([a-z])/g, (e, t) => t.toUpperCase())] = n;
+        } else if ((l = tz.has(t)) || !i && (tZ[t] || (s = tK.has(t))) || (a = e.nodeName.includes("-"))) "class" === t || "className" === t ? t2(e, n) : !a || s || l ? e[tZ[t] || t] = n : e[t.toLowerCase().replace(/-([a-z])/g, (e, t) => t.toUpperCase())] = n;
         else {
           let r = i && t.indexOf(":") > -1 && tQ[t.split(":")[0]];
-          r ? null == n ? e.removeAttributeNS(r, t) : e.setAttributeNS(r, t, n) : t0(e, tz[t] || t, n)
+          r ? null == n ? e.removeAttributeNS(r, t) : e.setAttributeNS(r, t, n) : t0(e, tq[t] || t, n)
         }
         return n
       }
@@ -12356,7 +12423,7 @@
       function nB() {
         var e, t, n;
         let r, i;
-        let o = new ez().getResult(),
+        let o = new eq().getResult(),
           a = null == (e = o.os.name) ? void 0 : e.toLowerCase(),
           s = null == (t = o.device.model) ? void 0 : t.toLowerCase();
         switch (!0) {
@@ -12450,10 +12517,10 @@
           this.localStorage.removeItem(this.storageKey)
         }
       }
-      let [nK, nq] = tp({
+      let [nK, nz] = tp({
         status: "closed",
         closeReason: null
-      }), nz = tm(() => "opened" === nK().status), [nZ, nY] = tp({
+      }), nq = tm(() => "opened" === nK().status), [nZ, nY] = tp({
         status: "closed",
         closeReason: null
       }), nJ = tm(() => "opened" === nZ().status), nQ = tm(() => {
@@ -13299,7 +13366,7 @@
           height: a
         }
       }
-      let rq = e => {
+      let rz = e => {
           let t = tx(() => e.children),
             n = tm(() => {
               let t = e.name || "s";
@@ -13395,9 +13462,9 @@
             })), e
           }, new Map), c
         },
-        rz = "androidBackHandler",
+        rq = "androidBackHandler",
         rZ = {
-          [rz]: !0
+          [rq]: !0
         },
         rY = t1('<svg><path fill-rule="evenodd" clip-rule="evenodd" d="M10.2122 14.3407C10.5384 14.0854 10.5959 13.614 10.3406 13.2878L6.20237 8.00003L10.3406 2.71227C10.5959 2.38607 10.5384 1.91469 10.2122 1.6594C9.88604 1.40412 9.41465 1.46161 9.15937 1.7878L4.65937 7.5378C4.44688 7.80932 4.44688 8.19074 4.65937 8.46226L9.15937 14.2123C9.41465 14.5385 9.88604 14.5959 10.2122 14.3407Z"></path></svg>', 4, !0),
         rJ = {
@@ -13669,7 +13736,7 @@
           }), tb(() => {
             window.removeEventListener("popstate", i), nD(() => {
               var e;
-              (null == (e = window.history.state) ? void 0 : e[rz]) === !0 && window.history.back()
+              (null == (e = window.history.state) ? void 0 : e[rq]) === !0 && window.history.back()
             })
           })
         },
@@ -15215,7 +15282,7 @@
     }
 `,
         iK = t1("<div></div>"),
-        iq = e => {
+        iz = e => {
           var t;
           let n = null,
             r = () => {
@@ -15262,7 +15329,7 @@
             }
           })
         },
-        iz = nk.h1`
+        iq = nk.h1`
     font-style: normal;
     font-weight: 590;
     font-size: 20px;
@@ -15279,7 +15346,7 @@
 `,
         iZ = e => {
           let [t] = iL();
-          return tD(iz, {
+          return tD(iq, {
             get class() {
               return e.class
             },
@@ -15762,7 +15829,7 @@
     height: 20px;
     border-radius: ${e=>oI[e.theme.borderRadius]};
 `,
-        oU = e => tD(iq, {
+        oU = e => tD(iz, {
           get name() {
             return e.labelLine1
           },
@@ -15794,7 +15861,7 @@
           let [t] = iL(), n = () => e.wallet.appName === oV ? void 0 : "isPreferred" in e.wallet && e.wallet.isPreferred ? t("walletItem.recent", {}, "Recent") : ek(e.wallet) ? t("walletItem.installed", {}, "Installed") : "Tonkeeper" === e.wallet.name ? t("walletItem.popular", {}, "Popular") : void 0;
           return tm((() => {
             let r = tm(() => e.wallet.appName === oV);
-            return () => r() ? tD(iq, {
+            return () => r() ? tD(iz, {
               get icon() {
                 return e.wallet.imageUrl
               },
@@ -15806,7 +15873,7 @@
                 return oW.TG
               },
               onClick: () => e.onClick()
-            }) : tD(iq, {
+            }) : tD(iz, {
               get icon() {
                 return e.wallet.imageUrl
               },
@@ -15852,14 +15919,14 @@
         margin: 0;
     }
 `,
-        [oK, oq] = tp((null == (O = nI()) ? void 0 : O.innerHeight) || 0);
-      nI() && window.addEventListener("resize", () => oq(window.innerHeight));
-      let [oz, oZ] = tp(rN("mobile")), oY = () => oZ(rN("mobile"));
+        [oK, oz] = tp((null == (O = nI()) ? void 0 : O.innerHeight) || 0);
+      nI() && window.addEventListener("resize", () => oz(window.innerHeight));
+      let [oq, oZ] = tp(rN("mobile")), oY = () => oZ(rN("mobile"));
       nI() && (window.addEventListener("resize", () => oY()), window.addEventListener("load", () => oY(), {
         once: !0
       }));
       let oJ = e => {
-          let [t, n] = tp(!1), r = () => oz() ? 150 : 200, i = () => void 0 !== e.maxHeight ? `${e.maxHeight}px` : `${oK()-r()}px`;
+          let [t, n] = tp(!1), r = () => oq() ? 150 : 200, i = () => void 0 !== e.maxHeight ? `${e.maxHeight}px` : `${oK()-r()}px`;
           return [tD(oH, {
             get isShown() {
               return t()
@@ -16285,7 +16352,7 @@
           }();
           return (() => {
             let n = ay.cloneNode(!0);
-            return t8(n, tD(rq, {
+            return t8(n, tD(rz, {
               onBeforeEnter: e => {
                 ir(e, [{
                   opacity: 0,
@@ -16603,11 +16670,11 @@
         }
       }
 
-      function aq(e) {
+      function az(e) {
         return ((aN(e) ? e.ownerDocument : e.document) || window.document).documentElement
       }
 
-      function az(e) {
+      function aq(e) {
         return aM(e) ? {
           scrollLeft: e.scrollLeft,
           scrollTop: e.scrollTop
@@ -16618,12 +16685,12 @@
       }
 
       function aZ(e) {
-        return aK(aq(e)).left + az(e).scrollLeft
+        return aK(az(e)).left + aq(e).scrollLeft
       }
 
       function aY(e) {
         if ("html" === aR(e)) return e;
-        let t = e.assignedSlot || e.parentNode || (aD(e) ? e.host : null) || aq(e);
+        let t = e.assignedSlot || e.parentNode || (aD(e) ? e.host : null) || az(e);
         return aD(t) ? t.host : t
       }
 
@@ -16660,7 +16727,7 @@
       function a1(e, t, n) {
         return "viewport" === t ? aT(function(e, t) {
           let n = aA(e),
-            r = aq(e),
+            r = az(e),
             i = n.visualViewport,
             o = r.clientWidth,
             a = r.clientHeight,
@@ -16701,8 +16768,8 @@
           }
         }(t, n) : aT(function(e) {
           var t;
-          let n = aq(e),
-            r = az(e),
+          let n = az(e),
+            r = aq(e),
             i = null == (t = e.ownerDocument) ? void 0 : t.body,
             o = aW(n.scrollWidth, n.clientWidth, i ? i.scrollWidth : 0, i ? i.clientWidth : 0),
             a = aW(n.scrollHeight, n.clientHeight, i ? i.scrollHeight : 0, i ? i.clientHeight : 0),
@@ -16714,7 +16781,7 @@
             x: s,
             y: l
           }
-        }(aq(e)))
+        }(az(e)))
       }
       let a0 = {
         getClippingRect: function(e) {
@@ -16752,7 +16819,7 @@
             rect: t,
             offsetParent: n,
             strategy: r
-          } = e, i = aL(n), o = aq(n);
+          } = e, i = aL(n), o = az(n);
           if (n === o) return t;
           let a = {
               scrollLeft: 0,
@@ -16766,7 +16833,7 @@
               x: 0,
               y: 0
             };
-          if ((i || !i && "fixed" !== r) && (("body" !== aR(n) || aI(o)) && (a = az(n)), aL(n))) {
+          if ((i || !i && "fixed" !== r) && (("body" !== aR(n) || aI(o)) && (a = aq(n)), aL(n))) {
             let e = aK(n);
             s = aH(n), l.x = e.x + n.clientLeft, l.y = e.y + n.clientTop
           }
@@ -16790,7 +16857,7 @@
           }
         },
         getOffsetParent: aQ,
-        getDocumentElement: aq,
+        getDocumentElement: az,
         getScale: aH,
         getElementRects(e) {
           return e7(this, null, function*() {
@@ -16802,7 +16869,7 @@
             return {
               reference: function(e, t, n) {
                 let r = aL(t),
-                  i = aq(t),
+                  i = az(t),
                   o = aK(e, !0, "fixed" === n, t),
                   a = {
                     scrollLeft: 0,
@@ -16813,7 +16880,7 @@
                     y: 0
                   };
                 if (r || !r && "fixed" !== n) {
-                  if (("body" !== aR(t) || aI(i)) && (a = az(t)), aL(t)) {
+                  if (("body" !== aR(t) || aI(i)) && (a = aq(t)), aL(t)) {
                     let e = aK(t, !0);
                     s.x = e.x + t.clientLeft, s.y = e.y + t.clientTop
                   } else i && (s.x = aZ(i))
@@ -17310,8 +17377,8 @@
 `,
         sp = t1("<li></li>"),
         sh = e => {
-          let t = () => oz() ? void 0 : 510,
-            n = () => oz() ? e.walletsList.filter(si) : e.walletsList;
+          let t = () => oq() ? void 0 : 510,
+            n = () => oq() ? e.walletsList.filter(si) : e.walletsList;
           return tD(ss, {
             "data-tc-wallets-modal-list": "true",
             get children() {
@@ -18028,11 +18095,11 @@
     justify-content: center;
     min-height: 232px;
 `,
-        sq = nk(iZ)`
+        sz = nk(iZ)`
     max-width: 262px;
     margin: 0 auto 8px;
 `,
-        sz = nk(r2)`
+        sq = nk(r2)`
     position: absolute;
     top: 16px;
     left: 16px;
@@ -18165,7 +18232,7 @@
                   return !e.backDisabled || i()
                 },
                 get children() {
-                  return tD(sz, {
+                  return tD(sq, {
                     icon: "arrow",
                     onClick: g
                   })
@@ -18189,7 +18256,7 @@
                   return !i()
                 },
                 get children() {
-                  return [tD(sq, {
+                  return [tD(sz, {
                     get children() {
                       return e.wallet.name
                     }
@@ -18593,7 +18660,7 @@
                       },
                       children: t => (() => {
                         let n = lf.cloneNode(!0);
-                        return t8(n, tD(iq, {
+                        return t8(n, tD(iz, {
                           get icon() {
                             return t.imageUrl
                           },
@@ -18817,7 +18884,7 @@
             locale: e
           } = iL()[1];
           tg(() => e(a9.language)), tg(() => {
-            nz() ? oY() : (a(null), l("universal"), u(!1))
+            nq() ? oY() : (a(null), l("universal"), u(!1))
           });
           let t = tw(n4),
             n = tw(o1),
@@ -18947,7 +19014,7 @@
             a(null), u(!1)
           }), tb(g), tD(a6, {
             get opened() {
-              return nz()
+              return nq()
             },
             get enableAndroidBackHandler() {
               return a9.enableAndroidBackHandler
@@ -19000,7 +19067,7 @@
                             get children() {
                               return tD(ni, {
                                 get component() {
-                                  return oz() ? s6 : sN
+                                  return oq() ? s6 : sN
                                 },
                                 get wallet() {
                                   return o()
@@ -19018,7 +19085,7 @@
                             get children() {
                               return tD(ni, {
                                 get component() {
-                                  return oz() ? lm : lE
+                                  return oq() ? lm : lE
                                 },
                                 onSelect: a,
                                 get walletsList() {
@@ -19337,7 +19404,7 @@
                     get children() {
                       return tD(ni, {
                         get component() {
-                          return oz() ? s6 : sN
+                          return oq() ? s6 : sN
                         },
                         get wallet() {
                           return nQ()
@@ -19403,11 +19470,11 @@
           })
         },
         lU = {
-          openWalletsModal: () => void setTimeout(() => nq({
+          openWalletsModal: () => void setTimeout(() => nz({
             status: "opened",
             closeReason: null
           })),
-          closeWalletsModal: e => void setTimeout(() => nq({
+          closeWalletsModal: e => void setTimeout(() => nz({
             status: "closed",
             closeReason: e
           })),
@@ -20008,8 +20075,8 @@
         }
       }
       var lK = Object.defineProperty,
-        lq = Object.getOwnPropertySymbols,
-        lz = Object.prototype.hasOwnProperty,
+        lz = Object.getOwnPropertySymbols,
+        lq = Object.prototype.hasOwnProperty,
         lZ = Object.prototype.propertyIsEnumerable,
         lY = (e, t, n) => t in e ? lK(e, t, {
           enumerable: !0,
@@ -20018,16 +20085,16 @@
           value: n
         }) : e[t] = n,
         lJ = (e, t) => {
-          for (var n in t || (t = {})) lz.call(t, n) && lY(e, n, t[n]);
-          if (lq)
-            for (var n of lq(t)) lZ.call(t, n) && lY(e, n, t[n]);
+          for (var n in t || (t = {})) lq.call(t, n) && lY(e, n, t[n]);
+          if (lz)
+            for (var n of lz(t)) lZ.call(t, n) && lY(e, n, t[n]);
           return e
         },
         lQ = (e, t) => {
           var n = {};
-          for (var r in e) lz.call(e, r) && 0 > t.indexOf(r) && (n[r] = e[r]);
-          if (null != e && lq)
-            for (var r of lq(e)) 0 > t.indexOf(r) && lZ.call(e, r) && (n[r] = e[r]);
+          for (var r in e) lq.call(e, r) && 0 > t.indexOf(r) && (n[r] = e[r]);
+          if (null != e && lz)
+            for (var r of lz(e)) 0 > t.indexOf(r) && lZ.call(e, r) && (n[r] = e[r]);
           return n
         },
         lX = {
