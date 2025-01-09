@@ -1109,10 +1109,11 @@
             if ("referral" === i.type) return N(!0);
             if (["social", "boost", "ton"].includes(i.type) || "link" === i.action) {
               if ("start" === w) {
-                0 === i.flag && M(e), I();
+                0 === i.flag && setTimeout(() => M(e), 3e3), I();
                 return
               }
-              return M(e)
+              setTimeout(() => M(e), 3e3);
+              return
             }
             if ("soll-wallet" === i.type && !g) return G((0, x.W2)(!0));
             if ("wallet" === i.type && !b) return U.openModal();
