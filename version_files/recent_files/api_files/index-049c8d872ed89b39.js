@@ -2018,68 +2018,72 @@
         ij = i => {
           var t, e, o;
           let {
-            item: s,
-            onStatusChange: c,
-            onTimeOut: n
-          } = i, l = (0, iQ.I0)(), y = (null == s ? void 0 : null === (t = s.progress) || void 0 === t ? void 0 : t.status) || "calculating", [m, k] = (0, a.useState)(!1), [u, h] = (0, a.useState)(!1), {
-            webApp: d
-          } = (0, Z.fW)(), v = s.balance || 0;
-          v || (v = (null == s ? void 0 : null === (e = s.rewards) || void 0 === e ? void 0 : null === (o = e.find(i => "balance" === i.code)) || void 0 === o ? void 0 : o.amount) || 0);
-          let f = async i => {
-            if (m || "pwa" === s.type) return;
+            item: c,
+            onStatusChange: n,
+            onTimeOut: l
+          } = i, y = (0, iQ.I0)(), m = (0, s.CG)(i => i.main.user.userData.proofTonWallet), k = (0, s.CG)(i => i.main.user.userData.proofSolanaWallet), u = (null == c ? void 0 : null === (t = c.progress) || void 0 === t ? void 0 : t.status) || "calculating", [h, d] = (0, a.useState)(!1), [v, f] = (0, a.useState)(!1), {
+            webApp: E
+          } = (0, Z.fW)(), A = c.balance || 0;
+          A || (A = (null == c ? void 0 : null === (e = c.rewards) || void 0 === e ? void 0 : null === (o = e.find(i => "balance" === i.code)) || void 0 === o ? void 0 : o.amount) || 0);
+          let G = async i => {
+            if (h || "pwa" === c.type) return;
             let t = {
               x: (null == i ? void 0 : i.clientX) || -1,
               y: (null == i ? void 0 : i.clientY) || -1,
               timestamp: Date.now() || -1
             };
             try {
-              k(!0);
+              d(!0);
               let i = await (0, Q.Z)("/quests/completed", {
                 method: "POST",
                 body: {
-                  questId: s._id,
+                  questId: c._id,
                   additionalData: t
                 }
               });
-              !0 === i.data && c(s._id, "finished")
+              !0 === i.data && n(c._id, "finished")
             } catch (i) {
               console.error(i)
             } finally {
-              k(!1)
+              d(!1)
             }
-          }, E = async () => {
-            if (!m && "claimable" === y) try {
-              k(!0), (await (0, Q.Z)("/quests/claim", {
+          }, b = async () => {
+            if (!h && "claimable" === u) try {
+              d(!0), (await (0, Q.Z)("/quests/claim", {
                 method: "POST",
                 body: {
-                  questId: s._id
+                  questId: c._id
                 }
-              })).data && (c(s._id, "finished"), l((0, x.x7)(v)), window.dispatchEvent(new CustomEvent("transactionsHistoryUpdated")))
+              })).data && (n(c._id, "finished"), y((0, x.x7)(A)), window.dispatchEvent(new CustomEvent("transactionsHistoryUpdated")))
             } catch (i) {
               console.error(i)
             } finally {
-              k(!1)
+              d(!1)
             }
+          }, g = async () => {
+            ["walletConnect"].includes(c.type) || await G()
           };
-          return a.createElement("div", {
+          return (0, a.useEffect)(() => {
+            "walletConnect" === c.type && m && k && "start" === u && G()
+          }, []), a.createElement("div", {
             className: "invite-item",
-            onClick: () => s.hint && "start" === y && h(!0)
-          }, s.hint && a.createElement(K.Z, {
-            isOpen: u,
-            target: "TooltipExample".concat(s._id),
-            toggle: () => h(!1)
+            onClick: () => c.hint && "start" === u && f(!0)
+          }, c.hint && a.createElement(K.Z, {
+            isOpen: v,
+            target: "TooltipExample".concat(c._id),
+            toggle: () => f(!1)
           }, a.createElement("p", {
             className: "custom-tooltip-descr",
             dangerouslySetInnerHTML: {
-              __html: s.hint
+              __html: c.hint
             }
           })), a.createElement("div", {
             className: "main-info",
-            id: "TooltipExample".concat(s._id)
+            id: "TooltipExample".concat(c._id)
           }, a.createElement("div", {
             className: "icon-con"
           }, a.createElement(r(), {
-            src: is[s.code] || s.iconUrl || is.paws,
+            src: c.iconUrl || is[c.code] || is.paws,
             alt: "",
             width: 40,
             height: 40,
@@ -2088,38 +2092,38 @@
             className: "wallet-con"
           }, a.createElement("div", {
             className: "wallet"
-          }, s.title, s.hint && "start" === y && a.createElement("span", {
+          }, c.title, c.hint && "start" === u && a.createElement("span", {
             className: "h6"
-          }, " ⓘ")), !v && a.createElement("div", {
+          }, " ⓘ")), !A && a.createElement("div", {
             className: "descr"
-          }, "Mandatory*"), !!v && a.createElement("p", {
+          }, "Mandatory*"), !!A && a.createElement("p", {
             className: "reward-count"
-          }, "+ ", (0, p.Z)(v, ","), " PAWS"))), a.createElement("div", {
+          }, "+ ", (0, p.Z)(A, ","), " PAWS"))), a.createElement("div", {
             className: "points"
-          }, "start" === y && !s.isTimeOut && a.createElement(iD.Z, {
-            href: "".concat("https://paws.community", "/app?initData=").concat(window.btoa(d.initData)),
-            onRedirect: f
+          }, "start" === u && !c.isTimeOut && a.createElement(iD.Z, {
+            href: "".concat("https://paws.community", "/app?initData=").concat(window.btoa(E.initData)),
+            onRedirect: g
           }, a.createElement("div", {
-            className: "start-btn ".concat(["claimable", "check"].includes(y) ? "claim" : "")
-          }, "Start")), ["claimable", "check"].includes(y) && a.createElement("div", {
-            className: "start-btn ".concat(["claimable", "check"].includes(y) ? "claim" : ""),
-            onClick: E
-          }, "start" === y && "Start", "check" === y && "Check", "claimable" === y && "Claim"), "pending" === y && a.createElement("div", {
+            className: "start-btn ".concat(["claimable", "check"].includes(u) ? "claim" : "")
+          }, "Start")), ["claimable", "check"].includes(u) && a.createElement("div", {
+            className: "start-btn ".concat(["claimable", "check"].includes(u) ? "claim" : ""),
+            onClick: b
+          }, "start" === u && "Start", "check" === u && "Check", "claimable" === u && "Claim"), "pending" === u && a.createElement("div", {
             className: "start-btn pending"
-          }, "Pending..."), "finished" === y && a.createElement("div", {
+          }, "Pending..."), "finished" === u && a.createElement("div", {
             className: "check-con"
           }, a.createElement(r(), {
             src: J.Z,
             alt: "",
             width: 16,
             height: 14
-          })), "start" === y && s.availableUntil && a.createElement(a.Fragment, null, !s.isTimeOut && a.createElement("div", {
+          })), "start" === u && c.availableUntil && a.createElement(a.Fragment, null, !c.isTimeOut && a.createElement("div", {
             className: "timer-con"
           }, a.createElement(io, {
             withSymbols: !1,
-            date: s.availableUntil,
-            onComplete: () => n(s._id)
-          })), s.isTimeOut && a.createElement("div", {
+            date: c.availableUntil,
+            onComplete: () => l(c._id)
+          })), c.isTimeOut && a.createElement("div", {
             className: "timer-out-con"
           }, "Time's up"))))
         },
