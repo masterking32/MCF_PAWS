@@ -1442,7 +1442,7 @@
             className: "connected-wallet-con"
           }, a.createElement("div", {
             className: "title"
-          }, v.length ? "Menage" : "Connect", " on PAWS Website"), a.createElement("div", {
+          }, v.length ? "Manage" : "Connect", " on PAWS Website"), a.createElement("div", {
             className: "icon-con"
           }, a.createElement(r(), {
             src: iA,
