@@ -19,7 +19,7 @@ MasterCryptoFarmBot_Dir = os.path.dirname(
 )
 sys.path.append(MasterCryptoFarmBot_Dir)
 
-from utilities.utilities import getConfig
+from utilities.utilities import add_account_to_display_data, getConfig, inc_display_data
 
 
 class FarmBot:
@@ -60,6 +60,9 @@ class FarmBot:
             auth = Auth(self.log, self.http, self.account_name, start_param)
 
             if not auth.authorize(self.web_app_query):
+                add_account_to_display_data(
+                    "display_data_bot_issues.json", self.account_name
+                )
                 self.log.error(
                     f"<r>❌ Failed to authorize for account <c>{self.account_name}</c>!</r>"
                 )
@@ -133,7 +136,14 @@ class FarmBot:
                 event.PAWSMAS()
 
             license_key = self.bot_globals.get("license", None)
-            quests = Quests(self.log, self.http, self.tgAccount, self.account_name, self.bot_globals, license_key)
+            quests = Quests(
+                self.log,
+                self.http,
+                self.tgAccount,
+                self.account_name,
+                self.bot_globals,
+                license_key,
+            )
             quests_list = quests.get_quests()
 
             if quests_list is not None:
@@ -152,7 +162,21 @@ class FarmBot:
                 if getConfig("start_quests", True) and remaining_quest > 0:
                     await quests.complete_and_claim_all_quests()
 
+                add_account_to_display_data(
+                    "display_data_success_accounts.json",
+                    self.account_name,
+                    "",
+                    balance,
+                )
+                inc_display_data(
+                    "display_data.json",
+                    "success_accounts",
+                    {"title": "Successfull farm finished accounts", "name": "count"},
+                )
         except Exception as e:
+            add_account_to_display_data(
+                "display_data_bot_issues.json", self.account_name
+            )
             self.log.error(
                 f"⭕ <r>Failed to farm for account <c>{self.account_name}</c>!</r>"
             )
