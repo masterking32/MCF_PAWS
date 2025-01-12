@@ -8,7 +8,7 @@ self.__BUILD_MANIFEST = function(s, c) {
     "/": [s, "static/chunks/797-581af5e09d812c61.js", c, "static/css/ddca092bc4837d3a.css", "static/chunks/pages/index-83a7a775186abb50.js"],
     "/404": ["static/chunks/pages/404-3906dc2650dbee03.js"],
     "/_error": ["static/chunks/pages/_error-5842153508ff243d.js"],
-    "/app": [s, c, "static/css/81ed0b70c1f19852.css", "static/chunks/pages/app-7c8fad96ea1befdb.js"],
+    "/app": [s, c, "static/css/81ed0b70c1f19852.css", "static/chunks/pages/app-de2cc6f27ffe4fdb.js"],
     "/phantom-connect": ["static/css/088adeff40e15ab7.css", "static/chunks/pages/phantom-connect-bbac7ed9a94256b4.js"],
     sortedPages: ["/", "/404", "/_app", "/_error", "/app", "/phantom-connect"]
   }
