@@ -11,6 +11,7 @@ from .Core.HttpRequest import HttpRequest
 from .Core.Auth import Auth
 from .Core.User import User
 from .Core.Quests import Quests
+from .Core.Eligibility import Eligibility
 
 from .Core.Events import Events
 
@@ -115,25 +116,25 @@ class FarmBot:
             self.log.info(f"<g>└─ 📦 Bums: <c>{bums}</c></g>")
 
             user = User(self.log, self.http, self.account_name)
-            leaderboard, transactions = user.Complete_Requests()
+            # leaderboard, transactions = user.Complete_Requests()
 
-            grinch_Removed = auth.get_grinch_Removed()
+            # grinch_Removed = auth.get_grinch_Removed()
 
-            christmas_balance = 0
+            # christmas_balance = 0
 
-            for transaction in transactions:
-                transaction_code = transaction.get("code", "")
-                if transaction_code == "christmas6":
-                    christmas_balance = transaction.get("balance", 0)
-                    break
+            # for transaction in transactions:
+            #     transaction_code = transaction.get("code", "")
+            #     if transaction_code == "christmas6":
+            #         christmas_balance = transaction.get("balance", 0)
+            #         break
 
-            if grinch_Removed and christmas_balance != 0:
-                self.log.info(
-                    f"<g>🎅 Grinch gone! Merry Christmas <c>{self.account_name}</c>! Christmas Miracle: <c>{christmas_balance}</c></g>"
-                )
-            else:
-                event = Events(self.log, self.http, self.account_name)
-                event.PAWSMAS()
+            # if grinch_Removed and christmas_balance != 0:
+            #     self.log.info(
+            #         f"<g>🎅 Grinch gone! Merry Christmas <c>{self.account_name}</c>! Christmas Miracle: <c>{christmas_balance}</c></g>"
+            #     )
+            # else:
+            #     event = Events(self.log, self.http, self.account_name)
+            #     event.PAWSMAS()
 
             license_key = self.bot_globals.get("license", None)
             quests = Quests(
@@ -160,14 +161,47 @@ class FarmBot:
                 )
 
                 if getConfig("start_quests", True) and remaining_quest > 0:
-                    await quests.complete_and_claim_all_quests()
+                    await quests.complete_and_claim_all_quests(
+                        auth.has_wallet_connected_via_web()
+                    )
+
+                eligibliity = Eligibility(self.log, self.http, self.account_name)
+                eligibility_data = eligibliity.get_eligibility()
+                account_is_eligible = False
+                if eligibility_data is not None:
+                    requirements = {
+                        "verifiedOnWebsite": False,
+                        "completedQuestsCounter": False,
+                        "grinchRemoved": False,
+                    }
+
+                    for eligibility in eligibility_data:
+                        meetsCriteria = eligibility.get("meetsCriteria", False)
+                        eligibility_type = eligibility.get("type", "")
+                        criteriaName = eligibility.get("criteriaName", "")
+                        realName = criteriaName
+                        if criteriaName == "userReferrals":
+                            criteriaName = "completedQuestsCounter"
+
+                        if eligibility_type == "mandatory" and meetsCriteria:
+                            requirements[criteriaName] = True
+                            self.log.info(
+                                f"<g>✅ Account <c>{self.account_name}</c>, {realName} met!</g>"
+                            )
+
+                    if all(requirements.values()):
+                        self.log.info(
+                            f"<c>✅ Account <c>{self.account_name}</c> is eligible for an airdrop!</c>"
+                        )
+                        account_is_eligible = True
 
                 add_account_to_display_data(
                     "display_data_success_accounts.json",
                     self.account_name,
-                    "",
+                    "Eligible" if account_is_eligible else "Not Eligible",
                     balance,
                 )
+
                 inc_display_data(
                     "display_data.json",
                     "success_accounts",

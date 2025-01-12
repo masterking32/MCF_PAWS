@@ -9,7 +9,9 @@ from mcf_utils.api import API
 
 
 class Quests:
-    def __init__(self, log, httpRequest, tgAccount, account_name, bot_globals, license_key):
+    def __init__(
+        self, log, httpRequest, tgAccount, account_name, bot_globals, license_key
+    ):
         self.log = log
         self.http = httpRequest
         self.tgAccount = tgAccount
@@ -19,10 +21,10 @@ class Quests:
         self.quests = []
         self.whitelist_quests = ["674dcb4b30dc53f7e9aec470", "N/A"]  # id's
         self.blacklist_quests = [
-            "675067faaae81a10ba5a3c4f", # TAP
-            "67532ea5a3770d4f94e38f6f", # REACT
-            "67717bfb067c823d800e5a14", # Verify
-            "N/A"
+            "675067faaae81a10ba5a3c4f",  # TAP
+            "67532ea5a3770d4f94e38f6f",  # REACT
+            "67717bfb067c823d800e5a14",  # Verify
+            "N/A",
         ]
 
     def get_quests(self):
@@ -40,7 +42,7 @@ class Quests:
                     f"<r>❌ Failed to fetch quests for user <c>{self.account_name}</c>! NULL_RESPONSE</r>"
                 )
                 return None
-            
+
             self.log.info(
                 f"<g>🔃 Successfully fetched quests info for <c>{self.account_name}</c>.</g>"
             )
@@ -58,16 +60,13 @@ class Quests:
             quest_id = quest.get("_id", "")
             quest_code = quest.get("code", "")
             quest_type = quest.get("type", "")
-            quest_data:str = quest.get("data", "")
+            quest_data: str = quest.get("data", "")
             quest_title = quest.get("title", "N/A")
 
             if quest_title == "Follow Zoo channel":
                 quest_data = "https://t.me/zoo_story"
 
-            if (
-                quest_code == "telegram"
-                or quest_type == "partner-channel"
-            ):
+            if quest_code == "telegram" or quest_type == "partner-channel":
                 if (
                     getConfig("join_channels", False)
                     and self.tgAccount is not None
@@ -79,13 +78,9 @@ class Quests:
                     await asyncio.sleep(random.randint(5, 10))
                 else:
                     return False
-                
 
             elif quest_type == "partner-app":
-                if (
-                    not getConfig("start_bots", False)
-                    or self.tgAccount is None
-                ):
+                if not getConfig("start_bots", False) or self.tgAccount is None:
                     return
 
                 data = {
@@ -103,9 +98,11 @@ class Quests:
                     return
 
                 ref_link = api_response.get("referral")
-                bot_id:str = api_response.get("bot_id")
+                bot_id: str = api_response.get("bot_id")
 
-                self.log.info(f"<g>🤖 Starting <c>@{bot_id}</c> for task <c>{quest_title}</c>...</g>")
+                self.log.info(
+                    f"<g>🤖 Starting <c>@{bot_id}</c> for task <c>{quest_title}</c>...</g>"
+                )
 
                 try:
                     tg = TG(
@@ -116,7 +113,7 @@ class Quests:
                         BotID=bot_id,
                         ReferralToken=ref_link,
                         ShortAppName="game",
-                        AppURL="https://game.zoo.team"
+                        AppURL="https://game.zoo.team",
                     )
 
                     await tg.getWebViewData()
@@ -127,10 +124,7 @@ class Quests:
 
             elif quest_code == "emojiName":
 
-                if (
-                    getConfig("change_name", False) == False
-                    or self.tgAccount is None
-                ):
+                if getConfig("change_name", False) == False or self.tgAccount is None:
                     return False
 
                 tgMe = self.tgAccount.me
@@ -159,7 +153,6 @@ class Quests:
                     )
                     return False
 
-
             payload = {"questId": quest_id}
 
             if quest_type == "website":
@@ -167,9 +160,18 @@ class Quests:
                     "questId": quest_id,
                     "additionalData": {
                         "x": random.randint(145, 155),
-                        "y": random.randint(395, 405), 
-                        "timestamp": int(time.time() * 1000)
-                    } 
+                        "y": random.randint(395, 405),
+                        "timestamp": int(time.time() * 1000),
+                    },
+                }
+            elif quest_type == "walletConnect":
+                payload = {
+                    "questId": quest_id,
+                    "additionalData": {
+                        "x": -1,
+                        "y": -1,
+                        "timestamp": int(time.time() * 1000),
+                    },
                 }
 
             response = self.http.post(
@@ -183,20 +185,22 @@ class Quests:
                     f"<r>❌ Failed to complete quest <c>{quest_title}</c>! NULL_RESPONSE</r>"
                 )
                 return False
-            
+
             elif response.get("data", False) == False:
                 self.log.error(
                     f"<y>⚠️ Quest <c>{quest_title}</c> bugged and cannot complete now! (SERVER SIDE)</y>"
                 )
                 return False
-            
+
             self.log.info(
                 f"<g>✅ Completed quest <c>{quest_title}</c> successfully!</g>"
             )
 
             return True
         except Exception as e:
-            self.log.error(f"<r>┌─ ❌ Failed to complete quest <c>{quest_title}</c>!</r>")
+            self.log.error(
+                f"<r>┌─ ❌ Failed to complete quest <c>{quest_title}</c>!</r>"
+            )
             self.log.error(f"<r>└─ ❌ {str(e)}</r>")
             return False
 
@@ -204,7 +208,7 @@ class Quests:
         try:
             quest_id = quest.get("_id", "N/A")
             quest_title = quest.get("title", "N/A")
-            quest_data:str = quest.get("data", "0")
+            quest_data: str = quest.get("data", "0")
 
             if quest_id in self.blacklist_quests:
                 return None
@@ -240,7 +244,7 @@ class Quests:
 
             return False
 
-    async def complete_and_claim_all_quests(self):
+    async def complete_and_claim_all_quests(self, has_wallet_connected_via_web):
         self.log.info(f"<y>⌛ Checking remaining quests...</y>")
 
         for quest in self.quests:
@@ -252,12 +256,27 @@ class Quests:
             current_state = quest.get("progress", {}).get("current", 0)
             total_states = quest.get("progress", {}).get("total", 0)
             quest_status = quest.get("progress", {}).get("status", None)
-            
-            if (
-                current_state >= total_states
-                or quest_status == "claimable"
-            ):
+
+            if current_state >= total_states or quest_status == "claimable":
                 self.claim_quest(quest)
+                continue
+
+            quest_title = quest.get("title", "N/A")
+            quest_code = quest.get("code", None)
+            quest_type = quest.get("type", None)
+
+            if quest_title in ["Boost PAWS channel", "Invite 10 friends"]:
+                continue
+
+            if has_wallet_connected_via_web and quest_status != "finished":
+                await self.complete_quest(quest)
+                continue
+            elif (
+                quest_code == "website"
+                and quest_status == "website-blank"
+                and quest_status == "start"
+            ):
+                await self.complete_quest(quest)
                 continue
 
             if quest_status == "pending":
@@ -266,20 +285,12 @@ class Quests:
                 )
                 continue
 
-            quest_title = quest.get("title", "N/A")
-            quest_code = quest.get("code", None)
             quest_id = quest.get("_id", "N/A")
 
-            if (
-                quest_code is None
-                or quest_code in ["wallet", "boost", "invite"]
-            ):
+            if quest_code is None or quest_code in ["wallet", "boost", "invite"]:
                 continue
 
-            if (
-                quest_code == "emoji"
-                and getConfig("premium_quest", False) == False
-            ):
+            if quest_code == "emoji" and getConfig("premium_quest", False) == False:
                 continue
 
             if quest_title == "Mystery Quest":
@@ -287,15 +298,18 @@ class Quests:
                     continue
 
             if current_state == 0:
-                if await self.complete_quest(quest) and quest_id not in self.blacklist_quests:
-                    current_state = 1
+                if (
+                    await self.complete_quest(quest)
+                    and quest_id not in self.blacklist_quests
+                ):
+                    current_state += 1
                     sleep_duration = random.randint(5, 10)
                     self.log.info(
                         f"<y>├─ ⌛ Claiming quest after {sleep_duration}s...</y>"
                     )
                     await asyncio.sleep(sleep_duration)
 
-            if current_state == 1:
+            if current_state >= total_states:
                 self.claim_quest(quest)
 
     def get_total_quests(self):
@@ -317,7 +331,7 @@ class Quests:
             return f"{value / 1_000:.1f}k"
         else:
             return value
-        
+
     def get_api_data(self, data, license_key):
         if license_key is None:
             return None

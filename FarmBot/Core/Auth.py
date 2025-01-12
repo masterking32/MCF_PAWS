@@ -45,11 +45,17 @@ class Auth:
                 valid_response_code=[200, 201],
             )
 
-            if res is None or not res.get("success", False) or "data" not in res:
+            if res is None:
                 self.log.error(
                     f"<r>❌ Failed to authorize user <c>{self.account_name}</c>! RESPONSE_IS_NULL</r>"
                 )
                 return False
+
+            if not res.get("success", False) or "data" not in res:
+                self.log.error(
+                    f"<r>❌ Failed to authorize user <c>{self.account_name}</c>! {res}</r>"
+                )
+                return
 
             self.data = res["data"]
             self.http.authToken = self.get_token()
@@ -77,6 +83,11 @@ class Auth:
     def get_avatarId(self):
         return self.get_userData().get("avatarId", 0)
 
+    def has_wallet_connected_via_web(self):
+        if "proofTonWallet" in self.get_userData():
+            return True
+        return False
+
     def mask_wallet_address(self, wallet_address):
         start = wallet_address[:6]
         end = wallet_address[-6:]
@@ -89,9 +100,9 @@ class Auth:
             return wallet
         else:
             return None
-        
+
     def get_sol_wallet(self):
-        wallet = self.get_userData().get("solanaWallet", None)
+        wallet = self.get_userData().get("proofSolanaWallet", None)
         if wallet is not None and wallet != "":
             return wallet
         else:
@@ -141,10 +152,10 @@ class Auth:
 
     def get_xempire_converted(self):
         return self.get_allocationData().get("empire", {}).get("converted", 0)
-    
+
     def get_bums_converted(self):
         return self.get_allocationData().get("bums", {}).get("converted", 0)
-    
+
     def getBadge(self):
         return self.data[1].get("badgeTier", 0)
 
