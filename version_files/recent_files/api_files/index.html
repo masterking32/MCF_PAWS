@@ -7,7 +7,7 @@
   <meta name="robots" content="index,follow" />
   <meta name="description" content="Animals are done! It’s PAWS Season" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@PawsUpCult" />
+  <meta name="twitter:site" content="@pawsuplabs" />
   <meta property="og:title" content="PAWS | Home" />
   <meta property="og:description" content="Animals are done! It’s PAWS Season" />
   <meta property="og:url" content="https://paws.community" />
@@ -48,7 +48,7 @@
   <link rel="manifest" href="/manifest.json" />
   <meta name="next-head-count" content="44" />
   <link data-next-font="" rel="preconnect" href="/" crossorigin="anonymous" />
-  <style data-href="/_next/static/css/58f03a73654692fb.css" data-n-g="">
+  <style data-href="/_next/static/css/f99c8ae03ef627fd.css" data-n-g="">
     @charset "UTF-8";
 
     /*!
@@ -12262,6 +12262,12 @@
       pointer-events: none
     }
 
+    @media(min-width:480px) {
+      .Toastify__toast-container {
+        min-width: 450px
+      }
+    }
+
     .Toastify__toast-container .custom-toast {
       pointer-events: auto;
       background: none;
@@ -13552,7 +13558,7 @@
       color: #000
     }
   </style>
-  <style data-href="/_next/static/css/541f110a3a99d0df.css" data-n-p="">
+  <style data-href="/_next/static/css/ddca092bc4837d3a.css" data-n-p="">
     .preloader-continaer {
       display: flex;
       flex-direction: column;
@@ -14270,8 +14276,7 @@
     }
 
     .home-tab-con .wallet-collapse-wrapper .wallet-collapse .connected-wallet-wrapper {
-      width: 100%;
-      border-bottom: 8px solid hsla(240, 3%, 49%, .12)
+      width: 100%
     }
 
     .home-tab-con .wallet-collapse-wrapper .wallet-collapse .connected-wallet-wrapper:last-child {
@@ -14403,6 +14408,58 @@
       justify-content: space-between;
       color: #fff;
       background: #151516
+    }
+
+    .eligibility-modal-con {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 36px 70px;
+      width: 100%;
+      text-align: center
+    }
+
+    .eligibility-modal-con .cross-con {
+      position: absolute;
+      top: 16px;
+      right: 16px
+    }
+
+    .eligibility-modal-con .img-con {
+      margin-bottom: 14px
+    }
+
+    .eligibility-modal-con .title {
+      margin-bottom: 16px;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400
+    }
+
+    .eligibility-modal-con .descr {
+      margin-bottom: 32px;
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 600
+    }
+
+    .eligibility-modal-con .link-wrapper {
+      width: 100%
+    }
+
+    .eligibility-modal-con .link-wrapper .next-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      background: #4c9ce2;
+      padding: 5px;
+      flex-grow: 1;
+      width: 100%;
+      min-height: 55px;
+      font-size: 16px
     }
 
     .quest-copy-modal-con {
@@ -16651,16 +16708,16 @@
   </style><noscript data-n-css=""></noscript>
   <script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script>
   <script src="/telegram-web-app.js" defer="" data-nscript="beforeInteractive"></script>
-  <script src="/_next/static/chunks/webpack-0f343db6f6206961.js" defer=""></script>
+  <script src="/_next/static/chunks/webpack-4f4251b0df534c1f.js" defer=""></script>
   <script src="/_next/static/chunks/framework-5429a50ba5373c56.js" defer=""></script>
   <script src="/_next/static/chunks/main-7cfd392e3607cf8f.js" defer=""></script>
-  <script src="/_next/static/chunks/pages/_app-3d20b63cae4f0e9a.js" defer=""></script>
-  <script src="/_next/static/chunks/727-1399109fe9802f9c.js" defer=""></script>
-  <script src="/_next/static/chunks/433-9ea3dd9fe7c716db.js" defer=""></script>
-  <script src="/_next/static/chunks/428-6b404590da9f4cbc.js" defer=""></script>
-  <script src="/_next/static/chunks/pages/index-049c8d872ed89b39.js" defer=""></script>
-  <script src="/_next/static/143-vfHwBBFb7ozH_OodY/_buildManifest.js" defer=""></script>
-  <script src="/_next/static/143-vfHwBBFb7ozH_OodY/_ssgManifest.js" defer=""></script>
+  <script src="/_next/static/chunks/pages/_app-de6a3f3b4002968c.js" defer=""></script>
+  <script src="/_next/static/chunks/645-1d5b8d45aa00a007.js" defer=""></script>
+  <script src="/_next/static/chunks/797-581af5e09d812c61.js" defer=""></script>
+  <script src="/_next/static/chunks/609-3b54a5e19b08f433.js" defer=""></script>
+  <script src="/_next/static/chunks/pages/index-83a7a775186abb50.js" defer=""></script>
+  <script src="/_next/static/KDpZ8AcysVeRB1koNUXRy/_buildManifest.js" defer=""></script>
+  <script src="/_next/static/KDpZ8AcysVeRB1koNUXRy/_ssgManifest.js" defer=""></script>
 </head>
 
 <body>
@@ -16704,15 +16761,12 @@
         },
         "pathname": "/",
         "initialReduxState": {},
-        "clientSideDispatches": [{
-          "type": "main/setIsMobile",
-          "payload": true
-        }],
+        "clientSideDispatches": [],
         "__N_SSP": true
       },
       "page": "/",
       "query": {},
-      "buildId": "143-vfHwBBFb7ozH_OodY",
+      "buildId": "KDpZ8AcysVeRB1koNUXRy",
       "isFallback": false,
       "isExperimentalCompile": false,
       "gssp": true,

@@ -2391,24 +2391,26 @@
         let {
           href: t,
           children: n,
-          onRedirect: i
-        } = e, [c, u] = (0, r.useState)(!1), d = (e, n) => {
+          onRedirect: i,
+          wrapperClassName: c = ""
+        } = e, [u, d] = (0, r.useState)(!1), p = (e, n) => {
           var r, o;
           null === (r = window.Telegram) || void 0 === r || null === (o = r.WebApp) || void 0 === o || o.openLink(t, {
             try_instant_view: !1,
             try_browser: n
-          }), u(!1), i && i(e)
+          }), d(!1), i && i(e)
         };
         return r.createElement(r.Fragment, null, r.createElement("div", {
           onClick: e => {
             var n, r, o, a, s;
-            (null === (n = window) || void 0 === n ? void 0 : null === (r = n.Telegram) || void 0 === r ? void 0 : null === (o = r.WebApp) || void 0 === o ? void 0 : o.platform) === "android" ? u(!0): (null === (a = window.Telegram) || void 0 === a || null === (s = a.WebApp) || void 0 === s || s.openLink(t, {
+            (null === (n = window) || void 0 === n ? void 0 : null === (r = n.Telegram) || void 0 === r ? void 0 : null === (o = r.WebApp) || void 0 === o ? void 0 : o.platform) === "android" ? d(!0): (null === (a = window.Telegram) || void 0 === a || null === (s = a.WebApp) || void 0 === s || s.openLink(t, {
               try_instant_view: !1
             }), i && i(e))
-          }
+          },
+          className: c
         }, n), r.createElement(s.Z, {
-          isOpen: c,
-          close: () => u(!1)
+          isOpen: u,
+          close: () => d(!1)
         }, r.createElement("div", {
           className: "choose-browser-con"
         }, r.createElement("div", {
@@ -2417,7 +2419,7 @@
           className: "descr"
         }, "Choose your default"), r.createElement("div", {
           className: "cross-con",
-          onClick: () => u(!1)
+          onClick: () => d(!1)
         }, r.createElement(o(), {
           src: a.Z,
           alt: "",
@@ -2431,7 +2433,7 @@
         }, r.createElement("div", {
           className: "icon-con",
           onClick: t => {
-            d(t, e.code)
+            p(t, e.code)
           }
         }, r.createElement(o(), {
           src: e.icon,
@@ -2452,28 +2454,55 @@
           isOpen: t,
           isCloseAble: n = !0,
           close: o,
-          children: a
-        } = e, [s, l] = (0, r.useState)(!1), [c, u] = (0, r.useState)(!1), d = async () => {
-          n && (l(!1), u(!1), await new Promise(e => {
+          children: a,
+          modalClassName: s
+        } = e, [l, c] = (0, r.useState)(!1), [u, d] = (0, r.useState)(!1), p = async () => {
+          n && (c(!1), d(!1), await new Promise(e => {
             setTimeout(() => {
               o(), e()
             }, 250)
           }))
         };
         return (0, r.useEffect)(() => {
-          t && (u(!0), setTimeout(() => {
-            l(!0)
-          }, 250)), !t && s && d()
+          t && (d(!0), setTimeout(() => {
+            c(!0)
+          }, 250)), !t && l && p()
         }, [t]), r.createElement(i.Z, {
-          isOpen: c,
-          toggle: d,
+          isOpen: u,
+          toggle: p,
           backdropClassName: "swipe-able-popup-backdrop",
-          modalClassName: "swipe-able-popup-modal",
+          modalClassName: "swipe-able-popup-modal ".concat(s),
           className: "swipe-able-popup-wrapper",
           zIndex: 900
         }, r.createElement("div", {
-          className: "swipe-able-popup-container ".concat(s ? "is-open" : "is-close")
+          className: "swipe-able-popup-container ".concat(l ? "is-open" : "is-close")
         }, a))
+      }
+    },
+    2725: function(e, t, n) {
+      "use strict";
+      var r = n(7294),
+        i = n(2783);
+      n(6649);
+      var o = n(2894);
+      t.Z = () => {
+        let {
+          webApp: e
+        } = (0, o.fW)();
+        return r.createElement("div", {
+          className: "maintenance-screen-con"
+        }, r.createElement("div", {
+          className: "main-wrap"
+        }, r.createElement("div", {
+          className: "anim-wrap"
+        }, r.createElement(i.Z, {
+          isShow: !0
+        })), r.createElement("div", {
+          className: "title"
+        }, "Under Maintenance..."), r.createElement("div", {
+          className: "link",
+          onClick: () => e.openTelegramLink("https://t.me/pawsupfam")
+        }, "Stay tuned")))
       }
     },
     2783: function(e, t, n) {
@@ -2491,7 +2520,7 @@
         } = e, n = (0, r.useRef)(null);
         return (0, r.useEffect)(() => {
           let e = null;
-          return n.current && (t ? n.current.goToAndPlay(0, !0) : e = setTimeout(() => {
+          return n.current && (t ? n.current && n.current.goToAndPlay(0, !0) : e = setTimeout(() => {
             n.current.goToAndStop(0, !0)
           }, 3e3)), () => () => {
             clearTimeout(e)
@@ -2663,11 +2692,11 @@
         }, t))
       }
     },
-    4627: function(e, t, n) {
+    5082: function(e, t, n) {
       "use strict";
       n.r(t), n.d(t, {
         default: function() {
-          return eQ
+          return eJ
         }
       });
       var r = n(7462),
@@ -4930,10 +4959,10 @@
               href: "/manifest.json"
             }],
             twitter: {
-              site: "@PawsUpCult",
+              site: "@pawsuplabs",
               cardType: "summary",
               card: "summary",
-              creator: "@PawsUpCult"
+              creator: "@pawsuplabs"
             }
           })
         },
@@ -4948,32 +4977,12 @@
         eB = n(1163),
         eU = n(9155),
         eV = n(1513),
-        eW = n(2783);
-      n(6649);
-      var eF = () => {
-        let {
-          webApp: e
-        } = (0, e$.fW)();
-        return o.createElement("div", {
-          className: "maintenance-screen-con"
-        }, o.createElement("div", {
-          className: "main-wrap"
-        }, o.createElement("div", {
-          className: "anim-wrap"
-        }, o.createElement(eW.Z, {
-          isShow: !0
-        })), o.createElement("div", {
-          className: "title"
-        }, "Under Maintenance..."), o.createElement("div", {
-          className: "link",
-          onClick: () => e.openTelegramLink("https://t.me/pawsupfam")
-        }, "Stay tuned")))
-      };
-      let eG = ["Component"];
-      var eH = e => {
+        eW = n(2725);
+      let eF = ["Component"];
+      var eG = e => {
         let {
           Component: t
-        } = e, n = (0, m.Z)(e, eG), r = (0, ew.TL)(), {
+        } = e, n = (0, m.Z)(e, eF), r = (0, ew.TL)(), {
           pathname: i
         } = (0, eB.useRouter)(), [a, s] = (0, o.useState)(!1), [l, c] = (0, o.useState)(!1), u = async () => {
           try {
@@ -4993,8 +5002,8 @@
               message: "Something went wrong while log in. Please try again later."
             });
             s(!0);
-            let [h, f, g, m, y] = p.data;
-            r((0, ev.av)(f)), r((0, ev.r7)(y || 0)), r((0, ev.tR)(!0)), g && r((0, ev.x5)({
+            let [h, f, g, m] = p.data;
+            r((0, ev.av)(f)), r((0, ev.tR)(!0)), g && r((0, ev.x5)({
               isShowing: !0
             })), m && m.isShowBumsModal && r((0, ev.UD)(!0)), window.sessionStorage.setItem("accessToken", h)
           } catch (e) {
@@ -5008,10 +5017,10 @@
         return (0, o.useEffect)(() => {
           if ("/" === i) return u(), () => {};
           s(!0)
-        }, []), o.createElement(o.Fragment, null, l && o.createElement(eF, null), a && !l && o.createElement(o.Fragment, null, o.createElement(t, n)))
+        }, []), o.createElement(o.Fragment, null, l && o.createElement(eW.Z, null), a && !l && o.createElement(o.Fragment, null, o.createElement(t, n)))
       };
       n(8231), n(1691), n(5389), n(5889);
-      var eK = () => {
+      var eH = () => {
           let e = (0, ew.TL)(),
             {
               asPath: t
@@ -5023,7 +5032,7 @@
             window.removeEventListener("resize", n)
           }), [t]), o.createElement(o.Fragment, null)
         },
-        ez = e => {
+        eK = e => {
           let {
             children: t
           } = e;
@@ -5033,9 +5042,9 @@
             })
           }, []), o.createElement(o.Fragment, null, t)
         },
-        eq = n(3454);
+        ez = n(3454);
 
-      function eZ(e, t) {
+      function eq(e, t) {
         var n = Object.keys(e);
         if (Object.getOwnPropertySymbols) {
           var r = Object.getOwnPropertySymbols(e);
@@ -5046,24 +5055,24 @@
         return n
       }
 
-      function eY(e) {
+      function eZ(e) {
         for (var t = 1; t < arguments.length; t++) {
           var n = null != arguments[t] ? arguments[t] : {};
-          t % 2 ? eZ(Object(n), !0).forEach(function(t) {
+          t % 2 ? eq(Object(n), !0).forEach(function(t) {
             (0, i.Z)(e, t, n[t])
-          }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : eZ(Object(n)).forEach(function(t) {
+          }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : eq(Object(n)).forEach(function(t) {
             Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
           })
         }
         return e
       }
-      class eJ extends s() {
+      class eY extends s() {
         constructor(e) {
           super(e), (0, i.Z)(this, "appWrapper", () => {
             let {
               pathname: e
             } = this.props;
-            return "/" === e ? e$.Eo : ez
+            return "/" === e ? e$.Eo : eK
           }), this.state = {
             isLoading: !0,
             url: ""
@@ -5076,38 +5085,38 @@
             initialReduxState: n,
             clientSideDispatches: i
           } = this.props, a = this.appWrapper();
-          return o.createElement(eb.LD, {
-            manifestUrl: "https://storage.googleapis.com/p-a-w-s/tonconnect-manifest-production.json"
-          }, o.createElement(eM, t), o.createElement(a, null, o.createElement(ek, {
+          return o.createElement(ek, {
             initialReduxState: n,
             clientSideDispatches: i
-          }, o.createElement("div", {
+          }, o.createElement(eb.LD, {
+            manifestUrl: "https://storage.googleapis.com/p-a-w-s/tonconnect-manifest-production.json"
+          }, o.createElement(eM, t), o.createElement(a, null, o.createElement("div", {
             id: "next-app"
-          }, o.createElement(eK, null), o.createElement(eH, (0, r.Z)({
+          }, o.createElement(eH, null), o.createElement(eG, (0, r.Z)({
             Component: e
           }, t)), o.createElement(eI, null), o.createElement(ey.Ix, null)))))
         }
       }
-      eJ.getInitialProps = async e => {
+      eY.getInitialProps = async e => {
         let {
           ctx: t
         } = e;
-        window.innerWidth < 992 || window && "ontouchstart" in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints;
+        window.innerWidth < 768 || window && "ontouchstart" in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints;
         let {
           accessToken: n,
           refreshToken: r
         } = t.query;
-        return (n || r) && (await (0, em.setCookie)("".concat("paws", "-accessToken"), n, eY(eY({}, t), {}, {
-          domain: eq.env.APP_DOMAIN
-        })), await (0, em.setCookie)("".concat("paws", "-refreshToken"), r, eY(eY({}, t), {}, {
-          domain: eq.env.APP_DOMAIN
-        }))), eY(eY({}, await s().getInitialProps(e)), {}, {
+        return (n || r) && (await (0, em.setCookie)("".concat("paws", "-accessToken"), n, eZ(eZ({}, t), {}, {
+          domain: ez.env.APP_DOMAIN
+        })), await (0, em.setCookie)("".concat("paws", "-refreshToken"), r, eZ(eZ({}, t), {}, {
+          domain: ez.env.APP_DOMAIN
+        }))), eZ(eZ({}, await s().getInitialProps(e)), {}, {
           pathname: t.pathname,
           initialReduxState: null,
-          clientSideDispatches: [(0, ev.Ep)(!0)]
+          clientSideDispatches: []
         })
       };
-      var eQ = function(e) {
+      var eJ = function(e) {
         var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : null;
         return d()(function(n) {
           var i, a, s = (n.pageProps || {})._nextI18Next,
@@ -5140,7 +5149,7 @@
             key: l
           }, n))
         }, e)
-      }(eJ)
+      }(eY)
     },
     9195: function(e, t, n) {
       "use strict";
@@ -5176,40 +5185,43 @@
       "use strict";
       n.d(t, {
         C0: function() {
-          return m
+          return y
         },
         Ep: function() {
           return s
         },
         M: function() {
+          return c
+        },
+        OJ: function() {
           return l
         },
         PL: function() {
           return a
         },
         UD: function() {
-          return h
+          return f
         },
         W2: function() {
-          return u
-        },
-        av: function() {
-          return y
-        },
-        r7: function() {
-          return b
-        },
-        tR: function() {
-          return c
-        },
-        uf: function() {
           return d
         },
-        x5: function() {
+        av: function() {
+          return b
+        },
+        r7: function() {
           return v
         },
+        tR: function() {
+          return u
+        },
+        uf: function() {
+          return p
+        },
+        x5: function() {
+          return w
+        },
         x7: function() {
-          return g
+          return m
         }
       });
       var r = n(6656);
@@ -5245,7 +5257,6 @@
             isSolWalletModalOpen: !1,
             chatId: 0,
             user: {
-              badgeTier: 0,
               userData: {
                 username: "",
                 firstname: "",
@@ -5260,7 +5271,8 @@
               },
               gameData: {
                 balance: 0,
-                wPaws: 0
+                wPaws: 0,
+                badgeTier: 0
               },
               allocationData: {
                 hamster: {
@@ -5329,7 +5341,10 @@
               e.user = o(o({}, e.user), t.payload)
             },
             setUserWPaws: (e, t) => {
-              e.user.gameData.wPaws = t.payload
+              e.user.gameData.wpaws = t.payload
+            },
+            setGameData: (e, t) => {
+              e.user.gameData = o(o({}, e.user.gameData), t.payload)
             },
             setUserWallet: (e, t) => {
               e.user.userData.wallet = t.payload
@@ -5359,18 +5374,19 @@
         }),
         {
           setIsMobile: s,
-          setUserData: l,
-          setIsAuth: c,
-          setIsSolWalletModalOpen: u,
-          setUserSolWallet: d,
-          pushTabHistory: p,
-          setIsWinnerModalModalOpen: h,
-          setIsTonTxModalOpen: f,
-          incBalance: g,
-          setUserWallet: m,
-          setUser: y,
-          setUserWPaws: b,
-          setOnboarding: v
+          setGameData: l,
+          setUserData: c,
+          setIsAuth: u,
+          setIsSolWalletModalOpen: d,
+          setUserSolWallet: p,
+          pushTabHistory: h,
+          setIsWinnerModalModalOpen: f,
+          setIsTonTxModalOpen: g,
+          incBalance: m,
+          setUserWallet: y,
+          setUser: b,
+          setUserWPaws: v,
+          setOnboarding: w
         } = a.actions
     },
     6477: function(e, t) {
@@ -5384,7 +5400,7 @@
     },
     1118: function(e, t, n) {
       (window.__NEXT_P = window.__NEXT_P || []).push(["/_app", function() {
-        return n(4627)
+        return n(5082)
       }])
     },
     9486: function(e, t) {

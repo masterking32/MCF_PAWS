@@ -1,5 +1,5 @@
 (self.webpackChunk_N_E = self.webpackChunk_N_E || []).push([
-  [428], {
+  [609], {
     2080: function(e, t, a) {
       "use strict";
       a.d(t, {
@@ -233,7 +233,7 @@
               message: "Something went wrong. Try again"
             })
           }
-        }, x = async () => {
+        }, M = async () => {
           let e = localStorage.getItem("phantom-keypair"),
             {
               nonce: t,
@@ -324,7 +324,7 @@
             data: a,
             phantom_encryption_public_key: n
           } = D;
-          t && a && n && (k(!0), e((0, p.W2)(!0))), t && a && !n && x()
+          t && a && n && (k(!0), e((0, p.W2)(!0))), t && a && !n && M()
         }, []), n.createElement(m.Z, {
           isOpen: t,
           close: S
@@ -357,7 +357,7 @@
           isShow: 2 === r
         })), n.createElement("div", {
           className: "retry-btn",
-          onClick: x
+          onClick: M
         }, "Sign message"))))), !y && n.createElement(n.Fragment, null, n.createElement("div", {
           className: "cross-con",
           onClick: S
@@ -436,6 +436,62 @@
         }, "Retry"))))))))
       }
     },
+    4965: function(e, t, a) {
+      "use strict";
+      var n = a(7294),
+        r = a(8130);
+      t.Z = e => {
+        let {
+          date: t,
+          withSymbols: a = !0,
+          onComplete: c
+        } = e;
+        return n.createElement(r.ZP, {
+          date: t,
+          zeroPadTime: 2,
+          onComplete: c,
+          daysInHours: !0,
+          renderer: e => {
+            let {
+              formatted: {
+                hours: t,
+                minutes: r,
+                seconds: c
+              }
+            } = e, i = Math.floor(t / 24), s = Math.floor(t % 24);
+            return n.createElement("div", {
+              className: "custom-timer"
+            }, !+t && n.createElement("p", {
+              className: "value"
+            }, !a && "0:", !+r && !a && "00:", +r ? "".concat(r).concat(a ? "M " : ":") : "", c, a ? "S" : ""), !!(+s + 24 * i) && t < 48 && n.createElement("p", {
+              className: "value"
+            }, s + 24 * i, a ? "H " : ":", r, a ? "M " : ":", c, a ? "S " : ""), (!!+s || !!i) && t >= 48 && n.createElement("p", {
+              className: "value"
+            }, i, "D ", s, "H"))
+          }
+        })
+      }
+    },
+    6463: function(e, t, a) {
+      "use strict";
+      var n = a(7294);
+      a(5723), t.Z = () => n.createElement("div", {
+        className: "loader-responsive-con"
+      }, n.createElement("div", {
+        className: "icon-con"
+      }, n.createElement("svg", {
+        className: "circular-loader",
+        viewBox: "25 25 50 50"
+      }, n.createElement("circle", {
+        className: "loader-path",
+        cx: "50",
+        cy: "50",
+        r: "20",
+        fill: "none",
+        stroke: "white",
+        strokeWidth: "2"
+      }))))
+    },
     4650: function(e, t, a) {
       "use strict";
       a.d(t, {
@@ -449,7 +505,7 @@
         i = a.n(c),
         s = a(6066),
         o = a(9163),
-        l = a(2924),
+        l = a(8809),
         m = a(742),
         d = a(1881),
         A = a(3129),
@@ -506,7 +562,7 @@
         let {
           isShow: t,
           openDetailInfo: a = () => {}
-        } = e, c = (0, v.CG)(e => e.main.isMobile), E = (0, v.CG)(e => e.main.user.gameData.balance), f = (0, v.CG)(e => e.main.user.gameData.wPaws), b = (0, v.CG)(e => e.main.user.badgeTier), N = !(0, v.CG)(e => e.main.user.grinchRemoved), y = (0, v.CG)(e => e.main.user.allocationData.notcoin.converted), P = (0, v.CG)(e => e.main.user.allocationData.dogs.converted), O = r.createElement("div", {
+        } = e, c = (0, v.CG)(e => e.main.isMobile), E = (0, v.CG)(e => e.main.user.gameData.balance), f = (0, v.CG)(e => e.main.user.gameData.wpaws), b = (0, v.CG)(e => e.main.user.gameData.badgeTier) || 0, N = !(0, v.CG)(e => e.main.user.grinchRemoved), y = (0, v.CG)(e => e.main.user.allocationData.notcoin.converted), P = (0, v.CG)(e => e.main.user.allocationData.dogs.converted), O = r.createElement("div", {
           className: "count step-2"
         }, r.createElement("div", {
           className: "text"
@@ -663,6 +719,16 @@
         }))))
       }
     },
+    6152: function(e, t) {
+      "use strict";
+      t.Z = function(e) {
+        let t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : 8;
+        if (void 0 === t || 0 == +t) return Math.round(e);
+        let a = +e,
+          n = +t;
+        return a ? Number.isNaN(a) || !("number" == typeof n && n % 1 == 0) ? NaN : (a = a.toString().split("e"), a = (a = Math.floor(+"".concat(a[0], "e").concat(a[1] ? +a[1] + n : n))).toString().split("e"), +"".concat(a[0], "e").concat(a[1] ? +a[1] - n : -n)) : 0
+      }
+    },
     247: function(e, t, a) {
       "use strict";
       var n = a(6656),
@@ -709,27 +775,21 @@
       };
       t.Z = m
     },
-    2924: function(e, t, a) {
+    8809: function(e, t, a) {
       "use strict";
       a.d(t, {
         i: function() {
           return r
         }
       });
-      var n = function(e) {
-        let t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : 8;
-        if (void 0 === t || 0 == +t) return Math.round(e);
-        let a = +e,
-          n = +t;
-        return a ? Number.isNaN(a) || !("number" == typeof n && n % 1 == 0) ? NaN : (a = a.toString().split("e"), a = (a = Math.floor(+"".concat(a[0], "e").concat(a[1] ? +a[1] + n : n))).toString().split("e"), +"".concat(a[0], "e").concat(a[1] ? +a[1] - n : -n)) : 0
-      };
+      var n = a(6152);
       let r = e => {
         if (!e) return "0";
         if (1e3 > +e) return e;
-        if (1e6 > +e) return "".concat(n(+e / 1e3, 2), "K");
-        if (1e9 > +e) return "".concat(n(+e / 1e6, 2), "M");
-        if (1e12 > +e) return "".concat(n(+e / 1e9, 2), "B");
-        if (1e15 > +e) return "".concat(n(+e / 1e12, 2), "T");
+        if (1e6 > +e) return "".concat((0, n.Z)(+e / 1e3, 2), "K");
+        if (1e9 > +e) return "".concat((0, n.Z)(+e / 1e6, 2), "M");
+        if (1e12 > +e) return "".concat((0, n.Z)(+e / 1e9, 2), "B");
+        if (1e15 > +e) return "".concat((0, n.Z)(+e / 1e12, 2), "T");
         if (1e18 > +e) {
           let t = new Intl.NumberFormat("en-US", {
             minimumFractionDigits: 0,
@@ -939,16 +999,6 @@
         blurHeight: 0
       }
     },
-    8412: function(e, t) {
-      "use strict";
-      t.Z = {
-        src: "/_next/static/media/exit.cdf3e119.svg",
-        height: 18,
-        width: 20,
-        blurWidth: 0,
-        blurHeight: 0
-      }
-    },
     9163: function(e, t) {
       "use strict";
       t.Z = {
@@ -970,7 +1020,18 @@
         blurHeight: 8
       }
     },
+    8610: function(e, t) {
+      "use strict";
+      t.Z = {
+        src: "/_next/static/media/ton.089dfbd3.svg",
+        height: 48,
+        width: 48,
+        blurWidth: 0,
+        blurHeight: 0
+      }
+    },
     2480: function() {},
+    5723: function() {},
     1106: function() {}
   }
 ]);
