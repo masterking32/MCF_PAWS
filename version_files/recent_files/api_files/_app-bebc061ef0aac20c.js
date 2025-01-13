@@ -5089,7 +5089,7 @@
             initialReduxState: n,
             clientSideDispatches: i
           }, o.createElement(eb.LD, {
-            manifestUrl: "https://storage.googleapis.com/p-a-w-s/tonconnect-manifest-production.json"
+            manifestUrl: "https://cdn.paws.community/tonconnect-manifest-production.json"
           }, o.createElement(eM, t), o.createElement(a, null, o.createElement("div", {
             id: "next-app"
           }, o.createElement(eH, null), o.createElement(eG, (0, r.Z)({

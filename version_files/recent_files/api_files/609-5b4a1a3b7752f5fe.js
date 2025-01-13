@@ -125,7 +125,7 @@
               s(1)
             }
           }],
-          S = () => {
+          C = () => {
             e((0, p.W2)(!1)), k(!1)
           };
         (0, n.useEffect)(() => {
@@ -133,7 +133,7 @@
             s(0)
           }, 500)
         }, [t]);
-        let C = async t => {
+        let S = async t => {
           let {
             signature: a,
             publicKey: n,
@@ -160,7 +160,7 @@
               });
               return
             }
-            if (!t) {
+            if (!t || c) {
               (0, A.Z)({
                 toastId: "solConnect",
                 imgCode: "cross",
@@ -183,14 +183,7 @@
               success: e,
               data: t
             } = await (0, w.Z)("/wallet/solana/payload");
-            if (!e) {
-              (0, A.Z)({
-                toastId: "solConnect",
-                imgCode: "cross",
-                message: "Something went wrong while connect wallet. Try again"
-              });
-              return
-            }
+            if (!e) return;
             return t
           } catch (e) {
             console.error(e)
@@ -204,7 +197,14 @@
               let e = await window.phantom.solana.connect();
               if (!(null != e && e.publicKey)) return;
               let t = await Z();
-              if (!t) return;
+              if (!t) {
+                (0, A.Z)({
+                  toastId: "solConnect",
+                  imgCode: "cross",
+                  message: "Something went wrong while connect wallet. Try again"
+                });
+                return
+              }
               let a = new TextEncoder().encode(t),
                 {
                   signature: n,
@@ -212,11 +212,11 @@
                 } = await window.phantom.solana.signMessage(a),
                 c = i.Z.encode(n),
                 s = r.toBase58();
-              await C({
+              await S({
                 signature: c,
                 publicKey: s,
                 token: t
-              }), S();
+              }), C();
               return
             }
             let a = c().box.keyPair(),
@@ -247,9 +247,13 @@
           if (s && localStorage.setItem("phantom-phantom_encryption_public_key", s), s || (s = localStorage.getItem("phantom-phantom_encryption_public_key")), n || r) return (0, A.Z)({
             toastId: "solConnect",
             imgCode: "cross",
-            message: "Something went wrong while connect wallet. Try again"
+            message: "Something went wrong while connect wallet. Try again. ".concat(n || r)
           }), null;
-          if (!e || !s || !t || !a) return null;
+          if (!e || !s || !t || !a) return (0, A.Z)({
+            toastId: "solConnect",
+            imgCode: "cross",
+            message: "Something went wrong while connect wallet. Try again. No required data"
+          }), null;
           let {
             address: o,
             session: l,
@@ -290,7 +294,7 @@
             phantom_encryption_public_key: s
           });
           if (o && localStorage.setItem("phantom-address", o), m) {
-            await C({
+            await S({
               signature: m,
               publicKey: localStorage.getItem("phantom-address"),
               token: localStorage.getItem("phantom-payload")
@@ -300,7 +304,14 @@
           let h = i.Z.decode(s),
             g = c().box.before(h, u),
             w = await Z();
-          if (!w) return;
+          if (!w) {
+            (0, A.Z)({
+              toastId: "solConnect",
+              imgCode: "cross",
+              message: "Something went wrong while connect wallet. Try again"
+            });
+            return
+          }
           localStorage.setItem("phantom-payload", w);
           let {
             nonce: p,
@@ -327,12 +338,12 @@
           t && a && n && (k(!0), e((0, p.W2)(!0))), t && a && !n && M()
         }, []), n.createElement(m.Z, {
           isOpen: t,
-          close: S
+          close: C
         }, n.createElement("div", {
           className: "custom-connect-wallet-modal"
         }, y && n.createElement(n.Fragment, null, n.createElement("div", {
           className: "cross-con",
-          onClick: S
+          onClick: C
         }, n.createElement(o(), {
           src: u.Z,
           alt: "",
@@ -360,7 +371,7 @@
           onClick: M
         }, "Sign message"))))), !y && n.createElement(n.Fragment, null, n.createElement("div", {
           className: "cross-con",
-          onClick: S
+          onClick: C
         }, n.createElement(o(), {
           src: u.Z,
           alt: "",
