@@ -264,6 +264,10 @@ class Quests:
             quest_title = quest.get("title", "N/A")
             quest_code = quest.get("code", None)
             quest_type = quest.get("type", None)
+            quest_action = quest.get("action", None)
+
+            if quest_action == "timer":
+                continue
 
             if quest_title in ["Boost PAWS channel", "Invite 10 friends"]:
                 continue
