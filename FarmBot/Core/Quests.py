@@ -283,6 +283,8 @@ class Quests:
                 await self.complete_quest(quest)
                 continue
 
+            return
+
             if quest_status == "pending":
                 self.log.info(
                     f"<y>⌛ Pending quest <c>{quest_title}</c> needs to be completed from bot's server...</y>"
