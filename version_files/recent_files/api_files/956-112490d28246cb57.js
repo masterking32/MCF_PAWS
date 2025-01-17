@@ -624,7 +624,9 @@
         let t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
           a = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : "application/json",
           n = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : {},
-          l = {},
+          l = {
+            "Secure-check": "paws"
+          },
           m = await (0, r.Z)(n);
         m && (l.Authorization = "Bearer ".concat(m));
         let A = await (0, i.Z)(e, o({}, t), a, l);

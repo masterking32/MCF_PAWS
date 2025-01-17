@@ -3200,7 +3200,8 @@
           n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : "application/json",
           r = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : {},
           i = s({
-            Accept: "application/json"
+            Accept: "application/json",
+            "Secure-check": "paws"
           }, r);
         return n && (i["Content-Type"] = n), t.body && (t.body = JSON.stringify(t.body)), "POST" !== t.method || t.body || delete i["Content-Type"], o()("".concat("https://api.paws.community/v1").concat(e), s({
           headers: i
