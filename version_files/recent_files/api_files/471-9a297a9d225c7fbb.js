@@ -1,12 +1,7 @@
 (self.webpackChunk_N_E = self.webpackChunk_N_E || []).push([
-  [956], {
-    6937: function(e, t, a) {
+  [471], {
+    8558: function(e, t, a) {
       "use strict";
-      a.d(t, {
-        Z: function() {
-          return v
-        }
-      });
       var n = a(7294),
         c = a(9578),
         r = a(5675),
@@ -17,13 +12,7 @@
         m = a(1513);
       a(2480);
       var A = a(4441),
-        d = {
-          src: "/_next/static/media/phantom.fa6d2c82.svg",
-          height: 38,
-          width: 45,
-          blurWidth: 0,
-          blurHeight: 0
-        },
+        d = a(8502),
         u = a(2783),
         h = a(247),
         g = a(6139);
@@ -36,7 +25,7 @@
         }, n.createElement("div", {
           className: "icon-con"
         }, n.createElement(i(), {
-          src: d,
+          src: d.Z,
           alt: "",
           width: 25
         })), "Phantom Connect"), n.createElement("div", {
@@ -93,7 +82,7 @@
           strokeLinejoin: "round"
         })))))
       };
-      var v = () => {
+      t.Z = () => {
         let e = (0, o.TL)(),
           t = (0, o.CG)(e => e.main.isSolWalletModalOpen),
           a = (0, o.CG)(e => e.main.isMobile),
@@ -102,7 +91,7 @@
           b = [{
             id: "phantom",
             name: "Phantom",
-            icon: d,
+            icon: d.Z,
             onClick: () => {
               v(1)
             }
@@ -796,6 +785,16 @@
         blurDataURL: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAsElEQVR42mP4e0WakQEK/q1kALMxwL8l/Ir/FjFIgNktDPz/JjGwoSrYJpn3b4tACIj9v8Hc6j9DOA+Y3avHyABmxDBw/i9l4Po/10Pm7y2H/X/PKxX/Z2Bg+/k/n5Hhvz/C3n/L/Jz/PlT78PcSw+r/hmJSEMGTRoxgepOqz79lDDz/pjL4/m8REweLzWdmYvh3WIUJzFkv4/1vk7Ta/xhmwX8TGHgYcIE//zVRvAoA82BBlMnnPRcAAAAASUVORK5CYII=",
         blurWidth: 8,
         blurHeight: 8
+      }
+    },
+    8502: function(e, t) {
+      "use strict";
+      t.Z = {
+        src: "/_next/static/media/phantom.fa6d2c82.svg",
+        height: 38,
+        width: 45,
+        blurWidth: 0,
+        blurHeight: 0
       }
     },
     7914: function(e, t) {
