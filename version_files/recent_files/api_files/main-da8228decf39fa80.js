@@ -5164,7 +5164,7 @@
         var r, o, a = n(e, t);
         if (Object.getOwnPropertySymbols) {
           var i = Object.getOwnPropertySymbols(e);
-          for (o = 0; o < i.length; o++) r = i[o], !(t.indexOf(r) >= 0) && Object.prototype.propertyIsEnumerable.call(e, r) && (a[r] = e[r])
+          for (o = 0; o < i.length; o++) r = i[o], t.includes(r) || ({}).propertyIsEnumerable.call(e, r) && (a[r] = e[r])
         }
         return a
       }, e.exports.__esModule = !0, e.exports.default = e.exports
@@ -5172,10 +5172,12 @@
     7071: function(e) {
       e.exports = function(e, t) {
         if (null == e) return {};
-        var r, n, o = {},
-          a = Object.keys(e);
-        for (n = 0; n < a.length; n++) r = a[n], t.indexOf(r) >= 0 || (o[r] = e[r]);
-        return o
+        var r = {};
+        for (var n in e)
+          if (({}).hasOwnProperty.call(e, n)) {
+            if (t.includes(n)) continue;
+            r[n] = e[n]
+          } return r
       }, e.exports.__esModule = !0, e.exports.default = e.exports
     },
     5036: function(e, t, r) {
@@ -5196,7 +5198,7 @@
         o = r(5036);
       e.exports = function(e) {
         var t = o(e, "string");
-        return "symbol" == n(t) ? t : String(t)
+        return "symbol" == n(t) ? t : t + ""
       }, e.exports.__esModule = !0, e.exports.default = e.exports
     },
     8698: function(e) {
