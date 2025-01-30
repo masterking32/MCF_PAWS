@@ -1060,7 +1060,7 @@
                 additionalData: t
               }
             });
-            if (o.data) {
+            if (o.data || !Y && o.success) {
               var a, e;
               G(A._id, "finished"), g((0, s.x7)((null === (a = o.data) || void 0 === a ? void 0 : a.amount) || Y || 0)), window.dispatchEvent(new CustomEvent("transactionsHistoryUpdated")), _((null === (e = o.data) || void 0 === e ? void 0 : e.amount) || Y || 0)
             }
@@ -1178,7 +1178,9 @@
           className: "date"
         }, u()(A.date).format("MMMM DD"), " at ", u()(A.date).format("HH:mm")), "quests" === E && !!Y && e.createElement("p", {
           className: "reward-count"
-        }, "+ ", -1 === Y ? "???" : (0, p.Z)(Y, ","), " PAWS"))), e.createElement("div", {
+        }, "+ ", -1 === Y ? "???" : (0, p.Z)(Y, ","), " PAWS"), "quests" === E && !Y && e.createElement("p", {
+          className: "reward-count"
+        }, "No Reward"))), e.createElement("div", {
           className: "points ".concat(null != A && null !== (l = A.button) && void 0 !== l && l.theme ? null == A ? void 0 : null === (y = A.button) || void 0 === y ? void 0 : y.theme : "")
         }, "quests" !== E && !!Y && e.createElement(e.Fragment, null, e.createElement("p", null, "+", (0, p.Z)(Y, ","), " PAWS"), e.createElement("p", {
           className: "descr"
