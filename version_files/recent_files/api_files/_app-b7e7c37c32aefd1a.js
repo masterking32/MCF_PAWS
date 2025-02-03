@@ -9326,9 +9326,6 @@
         LD: function() {
           return l8
         },
-        MW: function() {
-          return ce
-        },
         dG: function() {
           return l7
         }
@@ -20176,18 +20173,7 @@
         }(e), [e, t]) : [null, () => {}]
       }
       let l9 = "ton-connect-button";
-
-      function ce(e = !0) {
-        let t = function() {
-          let [e] = l7(), [t, n] = (0, T.useState)((null == e ? void 0 : e.wallet) || null);
-          return (0, T.useEffect)(() => {
-            if (e) return n(e.wallet), e.onStatusChange(e => {
-              n(e)
-            })
-          }, [e]), t
-        }();
-        return (0, T.useMemo)(() => t ? e ? eK(t.account.address, t.account.chain === b.TESTNET) : t.account.address : "", [t, e, null == t ? void 0 : t.account.address, null == t ? void 0 : t.account.chain])
-      }(0, T.memo)(({
+      (0, T.memo)(({
         className: e,
         style: t
       }) => {
