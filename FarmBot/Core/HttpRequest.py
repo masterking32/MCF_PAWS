@@ -64,6 +64,7 @@ class HttpRequest:
                 default_headers["Sec-Fetch-Site"] = "same-origin"
                 default_headers["Sec-Fetch-User"] = "?1"
                 default_headers["Upgrade-Insecure-Requests"] = "1"
+                default_headers["Secure-Check"] = "paws"
 
                 del default_headers["Origin"]
                 del default_headers["Referer"]
