@@ -5486,6 +5486,10 @@
         eI = () => o.createElement("div", null, o.createElement(eD(), {
           async: !0,
           src: "https://scripts.simpleanalyticscdn.com/latest.js"
+        }), o.createElement(eD(), {
+          src: "https://www.google.com/recaptcha/enterprise.js",
+          async: !0,
+          defer: !0
         }));
       n(1522);
       var e$ = n(2894),
