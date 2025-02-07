@@ -47,6 +47,13 @@ class FarmBot:
     async def run(self):
         try:
             self.log.info(
+                "<g>This module is discontinued, Wallet Connection & Activity Check is available in the WC_PAWS module<g>"
+            )
+            self.log.info(
+                "<g>For more information, Please check our Telegram Bot or Channel<g>"
+            )
+            return
+            self.log.info(
                 f"<g>🐾 PAWS is starting for account <cyan>{self.account_name}</cyan>...</g>"
             )
 

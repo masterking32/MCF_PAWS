@@ -64,7 +64,6 @@ class HttpRequest:
                 default_headers["Sec-Fetch-Site"] = "same-origin"
                 default_headers["Sec-Fetch-User"] = "?1"
                 default_headers["Upgrade-Insecure-Requests"] = "1"
-                default_headers["Secure-Check"] = "paws"
 
                 del default_headers["Origin"]
                 del default_headers["Referer"]
@@ -419,6 +418,7 @@ class HttpRequest:
             "User-Agent": self.user_agent,
             "cache-control": "no-cache",
             "Priority": "u=1, i",
+            "Secure-Check": "paws",
         }
 
         if "android" in self.user_agent.lower():
@@ -442,6 +442,7 @@ class HttpRequest:
             "User-Agent": self.user_agent,
             "Cache-Control": "no-cache",
             "Access-Control-Request-Method": method,
+            "Secure-Check": "paws",
         }
 
         if not headers:
