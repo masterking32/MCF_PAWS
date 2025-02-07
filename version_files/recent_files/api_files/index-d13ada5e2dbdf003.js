@@ -1925,7 +1925,7 @@
           }, e.createElement("div", {
             className: "start-btn",
             onClick: d
-          }, "Start"), "start" === n && x.availableUntil && e.createElement(e.Fragment, null, !x.isTimeOut && e.createElement("div", {
+          }, "Go"), "start" === n && x.availableUntil && e.createElement(e.Fragment, null, !x.isTimeOut && e.createElement("div", {
             className: "timer-con"
           }, e.createElement(ir.Z, {
             withSymbols: !1,
