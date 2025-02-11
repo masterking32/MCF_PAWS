@@ -20,9 +20,9 @@
   po.type = 'text/javascript';
   po.async = true;
   po.charset = 'utf-8';
-  po.src = 'https://www.gstatic.com/recaptcha/releases/PcIQSvk4Y5ANjYUx0f4froA1/recaptcha__en.js';
+  po.src = 'https://www.gstatic.com/recaptcha/releases/IyZ984yGrXrBd6ihLOYGwy9X/recaptcha__en.js';
   po.crossOrigin = 'anonymous';
-  po.integrity = 'sha384-P3vOnwOQjXmCJwx1vTvZAroj9OVXiVWsH201GY3AuWFi+LVyRVQwt0M/4hdSxMBf';
+  po.integrity = 'sha384-3wmc1Bh1cCJW+fASaBmsSdAIwB8jgncUQXdLNwTeFRWYZhdATgEib2Aeg4rtm7Yi';
   var e = d.querySelector('script[nonce]'),
     n = e && (e['nonce'] || e.getAttribute('nonce'));
   if (n) {
