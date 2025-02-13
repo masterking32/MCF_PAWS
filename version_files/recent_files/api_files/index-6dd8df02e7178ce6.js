@@ -703,7 +703,7 @@
             close: a
           } = i, {
             webApp: o
-          } = (0, I.fW)(), s = (0, x.CG)(i => i.main.user.referralData.code), c = "https://t.me/PAWSOG_bot/PAWS?startapp=".concat(s), n = "https://t.me/share/url?url=".concat(c, "&text=").concat("LFG!%0APAWS is the new top dog! \uD83D\uDC3E"), l = () => {
+          } = (0, I.fW)(), s = (0, x.CG)(i => i.main.user.referralData.code), c = "https://t.me/".concat("PAWSOG_bot", "/PAWS?startapp=").concat(s), n = "https://t.me/share/url?url=".concat(c, "&text=").concat("LFG!%0APAWS is the new top dog! \uD83D\uDC3E"), l = () => {
             try {
               navigator.clipboard.writeText(c)
             } catch (i) {

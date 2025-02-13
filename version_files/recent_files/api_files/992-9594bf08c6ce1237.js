@@ -3749,7 +3749,7 @@
     },
     7273: function(e, t, r) {
       "use strict";
-      var n, i = r(8764).Buffer,
+      var n, i = r(8764).lW,
         o = this && this.__importDefault || function(e) {
           return e && e.__esModule ? e : {
             default: e
@@ -3790,7 +3790,7 @@
     },
     8522: function(e, t, r) {
       "use strict";
-      var n, i = r(8764).Buffer,
+      var n, i = r(8764).lW,
         o = this && this.__importDefault || function(e) {
           return e && e.__esModule ? e : {
             default: e
@@ -3928,7 +3928,7 @@
     },
     1622: function(e, t, r) {
       "use strict";
-      var n = r(8764).Buffer;
+      var n = r(8764).lW;
       Object.defineProperty(t, "__esModule", {
         value: !0
       }), t.BitBuilder = void 0;
@@ -4052,7 +4052,7 @@
     },
     3658: function(e, t, r) {
       "use strict";
-      var n = r(8764).Buffer;
+      var n = r(8764).lW;
       Object.defineProperty(t, "__esModule", {
         value: !0
       }), t.BitReader = void 0;
@@ -4246,7 +4246,7 @@
     },
     637: function(e, t, r) {
       "use strict";
-      var n, i = r(8764).Buffer,
+      var n, i = r(8764).lW,
         o = this && this.__importDefault || function(e) {
           return e && e.__esModule ? e : {
             default: e
@@ -4451,7 +4451,7 @@
     },
     8886: function(e, t, r) {
       "use strict";
-      var n, i = r(8764).Buffer,
+      var n, i = r(8764).lW,
         o = this && this.__importDefault || function(e) {
           return e && e.__esModule ? e : {
             default: e
@@ -4767,7 +4767,7 @@
     },
     1575: function(e, t, r) {
       "use strict";
-      var n = r(8764).Buffer;
+      var n = r(8764).lW;
       Object.defineProperty(t, "__esModule", {
         value: !0
       }), t.getRepr = t.getBitsDescriptor = t.getRefsDescriptor = void 0;
@@ -5270,7 +5270,7 @@
     },
     8609: function(e, t, r) {
       "use strict";
-      var n = r(8764).Buffer;
+      var n = r(8764).lW;
       Object.defineProperty(t, "__esModule", {
         value: !0
       }), t.writeString = t.stringToCell = t.readString = void 0;
@@ -5344,7 +5344,7 @@
     },
     4950: function(e, t, r) {
       "use strict";
-      var n = r(8764).Buffer;
+      var n = r(8764).lW;
       Object.defineProperty(t, "__esModule", {
         value: !0
       }), t.safeSignVerify = t.safeSign = void 0;
@@ -5364,7 +5364,7 @@
     },
     3927: function(e, t, r) {
       "use strict";
-      var n = r(8764).Buffer;
+      var n = r(8764).lW;
       Object.defineProperty(t, "__esModule", {
         value: !0
       }), t.Dictionary = void 0;
@@ -5832,7 +5832,7 @@
     },
     6741: function(e, t, r) {
       "use strict";
-      var n = r(8764).Buffer;
+      var n = r(8764).lW;
       Object.defineProperty(t, "__esModule", {
         value: !0
       }), t.deserializeInternalKey = t.serializeInternalKey = void 0;
@@ -7873,7 +7873,7 @@
     },
     6265: function(e, t, r) {
       "use strict";
-      var n = r(8764).Buffer;
+      var n = r(8764).lW;
       Object.defineProperty(t, "__esModule", {
         value: !0
       }), t.base32Decode = t.base32Encode = void 0;
@@ -7958,7 +7958,7 @@
     },
     9631: function(e, t, r) {
       "use strict";
-      var n = r(8764).Buffer;
+      var n = r(8764).lW;
       Object.defineProperty(t, "__esModule", {
         value: !0
       }), t.crc16 = void 0, t.crc16 = function(e) {
@@ -7973,7 +7973,7 @@
     },
     5090: function(e, t, r) {
       "use strict";
-      var n = r(8764).Buffer;
+      var n = r(8764).lW;
       Object.defineProperty(t, "__esModule", {
         value: !0
       }), t.crc32c = void 0, t.crc32c = function(e) {
@@ -7986,7 +7986,7 @@
     },
     7509: function(e, t, r) {
       "use strict";
-      var n = r(8764).Buffer;
+      var n = r(8764).lW;
       Object.defineProperty(t, "__esModule", {
         value: !0
       }), t.getMethodId = void 0;
@@ -8048,7 +8048,7 @@
     },
     4656: function(e, t, r) {
       "use strict";
-      var n = r(8764).Buffer;
+      var n = r(8764).lW;
       Object.defineProperty(t, "__esModule", {
         value: !0
       }), t.getSecureRandomWords = t.getSecureRandomBytes = void 0, t.getSecureRandomBytes = function(e) {
@@ -8059,7 +8059,7 @@
     },
     902: function(e, t, r) {
       "use strict";
-      var n = r(8764).Buffer;
+      var n = r(8764).lW;
       async function i(e, t) {
         let r = "string" == typeof e ? n.from(e, "utf-8") : e,
           i = "string" == typeof t ? n.from(t, "utf-8") : t,
@@ -8076,7 +8076,7 @@
     },
     735: function(e, t, r) {
       "use strict";
-      var n = r(8764).Buffer;
+      var n = r(8764).lW;
       async function i(e, t, r, i) {
         let o = "string" == typeof e ? n.from(e, "utf-8") : e,
           a = "string" == typeof t ? n.from(t, "utf-8") : t,
@@ -8097,7 +8097,7 @@
     },
     9322: function(e, t, r) {
       "use strict";
-      var n = r(8764).Buffer;
+      var n = r(8764).lW;
       async function i(e) {
         return "string" == typeof e ? n.from(await crypto.subtle.digest("SHA-256", n.from(e, "utf-8"))) : n.from(await crypto.subtle.digest("SHA-256", e))
       }
@@ -8107,7 +8107,7 @@
     },
     8892: function(e, t, r) {
       "use strict";
-      var n = r(8764).Buffer;
+      var n = r(8764).lW;
       async function i(e) {
         return "string" == typeof e ? n.from(await crypto.subtle.digest("SHA-512", n.from(e, "utf-8"))) : n.from(await crypto.subtle.digest("SHA-512", e))
       }
@@ -8117,7 +8117,7 @@
     },
     9814: function(e, t, r) {
       "use strict";
-      var n = r(8764).Buffer;
+      var n = r(8764).lW;
       Object.defineProperty(t, "__esModule", {
         value: !0
       }), t.deriveEd25519Path = t.deriveED25519HardenedKey = t.getED25519MasterKeyFromSeed = void 0;
@@ -8153,7 +8153,7 @@
     },
     1618: function(e, t, r) {
       "use strict";
-      var n = r(8764).Buffer;
+      var n = r(8764).lW;
       Object.defineProperty(t, "__esModule", {
         value: !0
       }), t.deriveMnemonicsPath = t.deriveMnemonicHardenedKey = t.getMnemonicsMasterKeyFromSeed = void 0;
@@ -8190,7 +8190,7 @@
     },
     9129: function(e, t, r) {
       "use strict";
-      var n = r(8764).Buffer;
+      var n = r(8764).lW;
       Object.defineProperty(t, "__esModule", {
         value: !0
       }), t.deriveSymmetricPath = t.deriveSymmetricHardenedKey = t.getSymmetricMasterKeyFromSeed = void 0;
@@ -8422,7 +8422,7 @@
     },
     2934: function(e, t, r) {
       "use strict";
-      var n = r(8764).Buffer,
+      var n = r(8764).lW,
         i = this && this.__importDefault || function(e) {
           return e && e.__esModule ? e : {
             default: e
@@ -8597,7 +8597,7 @@
     },
     3080: function(e, t, r) {
       "use strict";
-      var n = r(8764).Buffer,
+      var n = r(8764).lW,
         i = this && this.__importDefault || function(e) {
           return e && e.__esModule ? e : {
             default: e
@@ -8627,7 +8627,7 @@
     },
     7148: function(e, t, r) {
       "use strict";
-      var n = r(8764).Buffer,
+      var n = r(8764).lW,
         i = this && this.__importDefault || function(e) {
           return e && e.__esModule ? e : {
             default: e
@@ -8672,7 +8672,7 @@
     },
     9688: function(e, t, r) {
       "use strict";
-      var n = r(8764).Buffer,
+      var n = r(8764).lW,
         i = this && this.__importDefault || function(e) {
           return e && e.__esModule ? e : {
             default: e
@@ -8701,7 +8701,7 @@
     },
     8606: function(e, t, r) {
       "use strict";
-      var n = r(8764).Buffer,
+      var n = r(8764).lW,
         i = this && this.__importDefault || function(e) {
           return e && e.__esModule ? e : {
             default: e
@@ -8731,7 +8731,7 @@
     },
     8116: function(e, t, r) {
       "use strict";
-      var n = r(8764).Buffer;
+      var n = r(8764).lW;
 
       function i(e, t, r) {
         for (; e.length < r;) e = t + e;
