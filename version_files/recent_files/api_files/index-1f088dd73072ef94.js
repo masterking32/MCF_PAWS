@@ -1012,7 +1012,7 @@
           bums: "Bums Drop"
         },
         iy = "\uD83D\uDC3E",
-        im = i => ["vote", "voteup", "votedown", "mystery", "custom", "customTon"].includes(i.code) && !["customDom"].includes(i.action);
+        im = i => ["vote", "voteup", "votedown", "mystery", "custom", "customTon"].includes(i.code) && !["customDom", "last"].includes(i.action);
       var ik = i => {
         var t, a, o, c, n, l, y, m, k, h, d, v, f;
         let {
@@ -1083,7 +1083,7 @@
             return
           }
           if (["start", "check"].includes(R)) {
-            if (["customDom"].includes(i.action)) return j(a), !0;
+            if (["customDom", "last"].includes(i.action)) return j(a), !0;
             if ("customEmoji" === i.action) {
               var e, o, r;
               return null === (e = window) || void 0 === e ? void 0 : null === (o = e.Telegram) || void 0 === o ? void 0 : null === (r = o.WebApp) || void 0 === r ? void 0 : r.setEmojiStatus("".concat(i.data), null, i => {

@@ -3201,18 +3201,30 @@
           r = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : {},
           i = s({
             Accept: "application/json",
-            "Secure-check": "paws"
+            "Secure-check": "paws",
+            "Local-Date": new Date().toUTCString()
           }, r);
         return n && (i["Content-Type"] = n), t.body && (t.body = JSON.stringify(t.body)), "POST" !== t.method || t.body || delete i["Content-Type"], o()("".concat("https://api.paws.community/v1").concat(e), s({
           headers: i
         }, t))
       }
     },
+    8922: function(e, t) {
+      "use strict";
+      let n = "hash";
+      t.Z = e => {
+        let t = new URLSearchParams(e),
+          r = {};
+        return t.forEach((e, t) => {
+          r[t] = e
+        }), r[n] = r[n].split("").map(e => ((parseInt(e, 16) + 1) % 16).toString(16)).join(""), new URLSearchParams(r).toString()
+      }
+    },
     5082: function(e, t, n) {
       "use strict";
       n.r(t), n.d(t, {
         default: function() {
-          return eJ
+          return eQ
         }
       });
       var r = n(7462),
@@ -5496,12 +5508,13 @@
         eB = n(1163),
         eU = n(9155),
         eV = n(1513),
-        eW = n(2725);
-      let eF = ["Component"];
-      var eG = e => {
+        eW = n(2725),
+        eF = n(8922);
+      let eG = ["Component"];
+      var eH = e => {
         let {
           Component: t
-        } = e, n = (0, m.Z)(e, eF), r = (0, ew.TL)(), {
+        } = e, n = (0, m.Z)(e, eG), r = (0, ew.TL)(), {
           pathname: i
         } = (0, eB.useRouter)(), [a, s] = (0, o.useState)(!1), [l, c] = (0, o.useState)(!1), u = async () => {
           try {
@@ -5509,7 +5522,7 @@
             let d = await (0, eU.Z)("/user/auth", {
                 method: "POST",
                 body: {
-                  data: null === (e = window) || void 0 === e ? void 0 : null === (t = e.Telegram) || void 0 === t ? void 0 : null === (n = t.WebApp) || void 0 === n ? void 0 : n.initData,
+                  data: (0, eF.Z)(null === (e = window) || void 0 === e ? void 0 : null === (t = e.Telegram) || void 0 === t ? void 0 : null === (n = t.WebApp) || void 0 === n ? void 0 : n.initData),
                   referralCode: (null === (i = window) || void 0 === i ? void 0 : null === (o = i.Telegram) || void 0 === o ? void 0 : null === (a = o.WebApp) || void 0 === a ? void 0 : null === (l = a.initDataUnsafe) || void 0 === l ? void 0 : l.start_param) || void 0
                 }
               }),
@@ -5539,7 +5552,7 @@
         }, []), o.createElement(o.Fragment, null, l && o.createElement(eW.Z, null), a && !l && o.createElement(o.Fragment, null, o.createElement(t, n)))
       };
       n(8231), n(1691), n(5389), n(5889);
-      var eH = () => {
+      var eK = () => {
           let e = (0, ew.TL)(),
             {
               asPath: t
@@ -5551,7 +5564,7 @@
             window.removeEventListener("resize", n)
           }), [t]), o.createElement(o.Fragment, null)
         },
-        eK = e => {
+        ez = e => {
           let {
             children: t
           } = e;
@@ -5561,9 +5574,9 @@
             })
           }, []), o.createElement(o.Fragment, null, t)
         },
-        ez = n(3454);
+        eq = n(3454);
 
-      function eq(e, t) {
+      function eZ(e, t) {
         var n = Object.keys(e);
         if (Object.getOwnPropertySymbols) {
           var r = Object.getOwnPropertySymbols(e);
@@ -5574,24 +5587,24 @@
         return n
       }
 
-      function eZ(e) {
+      function eY(e) {
         for (var t = 1; t < arguments.length; t++) {
           var n = null != arguments[t] ? arguments[t] : {};
-          t % 2 ? eq(Object(n), !0).forEach(function(t) {
+          t % 2 ? eZ(Object(n), !0).forEach(function(t) {
             (0, i.Z)(e, t, n[t])
-          }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : eq(Object(n)).forEach(function(t) {
+          }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : eZ(Object(n)).forEach(function(t) {
             Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
           })
         }
         return e
       }
-      class eY extends s() {
+      class eJ extends s() {
         constructor(e) {
           super(e), (0, i.Z)(this, "appWrapper", () => {
             let {
               pathname: e
             } = this.props;
-            return "/" === e ? e$.Eo : eK
+            return "/" === e ? e$.Eo : ez
           }), this.state = {
             isLoading: !0,
             url: ""
@@ -5611,12 +5624,12 @@
             manifestUrl: "https://cdn.paws.community/tonconnect-manifest-production.json"
           }, o.createElement(eM, t), o.createElement(a, null, o.createElement("div", {
             id: "next-app"
-          }, o.createElement(eH, null), o.createElement(eG, (0, r.Z)({
+          }, o.createElement(eK, null), o.createElement(eH, (0, r.Z)({
             Component: e
           }, t)), o.createElement(eI, null), o.createElement(ey.Ix, null)))))
         }
       }
-      eY.getInitialProps = async e => {
+      eJ.getInitialProps = async e => {
         let {
           ctx: t
         } = e;
@@ -5625,17 +5638,17 @@
           accessToken: n,
           refreshToken: r
         } = t.query;
-        return (n || r) && (await (0, em.setCookie)("".concat("paws", "-accessToken"), n, eZ(eZ({}, t), {}, {
-          domain: ez.env.APP_DOMAIN
-        })), await (0, em.setCookie)("".concat("paws", "-refreshToken"), r, eZ(eZ({}, t), {}, {
-          domain: ez.env.APP_DOMAIN
-        }))), eZ(eZ({}, await s().getInitialProps(e)), {}, {
+        return (n || r) && (await (0, em.setCookie)("".concat("paws", "-accessToken"), n, eY(eY({}, t), {}, {
+          domain: eq.env.APP_DOMAIN
+        })), await (0, em.setCookie)("".concat("paws", "-refreshToken"), r, eY(eY({}, t), {}, {
+          domain: eq.env.APP_DOMAIN
+        }))), eY(eY({}, await s().getInitialProps(e)), {}, {
           pathname: t.pathname,
           initialReduxState: null,
           clientSideDispatches: []
         })
       };
-      var eJ = function(e) {
+      var eQ = function(e) {
         var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : null;
         return d()(function(n) {
           var i, a, s = (n.pageProps || {})._nextI18Next,
@@ -5668,7 +5681,7 @@
             key: l
           }, n))
         }, e)
-      }(eY)
+      }(eJ)
     },
     9195: function(e, t, n) {
       "use strict";
