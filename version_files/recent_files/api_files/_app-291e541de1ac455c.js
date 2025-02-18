@@ -2246,22 +2246,22 @@
             push: b
           } = (0, a.useRouter)();
           (0, r.useEffect)(() => {
-            var e, t;
-            let n = null === (e = window.Telegram) || void 0 === e ? void 0 : e.WebApp,
-              r = null;
-            if (!(null != n && n.initData)) return b("/app", void 0, {
+            var e;
+            let t = null === (e = window.Telegram) || void 0 === e ? void 0 : e.WebApp,
+              n = null;
+            if (!(null != t && t.initData)) return b("/app", void 0, {
               shallow: !0
             }), () => {};
-            m((null == n ? void 0 : null === (t = n.initDataUnsafe) || void 0 === t ? void 0 : t.start_param) === "verify");
-            let i = () => {
-              n && !n.isExpanded && n.expand()
+            m(!0);
+            let r = () => {
+              t && !t.isExpanded && t.expand()
             };
-            return n && (n.ready(), u(n), n.expand(), n.onEvent("viewportChanged", i), n.setBackgroundColor("#0D0D0D"), n.setHeaderColor("#0D0D0D"), n.disableVerticalSwipes(), n.BackButton.onClick(() => {
+            return t && (t.ready(), u(t), t.expand(), t.onEvent("viewportChanged", r), t.setBackgroundColor("#0D0D0D"), t.setHeaderColor("#0D0D0D"), t.disableVerticalSwipes(), t.BackButton.onClick(() => {
               window.history.back()
-            }), r = setTimeout(() => {
+            }), n = setTimeout(() => {
               p(!0)
             }, 150)), () => {
-              n.offEvent("viewportChanged", i), clearTimeout(r)
+              t.offEvent("viewportChanged", r), clearTimeout(n)
             }
           }, []), (0, r.useEffect)(() => {
             c && "/" === y ? c.BackButton.hide() : c && "/" !== y && c.BackButton.show()
@@ -2296,10 +2296,7 @@
             }
           }, r.createElement("div", {
             className: "btn-item main"
-          }, "Continue in website")), r.createElement("div", {
-            className: "btn-item",
-            onClick: () => m(!1)
-          }, "Stay in Telegram")))
+          }, "Continue in website"))))
         },
         u = () => (0, r.useContext)(l)
     },
