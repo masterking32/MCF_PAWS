@@ -3011,10 +3011,7 @@
           isShow: !0
         })), r.createElement("div", {
           className: "title"
-        }, "Under Maintenance..."), r.createElement("div", {
-          className: "link",
-          onClick: () => e.openTelegramLink("https://t.me/pawsupfam")
-        }, "Stay tuned")))
+        }, "Under Maintenance...")))
       }
     },
     2783: function(e, t, n) {
