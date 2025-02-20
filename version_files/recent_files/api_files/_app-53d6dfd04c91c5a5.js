@@ -3218,7 +3218,7 @@
       "use strict";
       n.r(t), n.d(t, {
         default: function() {
-          return eQ
+          return eY
         }
       });
       var r = n(7462),
@@ -5357,172 +5357,164 @@
         "'": "&apos;"
       })).join("") + "]", "g");
       var eM = e => {
-          let {
-            title: t,
-            description: n,
-            keywords: r,
-            previewImg: i,
-            canonical: a
-          } = e;
-          return o.createElement(eL, {
-            title: t || "PAWS | Home",
-            description: n || "Animals are done! It’s PAWS Season",
-            canonical: a,
-            openGraph: {
-              type: "website",
-              url: "".concat(a),
-              title: "".concat(t || "PAWS | Home"),
-              description: "".concat(n || "Animals are done! It’s PAWS Season"),
-              images: [{
-                url: "".concat(i || "".concat("https://paws.community", "/static/page-preview.png")),
-                alt: "preview"
-              }]
-            },
-            additionalMetaTags: [{
-              httpEquiv: "X-UA-Compatible",
-              content: "IE=edge"
-            }, {
-              name: "viewport",
-              content: "width=device-width, user-scalable=no, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
-            }, {
-              name: "x-ua-compatible",
-              content: "IE=edge; chrome=1"
-            }, {
-              name: "description",
-              content: "".concat(n || "Animals are done! It’s PAWS Season")
-            }, {
-              name: "title",
-              content: "".concat(t || "PAWS | Home")
-            }, {
-              name: "keywords",
-              content: "!"
-            }, {
-              name: "twitter:image",
-              content: "".concat(i || "".concat("https://paws.community", "/static/page-preview.png"))
-            }, {
-              property: "twitter:title",
-              content: "PAWS"
-            }, {
-              property: "twitter:description",
-              content: "Animals are done! It’s PAWS Season"
-            }, {
-              property: "application-name",
-              content: "PAWS"
-            }, {
-              property: "apple-mobile-web-app-capable",
-              content: "yes"
-            }, {
-              property: "apple-mobile-web-app-status-bar-style",
-              content: "default"
-            }, {
-              property: "apple-mobile-web-app-title",
-              content: "PAWS"
-            }, {
-              property: "format-detection",
-              content: "telephone=no"
-            }, {
-              property: "mobile-web-app-capable",
-              content: "yes"
-            }, {
-              property: "msapplication-config",
-              content: "/icons/browserconfig.xml"
-            }, {
-              property: "msapplication-tap-highlight",
-              content: "no"
-            }, {
-              property: "theme-color",
-              content: "#0D0D0D"
-            }, {
-              property: "msapplication-TileImage",
-              content: "/icons/144.png"
-            }],
-            additionalLinkTags: [{
-              rel: "dns-prefetch",
-              href: "https://fonts.googleapis.com"
-            }, {
-              rel: "preconnect",
-              href: "https://www.google-analytics.com"
-            }, {
-              rel: "preconnect",
-              href: "https://www.googletagmanager.com"
-            }, {
-              rel: "preconnect",
-              href: "https://fonts.googleapis.com"
-            }, {
-              rel: "icon",
-              href: "/favicon.ico"
-            }, {
-              rel: "icon",
-              href: "/static/favicon-32x32.png",
-              sizes: "32x32"
-            }, {
-              rel: "icon",
-              href: "/icons/72.png",
-              sizes: "72x72"
-            }, {
-              rel: "icon",
-              href: "/icons/96.png",
-              sizes: "96x96"
-            }, {
-              rel: "icon",
-              href: "/icons/144.png",
-              sizes: "144x144"
-            }, {
-              rel: "icon",
-              href: "/icons/192.png",
-              sizes: "192x192"
-            }, {
-              rel: "apple-touch-icon",
-              href: "/icons/512.png",
-              sizes: "512x512"
-            }, {
-              rel: "manifest",
-              href: "/manifest.json"
-            }],
-            twitter: {
-              site: "@pawsuplabs",
-              cardType: "summary",
-              card: "summary",
-              creator: "@pawsuplabs"
-            }
-          })
-        },
-        eN = n(4298),
-        eD = n.n(eN),
-        eI = () => o.createElement("div", null, o.createElement(eD(), {
-          async: !0,
-          src: "https://scripts.simpleanalyticscdn.com/latest.js"
-        }), o.createElement(eD(), {
-          src: "https://www.google.com/recaptcha/enterprise.js",
-          async: !0,
-          defer: !0
-        }));
+        let {
+          title: t,
+          description: n,
+          keywords: r,
+          previewImg: i,
+          canonical: a
+        } = e;
+        return o.createElement(eL, {
+          title: t || "PAWS | Home",
+          description: n || "Animals are done! It’s PAWS Season",
+          canonical: a,
+          openGraph: {
+            type: "website",
+            url: "".concat(a),
+            title: "".concat(t || "PAWS | Home"),
+            description: "".concat(n || "Animals are done! It’s PAWS Season"),
+            images: [{
+              url: "".concat(i || "".concat("https://paws.community", "/static/page-preview.png")),
+              alt: "preview"
+            }]
+          },
+          additionalMetaTags: [{
+            httpEquiv: "X-UA-Compatible",
+            content: "IE=edge"
+          }, {
+            name: "viewport",
+            content: "width=device-width, user-scalable=no, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
+          }, {
+            name: "x-ua-compatible",
+            content: "IE=edge; chrome=1"
+          }, {
+            name: "description",
+            content: "".concat(n || "Animals are done! It’s PAWS Season")
+          }, {
+            name: "title",
+            content: "".concat(t || "PAWS | Home")
+          }, {
+            name: "keywords",
+            content: "!"
+          }, {
+            name: "twitter:image",
+            content: "".concat(i || "".concat("https://paws.community", "/static/page-preview.png"))
+          }, {
+            property: "twitter:title",
+            content: "PAWS"
+          }, {
+            property: "twitter:description",
+            content: "Animals are done! It’s PAWS Season"
+          }, {
+            property: "application-name",
+            content: "PAWS"
+          }, {
+            property: "apple-mobile-web-app-capable",
+            content: "yes"
+          }, {
+            property: "apple-mobile-web-app-status-bar-style",
+            content: "default"
+          }, {
+            property: "apple-mobile-web-app-title",
+            content: "PAWS"
+          }, {
+            property: "format-detection",
+            content: "telephone=no"
+          }, {
+            property: "mobile-web-app-capable",
+            content: "yes"
+          }, {
+            property: "msapplication-config",
+            content: "/icons/browserconfig.xml"
+          }, {
+            property: "msapplication-tap-highlight",
+            content: "no"
+          }, {
+            property: "theme-color",
+            content: "#0D0D0D"
+          }, {
+            property: "msapplication-TileImage",
+            content: "/icons/144.png"
+          }],
+          additionalLinkTags: [{
+            rel: "dns-prefetch",
+            href: "https://fonts.googleapis.com"
+          }, {
+            rel: "preconnect",
+            href: "https://www.google-analytics.com"
+          }, {
+            rel: "preconnect",
+            href: "https://www.googletagmanager.com"
+          }, {
+            rel: "preconnect",
+            href: "https://fonts.googleapis.com"
+          }, {
+            rel: "icon",
+            href: "/favicon.ico"
+          }, {
+            rel: "icon",
+            href: "/static/favicon-32x32.png",
+            sizes: "32x32"
+          }, {
+            rel: "icon",
+            href: "/icons/72.png",
+            sizes: "72x72"
+          }, {
+            rel: "icon",
+            href: "/icons/96.png",
+            sizes: "96x96"
+          }, {
+            rel: "icon",
+            href: "/icons/144.png",
+            sizes: "144x144"
+          }, {
+            rel: "icon",
+            href: "/icons/192.png",
+            sizes: "192x192"
+          }, {
+            rel: "apple-touch-icon",
+            href: "/icons/512.png",
+            sizes: "512x512"
+          }, {
+            rel: "manifest",
+            href: "/manifest.json"
+          }],
+          twitter: {
+            site: "@pawsuplabs",
+            cardType: "summary",
+            card: "summary",
+            creator: "@pawsuplabs"
+          }
+        })
+      };
+      n(4298);
+      var eN = () => o.createElement("div", null);
       n(1522);
-      var e$ = n(2894),
-        eB = n(1163),
-        eU = n(9155),
-        eV = n(1513),
-        eW = n(2725),
-        eF = n(8922);
-      let eG = ["Component"];
-      var eH = e => {
+      var eD = n(2894),
+        eI = n(1163),
+        e$ = n(9155),
+        eB = n(1513),
+        eU = n(2725),
+        eV = n(8922);
+      let eW = ["Component"];
+      var eF = e => {
         let {
           Component: t
-        } = e, n = (0, m.Z)(e, eG), r = (0, ew.TL)(), {
+        } = e, n = (0, m.Z)(e, eW), r = (0, ew.TL)(), {
           pathname: i
-        } = (0, eB.useRouter)(), [a, s] = (0, o.useState)(!1), [l, c] = (0, o.useState)(!1), u = async () => {
+        } = (0, eI.useRouter)(), [a, s] = (0, o.useState)(!1), [l, c] = (0, o.useState)(!1), u = async () => {
           try {
             var e, t, n, i, o, a, l, u;
-            let d = await (0, eU.Z)("/user/auth", {
+            let d = await (0, e$.Z)("/user/auth", {
                 method: "POST",
                 body: {
-                  data: (0, eF.Z)(null === (e = window) || void 0 === e ? void 0 : null === (t = e.Telegram) || void 0 === t ? void 0 : null === (n = t.WebApp) || void 0 === n ? void 0 : n.initData),
+                  data: (0, eV.Z)(null === (e = window) || void 0 === e ? void 0 : null === (t = e.Telegram) || void 0 === t ? void 0 : null === (n = t.WebApp) || void 0 === n ? void 0 : n.initData),
                   referralCode: (null === (i = window) || void 0 === i ? void 0 : null === (o = i.Telegram) || void 0 === o ? void 0 : null === (a = o.WebApp) || void 0 === a ? void 0 : null === (l = a.initDataUnsafe) || void 0 === l ? void 0 : l.start_param) || void 0
                 }
               }),
               p = await d.json();
             if (!p || !p.success || "Maintenance" === p.error) return c(!0);
-            if (!p.success || !(null != p && null !== (u = p.data) && void 0 !== u && u.length)) return (0, eV.Z)({
+            if (!p.success || !(null != p && null !== (u = p.data) && void 0 !== u && u.length)) return (0, eB.Z)({
               type: "error",
               imgCode: "cross",
               message: "Something went wrong while log in. Please try again later."
@@ -5533,7 +5525,7 @@
               isShowing: !0
             })), m && m.isShowBumsModal && r((0, ev.UD)(!0)), window.sessionStorage.setItem("accessToken", h)
           } catch (e) {
-            (0, eV.Z)({
+            (0, eB.Z)({
               type: "error",
               imgCode: "cross",
               message: "Something went wrong while log in. Please try again later."
@@ -5543,14 +5535,14 @@
         return (0, o.useEffect)(() => {
           if ("/" === i) return u(), () => {};
           s(!0)
-        }, []), o.createElement(o.Fragment, null, l && o.createElement(eW.Z, null), a && !l && o.createElement(o.Fragment, null, o.createElement(t, n)))
+        }, []), o.createElement(o.Fragment, null, l && o.createElement(eU.Z, null), a && !l && o.createElement(o.Fragment, null, o.createElement(t, n)))
       };
       n(8231), n(1691), n(5389), n(5889);
-      var eK = () => {
+      var eG = () => {
           let e = (0, ew.TL)(),
             {
               asPath: t
-            } = (0, eB.useRouter)(),
+            } = (0, eI.useRouter)(),
             n = () => {
               e((0, ev.Ep)(window.innerWidth < 768))
             };
@@ -5558,7 +5550,7 @@
             window.removeEventListener("resize", n)
           }), [t]), o.createElement(o.Fragment, null)
         },
-        ez = e => {
+        eH = e => {
           let {
             children: t
           } = e;
@@ -5568,9 +5560,9 @@
             })
           }, []), o.createElement(o.Fragment, null, t)
         },
-        eq = n(3454);
+        eK = n(3454);
 
-      function eZ(e, t) {
+      function ez(e, t) {
         var n = Object.keys(e);
         if (Object.getOwnPropertySymbols) {
           var r = Object.getOwnPropertySymbols(e);
@@ -5581,24 +5573,24 @@
         return n
       }
 
-      function eY(e) {
+      function eq(e) {
         for (var t = 1; t < arguments.length; t++) {
           var n = null != arguments[t] ? arguments[t] : {};
-          t % 2 ? eZ(Object(n), !0).forEach(function(t) {
+          t % 2 ? ez(Object(n), !0).forEach(function(t) {
             (0, i.Z)(e, t, n[t])
-          }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : eZ(Object(n)).forEach(function(t) {
+          }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(n)) : ez(Object(n)).forEach(function(t) {
             Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(n, t))
           })
         }
         return e
       }
-      class eJ extends s() {
+      class eZ extends s() {
         constructor(e) {
           super(e), (0, i.Z)(this, "appWrapper", () => {
             let {
               pathname: e
             } = this.props;
-            return "/" === e ? e$.Eo : ez
+            return "/" === e ? eD.Eo : eH
           }), this.state = {
             isLoading: !0,
             url: ""
@@ -5618,12 +5610,12 @@
             manifestUrl: "https://cdn.paws.community/tonconnect-manifest-production.json"
           }, o.createElement(eM, t), o.createElement(a, null, o.createElement("div", {
             id: "next-app"
-          }, o.createElement(eK, null), o.createElement(eH, (0, r.Z)({
+          }, o.createElement(eG, null), o.createElement(eF, (0, r.Z)({
             Component: e
-          }, t)), o.createElement(eI, null), o.createElement(ey.Ix, null)))))
+          }, t)), o.createElement(eN, null), o.createElement(ey.Ix, null)))))
         }
       }
-      eJ.getInitialProps = async e => {
+      eZ.getInitialProps = async e => {
         let {
           ctx: t
         } = e;
@@ -5632,17 +5624,17 @@
           accessToken: n,
           refreshToken: r
         } = t.query;
-        return (n || r) && (await (0, em.setCookie)("".concat("paws", "-accessToken"), n, eY(eY({}, t), {}, {
-          domain: eq.env.APP_DOMAIN
-        })), await (0, em.setCookie)("".concat("paws", "-refreshToken"), r, eY(eY({}, t), {}, {
-          domain: eq.env.APP_DOMAIN
-        }))), eY(eY({}, await s().getInitialProps(e)), {}, {
+        return (n || r) && (await (0, em.setCookie)("".concat("paws", "-accessToken"), n, eq(eq({}, t), {}, {
+          domain: eK.env.APP_DOMAIN
+        })), await (0, em.setCookie)("".concat("paws", "-refreshToken"), r, eq(eq({}, t), {}, {
+          domain: eK.env.APP_DOMAIN
+        }))), eq(eq({}, await s().getInitialProps(e)), {}, {
           pathname: t.pathname,
           initialReduxState: null,
           clientSideDispatches: []
         })
       };
-      var eQ = function(e) {
+      var eY = function(e) {
         var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : null;
         return d()(function(n) {
           var i, a, s = (n.pageProps || {})._nextI18Next,
@@ -5675,7 +5667,7 @@
             key: l
           }, n))
         }, e)
-      }(eJ)
+      }(eZ)
     },
     9195: function(e, t, n) {
       "use strict";

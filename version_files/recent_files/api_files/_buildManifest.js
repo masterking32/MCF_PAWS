@@ -8,7 +8,7 @@ self.__BUILD_MANIFEST = function(s, c, e, a) {
     "/": [s, c, "static/chunks/797-581af5e09d812c61.js", e, "static/css/ed6ea74e52b2ed7d.css", "static/chunks/pages/index-872747a949c3b1b4.js"],
     "/404": ["static/chunks/pages/404-3906dc2650dbee03.js"],
     "/_error": ["static/chunks/pages/_error-5842153508ff243d.js"],
-    "/app": [s, c, "static/chunks/729-d4b5bbd3567b7c31.js", e, "static/css/c6151944b27af945.css", "static/chunks/pages/app-a4dde0ee276cb57d.js"],
+    "/app": [s, c, "static/chunks/729-d4b5bbd3567b7c31.js", e, "static/css/c6151944b27af945.css", "static/chunks/pages/app-72bf2904d155619f.js"],
     "/discord-verify": [s, a, "static/chunks/pages/discord-verify-f88257febdde432c.js"],
     "/phantom-connect": [a, "static/chunks/pages/phantom-connect-0f84872630a9a76a.js"],
     sortedPages: ["/", "/404", "/_app", "/_error", "/app", "/discord-verify", "/phantom-connect"]
