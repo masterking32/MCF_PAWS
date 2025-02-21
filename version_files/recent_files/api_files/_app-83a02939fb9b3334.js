@@ -2241,46 +2241,53 @@
           var t, n;
           let {
             children: i
-          } = e, [c, u] = (0, r.useState)(null), [d, p] = (0, r.useState)(!1), [h, f] = (0, r.useState)(!1), [g, m] = (0, r.useState)(!1), {
-            pathname: y,
-            push: b
+          } = e, [c, u] = (0, r.useState)(null), [d, p] = (0, r.useState)(!1), [h, f] = (0, r.useState)(!1), [g, m] = (0, r.useState)(!1), [y, b] = (0, r.useState)("https://paws.community"), {
+            pathname: v,
+            push: w
           } = (0, a.useRouter)();
           (0, r.useEffect)(() => {
-            var e;
-            let t = null === (e = window.Telegram) || void 0 === e ? void 0 : e.WebApp,
-              n = null;
-            if (!(null != t && t.initData)) return b("/app", void 0, {
+            var e, t, n;
+            let r = null === (e = window.Telegram) || void 0 === e ? void 0 : e.WebApp,
+              i = null;
+            if (!(null != r && r.initData)) return w("/app", void 0, {
               shallow: !0
             }), () => {};
             m(!0);
-            let r = () => {
-              t && !t.isExpanded && t.expand()
+            let o = {};
+            if (null != r && null !== (t = r.initDataUnsafe) && void 0 !== t && t.start_param) try {
+              o = JSON.parse(atob(r.initDataUnsafe.start_param))
+            } catch (e) {
+              console.error(e)
+            }
+            null !== (n = o) && void 0 !== n && n.redirectTo && b(o.redirectTo);
+            let a = () => {
+              r && !r.isExpanded && r.expand()
             };
-            return t && (t.ready(), u(t), t.expand(), t.onEvent("viewportChanged", r), t.setBackgroundColor("#0D0D0D"), t.setHeaderColor("#0D0D0D"), t.disableVerticalSwipes(), t.BackButton.onClick(() => {
+            return r && (r.ready(), u(r), r.expand(), r.onEvent("viewportChanged", a), r.setBackgroundColor("#0D0D0D"), r.setHeaderColor("#0D0D0D"), r.disableVerticalSwipes(), r.BackButton.onClick(() => {
               window.history.back()
-            }), n = setTimeout(() => {
+            }), i = setTimeout(() => {
               p(!0)
             }, 150)), () => {
-              t.offEvent("viewportChanged", r), clearTimeout(n)
+              r.offEvent("viewportChanged", a), clearTimeout(i)
             }
           }, []), (0, r.useEffect)(() => {
-            c && "/" === y ? c.BackButton.hide() : c && "/" !== y && c.BackButton.show()
-          }, [c, y]);
-          let v = async () => {
-            await b(y, void 0, {
+            c && "/" === v ? c.BackButton.hide() : c && "/" !== v && c.BackButton.show()
+          }, [c, v]);
+          let x = async () => {
+            await w(v, void 0, {
               shallow: !0
             }), f(!0)
           };
           (0, r.useEffect)(() => {
-            d && v()
+            d && x()
           }, [d]);
-          let w = (0, r.useMemo)(() => c ? {
+          let k = (0, r.useMemo)(() => c ? {
             webApp: c,
             unsafeData: c.initDataUnsafe,
             user: c.initDataUnsafe.user
           } : {}, [c]);
           return r.createElement(l.Provider, {
-            value: w
+            value: k
           }, r.createElement(o(), {
             src: "/telegram-web-app.js",
             strategy: "beforeInteractive"
@@ -2289,7 +2296,7 @@
           }, r.createElement("div", {
             className: "descr"
           }, "Account verified"), r.createElement(s.Z, {
-            href: "".concat("https://paws.community", "/app?initData=").concat(window.btoa(null === (t = window.Telegram) || void 0 === t ? void 0 : null === (n = t.WebApp) || void 0 === n ? void 0 : n.initData)),
+            href: "".concat(y, "/app?initData=").concat(window.btoa(null === (t = window.Telegram) || void 0 === t ? void 0 : null === (n = t.WebApp) || void 0 === n ? void 0 : n.initData)),
             onRedirect: () => {
               var e, t;
               null === (e = window.Telegram) || void 0 === e || null === (t = e.WebApp) || void 0 === t || t.close()

@@ -1,11 +1,11 @@
 (self.webpackChunk_N_E = self.webpackChunk_N_E || []).push([
-  [471], {
+  [942], {
     8558: function(e, t, a) {
       "use strict";
       var n = a(7294),
         c = a(9578),
-        r = a(5675),
-        i = a.n(r),
+        i = a(5675),
+        r = a.n(i),
         s = a(7041),
         l = a(861),
         o = a(9195),
@@ -13,8 +13,8 @@
       a(2480);
       var A = a(4441),
         d = a(8502),
-        u = a(2783),
-        h = a(247),
+        h = a(2783),
+        u = a(247),
         g = a(6139);
       let w = e => {
         let {
@@ -24,7 +24,7 @@
           className: "modal-title mb-3"
         }, n.createElement("div", {
           className: "icon-con"
-        }, n.createElement(i(), {
+        }, n.createElement(r(), {
           src: d.Z,
           alt: "",
           width: 25
@@ -86,7 +86,7 @@
         let e = (0, o.TL)(),
           t = (0, o.CG)(e => e.main.isSolWalletModalOpen),
           a = (0, o.CG)(e => e.main.isMobile),
-          [r, v] = (0, n.useState)(0),
+          [i, v] = (0, n.useState)(0),
           [E, p] = (0, n.useState)(!1),
           b = [{
             id: "phantom",
@@ -114,8 +114,8 @@
             p(!0);
             let {
               success: t,
-              error: r
-            } = await (0, h.Z)("/wallet/solana/check_proof", {
+              error: i
+            } = await (0, u.Z)("/wallet/solana/check_proof", {
               method: "POST",
               body: {
                 signature: a,
@@ -123,7 +123,7 @@
                 token: c
               }
             });
-            if ("Wallet already exists" === r) {
+            if ("Wallet already exists" === i) {
               (0, m.Z)({
                 toastId: "solConnect",
                 imgCode: "cross",
@@ -131,7 +131,7 @@
               });
               return
             }
-            if (!t || r) {
+            if (!t || i) {
               (0, m.Z)({
                 toastId: "solConnect",
                 imgCode: "cross",
@@ -153,7 +153,7 @@
             let {
               success: e,
               data: t
-            } = await (0, h.Z)("/wallet/solana/payload");
+            } = await (0, u.Z)("/wallet/solana/payload");
             if (!e) return;
             return t
           } catch (e) {
@@ -161,9 +161,9 @@
           } finally {
             p(!1)
           }
-        }, P = () => {
-          "visible" === document.visibilityState && (window.dispatchEvent(new CustomEvent("refetchUserData")), document.removeEventListener("visibilitychange", P))
-        }, k = async () => {
+        }, k = () => {
+          "visible" === document.visibilityState && (window.dispatchEvent(new CustomEvent("refetchUserData")), document.removeEventListener("visibilitychange", k))
+        }, P = async () => {
           try {
             var e, t;
             if (null !== (e = window) && void 0 !== e && null !== (t = e.phantom) && void 0 !== t && t.solana) {
@@ -181,20 +181,20 @@
               let a = new TextEncoder().encode(t),
                 {
                   signature: n,
-                  publicKey: r
+                  publicKey: i
                 } = await window.phantom.solana.signMessage(a),
-                i = c.Z.encode(n),
-                s = r.toBase58();
+                r = c.Z.encode(n),
+                s = i.toBase58();
               await N({
-                signature: i,
+                signature: r,
                 publicKey: s,
                 token: t
               }), f();
               return
             }
             let n = encodeURIComponent("".concat("https://paws.community", "/phantom-connect?unSaveAccessToken=").concat((0, s.getCookie)("".concat("paws", "-unSaveAccessToken")))),
-              r = "https://phantom.app/ul/browse/".concat(n, "?ref=").concat("https://paws.community");
-            a ? (document.addEventListener("visibilitychange", P), window.location.href = r) : window.open(r, "_blank")
+              i = "https://phantom.app/ul/browse/".concat(n, "?ref=").concat("https://paws.community");
+            a ? (document.addEventListener("visibilitychange", k), window.location.href = i) : window.open(i, "_blank")
           } catch (e) {
             (0, m.Z)({
               toastId: "solConnect",
@@ -211,7 +211,7 @@
         }, n.createElement("div", {
           className: "cross-con",
           onClick: f
-        }, n.createElement(i(), {
+        }, n.createElement(r(), {
           src: A.Z,
           alt: "",
           width: 24,
@@ -221,7 +221,7 @@
         }, n.createElement("div", {
           className: "tabs-carousel-wrapper",
           style: {
-            transform: a ? "translate(".concat(-100 * r, "vw)") : "translate(".concat(-500 * r, "px)")
+            transform: a ? "translate(".concat(-100 * i, "vw)") : "translate(".concat(-500 * i, "px)")
           }
         }, n.createElement("div", {
           className: "custom-carousel-item"
@@ -236,17 +236,17 @@
             id: t,
             name: a,
             icon: c,
-            onClick: r
+            onClick: i
           } = e;
           return n.createElement("div", {
             key: t,
             className: "option-con ".concat(t),
-            onClick: r
+            onClick: i
           }, n.createElement("div", {
             className: "side-block"
           }, n.createElement("div", {
             className: "icon-con"
-          }, n.createElement(i(), {
+          }, n.createElement(r(), {
             src: c,
             alt: "",
             width: 36,
@@ -268,58 +268,22 @@
           })))
         }))), n.createElement("div", {
           className: "custom-carousel-item"
-        }, [1, 2].includes(r) && n.createElement(w, {
-          openPhantom: k
+        }, [1, 2].includes(i) && n.createElement(w, {
+          openPhantom: P
         })), n.createElement("div", {
           className: "custom-carousel-item"
-        }, [2].includes(r) && n.createElement(n.Fragment, null, n.createElement("div", {
+        }, [2].includes(i) && n.createElement(n.Fragment, null, n.createElement("div", {
           className: "modal-title"
         }, "Continue in Phantom"), n.createElement("div", {
           className: "modal-descr"
         }, "We are currently in the process of connecting your Phantom Wallet for use in PAWS. Please note that this may take some time!"), n.createElement("div", {
           className: "lottie-con"
-        }, 2 === r && n.createElement(u.Z, {
-          isShow: 2 === r
+        }, 2 === i && n.createElement(h.Z, {
+          isShow: 2 === i
         })), n.createElement("div", {
           className: "retry-btn",
           onClick: () => v(1)
         }, "Retry")))))))
-      }
-    },
-    4965: function(e, t, a) {
-      "use strict";
-      var n = a(7294),
-        c = a(8130);
-      t.Z = e => {
-        let {
-          date: t,
-          withSymbols: a = !0,
-          onComplete: r
-        } = e;
-        return n.createElement(c.ZP, {
-          date: t,
-          zeroPadTime: 2,
-          onComplete: r,
-          daysInHours: !0,
-          renderer: e => {
-            let {
-              formatted: {
-                hours: t,
-                minutes: c,
-                seconds: r
-              }
-            } = e, i = Math.floor(t / 24), s = Math.floor(t % 24);
-            return n.createElement("div", {
-              className: "custom-timer"
-            }, !+t && n.createElement("p", {
-              className: "value"
-            }, !a && "0:", !+c && !a && "00:", +c ? "".concat(c).concat(a ? "M " : ":") : "", r, a ? "S" : ""), !!(+s + 24 * i) && t < 48 && n.createElement("p", {
-              className: "value"
-            }, s + 24 * i, a ? "H " : ":", c, a ? "M " : ":", r, a ? "S " : ""), (!!+s || !!i) && t >= 48 && n.createElement("p", {
-              className: "value"
-            }, i, "D ", s, "H"))
-          }
-        })
       }
     },
     6463: function(e, t, a) {
@@ -351,16 +315,16 @@
       });
       var n = a(7462),
         c = a(7294),
-        r = a(5675),
-        i = a.n(r),
+        i = a(5675),
+        r = a.n(i),
         s = a(6066),
         l = a(9163),
         o = a(2924),
         m = a(742),
         A = a(1881),
         d = a(3129),
-        u = a(970),
-        h = a(383),
+        h = a(970),
+        u = a(383),
         g = a(713),
         w = a(2121),
         v = {
@@ -384,13 +348,13 @@
           blurHeight: 0
         };
       a(1106);
-      let P = {
+      let k = {
           1: p.Z,
           2: b.Z,
           3: f.Z,
           4: N.Z
         },
-        k = {
+        P = {
           1: {
             src: "/_next/static/media/starAnimatedBronze.256bb892.svg",
             height: 200,
@@ -412,17 +376,17 @@
         let {
           isShow: t,
           openDetailInfo: a = () => {}
-        } = e, r = (0, E.CG)(e => e.main.isMobile), p = (0, E.CG)(e => e.main.user.gameData.balance), b = (0, E.CG)(e => e.main.user.gameData.wpaws), f = (0, E.CG)(e => e.main.user.gameData.badgeTier) || 0, N = !(0, E.CG)(e => e.main.user.grinchRemoved), D = (0, E.CG)(e => e.main.user.allocationData.notcoin.converted), O = (0, E.CG)(e => e.main.user.allocationData.dogs.converted), C = c.createElement("div", {
+        } = e, i = (0, E.CG)(e => e.main.isMobile), p = (0, E.CG)(e => e.main.user.gameData.balance), b = (0, E.CG)(e => e.main.user.gameData.wpaws), f = (0, E.CG)(e => e.main.user.gameData.badgeTier) || 0, N = !(0, E.CG)(e => e.main.user.grinchRemoved), D = (0, E.CG)(e => e.main.user.allocationData.notcoin.converted), O = (0, E.CG)(e => e.main.user.allocationData.dogs.converted), C = c.createElement("div", {
           className: "count step-2"
         }, c.createElement("div", {
           className: "text"
         }, "Newcomer"), c.createElement("div", {
           className: "img-con"
-        }, c.createElement(i(), {
-          src: u.Z,
+        }, c.createElement(r(), {
+          src: h.Z,
           alt: "",
-          width: r ? 18 : 35,
-          height: r ? 18 : 35
+          width: i ? 18 : 35,
+          height: i ? 18 : 35
         })), c.createElement("div", {
           className: "text"
         }, "RANK"));
@@ -432,11 +396,11 @@
           className: "text"
         }, "Pioneer"), c.createElement("div", {
           className: "img-con"
-        }, c.createElement(i(), {
-          src: h.Z,
+        }, c.createElement(r(), {
+          src: u.Z,
           alt: "",
-          width: r ? 18 : 35,
-          height: r ? 18 : 35
+          width: i ? 18 : 35,
+          height: i ? 18 : 35
         })), c.createElement("div", {
           className: "text"
         }, "RANK"))), !D && O && (C = c.createElement("div", {
@@ -445,11 +409,11 @@
           className: "text"
         }, "Legend"), c.createElement("div", {
           className: "img-con"
-        }, c.createElement(i(), {
+        }, c.createElement(r(), {
           src: g.Z,
           alt: "",
-          width: r ? 18 : 35,
-          height: r ? 18 : 35
+          width: i ? 18 : 35,
+          height: i ? 18 : 35
         })), c.createElement("div", {
           className: "text"
         }, "RANK"))), D && O && (C = c.createElement("div", {
@@ -458,11 +422,11 @@
           className: "text"
         }, "Champ"), c.createElement("div", {
           className: "img-con"
-        }, c.createElement(i(), {
+        }, c.createElement(r(), {
           src: w.Z,
           alt: "",
-          width: r ? 18 : 35,
-          height: r ? 18 : 35
+          width: i ? 18 : 35,
+          height: i ? 18 : 35
         })), c.createElement("div", {
           className: "text"
         }, "RANK"))), c.createElement("div", {
@@ -471,33 +435,33 @@
           className: "img-con"
         }, c.createElement("div", {
           className: "main-logo"
-        }, c.createElement(i(), {
+        }, c.createElement(r(), {
           src: l.Z,
           alt: "",
-          width: r ? 120 : 170,
-          height: r ? 120 : 170
+          width: i ? 120 : 170,
+          height: i ? 120 : 170
         }), c.createElement("div", {
           className: "hat-con"
-        }, c.createElement(i(), {
+        }, c.createElement(r(), {
           src: v,
           alt: "",
           width: 250
-        }))), P[f] && c.createElement("div", {
+        }))), k[f] && c.createElement("div", {
           className: "user-mark tier-".concat(f)
         }, c.createElement("div", {
           className: "icon-con"
-        }, c.createElement(i(), {
-          src: P[f],
-          alt: "",
-          width: r ? 22 : 49,
-          height: r ? 22 : 49
-        }), t && c.createElement("div", {
-          className: "animated-icon"
-        }, c.createElement(i(), {
+        }, c.createElement(r(), {
           src: k[f],
           alt: "",
-          width: r ? 75 : 150,
-          height: r ? 75 : 150
+          width: i ? 22 : 49,
+          height: i ? 22 : 49
+        }), t && c.createElement("div", {
+          className: "animated-icon"
+        }, c.createElement(r(), {
+          src: P[f],
+          alt: "",
+          width: i ? 75 : 150,
+          height: i ? 75 : 150
         }))))), c.createElement("div", {
           className: "text-carousel-con"
         }, !!b && c.createElement(s.Z, (0, n.Z)({
@@ -526,11 +490,11 @@
           className: "count"
         }, !N && (p > 1e5 ? (0, o.i)(p) : (0, m.Z)(p, ",")), N && c.createElement("div", {
           className: "d-flex align-items-center pt-2"
-        }, c.createElement(i(), {
+        }, c.createElement(r(), {
           src: A.Z,
           alt: "",
-          width: r ? 50 : 80,
-          height: r ? 50 : 80
+          width: i ? 50 : 80,
+          height: i ? 50 : 80
         }))), c.createElement("div", {
           className: "currency"
         }, "PAWS"))), c.createElement("div", {
@@ -549,11 +513,11 @@
           className: "count"
         }, !N && (p > 1e5 ? (0, o.i)(p) : (0, m.Z)(p, ",")), N && c.createElement("div", {
           className: "d-flex align-items-center pt-2"
-        }, c.createElement(i(), {
+        }, c.createElement(r(), {
           src: A.Z,
           alt: "",
-          width: r ? 50 : 80,
-          height: r ? 50 : 80
+          width: i ? 50 : 80,
+          height: i ? 50 : 80
         }))), c.createElement("div", {
           className: "currency"
         }, "PAWS")))), c.createElement("div", {
@@ -561,7 +525,7 @@
           onClick: a
         }, C, !!a && c.createElement("div", {
           className: "icon-con"
-        }, c.createElement(i(), {
+        }, c.createElement(r(), {
           src: d.Z,
           alt: "",
           width: 24,
@@ -573,8 +537,8 @@
       "use strict";
       var n = a(6656),
         c = a(7041),
-        r = a(9993),
-        i = a(9155),
+        i = a(9993),
+        r = a(9155),
         s = a(3454);
 
       function l(e, t) {
@@ -606,9 +570,9 @@
           l = {
             "Secure-check": "paws"
           },
-          m = await (0, r.Z)(n);
+          m = await (0, i.Z)(n);
         m && (l.Authorization = "Bearer ".concat(m));
-        let A = await (0, i.Z)(e, o({}, t), a, l);
+        let A = await (0, r.Z)(e, o({}, t), a, l);
         return 401 === A.status ? (await (0, c.deleteCookie)("".concat("paws", "-accessToken"), o(o({}, n), {}, {
           domain: s.env.APP_DOMAIN
         })), await (0, c.deleteCookie)("".concat("paws", "-refreshToken"), o(o({}, n), {}, {
@@ -657,11 +621,11 @@
       });
       var n = a(6656),
         c = a(7041),
-        r = a(9892),
-        i = a.n(r),
+        i = a(9892),
+        r = a.n(i),
         s = function(e) {
           try {
-            let t = JSON.parse(i()(e.split(".")[1])).exp;
+            let t = JSON.parse(r()(e.split(".")[1])).exp;
             return Math.floor(new Date().getTime() / 1e3) >= t
           } catch (e) {
             return !0
@@ -707,10 +671,10 @@
           }))) && s(a = window.sessionStorage.getItem("accessToken") || await (0, c.getCookie)("".concat("paws", "-accessToken"), A(A({}, e), {}, {
             domain: o.env.APP_DOMAIN
           })))) {
-          var n, r, i, m;
+          var n, i, r, m;
           await (0, c.deleteCookie)("".concat("paws", "-accessToken"), A(A({}, e), {}, {
             domain: o.env.APP_DOMAIN
-          })), null === (n = window) || void 0 === n || null === (r = n.sessionStorage) || void 0 === r || r.removeItem("accessToken"), null === (i = window) || void 0 === i || null === (m = i.location) || void 0 === m || m.reload(), a = ""
+          })), null === (n = window) || void 0 === n || null === (i = n.sessionStorage) || void 0 === i || i.removeItem("accessToken"), null === (r = window) || void 0 === r || null === (m = r.location) || void 0 === m || m.reload(), a = ""
         }
         if (!a && t && t) try {
           let n = await (0, l.Z)("/user/refresh", {
@@ -860,9 +824,9 @@
     9163: function(e, t) {
       "use strict";
       t.Z = {
-        src: "/_next/static/media/pawsLogo.372b558c.svg",
-        height: 20,
-        width: 20,
+        src: "/_next/static/media/pawsLogo.fb700d6b.svg",
+        height: 40,
+        width: 40,
         blurWidth: 0,
         blurHeight: 0
       }
