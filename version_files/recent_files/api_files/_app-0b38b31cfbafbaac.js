@@ -39211,6 +39211,7 @@ ${e.length}`,
             title: "Solana OG",
             code: "solana-og",
             isAuth: !1,
+            isNew: !0,
             isLink: !0,
             href: "/app/solana-og",
             IconComponent: rA
@@ -39228,7 +39229,6 @@ ${e.length}`,
           }, {
             title: "Exchange",
             code: "exchange",
-            isNew: !0,
             isAuth: !0,
             IconComponent: rO,
             href: "/app/exchange"
