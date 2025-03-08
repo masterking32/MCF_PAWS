@@ -12,8 +12,10 @@
   <meta property="og:description" content="Animals are done! It’s PAWS Season" />
   <meta property="og:url" content="https://paws.community" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://paws.community/static/page-preview.png" />
+  <meta property="og:image" content="https://paws.community/static/og.png" />
   <meta property="og:image:alt" content="preview" />
+  <meta property="og:image:width" content="1280" />
+  <meta property="og:image:height" content="720" />
   <link rel="canonical" href="https://paws.community" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, user-scalable=no, shrink-to-fit=no, user-scalable=no, viewport-fit=cover" />
@@ -46,9 +48,9 @@
   <link rel="icon" href="/icons/192.png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/icons/512.png" sizes="512x512" />
   <link rel="manifest" href="/manifest.json" />
-  <meta name="next-head-count" content="44" />
+  <meta name="next-head-count" content="46" />
   <link data-next-font="" rel="preconnect" href="/" crossorigin="anonymous" />
-  <style data-href="/_next/static/css/3c22ca8a0270bae7.css" data-n-g="">
+  <style data-href="/_next/static/css/c560ee2e795b9fcf.css" data-n-g="">
     @charset "UTF-8";
 
     /*!
@@ -13561,6 +13563,236 @@
       opacity: .75;
       color: #000
     }
+
+    .header-app-con {
+      position: fixed;
+      width: 100%;
+      z-index: 9;
+      margin-top: 15px;
+      top: 0
+    }
+
+    @media(max-width:768px) {
+      .header-app-con {
+        bottom: 0;
+        left: 0;
+        top: unset;
+        border-top: .33px solid rgba(60, 60, 67, .36);
+        background: rgba(21, 21, 22, .75);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        padding: 2px 16px 15px;
+        margin-top: 0
+      }
+    }
+
+    .header-app-con .nav-bar-con {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px;
+      border-radius: 12px;
+      border: 1px solid hsla(0, 0%, 100%, .1);
+      background: #151516;
+      margin: 16px 0 24px;
+      z-index: 3;
+      position: relative
+    }
+
+    @media(min-width:768px) {
+      .header-app-con .nav-bar-con {
+        margin: 0 0 24px
+      }
+    }
+
+    .header-app-con .nav-bar-con .logo-con {
+      display: flex;
+      align-items: center;
+      font-size: 29.037px;
+      font-style: normal;
+      font-weight: 700
+    }
+
+    .header-app-con .nav-bar-con .logo-con .icon-con {
+      margin-right: 10px
+    }
+
+    .header-app-con .nav-bar-con .logo-con .burger-btn {
+      display: flex;
+      align-items: center;
+      margin-right: 16px;
+      min-width: 26px;
+      width: 26px
+    }
+
+    .header-app-con .nav-bar-con .nav-items-wrapper {
+      display: flex
+    }
+
+    .header-app-con .nav-bar-con .nav-items-wrapper .nav-item-con {
+      position: relative;
+      margin-right: 30px;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 600;
+      cursor: pointer;
+      line-height: 1;
+      opacity: .5
+    }
+
+    .header-app-con .nav-bar-con .nav-items-wrapper .nav-item-con.active {
+      opacity: 1
+    }
+
+    .header-app-con .nav-bar-con .nav-items-wrapper .nav-item-con:last-child {
+      margin-right: 0
+    }
+
+    .header-app-con .nav-bar-con .nav-items-wrapper .nav-item-con.blur {
+      cursor: auto;
+      opacity: .5;
+      filter: blur(2px)
+    }
+
+    .header-app-con .nav-bar-con .nav-items-wrapper .nav-item-con .not-connected-indicator {
+      width: 9px;
+      height: 9px;
+      background: #ff3b30;
+      border-radius: 50%;
+      position: absolute;
+      right: -12px;
+      top: 0;
+      animation: indicator-opacity-bounce 2s infinite
+    }
+
+    .header-app-con .nav-bar-con .socials-items-con .social-item {
+      margin-right: 10px
+    }
+
+    @media(min-width:768px) {
+      .header-app-con .nav-bar-con .socials-items-con .social-item {
+        margin-right: 15px
+      }
+    }
+
+    .header-app-con .nav-bar-con .socials-items-con .social-item:last-child {
+      margin-right: 0
+    }
+
+    .header-app-con .mobile-nav-bar-con {
+      width: 100%
+    }
+
+    .header-app-con .mobile-nav-bar-con .nav-items-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between
+    }
+
+    .header-app-con .mobile-nav-bar-con .nav-items-wrapper .nav-item-con {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 12px;
+      color: hsla(0, 0%, 100%, .4)
+    }
+
+    .header-app-con .mobile-nav-bar-con .nav-items-wrapper .nav-item-con .icon-con {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      opacity: .4
+    }
+
+    .header-app-con .mobile-nav-bar-con .nav-items-wrapper .nav-item-con.active {
+      color: #fff
+    }
+
+    .header-app-con .mobile-nav-bar-con .nav-items-wrapper .nav-item-con.active .icon-con {
+      opacity: 1
+    }
+
+    .header-app-con .mobile-nav-bar-con .nav-items-wrapper .nav-item-con .not-connected-indicator {
+      width: 9px;
+      height: 9px;
+      background: #ff3b30;
+      border-radius: 50%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      animation: indicator-opacity-bounce 2s infinite
+    }
+
+    .login-modal-con {
+      position: relative;
+      padding: 24px;
+      width: 100%
+    }
+
+    .login-modal-con .title {
+      text-align: left;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      margin-bottom: 32px
+    }
+
+    .login-modal-con .cross-con {
+      position: absolute;
+      top: 24px;
+      right: 24px
+    }
+
+    .login-modal-con .items-list-con {
+      width: 100%;
+      border-radius: 12px;
+      background: #1c1c1e;
+      padding: 12px
+    }
+
+    .login-modal-con .items-list-con .item-con {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 8px;
+      position: relative;
+      cursor: pointer
+    }
+
+    .login-modal-con .items-list-con .item-con:last-child:before {
+      display: none
+    }
+
+    .login-modal-con .items-list-con .item-con:before {
+      content: "";
+      position: absolute;
+      width: calc(100% - 42px);
+      height: 1px;
+      right: 0;
+      bottom: 0;
+      background: hsla(0, 0%, 100%, .08)
+    }
+
+    .login-modal-con .items-list-con .item-con .side-con {
+      display: flex;
+      align-items: center
+    }
+
+    .login-modal-con .items-list-con .item-con .side-con .icon-con {
+      margin-right: 20px
+    }
+
+    .login-modal-con .items-list-con .item-con .side-con .item-title {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px
+    }
   </style>
   <style data-href="/_next/static/css/ed6ea74e52b2ed7d.css" data-n-p="">
     .preloader-continaer {
@@ -16732,17 +16964,16 @@
   </style><noscript data-n-css=""></noscript>
   <script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script>
   <script src="/telegram-web-app.js" defer="" data-nscript="beforeInteractive"></script>
-  <script src="/_next/static/chunks/webpack-bff51b37a2f2c561.js" defer=""></script>
-  <script src="/_next/static/chunks/framework-5429a50ba5373c56.js" defer=""></script>
-  <script src="/_next/static/chunks/main-da8228decf39fa80.js" defer=""></script>
-  <script src="/_next/static/chunks/pages/_app-83a02939fb9b3334.js" defer=""></script>
-  <script src="/_next/static/chunks/368-e69b703b637a7734.js" defer=""></script>
-  <script src="/_next/static/chunks/905-29fe9f3aabc0acb0.js" defer=""></script>
-  <script src="/_next/static/chunks/672-b2320d2532892d9b.js" defer=""></script>
-  <script src="/_next/static/chunks/942-f3dc4f7258b7b774.js" defer=""></script>
-  <script src="/_next/static/chunks/pages/index-2478457c4c427a6a.js" defer=""></script>
-  <script src="/_next/static/h4vYShrG0pihI3EL3AGwv/_buildManifest.js" defer=""></script>
-  <script src="/_next/static/h4vYShrG0pihI3EL3AGwv/_ssgManifest.js" defer=""></script>
+  <script src="/_next/static/chunks/webpack-f94efc9aab9be514.js" defer=""></script>
+  <script src="/_next/static/chunks/framework-10fac88913917d91.js" defer=""></script>
+  <script src="/_next/static/chunks/main-2f482bc910114ea4.js" defer=""></script>
+  <script src="/_next/static/chunks/pages/_app-0f374ec07bf1da85.js" defer=""></script>
+  <script src="/_next/static/chunks/66-7780e576dfb8cce9.js" defer=""></script>
+  <script src="/_next/static/chunks/291-cc3551d5565a7f82.js" defer=""></script>
+  <script src="/_next/static/chunks/672-bf7fd5bfc134fd93.js" defer=""></script>
+  <script src="/_next/static/chunks/pages/index-790ac0faf8963bc1.js" defer=""></script>
+  <script src="/_next/static/lJPcoNlPAZjN91bbKD63R/_buildManifest.js" defer=""></script>
+  <script src="/_next/static/lJPcoNlPAZjN91bbKD63R/_ssgManifest.js" defer=""></script>
 </head>
 
 <body>
@@ -16791,7 +17022,7 @@
       },
       "page": "/",
       "query": {},
-      "buildId": "h4vYShrG0pihI3EL3AGwv",
+      "buildId": "lJPcoNlPAZjN91bbKD63R",
       "isFallback": false,
       "isExperimentalCompile": false,
       "gssp": true,
