@@ -39097,7 +39097,7 @@ ${e.length}`,
           }
         }, m = async e => {
           if (!e || c) return null;
-          if ("tg" === e) return window.location.href = "tg://resolve?domain=".concat("AbsolutelyNotVerifier_bot", "&appname=login&startapp=").concat(btoa(JSON.stringify({
+          if ("tg" === e) return window.location.href = "tg://resolve?domain=".concat("PVerifierBot", "&appname=login&startapp=").concat(btoa(JSON.stringify({
             redirectTo: "https://paws.community"
           }))), null;
           u(!0);
@@ -39667,7 +39667,7 @@ ${e.length}`,
     43129: function(e, t) {
       "use strict";
       t.Z = {
-        src: "/_next/static/media/arrowSmall.8202cbdc.svg",
+        src: "/_next/static/media/arrowSmall.091fa3c8.svg",
         height: 24,
         width: 24,
         blurWidth: 0,
