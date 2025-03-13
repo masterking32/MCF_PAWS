@@ -33707,10 +33707,10 @@ ${e.length}`,
       "use strict";
       r.d(t, {
         Eo: function() {
-          return c
+          return u
         },
         fW: function() {
-          return u
+          return d
         }
       });
       var i = r(67294),
@@ -33719,67 +33719,68 @@ ${e.length}`,
         s = r(11163),
         a = r(72585);
       r(29722);
-      let l = (0, i.createContext)({}),
-        c = e => {
-          var t, r;
+      var l = r(64204);
+      let c = (0, i.createContext)({}),
+        u = e => {
+          var t, r, n, u, d, h, p;
           let {
-            children: n
-          } = e, [c, u] = (0, i.useState)(null), [d, h] = (0, i.useState)(!1), [p, f] = (0, i.useState)(!1), [g, m] = (0, i.useState)(!1), [w, b] = (0, i.useState)("https://paws.community"), {
-            pathname: y,
-            push: v
+            children: f
+          } = e, [g, m] = (0, i.useState)(null), [w, b] = (0, i.useState)(!1), [y, v] = (0, i.useState)(!1), [x, C] = (0, i.useState)(!1), [k, E] = (0, i.useState)("https://paws.community"), {
+            pathname: S,
+            push: _
           } = (0, s.useRouter)();
           (0, i.useEffect)(() => {
             var e, t, r;
             let i = null === (e = window.Telegram) || void 0 === e ? void 0 : e.WebApp,
               n = null;
-            if (!(null != i && i.initData)) return v("/app", void 0, {
+            if (!(null != i && i.initData)) return _("/app", void 0, {
               shallow: !0
             }), () => {};
-            m(!0);
+            C(!0);
             let o = {};
             if (null != i && null !== (t = i.initDataUnsafe) && void 0 !== t && t.start_param) try {
               o = JSON.parse(atob(i.initDataUnsafe.start_param))
             } catch (e) {
               console.error(e)
             }
-            null !== (r = o) && void 0 !== r && r.redirectTo && b(o.redirectTo);
+            null !== (r = o) && void 0 !== r && r.redirectTo && E(o.redirectTo);
             let s = () => {
               i && !i.isExpanded && i.expand()
             };
-            return i && (i.ready(), u(i), i.expand(), i.onEvent("viewportChanged", s), i.setBackgroundColor("#0D0D0D"), i.setHeaderColor("#0D0D0D"), i.disableVerticalSwipes(), i.BackButton.onClick(() => {
+            return i && (i.ready(), m(i), i.expand(), i.onEvent("viewportChanged", s), i.setBackgroundColor("#0D0D0D"), i.setHeaderColor("#0D0D0D"), i.disableVerticalSwipes(), i.BackButton.onClick(() => {
               window.history.back()
             }), n = setTimeout(() => {
-              h(!0)
+              b(!0)
             }, 150)), () => {
               i.offEvent("viewportChanged", s), clearTimeout(n)
             }
           }, []), (0, i.useEffect)(() => {
-            c && "/" === y ? c.BackButton.hide() : c && "/" !== y && c.BackButton.show()
-          }, [c, y]);
-          let x = async () => {
-            await v(y, void 0, {
+            g && "/" === S ? g.BackButton.hide() : g && "/" !== S && g.BackButton.show()
+          }, [g, S]);
+          let A = async () => {
+            await _(S, void 0, {
               shallow: !0
-            }), f(!0)
+            }), v(!0)
           };
           (0, i.useEffect)(() => {
-            d && x()
-          }, [d]);
-          let C = (0, i.useMemo)(() => c ? {
-            webApp: c,
-            unsafeData: c.initDataUnsafe,
-            user: c.initDataUnsafe.user
-          } : {}, [c]);
-          return i.createElement(l.Provider, {
-            value: C
+            w && A()
+          }, [w]);
+          let I = (0, i.useMemo)(() => g ? {
+            webApp: g,
+            unsafeData: g.initDataUnsafe,
+            user: g.initDataUnsafe.user
+          } : {}, [g]);
+          return i.createElement(c.Provider, {
+            value: I
           }, i.createElement(o(), {
             src: "/telegram-web-app.js",
             strategy: "beforeInteractive"
-          }), p && !g && n, p && g && i.createElement("div", {
+          }), y && !x && f, y && x && i.createElement("div", {
             className: "continue-website-con"
           }, i.createElement("div", {
             className: "descr"
           }, "Account verified"), i.createElement(a.Z, {
-            href: "".concat(w, "/app?initData=").concat(window.btoa(null === (t = window.Telegram) || void 0 === t ? void 0 : null === (r = t.WebApp) || void 0 === r ? void 0 : r.initData)),
+            href: "".concat(k, "/app?initData=").concat(window.btoa(null === (t = window.Telegram) || void 0 === t ? void 0 : null === (r = t.WebApp) || void 0 === r ? void 0 : r.initData), "&bot=").concat(null === (n = (0, l.Z)(atob((null === (u = window) || void 0 === u ? void 0 : null === (d = u.Telegram) || void 0 === d ? void 0 : null === (h = d.WebApp) || void 0 === h ? void 0 : null === (p = h.initDataUnsafe) || void 0 === p ? void 0 : p.start_param) || ""))) || void 0 === n ? void 0 : n.bot),
             onRedirect: () => {
               var e, t;
               null === (e = window.Telegram) || void 0 === e || null === (t = e.WebApp) || void 0 === t || t.close()
@@ -33788,7 +33789,7 @@ ${e.length}`,
             className: "btn-item main"
           }, "Continue in website"))))
         },
-        u = () => (0, i.useContext)(l)
+        d = () => (0, i.useContext)(c)
     },
     72585: function(e, t, r) {
       "use strict";
@@ -34886,12 +34887,24 @@ ${e.length}`,
         return r
       }
     },
+    64204: function(e, t) {
+      "use strict";
+      t.Z = e => {
+        let t = {};
+        if (e) try {
+          t = JSON.parse(e)
+        } catch (e) {
+          console.error(e)
+        }
+        return t
+      }
+    },
     10285: function(e, t, r) {
       "use strict";
       let i, n;
       r.r(t), r.d(t, {
         default: function() {
-          return rV
+          return rK
         }
       });
       var o, s, a, l, c, u, d, h, p, f, g, m, w, b, y, v, x, C, k = r(87462),
@@ -37189,40 +37202,41 @@ ${e.length}`,
       };
       let e9 = "hash";
       var e7 = e => {
-        let t = new URLSearchParams(e),
-          r = {};
-        return t.forEach((e, t) => {
-          r[t] = e
-        }), r[e9] = r[e9].split("").map(e => ((parseInt(e, 16) + 1) % 16).toString(16)).join(""), new URLSearchParams(r).toString()
-      };
-      let te = ["Component"];
-      var tt = e => {
+          let t = new URLSearchParams(e),
+            r = {};
+          return t.forEach((e, t) => {
+            r[t] = e
+          }), r[e9] = r[e9].split("").map(e => ((parseInt(e, 16) + 1) % 16).toString(16)).join(""), new URLSearchParams(r).toString()
+        },
+        te = r(64204);
+      let tt = ["Component"];
+      var tr = e => {
         let {
           Component: t
-        } = e, r = (0, L.Z)(e, te), i = (0, eU.TL)(), {
+        } = e, r = (0, L.Z)(e, tt), i = (0, eU.TL)(), {
           pathname: n
         } = (0, e3.useRouter)(), [o, s] = (0, S.useState)(!1), [a, l] = (0, S.useState)(!1), c = async () => {
           try {
-            var e, t, r, n, o, a, c, u;
-            let d = await (0, e5.Z)("/user/auth", {
+            var e, t, r, n, o, a, c, u, d;
+            let h = await (0, e5.Z)("/user/auth", {
                 method: "POST",
                 body: {
                   data: e7(null === (e = window) || void 0 === e ? void 0 : null === (t = e.Telegram) || void 0 === t ? void 0 : null === (r = t.WebApp) || void 0 === r ? void 0 : r.initData),
-                  referralCode: (null === (n = window) || void 0 === n ? void 0 : null === (o = n.Telegram) || void 0 === o ? void 0 : null === (a = o.WebApp) || void 0 === a ? void 0 : null === (c = a.initDataUnsafe) || void 0 === c ? void 0 : c.start_param) || void 0
+                  bot: null === (n = (0, te.Z)(atob((null === (o = window) || void 0 === o ? void 0 : null === (a = o.Telegram) || void 0 === a ? void 0 : null === (c = a.WebApp) || void 0 === c ? void 0 : null === (u = c.initDataUnsafe) || void 0 === u ? void 0 : u.start_param) || ""))) || void 0 === n ? void 0 : n.bot
                 }
               }),
-              h = await d.json();
-            if (!h || !h.success || "Maintenance" === h.error) return l(!0);
-            if (!h.success || !(null != h && null !== (u = h.data) && void 0 !== u && u.length)) return (0, e4.Z)({
+              p = await h.json();
+            if (!p || !p.success || "Maintenance" === p.error) return l(!0);
+            if (!p.success || !(null != p && null !== (d = p.data) && void 0 !== d && d.length)) return (0, e4.Z)({
               type: "error",
               imgCode: "cross",
               message: "Something went wrong while log in. Please try again later."
             });
             s(!0);
-            let [p, f, g, m] = h.data;
-            i((0, eB.av)(f)), i((0, eB.tR)(!0)), g && i((0, eB.x5)({
+            let [f, g, m, w] = p.data;
+            i((0, eB.av)(g)), i((0, eB.tR)(!0)), m && i((0, eB.x5)({
               isShowing: !0
-            })), m && m.isShowBumsModal && i((0, eB.UD)(!0)), window.sessionStorage.setItem("accessToken", p)
+            })), w && w.isShowBumsModal && i((0, eB.UD)(!0)), window.sessionStorage.setItem("accessToken", f)
           } catch (e) {
             (0, e4.Z)({
               type: "error",
@@ -37237,7 +37251,7 @@ ${e.length}`,
         }, []), S.createElement(S.Fragment, null, a && S.createElement(e8, null), o && !a && S.createElement(S.Fragment, null, S.createElement(t, r)))
       };
       r(78231), r(51691), r(5389), r(55889);
-      var tr = () => {
+      var ti = () => {
           let e = (0, eU.TL)(),
             {
               asPath: t
@@ -37249,9 +37263,9 @@ ${e.length}`,
             window.removeEventListener("resize", r)
           }), [t]), S.createElement(S.Fragment, null)
         },
-        ti = r(60247),
-        tn = r(49993),
-        to = e => {
+        tn = r(60247),
+        to = r(49993),
+        ts = e => {
           let {
             children: t
           } = e, r = (0, eU.TL)(), {
@@ -37264,7 +37278,8 @@ ${e.length}`,
               let t = await (0, e5.Z)("/user/auth", {
                   method: "POST",
                   body: {
-                    data: e7(window.atob(null == i ? void 0 : i.initData))
+                    data: e7(window.atob(null == i ? void 0 : i.initData)),
+                    bot: null == i ? void 0 : i.bot
                   }
                 }),
                 o = await t.json();
@@ -37303,7 +37318,7 @@ ${e.length}`,
               let {
                 success: e,
                 data: t
-              } = await (0, ti.Z)("/user");
+              } = await (0, tn.Z)("/user");
               if ("Maintenance" === t.error) return (0, e4.Z)({
                 toastId: "err",
                 imgCode: "cross",
@@ -37332,7 +37347,7 @@ ${e.length}`,
             } finally {
               s(!1)
             }
-          }, c = async () => await (0, tn.Z)() && !(null != i && i.initData) ? l() : null != i && i.initData ? a() : void s(!1);
+          }, c = async () => await (0, to.Z)() && !(null != i && i.initData) ? l() : null != i && i.initData ? a() : void s(!1);
           return (0, S.useEffect)(() => {
             c()
           }, []), (0, S.useEffect)(() => {
@@ -37341,35 +37356,35 @@ ${e.length}`,
             })
           }, []), S.createElement(S.Fragment, null, !o && t)
         },
-        ts = r(59001),
-        ta = r(86949),
-        tl = r(73932);
-      let tc = (0, ta.sj)({
+        ta = r(59001),
+        tl = r(86949),
+        tc = r(73932);
+      let tu = (0, tl.sj)({
           connection: null
         }),
-        tu = {
-          state: tc,
-          subscribeKey: (e, t) => (0, tl.VW)(tc, e, t),
-          subscribe: e => (0, ta.Ld)(tc, () => e(tc)),
+        td = {
+          state: tu,
+          subscribeKey: (e, t) => (0, tc.VW)(tu, e, t),
+          subscribe: e => (0, tl.Ld)(tu, () => e(tu)),
           setConnection(e) {
-            tc.connection = (0, ta.iH)(e)
+            tu.connection = (0, tl.iH)(e)
           }
         };
-      var td = r(67908),
-        th = r(22615);
-      let tp = {
+      var th = r(67908),
+        tp = r(22615);
+      let tf = {
         UNIVERSAL_PROVIDER_RELAY_URL: "wss://relay.walletconnect.org",
         HASH_PREFIX: "SPL Name Service",
-        ROOT_DOMAIN_ACCOUNT: new td.nh("58PwtjSDuFHuUkYjH9BYnnQKHfwo9reZhC2zMJv9JPkx"),
-        NAME_PROGRAM_ID: new td.nh("namesLPneVptA9Z5rqUDD9tMTWEJwofgaYwp8cawRkX"),
-        REVERSE_LOOKUP_CLASS: new td.nh("33m47vH6Eav6jr5Ry86XjhRft2jRBLDnDgPSHoquXi2Z"),
+        ROOT_DOMAIN_ACCOUNT: new th.nh("58PwtjSDuFHuUkYjH9BYnnQKHfwo9reZhC2zMJv9JPkx"),
+        NAME_PROGRAM_ID: new th.nh("namesLPneVptA9Z5rqUDD9tMTWEJwofgaYwp8cawRkX"),
+        REVERSE_LOOKUP_CLASS: new th.nh("33m47vH6Eav6jr5Ry86XjhRft2jRBLDnDgPSHoquXi2Z"),
         ERROR_CODE_UNRECOGNIZED_CHAIN_ID: 4902,
         ERROR_CODE_DEFAULT: 5e3,
         DEFAULT_CHAIN: {
           id: "5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
           caipNetworkId: "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp",
           name: "Solana",
-          chainNamespace: th.bq.CHAIN.SOLANA,
+          chainNamespace: tp.bq.CHAIN.SOLANA,
           nativeCurrency: {
             name: "Solana",
             decimals: 9,
@@ -37383,7 +37398,7 @@ ${e.length}`,
           },
           rpcUrls: {
             default: {
-              http: [`${th.bq.BLOCKCHAIN_API_RPC_URL}/v1`]
+              http: [`${tp.bq.BLOCKCHAIN_API_RPC_URL}/v1`]
             }
           }
         },
@@ -37397,18 +37412,18 @@ ${e.length}`,
         LAMPORTS_PER_SOL: 1e9
       };
       r(11846), r(90966);
-      var tf = r(39578),
-        tg = r(23067);
+      var tg = r(39578),
+        tm = r(23067);
       r(43482), r(6964);
-      var tm = r(40720),
-        tw = r(23017);
+      var tw = r(40720),
+        tb = r(23017);
       r(69406);
-      var tb = r(79284);
+      var ty = r(79284);
 
-      function ty(e) {
+      function tv(e) {
         return "version" in e
       }
-      class tv {
+      class tx {
         constructor() {
           this.listeners = {
             accountsChanged: [],
@@ -37431,13 +37446,13 @@ ${e.length}`,
           this.listeners[e].forEach(e => e(t))
         }
       }
-      class tx extends tv {
+      class tC extends tx {
         constructor(e) {
-          super(), this.id = th.bq.CONNECTOR_ID.AUTH, this.name = th.bq.CONNECTOR_NAMES.AUTH, this.type = "AUTH", this.chain = th.bq.CHAIN.SOLANA, this.provider = e.w3mFrameProvider, this.requestedChains = e.chains, this.getActiveChain = e.getActiveChain
+          super(), this.id = tp.bq.CONNECTOR_ID.AUTH, this.name = tp.bq.CONNECTOR_NAMES.AUTH, this.type = "AUTH", this.chain = tp.bq.CHAIN.SOLANA, this.provider = e.w3mFrameProvider, this.requestedChains = e.chains, this.getActiveChain = e.getActiveChain
         }
         get publicKey() {
           let e = this.provider.user?.address;
-          return e ? new td.nh(e) : void 0
+          return e ? new th.nh(e) : void 0
         }
         get chains() {
           let e = this.provider.getAvailableChainIds();
@@ -37460,11 +37475,11 @@ ${e.length}`,
           let t = await this.provider.request({
             method: "solana_signMessage",
             params: {
-              message: tf.Z.encode(e),
+              message: tg.Z.encode(e),
               pubkey: this.publicKey.toBase58()
             }
           });
-          return tf.Z.decode(t.signature)
+          return tg.Z.decode(t.signature)
         }
         async signTransaction(e) {
           let t = await this.provider.request({
@@ -37473,8 +37488,8 @@ ${e.length}`,
                 transaction: this.serializeTransaction(e)
               }
             }),
-            r = tf.Z.decode(t.transaction);
-          return ty(e) ? td.GS.deserialize(r) : td.YW.from(r)
+            r = tg.Z.decode(t.transaction);
+          return tv(e) ? th.GS.deserialize(r) : th.YW.from(r)
         }
         async signAndSendTransaction(e, t) {
           let r = this.serializeTransaction(e);
@@ -37499,8 +37514,8 @@ ${e.length}`,
           })).transactions.map((t, r) => {
             let i = e[r];
             if (!i) throw Error("Invalid solana_signAllTransactions response");
-            let n = tf.Z.decode(t);
-            return ty(i) ? td.GS.deserialize(n) : td.YW.from(n)
+            let n = tg.Z.decode(t);
+            return tv(i) ? th.GS.deserialize(n) : th.YW.from(n)
           })
         }
         async request(e) {
@@ -37517,18 +37532,18 @@ ${e.length}`,
           }]) : Promise.resolve([])
         }
         serializeTransaction(e) {
-          return tf.Z.encode(e.serialize({
+          return tg.Z.encode(e.serialize({
             verifySignatures: !1
           }))
         }
       }
-      var tC = r(93065);
-      class tk extends tv {
+      var tk = r(93065);
+      class tE extends tx {
         constructor(e) {
-          super(), this.name = "Coinbase Wallet", this.id = tw.CK.ConnectorExplorerIds[th.bq.CONNECTOR_ID.COINBASE_SDK] || this.name, this.explorerId = tw.CK.ConnectorExplorerIds[th.bq.CONNECTOR_ID.COINBASE_SDK], this.type = "ANNOUNCED", this.imageUrl = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAyNCIgaGVpZ2h0PSIxMDI0IiB2aWV3Qm94PSIwIDAgMTAyNCAxMDI0IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8Y2lyY2xlIGN4PSI1MTIiIGN5PSI1MTIiIHI9IjUxMiIgZmlsbD0iIzAwNTJGRiIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTE1MiA1MTJDMTUyIDcxMC44MjMgMzEzLjE3NyA4NzIgNTEyIDg3MkM3MTAuODIzIDg3MiA4NzIgNzEwLjgyMyA4NzIgNTEyQzg3MiAzMTMuMTc3IDcxMC44MjMgMTUyIDUxMiAxNTJDMzEzLjE3NyAxNTIgMTUyIDMxMy4xNzcgMTUyIDUxMlpNNDIwIDM5NkM0MDYuNzQ1IDM5NiAzOTYgNDA2Ljc0NSAzOTYgNDIwVjYwNEMzOTYgNjE3LjI1NSA0MDYuNzQ1IDYyOCA0MjAgNjI4SDYwNEM2MTcuMjU1IDYyOCA2MjggNjE3LjI1NSA2MjggNjA0VjQyMEM2MjggNDA2Ljc0NSA2MTcuMjU1IDM5NiA2MDQgMzk2SDQyMFoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=", this.chain = th.bq.CHAIN.SOLANA, this.provider = this, this.coinbase = e.provider, this.requestedChains = e.chains
+          super(), this.name = "Coinbase Wallet", this.id = tb.CK.ConnectorExplorerIds[tp.bq.CONNECTOR_ID.COINBASE_SDK] || this.name, this.explorerId = tb.CK.ConnectorExplorerIds[tp.bq.CONNECTOR_ID.COINBASE_SDK], this.type = "ANNOUNCED", this.imageUrl = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAyNCIgaGVpZ2h0PSIxMDI0IiB2aWV3Qm94PSIwIDAgMTAyNCAxMDI0IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8Y2lyY2xlIGN4PSI1MTIiIGN5PSI1MTIiIHI9IjUxMiIgZmlsbD0iIzAwNTJGRiIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTE1MiA1MTJDMTUyIDcxMC44MjMgMzEzLjE3NyA4NzIgNTEyIDg3MkM3MTAuODIzIDg3MiA4NzIgNzEwLjgyMyA4NzIgNTEyQzg3MiAzMTMuMTc3IDcxMC44MjMgMTUyIDUxMiAxNTJDMzEzLjE3NyAxNTIgMTUyIDMxMy4xNzcgMTUyIDUxMlpNNDIwIDM5NkM0MDYuNzQ1IDM5NiAzOTYgNDA2Ljc0NSAzOTYgNDIwVjYwNEMzOTYgNjE3LjI1NSA0MDYuNzQ1IDYyOCA0MjAgNjI4SDYwNEM2MTcuMjU1IDYyOCA2MjggNjE3LjI1NSA2MjggNjA0VjQyMEM2MjggNDA2Ljc0NSA2MTcuMjU1IDM5NiA2MDQgMzk2SDQyMFoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=", this.chain = tp.bq.CHAIN.SOLANA, this.provider = this, this.coinbase = e.provider, this.requestedChains = e.chains
         }
         get chains() {
-          return this.requestedChains.filter(e => e.id === tC.Zjg.id)
+          return this.requestedChains.filter(e => e.id === tk.Zjg.id)
         }
         get publicKey() {
           return this.coinbase.publicKey
@@ -37578,19 +37593,19 @@ ${e.length}`,
           return t
         }
       }
-      var tE = r(72731);
-      class tS extends Error {
+      var tS = r(72731);
+      class t_ extends Error {
         constructor(e) {
           super(`The wallet does not support the "${e}" feature`)
         }
       }
-      class t_ extends Error {
+      class tA extends Error {
         constructor(e) {
           super(`The method "${e}" is not supported by the wallet`)
         }
       }
-      var tA = r(48764).Buffer;
-      class tI extends tE.z {
+      var tI = r(48764).Buffer;
+      class tT extends tS.z {
         constructor({
           provider: e,
           chains: t,
@@ -37600,7 +37615,7 @@ ${e.length}`,
             caipNetworks: t,
             namespace: "solana",
             provider: e
-          }), this.eventEmitter = new tv, this.emit = this.eventEmitter.emit.bind(this.eventEmitter), this.on = this.eventEmitter.on.bind(this.eventEmitter), this.removeListener = this.eventEmitter.removeListener.bind(this.eventEmitter), this.getActiveChain = r
+          }), this.eventEmitter = new tx, this.emit = this.eventEmitter.emit.bind(this.eventEmitter), this.on = this.eventEmitter.on.bind(this.eventEmitter), this.removeListener = this.eventEmitter.removeListener.bind(this.eventEmitter), this.getActiveChain = r
         }
         get session() {
           return this.provider.session
@@ -37608,17 +37623,17 @@ ${e.length}`,
         get chains() {
           return this.sessionChains.map(e => {
             let t = e;
-            return t === tp.CHAIN_IDS.Deprecated_Mainnet ? t = tp.CHAIN_IDS.Mainnet : t === tp.CHAIN_IDS.Deprecated_Devnet && (t = tp.CHAIN_IDS.Devnet), this.caipNetworks.find(e => e.caipNetworkId === t)
+            return t === tf.CHAIN_IDS.Deprecated_Mainnet ? t = tf.CHAIN_IDS.Mainnet : t === tf.CHAIN_IDS.Deprecated_Devnet && (t = tf.CHAIN_IDS.Devnet), this.caipNetworks.find(e => e.caipNetworkId === t)
           }).filter(Boolean)
         }
         get publicKey() {
           let e = this.getAccount(!1);
-          if (e) return new td.nh(e.publicKey)
+          if (e) return new th.nh(e.publicKey)
         }
         async connect() {
           await super.connectWalletConnect();
           let e = this.getAccount(!0);
-          return this.emit("connect", new td.nh(e.publicKey)), e.address
+          return this.emit("connect", new th.nh(e.publicKey)), e.address
         }
         async disconnect() {
           await super.disconnect(), this.emit("disconnect", void 0)
@@ -37626,10 +37641,10 @@ ${e.length}`,
         async signMessage(e) {
           this.checkIfMethodIsSupported("solana_signMessage");
           let t = await this.internalRequest("solana_signMessage", {
-            message: tf.Z.encode(e),
+            message: tg.Z.encode(e),
             pubkey: this.getAccount(!0).address
           });
-          return tf.Z.decode(t.signature)
+          return tg.Z.decode(t.signature)
         }
         async signTransaction(e) {
           this.checkIfMethodIsSupported("solana_signTransaction");
@@ -37639,9 +37654,9 @@ ${e.length}`,
               pubkey: this.getAccount(!0).address,
               ...this.getRawRPCParams(e)
             });
-          if ("signature" in r) return e.addSignature(new td.nh(this.getAccount(!0).publicKey), tA.from(tf.Z.decode(r.signature))), e;
-          let i = tA.from(r.transaction, "base64");
-          return ty(e) ? td.GS.deserialize(i) : td.YW.from(i)
+          if ("signature" in r) return e.addSignature(new th.nh(this.getAccount(!0).publicKey), tI.from(tg.Z.decode(r.signature))), e;
+          let i = tI.from(r.transaction, "base64");
+          return tv(e) ? th.GS.deserialize(i) : th.YW.from(i)
         }
         async signAndSendTransaction(e, t) {
           this.checkIfMethodIsSupported("solana_signAndSendTransaction");
@@ -37665,11 +37680,11 @@ ${e.length}`,
             })).transactions.map((t, r) => {
               let i = e[r];
               if (!i) throw Error("Invalid transactions response");
-              let n = tA.from(t, "base64");
-              return ty(i) ? td.GS.deserialize(n) : (this.emit("pendingTransaction", void 0), td.YW.from(n))
+              let n = tI.from(t, "base64");
+              return tv(i) ? th.GS.deserialize(n) : (this.emit("pendingTransaction", void 0), th.YW.from(n))
             })
           } catch (t) {
-            if (t instanceof t_) {
+            if (t instanceof tA) {
               let t = [];
               for (let r of e) t.push(await this.signTransaction(r));
               return t
@@ -37683,7 +37698,7 @@ ${e.length}`,
         async getAccounts() {
           return Promise.resolve((this.session?.namespaces.solana?.accounts || []).map(e => ({
             namespace: this.chain,
-            address: th.uB.parseCaipAddress(e).address,
+            address: tp.uB.parseCaipAddress(e).address,
             type: "eoa"
           })))
         }
@@ -37691,11 +37706,11 @@ ${e.length}`,
           let r = this.chains.find(e => this.getActiveChain()?.id === e.id),
             i = r?.caipNetworkId;
           switch (i) {
-            case tp.CHAIN_IDS.Mainnet:
-              this.sessionChains.includes(tp.CHAIN_IDS.Mainnet) || (i = tp.CHAIN_IDS.Deprecated_Mainnet);
+            case tf.CHAIN_IDS.Mainnet:
+              this.sessionChains.includes(tf.CHAIN_IDS.Mainnet) || (i = tf.CHAIN_IDS.Deprecated_Mainnet);
               break;
-            case tp.CHAIN_IDS.Devnet:
-              this.sessionChains.includes(tp.CHAIN_IDS.Devnet) || (i = tp.CHAIN_IDS.Deprecated_Devnet)
+            case tf.CHAIN_IDS.Devnet:
+              this.sessionChains.includes(tf.CHAIN_IDS.Devnet) || (i = tf.CHAIN_IDS.Deprecated_Devnet)
           }
           return this.provider?.request({
             method: e,
@@ -37703,10 +37718,10 @@ ${e.length}`,
           }, i)
         }
         get sessionChains() {
-          return tm.s.getChainsFromNamespaces(this.session?.namespaces)
+          return tw.s.getChainsFromNamespaces(this.session?.namespaces)
         }
         serializeTransaction(e) {
-          return tA.from(e.serialize({
+          return tI.from(e.serialize({
             verifySignatures: !1
           })).toString("base64")
         }
@@ -37723,14 +37738,14 @@ ${e.length}`,
           }
           return {
             address: r,
-            publicKey: tf.Z.decode(r)
+            publicKey: tg.Z.decode(r)
           }
         }
         getRawRPCParams(e) {
-          return ty(e) ? {} : {
+          return tv(e) ? {} : {
             feePayer: e.feePayer?.toBase58() ?? "",
             instructions: e.instructions.map(e => ({
-              data: tf.Z.encode(e.data),
+              data: tg.Z.encode(e.data),
               keys: e.keys.map(e => ({
                 isWritable: e.isWritable,
                 isSigner: e.isSigner,
@@ -37742,90 +37757,90 @@ ${e.length}`,
           }
         }
         checkIfMethodIsSupported(e) {
-          if (!this.session?.namespaces.solana?.methods.includes(e)) throw new t_(e)
+          if (!this.session?.namespaces.solana?.methods.includes(e)) throw new tA(e)
         }
       }
-      async function tT({
+      async function tO({
         provider: e,
         to: t,
         value: r,
         connection: i
       }) {
         if (!e.publicKey) throw Error("No public key found");
-        let n = new td.nh(t),
-          o = Math.floor(r * td.j5),
+        let n = new th.nh(t),
+          o = Math.floor(r * th.j5),
           {
             blockhash: s,
             lastValidBlockHeight: a
           } = await i.getLatestBlockhash(),
-          l = [td.Lb.setComputeUnitPrice({
+          l = [th.Lb.setComputeUnitPrice({
             microLamports: 2e7
-          }), td.Lb.setComputeUnitLimit({
+          }), th.Lb.setComputeUnitLimit({
             units: 500
-          }), td.yc.transfer({
+          }), th.yc.transfer({
             fromPubkey: e.publicKey,
             toPubkey: n,
             lamports: o
           })];
-        return new td.YW({
+        return new th.YW({
           feePayer: e.publicKey,
           blockhash: s,
           lastValidBlockHeight: a
         }).add(...l)
       }
-      var tO = r(83149),
-        tN = r(38112);
-      let tR = "standard:connect",
-        tP = "standard:events";
+      var tN = r(83149),
+        tR = r(38112);
+      let tP = "standard:connect",
+        tM = "standard:events";
 
-      function tM(e) {
-        return tR in e.features && tP in e.features && (tO.G in e.features || tN.R in e.features)
+      function tD(e) {
+        return tP in e.features && tM in e.features && (tN.G in e.features || tR.R in e.features)
       }
-      var tD = function(e, t, r, i) {
+      var tL = function(e, t, r, i) {
           if ("a" === r && !i) throw TypeError("Private accessor was defined without a getter");
           if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw TypeError("Cannot read private member from an object whose class did not declare it");
           return "m" === r ? i : "a" === r ? i.call(e) : i ? i.value : t.get(e)
         },
-        tL = function(e, t, r, i, n) {
+        tj = function(e, t, r, i, n) {
           if ("m" === i) throw TypeError("Private method is not writable");
           if ("a" === i && !n) throw TypeError("Private accessor was defined without a setter");
           if ("function" == typeof t ? e !== t || !n : !t.has(e)) throw TypeError("Cannot write private member to an object whose class did not declare it");
           return "a" === i ? n.call(e, r) : n ? n.value = r : t.set(e, r), r
         };
-      let tj = new Set,
-        t$ = {};
+      let t$ = new Set,
+        tB = {};
 
-      function tB(...e) {
-        return (e = e.filter(e => !tj.has(e))).length ? (e.forEach(e => {
-          i = void 0, tj.add(e)
-        }), t$.register?.forEach(t => tW(() => t(...e))), function() {
+      function tU(...e) {
+        return (e = e.filter(e => !t$.has(e))).length ? (e.forEach(e => {
+          i = void 0, t$.add(e)
+        }), tB.register?.forEach(t => tq(() => t(...e))), function() {
           e.forEach(e => {
-            i = void 0, tj.delete(e)
-          }), t$.unregister?.forEach(t => tW(() => t(...e)))
+            i = void 0, t$.delete(e)
+          }), tB.unregister?.forEach(t => tq(() => t(...e)))
         }) : () => {}
       }
 
-      function tU() {
-        return i || (i = [...tj]), i
+      function tz() {
+        return i || (i = [...t$]), i
       }
 
-      function tz(e, t) {
-        return t$[e]?.push(t) || (t$[e] = [t]),
+      function tW(e, t) {
+        return tB[e]?.push(t) || (tB[e] = [t]),
           function() {
-            t$[e] = t$[e]?.filter(e => t !== e)
+            tB[e] = tB[e]?.filter(e => t !== e)
           }
       }
 
-      function tW(e) {
+      function tq(e) {
         try {
           e()
         } catch (e) {
           console.error(e)
         }
       }
-      class tq extends Event {
+      class tF extends Event {
         get detail() {
-          return tD(this, s, "f")
+          return tL(this, s, "f")
         }
         get type() {
           return "wallet-standard:app-ready"
@@ -37835,7 +37850,7 @@ ${e.length}`,
             bubbles: !1,
             cancelable: !1,
             composed: !1
-          }), s.set(this, void 0), tL(this, s, e, "f")
+          }), s.set(this, void 0), tj(this, s, e, "f")
         }
         preventDefault() {
           throw Error("preventDefault cannot be called")
@@ -37848,89 +37863,89 @@ ${e.length}`,
         }
       }
       s = new WeakMap;
-      class tF extends Error {
+      class tH extends Error {
         constructor(e, t) {
           super(e), this.error = t
         }
       }
-      class tH extends tF {
+      class tV extends tH {
         constructor() {
           super(...arguments), this.name = "WalletNotReadyError"
         }
       }
-      class tV extends tF {
+      class tK extends tH {
         constructor() {
           super(...arguments), this.name = "WalletLoadError"
         }
       }
-      class tK extends tF {
+      class tY extends tH {
         constructor() {
           super(...arguments), this.name = "WalletConfigError"
         }
       }
-      class tY extends tF {
+      class tZ extends tH {
         constructor() {
           super(...arguments), this.name = "WalletConnectionError"
         }
       }
-      class tZ extends tF {
+      class tG extends tH {
         constructor() {
           super(...arguments), this.name = "WalletDisconnectedError"
         }
       }
-      class tG extends tF {
+      class tJ extends tH {
         constructor() {
           super(...arguments), this.name = "WalletDisconnectionError"
         }
       }
-      class tJ extends tF {
+      class tX extends tH {
         constructor() {
           super(...arguments), this.name = "WalletAccountError"
         }
       }
-      class tX extends tF {
+      class tQ extends tH {
         constructor() {
           super(...arguments), this.name = "WalletPublicKeyError"
         }
       }
-      class tQ extends tF {
+      class t0 extends tH {
         constructor() {
           super(...arguments), this.name = "WalletNotConnectedError"
         }
       }
-      class t0 extends tF {
+      class t1 extends tH {
         constructor() {
           super(...arguments), this.name = "WalletSendTransactionError"
         }
       }
-      class t1 extends tF {
+      class t2 extends tH {
         constructor() {
           super(...arguments), this.name = "WalletSignTransactionError"
         }
       }
-      class t2 extends tF {
+      class t3 extends tH {
         constructor() {
           super(...arguments), this.name = "WalletSignMessageError"
         }
       }
-      var t3 = r(61999);
-      let t5 = "standard:disconnect",
-        t4 = {
-          "solana:mainnet": tC.Zjg,
-          "solana:testnet": tC.Q6N,
-          "solana:devnet": tC.ol5
+      var t5 = r(61999);
+      let t4 = "standard:disconnect",
+        t6 = {
+          "solana:mainnet": tk.Zjg,
+          "solana:testnet": tk.Q6N,
+          "solana:devnet": tk.ol5
         };
-      class t6 extends tv {
+      class t8 extends tx {
         constructor({
           wallet: e,
           getActiveChain: t,
           requestedChains: r
         }) {
-          super(), this.chain = th.bq.CHAIN.SOLANA, this.provider = this, this.wallet = e, this.getActiveChain = t, this.requestedChains = r, this.bindEvents()
+          super(), this.chain = tp.bq.CHAIN.SOLANA, this.provider = this, this.wallet = e, this.getActiveChain = t, this.requestedChains = r, this.bindEvents()
         }
         get id() {
           let e = this.name;
-          return tw.CK.ConnectorExplorerIds[e] || e
+          return tb.CK.ConnectorExplorerIds[e] || e
         }
         get name() {
           return "Trust" === this.wallet.name ? "Trust Wallet" : this.wallet.name
@@ -37939,41 +37954,41 @@ ${e.length}`,
           return "ANNOUNCED"
         }
         get explorerId() {
-          return tw.CK.ConnectorExplorerIds[this.name]
+          return tb.CK.ConnectorExplorerIds[this.name]
         }
         get publicKey() {
           let e = this.getAccount(!1);
-          if (e) return new td.nh(e.publicKey)
+          if (e) return new th.nh(e.publicKey)
         }
         get imageUrl() {
           return this.wallet.icon
         }
         get chains() {
-          return this.wallet.chains.map(e => this.requestedChains.find(t => t.id === e || t.id === t4[e]?.id)).filter(Boolean)
+          return this.wallet.chains.map(e => this.requestedChains.find(t => t.id === e || t.id === t6[e]?.id)).filter(Boolean)
         }
         async connect() {
-          let e = this.getWalletFeature(tR);
+          let e = this.getWalletFeature(tP);
           await e.connect();
           let t = this.getAccount(!0),
-            r = new td.nh(t.publicKey);
+            r = new th.nh(t.publicKey);
           return this.emit("connect", r), t.address
         }
         async disconnect() {
-          let e = this.getWalletFeature(t5);
+          let e = this.getWalletFeature(t4);
           await e.disconnect(), this.emit("disconnect", void 0)
         }
         async signMessage(e) {
-          let t = this.getWalletFeature(t3.g),
+          let t = this.getWalletFeature(t5.g),
             r = this.getAccount(!0),
             [i] = await t.signMessage({
               message: e,
               account: r
             });
-          if (!i) throw new t2("Empty result");
+          if (!i) throw new t3("Empty result");
           return i.signature
         }
         async signTransaction(e) {
-          let t = this.getWalletFeature(tN.R),
+          let t = this.getWalletFeature(tR.R),
             r = this.getAccount(!0),
             i = this.serializeTransaction(e),
             [n] = await t.signTransaction({
@@ -37981,11 +37996,11 @@ ${e.length}`,
               transaction: i,
               chain: this.getActiveChainName()
             });
-          if (!n) throw new t1("Empty result");
-          return (this.emit("pendingTransaction", void 0), ty(e)) ? td.GS.deserialize(n.signedTransaction) : td.YW.from(n.signedTransaction)
+          if (!n) throw new t2("Empty result");
+          return (this.emit("pendingTransaction", void 0), tv(e)) ? th.GS.deserialize(n.signedTransaction) : th.YW.from(n.signedTransaction)
         }
         async signAndSendTransaction(e, t) {
-          let r = this.getWalletFeature(tO.G),
+          let r = this.getWalletFeature(tN.G),
             i = this.getAccount(!0),
             [n] = await r.signAndSendTransaction({
               account: i,
@@ -38014,15 +38029,15 @@ ${e.length}`,
               },
               chain: this.getActiveChainName()
             });
-          if (!n) throw new t0("Empty result");
-          return this.emit("pendingTransaction", void 0), tf.Z.encode(n.signature)
+          if (!n) throw new t1("Empty result");
+          return this.emit("pendingTransaction", void 0), tg.Z.encode(n.signature)
         }
         async sendTransaction(e, t, r) {
           let i = await this.signTransaction(e);
           return await t.sendRawTransaction(i.serialize(), r)
         }
         async signAllTransactions(e) {
-          let t = this.getWalletFeature(tN.R),
+          let t = this.getWalletFeature(tR.R),
             r = this.getAccount(!0),
             i = this.getActiveChainName();
           return (await t.signTransaction(...e.map(e => ({
@@ -38033,12 +38048,12 @@ ${e.length}`,
             signedTransaction: t
           }, r) => {
             let i = e[r];
-            if (!i) throw new t1("Invalid transaction signature response");
-            return (this.emit("pendingTransaction", void 0), ty(i)) ? td.GS.deserialize(t) : td.YW.from(t)
+            if (!i) throw new t2("Invalid transaction signature response");
+            return (this.emit("pendingTransaction", void 0), tv(i)) ? th.GS.deserialize(t) : th.YW.from(t)
           })
         }
         async request(e) {
-          return Promise.reject(new tS("request"))
+          return Promise.reject(new t_("request"))
         }
         async getAccounts() {
           return Promise.resolve(this.wallet.accounts.map(e => ({
@@ -38054,38 +38069,38 @@ ${e.length}`,
         }
         getAccount(e) {
           let t = this.wallet.accounts[0];
-          if (e && !t) throw new tJ;
+          if (e && !t) throw new tX;
           return t
         }
         getWalletFeature(e) {
-          if (!(e in this.wallet.features)) throw new tS(e);
+          if (!(e in this.wallet.features)) throw new t_(e);
           return this.wallet.features[e]
         }
         getActiveChainName() {
-          let e = Object.entries(t4).find(([, e]) => e.id === this.getActiveChain()?.id);
+          let e = Object.entries(t6).find(([, e]) => e.id === this.getActiveChain()?.id);
           if (!e) throw Error("Invalid chain id");
           return e[0]
         }
         bindEvents() {
-          this.getWalletFeature(tP).on("change", e => {
+          this.getWalletFeature(tM).on("change", e => {
             if (e.accounts) {
               let t = e.accounts[0];
-              t && this.emit("accountsChanged", new td.nh(t.publicKey))
+              t && this.emit("accountsChanged", new th.nh(t.publicKey))
             }
           })
         }
       }
       let {
-        get: t8,
-        on: t9
+        get: t9,
+        on: t7
       } = function() {
         if (n || (n = Object.freeze({
-            register: tB,
-            get: tU,
-            on: tz
+            register: tU,
+            get: tz,
+            on: tW
           }), "undefined" == typeof window)) return n;
         let e = Object.freeze({
-          register: tB
+          register: tU
         });
         try {
           window.addEventListener("wallet-standard:register-wallet", ({
@@ -38095,46 +38110,46 @@ ${e.length}`,
           console.error("wallet-standard:register-wallet event listener could not be added\n", e)
         }
         try {
-          window.dispatchEvent(new tq(e))
+          window.dispatchEvent(new tF(e))
         } catch (e) {
           console.error("wallet-standard:app-ready event could not be dispatched\n", e)
         }
         return n
-      }(), t7 = [];
+      }(), re = [];
 
-      function re(e, t, r) {
-        return e.filter(tM).map(e => new t6({
+      function rt(e, t, r) {
+        return e.filter(tD).map(e => new t8({
           wallet: e,
           requestedChains: t,
           getActiveChain: r
         }))
       }
-      class rt extends tb.q {
+      class rr extends ty.q {
         constructor(e = {}) {
-          super({}), this.adapterType = "solana", this.providerHandlers = null, this.namespace = th.bq.CHAIN.SOLANA, this.connectionSettings = e.connectionSettings || "confirmed", this.wallets = e.wallets
+          super({}), this.adapterType = "solana", this.providerHandlers = null, this.namespace = tp.bq.CHAIN.SOLANA, this.connectionSettings = e.connectionSettings || "confirmed", this.wallets = e.wallets
         }
         setAuthProvider(e) {
-          this.addConnector(new tx({
+          this.addConnector(new tC({
             w3mFrameProvider: e,
-            getActiveChain: () => tg.RY.state.activeCaipNetwork,
+            getActiveChain: () => tm.RY.state.activeCaipNetwork,
             chains: this.caipNetworks
           }))
         }
         syncConnectors(e, t) {
-          e.projectId || tg.AlertController.open(tw.jD.ALERT_ERRORS.PROJECT_ID_NOT_CONFIGURED, "error");
+          e.projectId || tm.AlertController.open(tb.jD.ALERT_ERRORS.PROJECT_ID_NOT_CONFIGURED, "error");
           let r = () => t.getCaipNetwork(this.namespace);
-          tg.j1.isClient() && "coinbaseSolana" in window && this.addConnector(new tk({
+          tm.j1.isClient() && "coinbaseSolana" in window && this.addConnector(new tE({
               provider: window.coinbaseSolana,
               chains: this.caipNetworks,
               getActiveChain: r
             })),
             function(e, t, r) {
-              let i = [t9("register", (...i) => {
-                r(...t7 = [...t7, ...re(i, e, t)])
-              }), t9("unregister", (...e) => {
-                r(...t7 = t7.filter(t => e.some(e => e.name === t.wallet.name)))
+              let i = [t7("register", (...i) => {
+                r(...re = [...re, ...rt(i, e, t)])
+              }), t7("unregister", (...e) => {
+                r(...re = re.filter(t => e.some(e => e.name === t.wallet.name)))
               })];
-              r(...t7 = re(t8(), e, t)), () => i.forEach(e => e())
+              r(...re = rt(t9(), e, t)), () => i.forEach(e => e())
             }(this.caipNetworks, r, this.addConnector.bind(this))
         }
         async getEnsAddress(e) {
@@ -38169,13 +38184,13 @@ ${e.length}`,
           if (!t) throw Error("connectionControllerClient:signMessage - provider is undefined");
           let r = await t.signMessage(new TextEncoder().encode(e.message));
           return {
-            signature: tf.Z.encode(r)
+            signature: tg.Z.encode(r)
           }
         }
         async estimateGas(e) {
-          let t = tu.state.connection;
+          let t = td.state.connection;
           if (!t || !e.provider) throw Error("Connection is not set");
-          let r = await tT({
+          let r = await tO({
             provider: e.provider,
             connection: t,
             to: "11111111111111111111111111111111",
@@ -38186,10 +38201,10 @@ ${e.length}`,
           }
         }
         async sendTransaction(e) {
-          let t = tu.state.connection;
+          let t = td.state.connection;
           if (!t || !e.address || !e.provider) throw Error("Connection is not set");
           let r = e.provider,
-            i = await tT({
+            i = await tO({
               provider: r,
               connection: t,
               to: e.to,
@@ -38219,7 +38234,7 @@ ${e.length}`,
           let i = await t.connect({
             chainId: e.chainId
           });
-          return this.listenProviderEvents(t), tu.setConnection(new td.ew(r, this.connectionSettings)), {
+          return this.listenProviderEvents(t), td.setConnection(new th.ew(r, this.connectionSettings)), {
             id: t.id,
             address: i,
             chainId: e.chainId,
@@ -38228,8 +38243,8 @@ ${e.length}`,
           }
         }
         async getBalance(e) {
-          let t = new td.ew(e.caipNetwork?.rpcUrls?.default?.http?.[0], this.connectionSettings),
-            r = (await t.getBalance(new td.nh(e.address)) / tp.LAMPORTS_PER_SOL).toString();
+          let t = new th.ew(e.caipNetwork?.rpcUrls?.default?.http?.[0], this.connectionSettings),
+            r = (await t.getBalance(new th.nh(e.address)) / tf.LAMPORTS_PER_SOL).toString();
           if (!e.caipNetwork) throw Error("caipNetwork is required");
           return {
             balance: r,
@@ -38241,7 +38256,7 @@ ${e.length}`,
           let {
             caipNetwork: t
           } = e;
-          t?.rpcUrls?.default?.http?.[0] && tu.setConnection(new td.ew(t.rpcUrls.default.http[0], this.connectionSettings))
+          t?.rpcUrls?.default?.http?.[0] && td.setConnection(new th.ew(t.rpcUrls.default.http[0], this.connectionSettings))
         }
         listenProviderEvents(e) {
           let t = () => {
@@ -38264,17 +38279,17 @@ ${e.length}`,
           this.providerHandlers && (e.removeListener("disconnect", this.providerHandlers.disconnect), e.removeListener("accountsChanged", this.providerHandlers.accountsChanged), e.removeListener("connect", this.providerHandlers.accountsChanged), this.providerHandlers = null)
         }
         setUniversalProvider(e) {
-          this.addConnector(new tI({
+          this.addConnector(new tT({
             provider: e,
             chains: this.caipNetworks,
-            getActiveChain: () => tg.RY.state.activeCaipNetwork
+            getActiveChain: () => tm.RY.state.activeCaipNetwork
           }))
         }
         async connectWalletConnect(e) {
           let t = await super.connectWalletConnect(e),
             r = this.caipNetworks?.find(t => t.id === e)?.rpcUrls.default.http[0],
-            i = new td.ew(r, this.connectionSettings);
-          return tu.setConnection(i), t
+            i = new th.ew(r, this.connectionSettings);
+          return td.setConnection(i), t
         }
         async disconnect(e) {
           if (!e.provider || !e.providerType) throw Error("Provider or providerType not provided");
@@ -38293,16 +38308,16 @@ ${e.length}`,
           })
         }
         getWalletConnectProvider(e) {
-          return new tI({
+          return new tT({
             provider: e.provider,
             chains: e.caipNetworks,
-            getActiveChain: () => tg.RY.state.activeCaipNetwork
+            getActiveChain: () => tm.RY.state.activeCaipNetwork
           })
         }
       }
-      var rr = r(60200);
+      var ri = r(60200);
       (o = a || (a = {})).Installed = "Installed", o.NotDetected = "NotDetected", o.Loadable = "Loadable", o.Unsupported = "Unsupported";
-      class ri extends rr {
+      class rn extends ri {
         get connected() {
           return !!this.publicKey
         }
@@ -38311,7 +38326,7 @@ ${e.length}`,
         }
         async prepareTransaction(e, t, r = {}) {
           let i = this.publicKey;
-          if (!i) throw new tQ;
+          if (!i) throw new t0;
           return e.feePayer = e.feePayer || i, e.recentBlockhash = e.recentBlockhash || (await t.getLatestBlockhash({
             commitment: r.preflightCommitment,
             minContextSlot: r.minContextSlot
@@ -38319,7 +38334,7 @@ ${e.length}`,
         }
       }
 
-      function rn(e) {
+      function ro(e) {
         if ("undefined" == typeof window || "undefined" == typeof document) return;
         let t = [];
 
@@ -38335,26 +38350,26 @@ ${e.length}`,
         }), t.push(() => window.removeEventListener("load", r))), r()
       }
 
-      function ro() {
+      function rs() {
         if (!navigator) return !1;
         let e = navigator.userAgent.toLowerCase(),
           t = e.includes("iphone") || e.includes("ipad"),
           r = e.includes("safari");
         return t && r
       }
-      class rs extends ri {
+      class ra extends rn {
         async sendTransaction(e, t, r = {}) {
           let i = !0;
           try {
-            if (ty(e)) {
-              if (!this.supportedTransactionVersions) throw new t0("Sending versioned transactions isn't supported by this wallet");
-              if (!this.supportedTransactionVersions.has(e.version)) throw new t0(`Sending transaction version ${e.version} isn't supported by this wallet`);
+            if (tv(e)) {
+              if (!this.supportedTransactionVersions) throw new t1("Sending versioned transactions isn't supported by this wallet");
+              if (!this.supportedTransactionVersions.has(e.version)) throw new t1(`Sending transaction version ${e.version} isn't supported by this wallet`);
               try {
                 let i = (e = await this.signTransaction(e)).serialize();
                 return await t.sendRawTransaction(i, r)
               } catch (e) {
-                if (e instanceof t1) throw i = !1, e;
-                throw new t0(e?.message, e)
+                if (e instanceof t2) throw i = !1, e;
+                throw new t1(e?.message, e)
               }
             } else try {
               let {
@@ -38365,8 +38380,8 @@ ${e.length}`,
               let o = (e = await this.signTransaction(e)).serialize();
               return await t.sendRawTransaction(o, n)
             } catch (e) {
-              if (e instanceof t1) throw i = !1, e;
-              throw new t0(e?.message, e)
+              if (e instanceof t2) throw i = !1, e;
+              throw new t1(e?.message, e)
             }
           } catch (e) {
             throw i && this.emit("error", e), e
@@ -38374,32 +38389,32 @@ ${e.length}`,
         }
         async signAllTransactions(e) {
           for (let t of e)
-            if (ty(t)) {
-              if (!this.supportedTransactionVersions) throw new t1("Signing versioned transactions isn't supported by this wallet");
-              if (!this.supportedTransactionVersions.has(t.version)) throw new t1(`Signing transaction version ${t.version} isn't supported by this wallet`)
+            if (tv(t)) {
+              if (!this.supportedTransactionVersions) throw new t2("Signing versioned transactions isn't supported by this wallet");
+              if (!this.supportedTransactionVersions.has(t.version)) throw new t2(`Signing transaction version ${t.version} isn't supported by this wallet`)
             } let t = [];
           for (let r of e) t.push(await this.signTransaction(r));
           return t
         }
       }
-      class ra extends rs {}
-      class rl extends ra {
+      class rl extends ra {}
+      class rc extends rl {
         constructor(e = {}) {
           super(), this.name = "Phantom", this.url = "https://phantom.app", this.icon = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDgiIGhlaWdodD0iMTA4IiB2aWV3Qm94PSIwIDAgMTA4IDEwOCIgZmlsbD0ibm9uZSI+CjxyZWN0IHdpZHRoPSIxMDgiIGhlaWdodD0iMTA4IiByeD0iMjYiIGZpbGw9IiNBQjlGRjIiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00Ni41MjY3IDY5LjkyMjlDNDIuMDA1NCA3Ni44NTA5IDM0LjQyOTIgODUuNjE4MiAyNC4zNDggODUuNjE4MkMxOS41ODI0IDg1LjYxODIgMTUgODMuNjU2MyAxNSA3NS4xMzQyQzE1IDUzLjQzMDUgNDQuNjMyNiAxOS44MzI3IDcyLjEyNjggMTkuODMyN0M4Ny43NjggMTkuODMyNyA5NCAzMC42ODQ2IDk0IDQzLjAwNzlDOTQgNTguODI1OCA4My43MzU1IDc2LjkxMjIgNzMuNTMyMSA3Ni45MTIyQzcwLjI5MzkgNzYuOTEyMiA2OC43MDUzIDc1LjEzNDIgNjguNzA1MyA3Mi4zMTRDNjguNzA1MyA3MS41NzgzIDY4LjgyNzUgNzAuNzgxMiA2OS4wNzE5IDY5LjkyMjlDNjUuNTg5MyA3NS44Njk5IDU4Ljg2ODUgODEuMzg3OCA1Mi41NzU0IDgxLjM4NzhDNDcuOTkzIDgxLjM4NzggNDUuNjcxMyA3OC41MDYzIDQ1LjY3MTMgNzQuNDU5OEM0NS42NzEzIDcyLjk4ODQgNDUuOTc2OCA3MS40NTU2IDQ2LjUyNjcgNjkuOTIyOVpNODMuNjc2MSA0Mi41Nzk0QzgzLjY3NjEgNDYuMTcwNCA4MS41NTc1IDQ3Ljk2NTggNzkuMTg3NSA0Ny45NjU4Qzc2Ljc4MTYgNDcuOTY1OCA3NC42OTg5IDQ2LjE3MDQgNzQuNjk4OSA0Mi41Nzk0Qzc0LjY5ODkgMzguOTg4NSA3Ni43ODE2IDM3LjE5MzEgNzkuMTg3NSAzNy4xOTMxQzgxLjU1NzUgMzcuMTkzMSA4My42NzYxIDM4Ljk4ODUgODMuNjc2MSA0Mi41Nzk0Wk03MC4yMTAzIDQyLjU3OTVDNzAuMjEwMyA0Ni4xNzA0IDY4LjA5MTYgNDcuOTY1OCA2NS43MjE2IDQ3Ljk2NThDNjMuMzE1NyA0Ny45NjU4IDYxLjIzMyA0Ni4xNzA0IDYxLjIzMyA0Mi41Nzk1QzYxLjIzMyAzOC45ODg1IDYzLjMxNTcgMzcuMTkzMSA2NS43MjE2IDM3LjE5MzFDNjguMDkxNiAzNy4xOTMxIDcwLjIxMDMgMzguOTg4NSA3MC4yMTAzIDQyLjU3OTVaIiBmaWxsPSIjRkZGREY4Ii8+Cjwvc3ZnPg==", this.supportedTransactionVersions = new Set(["legacy", 0]), this._readyState = "undefined" == typeof window || "undefined" == typeof document ? a.Unsupported : a.NotDetected, this._disconnected = () => {
             let e = this._wallet;
-            e && (e.off("disconnect", this._disconnected), e.off("accountChanged", this._accountChanged), this._wallet = null, this._publicKey = null, this.emit("error", new tZ), this.emit("disconnect"))
+            e && (e.off("disconnect", this._disconnected), e.off("accountChanged", this._accountChanged), this._wallet = null, this._publicKey = null, this.emit("error", new tG), this.emit("disconnect"))
           }, this._accountChanged = e => {
             let t = this._publicKey;
             if (t) {
               try {
-                e = new td.nh(e.toBytes())
+                e = new th.nh(e.toBytes())
               } catch (e) {
-                this.emit("error", new tX(e?.message, e));
+                this.emit("error", new tQ(e?.message, e));
                 return
               }
               t.equals(e) || (this._publicKey = e, this.emit("connect", e))
             }
-          }, this._connecting = !1, this._wallet = null, this._publicKey = null, this._readyState !== a.Unsupported && (ro() ? (this._readyState = a.Loadable, this.emit("readyStateChange", this._readyState)) : rn(() => !!(window.phantom?.solana?.isPhantom || window.solana?.isPhantom) && (this._readyState = a.Installed, this.emit("readyStateChange", this._readyState), !0)))
+          }, this._connecting = !1, this._wallet = null, this._publicKey = null, this._readyState !== a.Unsupported && (rs() ? (this._readyState = a.Loadable, this.emit("readyStateChange", this._readyState)) : ro(() => !!(window.phantom?.solana?.isPhantom || window.solana?.isPhantom) && (this._readyState = a.Installed, this.emit("readyStateChange", this._readyState), !0)))
         }
         get publicKey() {
           return this._publicKey
@@ -38423,19 +38438,19 @@ ${e.length}`,
               window.location.href = `https://phantom.app/ul/browse/${e}?ref=${t}`;
               return
             }
-            if (this.readyState !== a.Installed) throw new tH;
+            if (this.readyState !== a.Installed) throw new tV;
             this._connecting = !0;
             let t = window.phantom?.solana || window.solana;
             if (!t.isConnected) try {
               await t.connect()
             } catch (e) {
-              throw new tY(e?.message, e)
+              throw new tZ(e?.message, e)
             }
-            if (!t.publicKey) throw new tJ;
+            if (!t.publicKey) throw new tX;
             try {
-              e = new td.nh(t.publicKey.toBytes())
+              e = new th.nh(t.publicKey.toBytes())
             } catch (e) {
-              throw new tX(e?.message, e)
+              throw new tQ(e?.message, e)
             }
             t.on("disconnect", this._disconnected), t.on("accountChanged", this._accountChanged), this._wallet = t, this._publicKey = e, this.emit("connect", e)
           } catch (e) {
@@ -38451,7 +38466,7 @@ ${e.length}`,
             try {
               await e.disconnect()
             } catch (e) {
-              this.emit("error", new tG(e?.message, e))
+              this.emit("error", new tJ(e?.message, e))
             }
           }
           this.emit("disconnect")
@@ -38459,20 +38474,20 @@ ${e.length}`,
         async sendTransaction(e, t, r = {}) {
           try {
             let i = this._wallet;
-            if (!i) throw new tQ;
+            if (!i) throw new t0;
             try {
               let {
                 signers: n,
                 ...o
               } = r;
-              ty(e) ? n?.length && e.sign(n) : (e = await this.prepareTransaction(e, t, o), n?.length && e.partialSign(...n)), o.preflightCommitment = o.preflightCommitment || t.commitment;
+              tv(e) ? n?.length && e.sign(n) : (e = await this.prepareTransaction(e, t, o), n?.length && e.partialSign(...n)), o.preflightCommitment = o.preflightCommitment || t.commitment;
               let {
                 signature: s
               } = await i.signAndSendTransaction(e, o);
               return s
             } catch (e) {
-              if (e instanceof tF) throw e;
-              throw new t0(e?.message, e)
+              if (e instanceof tH) throw e;
+              throw new t1(e?.message, e)
             }
           } catch (e) {
             throw this.emit("error", e), e
@@ -38481,11 +38496,11 @@ ${e.length}`,
         async signTransaction(e) {
           try {
             let t = this._wallet;
-            if (!t) throw new tQ;
+            if (!t) throw new t0;
             try {
               return await t.signTransaction(e) || e
             } catch (e) {
-              throw new t1(e?.message, e)
+              throw new t2(e?.message, e)
             }
           } catch (e) {
             throw this.emit("error", e), e
@@ -38494,11 +38509,11 @@ ${e.length}`,
         async signAllTransactions(e) {
           try {
             let t = this._wallet;
-            if (!t) throw new tQ;
+            if (!t) throw new t0;
             try {
               return await t.signAllTransactions(e) || e
             } catch (e) {
-              throw new t1(e?.message, e)
+              throw new t2(e?.message, e)
             }
           } catch (e) {
             throw this.emit("error", e), e
@@ -38507,34 +38522,34 @@ ${e.length}`,
         async signMessage(e) {
           try {
             let t = this._wallet;
-            if (!t) throw new tQ;
+            if (!t) throw new t0;
             try {
               let {
                 signature: r
               } = await t.signMessage(e);
               return r
             } catch (e) {
-              throw new t2(e?.message, e)
+              throw new t3(e?.message, e)
             }
           } catch (e) {
             throw this.emit("error", e), e
           }
         }
       }
-      var rc = function(e, t, r, i) {
+      var ru = function(e, t, r, i) {
           if ("a" === r && !i) throw TypeError("Private accessor was defined without a getter");
           if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw TypeError("Cannot read private member from an object whose class did not declare it");
           return "m" === r ? i : "a" === r ? i.call(e) : i ? i.value : t.get(e)
         },
-        ru = function(e, t, r, i, n) {
+        rd = function(e, t, r, i, n) {
           if ("m" === i) throw TypeError("Private method is not writable");
           if ("a" === i && !n) throw TypeError("Private accessor was defined without a setter");
           if ("function" == typeof t ? e !== t || !n : !t.has(e)) throw TypeError("Cannot write private member to an object whose class did not declare it");
           return "a" === i ? n.call(e, r) : n ? n.value = r : t.set(e, r), r
         };
-      class rd extends Event {
+      class rh extends Event {
         get detail() {
-          return rc(this, l, "f")
+          return ru(this, l, "f")
         }
         get type() {
           return "wallet-standard:register-wallet"
@@ -38544,7 +38559,7 @@ ${e.length}`,
             bubbles: !1,
             cancelable: !1,
             composed: !1
-          }), l.set(this, void 0), ru(this, l, e, "f")
+          }), l.set(this, void 0), rd(this, l, e, "f")
         }
         preventDefault() {
           throw Error("preventDefault cannot be called")
@@ -38557,98 +38572,98 @@ ${e.length}`,
         }
       }
       l = new WeakMap;
-      var rh = function(e, t, r, i) {
+      var rp = function(e, t, r, i) {
           if ("a" === r && !i) throw TypeError("Private accessor was defined without a getter");
           if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw TypeError("Cannot read private member from an object whose class did not declare it");
           return "m" === r ? i : "a" === r ? i.call(e) : i ? i.value : t.get(e)
         },
-        rp = function(e, t, r, i, n) {
+        rf = function(e, t, r, i, n) {
           if ("m" === i) throw TypeError("Private method is not writable");
           if ("a" === i && !n) throw TypeError("Private accessor was defined without a setter");
           if ("function" == typeof t ? e !== t || !n : !t.has(e)) throw TypeError("Cannot write private member to an object whose class did not declare it");
           return "a" === i ? n.call(e, r) : n ? n.value = r : t.set(e, r), r
         };
-      class rf {
+      class rg {
         constructor() {
-          c.add(this), u.set(this, {}), d.set(this, "1.0.0"), h.set(this, "MetaMask"), p.set(this, "data:image/svg+xml;base64,PHN2ZyBmaWxsPSJub25lIiBoZWlnaHQ9IjMxIiB2aWV3Qm94PSIwIDAgMzEgMzEiIHdpZHRoPSIzMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGxpbmVhckdyYWRpZW50IGlkPSJhIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjIwLjI1IiB4Mj0iMjYuNTcxIiB5MT0iMjcuMTczIiB5Mj0iMTkuODU4Ij48c3RvcCBvZmZzZXQ9Ii4wOCIgc3RvcC1jb2xvcj0iIzk5NDVmZiIvPjxzdG9wIG9mZnNldD0iLjMiIHN0b3AtY29sb3I9IiM4NzUyZjMiLz48c3RvcCBvZmZzZXQ9Ii41IiBzdG9wLWNvbG9yPSIjNTQ5N2Q1Ii8+PHN0b3Agb2Zmc2V0PSIuNiIgc3RvcC1jb2xvcj0iIzQzYjRjYSIvPjxzdG9wIG9mZnNldD0iLjcyIiBzdG9wLWNvbG9yPSIjMjhlMGI5Ii8+PHN0b3Agb2Zmc2V0PSIuOTciIHN0b3AtY29sb3I9IiMxOWZiOWIiLz48L2xpbmVhckdyYWRpZW50PjxnIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iLjA5NCI+PHBhdGggZD0ibTI2LjEwOSAzLjY0My05LjM2OSA2Ljk1OSAxLjczMy00LjEwNSA3LjYzNy0yLjg1M3oiIGZpbGw9IiNlMjc2MWIiIHN0cm9rZT0iI2UyNzYxYiIvPjxnIGZpbGw9IiNlNDc2MWIiIHN0cm9rZT0iI2U0NzYxYiI+PHBhdGggZD0ibTQuNDgxIDMuNjQzIDkuMjk0IDcuMDI0LTEuNjQ4LTQuMTcxem0xOC4yNTggMTYuMTMtMi40OTUgMy44MjMgNS4zMzkgMS40NjkgMS41MzUtNS4yMDctNC4zNzgtLjA4NXptLTE5LjI0Ny4wODUgMS41MjUgNS4yMDcgNS4zMzktMS40NjktMi40OTUtMy44MjN6Ii8+PHBhdGggZD0ibTEwLjA1NSAxMy4zMTMtMS40ODggMi4yNTEgNS4zMDEuMjM1LS4xODgtNS42OTd6bTEwLjQ4IDAtMy42NzItMy4yNzctLjEyMiA1Ljc2MyA1LjI5Mi0uMjM1LTEuNDk3LTIuMjUxem0tMTAuMTc4IDEwLjI4MyAzLjE4My0xLjU1NC0yLjc0OS0yLjE0Ny0uNDMzIDMuNzAxem02LjY5NS0xLjU1NCAzLjE5MiAxLjU1NC0uNDQzLTMuNzAxeiIvPjwvZz48cGF0aCBkPSJtMjAuMjQ0IDIzLjU5Ni0zLjE5Mi0xLjU1NC4yNTQgMi4wODEtLjAyOC44NzZ6bS05Ljg4NyAwIDIuOTY2IDEuNDAzLS4wMTktLjg3Ni4yMzUtMi4wODEtMy4xODMgMS41NTR6IiBmaWxsPSIjZDdjMWIzIiBzdHJva2U9IiNkN2MxYjMiLz48cGF0aCBkPSJtMTMuMzY5IDE4LjUyMS0yLjY1NS0uNzgxIDEuODc0LS44NTd6bTMuODUxIDAgLjc4MS0xLjYzOCAxLjg4My44NTctMi42NjUuNzgxeiIgZmlsbD0iIzIzMzQ0NyIgc3Ryb2tlPSIjMjMzNDQ3Ii8+PHBhdGggZD0ibTEwLjM1NyAyMy41OTYuNDUyLTMuODIzLTIuOTQ3LjA4NXptOS40MzUtMy44MjMuNDUyIDMuODIzIDIuNDk1LTMuNzM4em0yLjI0MS00LjIwOS01LjI5Mi4yMzUuNDkgMi43MjEuNzgyLTEuNjM4IDEuODgzLjg1N3ptLTExLjMxOCAyLjE3NSAxLjg4My0uODU3Ljc3MiAxLjYzOC40OTktMi43MjEtNS4zMDEtLjIzNXoiIGZpbGw9IiNjZDYxMTYiIHN0cm9rZT0iI2NkNjExNiIvPjxwYXRoIGQ9Im04LjU2NyAxNS41NjQgMi4yMjIgNC4zMzEtLjA3NS0yLjE1NnptMTEuMzI4IDIuMTc1LS4wOTQgMi4xNTYgMi4yMzItNC4zMzEtMi4xMzcgMi4xNzV6bS02LjAyNi0xLjk0LS40OTkgMi43MjEuNjIxIDMuMjExLjE0MS00LjIyOC0uMjY0LTEuNzA0em0yLjg3MiAwLS4yNTQgMS42OTUuMTEzIDQuMjM3LjYzMS0zLjIxMXoiIGZpbGw9IiNlNDc1MWYiIHN0cm9rZT0iI2U0NzUxZiIvPjxwYXRoIGQ9Im0xNy4yMyAxOC41Mi0uNjMxIDMuMjExLjQ1Mi4zMTEgMi43NS0yLjE0Ny4wOTQtMi4xNTZ6bS02LjUxNi0uNzgxLjA3NSAyLjE1NiAyLjc1IDIuMTQ3LjQ1Mi0uMzExLS42MjItMy4yMTF6IiBmaWxsPSIjZjY4NTFiIiBzdHJva2U9IiNmNjg1MWIiLz48cGF0aCBkPSJtMTcuMjc3IDI0Ljk5OS4wMjgtLjg3Ni0uMjM1LS4yMDdoLTMuNTVsLS4yMTcuMjA3LjAxOS44NzYtMi45NjYtMS40MDMgMS4wMzYuODQ4IDIuMSAxLjQ1OWgzLjYwNmwyLjEwOS0xLjQ1OSAxLjAzNi0uODQ4eiIgZmlsbD0iI2MwYWQ5ZSIgc3Ryb2tlPSIjYzBhZDllIi8+PHBhdGggZD0ibTE3LjA1MSAyMi4wNDItLjQ1Mi0uMzExaC0yLjYwOGwtLjQ1Mi4zMTEtLjIzNSAyLjA4MS4yMTctLjIwN2gzLjU1bC4yMzUuMjA3LS4yNTQtMi4wODF6IiBmaWxsPSIjMTYxNjE2IiBzdHJva2U9IiMxNjE2MTYiLz48cGF0aCBkPSJtMjYuNTA1IDExLjA1My44LTMuODQyLTEuMTk2LTMuNTY5LTkuMDU4IDYuNzIzIDMuNDg0IDIuOTQ3IDQuOTI1IDEuNDQxIDEuMDkyLTEuMjcxLS40NzEtLjMzOS43NTMtLjY4Ny0uNTg0LS40NTIuNzUzLS41NzQtLjQ5OS0uMzc3em0tMjMuMjExLTMuODQxLjggMy44NDItLjUwOC4zNzcuNzUzLjU3NC0uNTc0LjQ1Mi43NTMuNjg3LS40NzEuMzM5IDEuMDgzIDEuMjcxIDQuOTI1LTEuNDQxIDMuNDg0LTIuOTQ3LTkuMDU5LTYuNzIzeiIgZmlsbD0iIzc2M2QxNiIgc3Ryb2tlPSIjNzYzZDE2Ii8+PHBhdGggZD0ibTI1LjQ2IDE0Ljc1NC00LjkyNS0xLjQ0MSAxLjQ5NyAyLjI1MS0yLjIzMiA0LjMzMSAyLjkzOC0uMDM4aDQuMzc4bC0xLjY1Ny01LjEwNHptLTE1LjQwNS0xLjQ0MS00LjkyNSAxLjQ0MS0xLjYzOCA1LjEwNGg0LjM2OWwyLjkyOC4wMzgtMi4yMjItNC4zMzEgMS40ODgtMi4yNTF6bTYuNjg1IDIuNDg2LjMxMS01LjQzMyAxLjQzMS0zLjg3aC02LjM1NmwxLjQxMyAzLjg3LjMyOSA1LjQzMy4xMTMgMS43MTQuMDA5IDQuMjE5aDIuNjFsLjAxOS00LjIxOS4xMjItMS43MTR6IiBmaWxsPSIjZjY4NTFiIiBzdHJva2U9IiNmNjg1MWIiLz48L2c+PGNpcmNsZSBjeD0iMjMuNSIgY3k9IjIzLjUiIGZpbGw9IiMwMDAiIHI9IjYuNSIvPjxwYXRoIGQ9Im0yNy40NzMgMjUuNTQ1LTEuMzEgMS4zNjhjLS4wMjkuMDMtLjA2My4wNTMtLjEwMS4wN2EuMzEuMzEgMCAwIDEgLS4xMjEuMDI0aC02LjIwOWMtLjAzIDAtLjA1OS0uMDA4LS4wODMtLjAyNGEuMTUuMTUgMCAwIDEgLS4wNTYtLjA2NWMtLjAxMi0uMDI2LS4wMTUtLjA1Ni0uMDEtLjA4NHMuMDE4LS4wNTUuMDM5LS4wNzZsMS4zMTEtMS4zNjhjLjAyOC0uMDMuMDYzLS4wNTMuMTAxLS4wNjlhLjMxLjMxIDAgMCAxIC4xMjEtLjAyNWg2LjIwOGMuMDMgMCAuMDU5LjAwOC4wODMuMDI0YS4xNS4xNSAwIDAgMSAuMDU2LjA2NWMuMDEyLjAyNi4wMTUuMDU2LjAxLjA4NHMtLjAxOC4wNTUtLjAzOS4wNzZ6bS0xLjMxLTIuNzU2Yy0uMDI5LS4wMy0uMDYzLS4wNTMtLjEwMS0uMDdhLjMxLjMxIDAgMCAwIC0uMTIxLS4wMjRoLTYuMjA5Yy0uMDMgMC0uMDU5LjAwOC0uMDgzLjAyNHMtLjA0NC4wMzgtLjA1Ni4wNjUtLjAxNS4wNTYtLjAxLjA4NC4wMTguMDU1LjAzOS4wNzZsMS4zMTEgMS4zNjhjLjAyOC4wMy4wNjMuMDUzLjEwMS4wNjlhLjMxLjMxIDAgMCAwIC4xMjEuMDI1aDYuMjA4Yy4wMyAwIC4wNTktLjAwOC4wODMtLjAyNGEuMTUuMTUgMCAwIDAgLjA1Ni0uMDY1Yy4wMTItLjAyNi4wMTUtLjA1Ni4wMS0uMDg0cy0uMDE4LS4wNTUtLjAzOS0uMDc2em0tNi40MzEtLjk4M2g2LjIwOWEuMzEuMzEgMCAwIDAgLjEyMS0uMDI0Yy4wMzgtLjAxNi4wNzMtLjA0LjEwMS0uMDdsMS4zMS0xLjM2OGMuMDItLjAyMS4wMzQtLjA0Ny4wMzktLjA3NnMuMDAxLS4wNTgtLjAxLS4wODRhLjE1LjE1IDAgMCAwIC0uMDU2LS4wNjVjLS4wMjUtLjAxNi0uMDU0LS4wMjQtLjA4My0uMDI0aC02LjIwOGEuMzEuMzEgMCAwIDAgLS4xMjEuMDI1Yy0uMDM4LjAxNi0uMDcyLjA0LS4xMDEuMDY5bC0xLjMxIDEuMzY4Yy0uMDIuMDIxLS4wMzQuMDQ3LS4wMzkuMDc2cy0uMDAxLjA1OC4wMS4wODQuMDMxLjA0OS4wNTYuMDY1LjA1NC4wMjQuMDgzLjAyNHoiIGZpbGw9InVybCgjYSkiLz48L3N2Zz4="), f.set(this, null), g.set(this, (e, t) => (rh(this, u, "f")[e]?.push(t) || (rh(this, u, "f")[e] = [t]), () => rh(this, c, "m", w).call(this, e, t))), b.set(this, async () => {
-            if (!rh(this, f, "f")) {
+          c.add(this), u.set(this, {}), d.set(this, "1.0.0"), h.set(this, "MetaMask"), p.set(this, "data:image/svg+xml;base64,PHN2ZyBmaWxsPSJub25lIiBoZWlnaHQ9IjMxIiB2aWV3Qm94PSIwIDAgMzEgMzEiIHdpZHRoPSIzMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGxpbmVhckdyYWRpZW50IGlkPSJhIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjIwLjI1IiB4Mj0iMjYuNTcxIiB5MT0iMjcuMTczIiB5Mj0iMTkuODU4Ij48c3RvcCBvZmZzZXQ9Ii4wOCIgc3RvcC1jb2xvcj0iIzk5NDVmZiIvPjxzdG9wIG9mZnNldD0iLjMiIHN0b3AtY29sb3I9IiM4NzUyZjMiLz48c3RvcCBvZmZzZXQ9Ii41IiBzdG9wLWNvbG9yPSIjNTQ5N2Q1Ii8+PHN0b3Agb2Zmc2V0PSIuNiIgc3RvcC1jb2xvcj0iIzQzYjRjYSIvPjxzdG9wIG9mZnNldD0iLjcyIiBzdG9wLWNvbG9yPSIjMjhlMGI5Ii8+PHN0b3Agb2Zmc2V0PSIuOTciIHN0b3AtY29sb3I9IiMxOWZiOWIiLz48L2xpbmVhckdyYWRpZW50PjxnIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iLjA5NCI+PHBhdGggZD0ibTI2LjEwOSAzLjY0My05LjM2OSA2Ljk1OSAxLjczMy00LjEwNSA3LjYzNy0yLjg1M3oiIGZpbGw9IiNlMjc2MWIiIHN0cm9rZT0iI2UyNzYxYiIvPjxnIGZpbGw9IiNlNDc2MWIiIHN0cm9rZT0iI2U0NzYxYiI+PHBhdGggZD0ibTQuNDgxIDMuNjQzIDkuMjk0IDcuMDI0LTEuNjQ4LTQuMTcxem0xOC4yNTggMTYuMTMtMi40OTUgMy44MjMgNS4zMzkgMS40NjkgMS41MzUtNS4yMDctNC4zNzgtLjA4NXptLTE5LjI0Ny4wODUgMS41MjUgNS4yMDcgNS4zMzktMS40NjktMi40OTUtMy44MjN6Ii8+PHBhdGggZD0ibTEwLjA1NSAxMy4zMTMtMS40ODggMi4yNTEgNS4zMDEuMjM1LS4xODgtNS42OTd6bTEwLjQ4IDAtMy42NzItMy4yNzctLjEyMiA1Ljc2MyA1LjI5Mi0uMjM1LTEuNDk3LTIuMjUxem0tMTAuMTc4IDEwLjI4MyAzLjE4My0xLjU1NC0yLjc0OS0yLjE0Ny0uNDMzIDMuNzAxem02LjY5NS0xLjU1NCAzLjE5MiAxLjU1NC0uNDQzLTMuNzAxeiIvPjwvZz48cGF0aCBkPSJtMjAuMjQ0IDIzLjU5Ni0zLjE5Mi0xLjU1NC4yNTQgMi4wODEtLjAyOC44NzZ6bS05Ljg4NyAwIDIuOTY2IDEuNDAzLS4wMTktLjg3Ni4yMzUtMi4wODEtMy4xODMgMS41NTR6IiBmaWxsPSIjZDdjMWIzIiBzdHJva2U9IiNkN2MxYjMiLz48cGF0aCBkPSJtMTMuMzY5IDE4LjUyMS0yLjY1NS0uNzgxIDEuODc0LS44NTd6bTMuODUxIDAgLjc4MS0xLjYzOCAxLjg4My44NTctMi42NjUuNzgxeiIgZmlsbD0iIzIzMzQ0NyIgc3Ryb2tlPSIjMjMzNDQ3Ii8+PHBhdGggZD0ibTEwLjM1NyAyMy41OTYuNDUyLTMuODIzLTIuOTQ3LjA4NXptOS40MzUtMy44MjMuNDUyIDMuODIzIDIuNDk1LTMuNzM4em0yLjI0MS00LjIwOS01LjI5Mi4yMzUuNDkgMi43MjEuNzgyLTEuNjM4IDEuODgzLjg1N3ptLTExLjMxOCAyLjE3NSAxLjg4My0uODU3Ljc3MiAxLjYzOC40OTktMi43MjEtNS4zMDEtLjIzNXoiIGZpbGw9IiNjZDYxMTYiIHN0cm9rZT0iI2NkNjExNiIvPjxwYXRoIGQ9Im04LjU2NyAxNS41NjQgMi4yMjIgNC4zMzEtLjA3NS0yLjE1NnptMTEuMzI4IDIuMTc1LS4wOTQgMi4xNTYgMi4yMzItNC4zMzEtMi4xMzcgMi4xNzV6bS02LjAyNi0xLjk0LS40OTkgMi43MjEuNjIxIDMuMjExLjE0MS00LjIyOC0uMjY0LTEuNzA0em0yLjg3MiAwLS4yNTQgMS42OTUuMTEzIDQuMjM3LjYzMS0zLjIxMXoiIGZpbGw9IiNlNDc1MWYiIHN0cm9rZT0iI2U0NzUxZiIvPjxwYXRoIGQ9Im0xNy4yMyAxOC41Mi0uNjMxIDMuMjExLjQ1Mi4zMTEgMi43NS0yLjE0Ny4wOTQtMi4xNTZ6bS02LjUxNi0uNzgxLjA3NSAyLjE1NiAyLjc1IDIuMTQ3LjQ1Mi0uMzExLS42MjItMy4yMTF6IiBmaWxsPSIjZjY4NTFiIiBzdHJva2U9IiNmNjg1MWIiLz48cGF0aCBkPSJtMTcuMjc3IDI0Ljk5OS4wMjgtLjg3Ni0uMjM1LS4yMDdoLTMuNTVsLS4yMTcuMjA3LjAxOS44NzYtMi45NjYtMS40MDMgMS4wMzYuODQ4IDIuMSAxLjQ1OWgzLjYwNmwyLjEwOS0xLjQ1OSAxLjAzNi0uODQ4eiIgZmlsbD0iI2MwYWQ5ZSIgc3Ryb2tlPSIjYzBhZDllIi8+PHBhdGggZD0ibTE3LjA1MSAyMi4wNDItLjQ1Mi0uMzExaC0yLjYwOGwtLjQ1Mi4zMTEtLjIzNSAyLjA4MS4yMTctLjIwN2gzLjU1bC4yMzUuMjA3LS4yNTQtMi4wODF6IiBmaWxsPSIjMTYxNjE2IiBzdHJva2U9IiMxNjE2MTYiLz48cGF0aCBkPSJtMjYuNTA1IDExLjA1My44LTMuODQyLTEuMTk2LTMuNTY5LTkuMDU4IDYuNzIzIDMuNDg0IDIuOTQ3IDQuOTI1IDEuNDQxIDEuMDkyLTEuMjcxLS40NzEtLjMzOS43NTMtLjY4Ny0uNTg0LS40NTIuNzUzLS41NzQtLjQ5OS0uMzc3em0tMjMuMjExLTMuODQxLjggMy44NDItLjUwOC4zNzcuNzUzLjU3NC0uNTc0LjQ1Mi43NTMuNjg3LS40NzEuMzM5IDEuMDgzIDEuMjcxIDQuOTI1LTEuNDQxIDMuNDg0LTIuOTQ3LTkuMDU5LTYuNzIzeiIgZmlsbD0iIzc2M2QxNiIgc3Ryb2tlPSIjNzYzZDE2Ii8+PHBhdGggZD0ibTI1LjQ2IDE0Ljc1NC00LjkyNS0xLjQ0MSAxLjQ5NyAyLjI1MS0yLjIzMiA0LjMzMSAyLjkzOC0uMDM4aDQuMzc4bC0xLjY1Ny01LjEwNHptLTE1LjQwNS0xLjQ0MS00LjkyNSAxLjQ0MS0xLjYzOCA1LjEwNGg0LjM2OWwyLjkyOC4wMzgtMi4yMjItNC4zMzEgMS40ODgtMi4yNTF6bTYuNjg1IDIuNDg2LjMxMS01LjQzMyAxLjQzMS0zLjg3aC02LjM1NmwxLjQxMyAzLjg3LjMyOSA1LjQzMy4xMTMgMS43MTQuMDA5IDQuMjE5aDIuNjFsLjAxOS00LjIxOS4xMjItMS43MTR6IiBmaWxsPSIjZjY4NTFiIiBzdHJva2U9IiNmNjg1MWIiLz48L2c+PGNpcmNsZSBjeD0iMjMuNSIgY3k9IjIzLjUiIGZpbGw9IiMwMDAiIHI9IjYuNSIvPjxwYXRoIGQ9Im0yNy40NzMgMjUuNTQ1LTEuMzEgMS4zNjhjLS4wMjkuMDMtLjA2My4wNTMtLjEwMS4wN2EuMzEuMzEgMCAwIDEgLS4xMjEuMDI0aC02LjIwOWMtLjAzIDAtLjA1OS0uMDA4LS4wODMtLjAyNGEuMTUuMTUgMCAwIDEgLS4wNTYtLjA2NWMtLjAxMi0uMDI2LS4wMTUtLjA1Ni0uMDEtLjA4NHMuMDE4LS4wNTUuMDM5LS4wNzZsMS4zMTEtMS4zNjhjLjAyOC0uMDMuMDYzLS4wNTMuMTAxLS4wNjlhLjMxLjMxIDAgMCAxIC4xMjEtLjAyNWg2LjIwOGMuMDMgMCAuMDU5LjAwOC4wODMuMDI0YS4xNS4xNSAwIDAgMSAuMDU2LjA2NWMuMDEyLjAyNi4wMTUuMDU2LjAxLjA4NHMtLjAxOC4wNTUtLjAzOS4wNzZ6bS0xLjMxLTIuNzU2Yy0uMDI5LS4wMy0uMDYzLS4wNTMtLjEwMS0uMDdhLjMxLjMxIDAgMCAwIC0uMTIxLS4wMjRoLTYuMjA5Yy0uMDMgMC0uMDU5LjAwOC0uMDgzLjAyNHMtLjA0NC4wMzgtLjA1Ni4wNjUtLjAxNS4wNTYtLjAxLjA4NC4wMTguMDU1LjAzOS4wNzZsMS4zMTEgMS4zNjhjLjAyOC4wMy4wNjMuMDUzLjEwMS4wNjlhLjMxLjMxIDAgMCAwIC4xMjEuMDI1aDYuMjA4Yy4wMyAwIC4wNTktLjAwOC4wODMtLjAyNGEuMTUuMTUgMCAwIDAgLjA1Ni0uMDY1Yy4wMTItLjAyNi4wMTUtLjA1Ni4wMS0uMDg0cy0uMDE4LS4wNTUtLjAzOS0uMDc2em0tNi40MzEtLjk4M2g2LjIwOWEuMzEuMzEgMCAwIDAgLjEyMS0uMDI0Yy4wMzgtLjAxNi4wNzMtLjA0LjEwMS0uMDdsMS4zMS0xLjM2OGMuMDItLjAyMS4wMzQtLjA0Ny4wMzktLjA3NnMuMDAxLS4wNTgtLjAxLS4wODRhLjE1LjE1IDAgMCAwIC0uMDU2LS4wNjVjLS4wMjUtLjAxNi0uMDU0LS4wMjQtLjA4My0uMDI0aC02LjIwOGEuMzEuMzEgMCAwIDAgLS4xMjEuMDI1Yy0uMDM4LjAxNi0uMDcyLjA0LS4xMDEuMDY5bC0xLjMxIDEuMzY4Yy0uMDIuMDIxLS4wMzQuMDQ3LS4wMzkuMDc2cy0uMDAxLjA1OC4wMS4wODQuMDMxLjA0OS4wNTYuMDY1LjA1NC4wMjQuMDgzLjAyNHoiIGZpbGw9InVybCgjYSkiLz48L3N2Zz4="), f.set(this, null), g.set(this, (e, t) => (rp(this, u, "f")[e]?.push(t) || (rp(this, u, "f")[e] = [t]), () => rp(this, c, "m", w).call(this, e, t))), b.set(this, async () => {
+            if (!rp(this, f, "f")) {
               let e;
               try {
                 e = (await r.e(839).then(r.bind(r, 69839))).default
               } catch (e) {
                 throw Error("Unable to load Solflare MetaMask SDK")
               }
-              rp(this, f, new e, "f"), rh(this, f, "f").on("standard_change", e => rh(this, c, "m", m).call(this, "change", e))
+              rf(this, f, new e, "f"), rp(this, f, "f").on("standard_change", e => rp(this, c, "m", m).call(this, "change", e))
             }
-            return this.accounts.length || await rh(this, f, "f").connect(), {
+            return this.accounts.length || await rp(this, f, "f").connect(), {
               accounts: this.accounts
             }
           }), y.set(this, async () => {
-            rh(this, f, "f") && await rh(this, f, "f").disconnect()
+            rp(this, f, "f") && await rp(this, f, "f").disconnect()
           }), v.set(this, async (...e) => {
-            if (!rh(this, f, "f")) throw new tQ;
-            return await rh(this, f, "f").standardSignAndSendTransaction(...e)
+            if (!rp(this, f, "f")) throw new t0;
+            return await rp(this, f, "f").standardSignAndSendTransaction(...e)
           }), x.set(this, async (...e) => {
-            if (!rh(this, f, "f")) throw new tQ;
-            return await rh(this, f, "f").standardSignTransaction(...e)
+            if (!rp(this, f, "f")) throw new t0;
+            return await rp(this, f, "f").standardSignTransaction(...e)
           }), C.set(this, async (...e) => {
-            if (!rh(this, f, "f")) throw new tQ;
-            return await rh(this, f, "f").standardSignMessage(...e)
+            if (!rp(this, f, "f")) throw new t0;
+            return await rp(this, f, "f").standardSignMessage(...e)
           })
         }
         get version() {
-          return rh(this, d, "f")
+          return rp(this, d, "f")
         }
         get name() {
-          return rh(this, h, "f")
+          return rp(this, h, "f")
         }
         get icon() {
-          return rh(this, p, "f")
+          return rp(this, p, "f")
         }
         get chains() {
           return ["solana:mainnet", "solana:devnet", "solana:testnet"]
         }
         get features() {
           return {
-            [tR]: {
-              version: "1.0.0",
-              connect: rh(this, b, "f")
-            },
-            [t5]: {
-              version: "1.0.0",
-              disconnect: rh(this, y, "f")
-            },
             [tP]: {
               version: "1.0.0",
-              on: rh(this, g, "f")
+              connect: rp(this, b, "f")
             },
-            [tO.G]: {
+            [t4]: {
+              version: "1.0.0",
+              disconnect: rp(this, y, "f")
+            },
+            [tM]: {
+              version: "1.0.0",
+              on: rp(this, g, "f")
+            },
+            [tN.G]: {
               version: "1.0.0",
               supportedTransactionVersions: ["legacy", 0],
-              signAndSendTransaction: rh(this, v, "f")
+              signAndSendTransaction: rp(this, v, "f")
             },
-            [tN.R]: {
+            [tR.R]: {
               version: "1.0.0",
               supportedTransactionVersions: ["legacy", 0],
-              signTransaction: rh(this, x, "f")
+              signTransaction: rp(this, x, "f")
             },
-            [t3.g]: {
+            [t5.g]: {
               version: "1.0.0",
-              signMessage: rh(this, C, "f")
+              signMessage: rp(this, C, "f")
             }
           }
         }
         get accounts() {
-          return rh(this, f, "f") ? rh(this, f, "f").standardAccounts : []
+          return rp(this, f, "f") ? rp(this, f, "f").standardAccounts : []
         }
       }
       u = new WeakMap, d = new WeakMap, h = new WeakMap, p = new WeakMap, f = new WeakMap, g = new WeakMap, b = new WeakMap, y = new WeakMap, v = new WeakMap, x = new WeakMap, C = new WeakMap, c = new WeakSet, m = function(e, ...t) {
-        rh(this, u, "f")[e]?.forEach(e => e.apply(null, t))
+        rp(this, u, "f")[e]?.forEach(e => e.apply(null, t))
       }, w = function(e, t) {
-        rh(this, u, "f")[e] = rh(this, u, "f")[e]?.filter(e => t !== e)
+        rp(this, u, "f")[e] = rp(this, u, "f")[e]?.filter(e => t !== e)
       };
-      let rg = !1;
-      async function rm() {
+      let rm = !1;
+      async function rw() {
         let e = "solflare-detect-metamask";
 
         function t() {
@@ -38667,12 +38682,12 @@ ${e.length}`,
 
         function r(i) {
           let n = i.data;
-          n?.target === "metamask-inpage" && n.data?.name === "metamask-provider" && (n.data.data?.id === e ? (window.removeEventListener("message", r), !n.data.data.error && (rg || (function(e) {
+          n?.target === "metamask-inpage" && n.data?.name === "metamask-provider" && (n.data.data?.id === e ? (window.removeEventListener("message", r), !n.data.data.error && (rm || (function(e) {
             let t = ({
               register: t
             }) => t(e);
             try {
-              window.dispatchEvent(new rd(t))
+              window.dispatchEvent(new rh(t))
             } catch (e) {
               console.error("wallet-standard:register-wallet event could not be dispatched\n", e)
             }
@@ -38683,28 +38698,28 @@ ${e.length}`,
             } catch (e) {
               console.error("wallet-standard:app-ready event listener could not be added\n", e)
             }
-          }(new rf), rg = !0))) : t())
+          }(new rg), rm = !0))) : t())
         }
         window.addEventListener("message", r), window.setTimeout(() => window.removeEventListener("message", r), 5e3), t()
       }
-      class rw extends ra {
+      class rb extends rl {
         constructor(e = {}) {
           super(), this.name = "Solflare", this.url = "https://solflare.com", this.icon = "data:image/svg+xml;base64,PHN2ZyBmaWxsPSJub25lIiBoZWlnaHQ9IjUwIiB2aWV3Qm94PSIwIDAgNTAgNTAiIHdpZHRoPSI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGxpbmVhckdyYWRpZW50IGlkPSJhIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmZmMxMGIiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmYjNmMmUiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0iYiIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSI2LjQ3ODM1IiB4Mj0iMzQuOTEwNyIgeGxpbms6aHJlZj0iI2EiIHkxPSI3LjkyIiB5Mj0iMzMuNjU5MyIvPjxyYWRpYWxHcmFkaWVudCBpZD0iYyIgY3g9IjAiIGN5PSIwIiBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KDQuOTkyMTg4MzIgMTIuMDYzODc5NjMgLTEyLjE4MTEzNjU1IDUuMDQwNzEwNzQgMjIuNTIwMiAyMC42MTgzKSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHI9IjEiIHhsaW5rOmhyZWY9IiNhIi8+PHBhdGggZD0ibTI1LjE3MDggNDcuOTEwNGMuNTI1IDAgLjk1MDcuNDIxLjk1MDcuOTQwM3MtLjQyNTcuOTQwMi0uOTUwNy45NDAyLS45NTA3LS40MjA5LS45NTA3LS45NDAyLjQyNTctLjk0MDMuOTUwNy0uOTQwM3ptLTEuMDMyOC00NC45MTU2NWMuNDY0Ni4wMzgzNi44Mzk4LjM5MDQuOTAyNy44NDY4MWwxLjEzMDcgOC4yMTU3NGMuMzc5OCAyLjcxNDMgMy42NTM1IDMuODkwNCA1LjY3NDMgMi4wNDU5bDExLjMyOTEtMTAuMzExNThjLjI3MzMtLjI0ODczLjY5ODktLjIzMTQ5Ljk1MDcuMDM4NTEuMjMwOS4yNDc3Mi4yMzc5LjYyNjk3LjAxNjEuODgyNzdsLTkuODc5MSAxMS4zOTU4Yy0xLjgxODcgMi4wOTQyLS40NzY4IDUuMzY0MyAyLjI5NTYgNS41OTc4bDguNzE2OC44NDAzYy40MzQxLjA0MTguNzUxNy40MjM0LjcwOTMuODUyNC0uMDM0OS4zNTM3LS4zMDc0LjYzOTUtLjY2MjguNjk0OWwtOS4xNTk0IDEuNDMwMmMtMi42NTkzLjM2MjUtMy44NjM2IDMuNTExNy0yLjEzMzkgNS41NTc2bDMuMjIgMy43OTYxYy4yNTk0LjMwNTguMjE4OC43NjE1LS4wOTA4IDEuMDE3OC0uMjYyMi4yMTcyLS42NDE5LjIyNTYtLjkxMzguMDIwM2wtMy45Njk0LTIuOTk3OGMtMi4xNDIxLTEuNjEwOS01LjIyOTctLjI0MTctNS40NTYxIDIuNDI0M2wtLjg3NDcgMTAuMzk3NmMtLjAzNjIuNDI5NS0uNDE3OC43NDg3LS44NTI1LjcxMy0uMzY5LS4wMzAzLS42NjcxLS4zMDk3LS43MTcxLS42NzIxbC0xLjM4NzEtMTAuMDQzN2MtLjM3MTctMi43MTQ0LTMuNjQ1NC0zLjg5MDQtNS42NzQzLTIuMDQ1OWwtMTIuMDUxOTUgMTAuOTc0Yy0uMjQ5NDcuMjI3MS0uNjM4MDkuMjExNC0uODY4LS4wMzUtLjIxMDk0LS4yMjYyLS4yMTczNS0uNTcyNC0uMDE0OTMtLjgwNmwxMC41MTgxOC0xMi4xMzg1YzEuODE4Ny0yLjA5NDIuNDg0OS01LjM2NDQtMi4yODc2LTUuNTk3OGwtOC43MTg3Mi0uODQwNWMtLjQzNDEzLS4wNDE4LS43NTE3Mi0uNDIzNS0uNzA5MzYtLjg1MjQuMDM0OTMtLjM1MzcuMzA3MzktLjYzOTQuNjYyNy0uNjk1bDkuMTUzMzgtMS40Mjk5YzIuNjU5NC0uMzYyNSAzLjg3MTgtMy41MTE3IDIuMTQyMS01LjU1NzZsLTIuMTkyLTIuNTg0MWMtLjMyMTctLjM3OTItLjI3MTMtLjk0NDMuMTEyNi0xLjI2MjEuMzI1My0uMjY5NC43OTYzLS4yNzk3IDEuMTMzNC0uMDI0OWwyLjY5MTggMi4wMzQ3YzIuMTQyMSAxLjYxMDkgNS4yMjk3LjI0MTcgNS40NTYxLTIuNDI0M2wuNzI0MS04LjU1OTk4Yy4wNDU3LS41NDA4LjUyNjUtLjk0MjU3IDEuMDczOS0uODk3Mzd6bS0yMy4xODczMyAyMC40Mzk2NWMuNTI1MDQgMCAuOTUwNjcuNDIxLjk1MDY3Ljk0MDNzLS40MjU2My45NDAzLS45NTA2Ny45NDAzYy0uNTI1MDQxIDAtLjk1MDY3LS40MjEtLjk1MDY3LS45NDAzcy40MjU2MjktLjk0MDMuOTUwNjctLjk0MDN6bTQ3LjY3OTczLS45NTQ3Yy41MjUgMCAuOTUwNy40MjEuOTUwNy45NDAzcy0uNDI1Ny45NDAyLS45NTA3Ljk0MDItLjk1MDctLjQyMDktLjk1MDctLjk0MDIuNDI1Ny0uOTQwMy45NTA3LS45NDAzem0tMjQuNjI5Ni0yMi40Nzk3Yy41MjUgMCAuOTUwNi40MjA5NzMuOTUwNi45NDAyNyAwIC41MTkzLS40MjU2Ljk0MDI3LS45NTA2Ljk0MDI3LS41MjUxIDAtLjk1MDctLjQyMDk3LS45NTA3LS45NDAyNyAwLS41MTkyOTcuNDI1Ni0uOTQwMjcuOTUwNy0uOTQwMjd6IiBmaWxsPSJ1cmwoI2IpIi8+PHBhdGggZD0ibTI0LjU3MSAzMi43NzkyYzQuOTU5NiAwIDguOTgwMi0zLjk3NjUgOC45ODAyLTguODgxOSAwLTQuOTA1My00LjAyMDYtOC44ODE5LTguOTgwMi04Ljg4MTlzLTguOTgwMiAzLjk3NjYtOC45ODAyIDguODgxOWMwIDQuOTA1NCA0LjAyMDYgOC44ODE5IDguOTgwMiA4Ljg4MTl6IiBmaWxsPSJ1cmwoI2MpIi8+PC9zdmc+", this.supportedTransactionVersions = new Set(["legacy", 0]), this._readyState = "undefined" == typeof window || "undefined" == typeof document ? a.Unsupported : a.Loadable, this._disconnected = () => {
             let e = this._wallet;
-            e && (e.off("disconnect", this._disconnected), this._wallet = null, this._publicKey = null, this.emit("error", new tZ), this.emit("disconnect"))
+            e && (e.off("disconnect", this._disconnected), this._wallet = null, this._publicKey = null, this.emit("error", new tG), this.emit("disconnect"))
           }, this._accountChanged = e => {
             if (!e) return;
             let t = this._publicKey;
             if (t) {
               try {
-                e = new td.nh(e.toBytes())
+                e = new th.nh(e.toBytes())
               } catch (e) {
-                this.emit("error", new tX(e?.message, e));
+                this.emit("error", new tQ(e?.message, e));
                 return
               }
               t.equals(e) || (this._publicKey = e, this.emit("connect", e))
             }
-          }, this._connecting = !1, this._publicKey = null, this._wallet = null, this._config = e, this._readyState !== a.Unsupported && (rn(() => (!!window.solflare?.isSolflare || !!window.SolflareApp) && (this._readyState = a.Installed, this.emit("readyStateChange", this._readyState), !0)), rm())
+          }, this._connecting = !1, this._publicKey = null, this._wallet = null, this._config = e, this._readyState !== a.Unsupported && (ro(() => (!!window.solflare?.isSolflare || !!window.SolflareApp) && (this._readyState = a.Installed, this.emit("readyStateChange", this._readyState), !0)), rw())
         }
         get publicKey() {
           return this._publicKey
@@ -38719,14 +38734,14 @@ ${e.length}`,
           return this._readyState
         }
         async autoConnect() {
-          this.readyState === a.Loadable && ro() || await this.connect()
+          this.readyState === a.Loadable && rs() || await this.connect()
         }
         async connect() {
           try {
             let e, t, i;
             if (this.connected || this.connecting) return;
-            if (this._readyState !== a.Loadable && this._readyState !== a.Installed) throw new tH;
-            if (this.readyState === a.Loadable && ro()) {
+            if (this._readyState !== a.Loadable && this._readyState !== a.Installed) throw new tV;
+            if (this.readyState === a.Loadable && rs()) {
               let e = encodeURIComponent(window.location.href),
                 t = encodeURIComponent(window.location.origin);
               window.location.href = `https://solflare.com/ul/v1/browse/${e}?ref=${t}`;
@@ -38735,25 +38750,25 @@ ${e.length}`,
             try {
               e = (await r.e(959).then(r.bind(r, 66959))).default
             } catch (e) {
-              throw new tV(e?.message, e)
+              throw new tK(e?.message, e)
             }
             try {
               t = new e({
                 network: this._config.network
               })
             } catch (e) {
-              throw new tK(e?.message, e)
+              throw new tY(e?.message, e)
             }
             if (this._connecting = !0, !t.connected) try {
               await t.connect()
             } catch (e) {
-              throw new tY(e?.message, e)
+              throw new tZ(e?.message, e)
             }
-            if (!t.publicKey) throw new tY;
+            if (!t.publicKey) throw new tZ;
             try {
-              i = new td.nh(t.publicKey.toBytes())
+              i = new th.nh(t.publicKey.toBytes())
             } catch (e) {
-              throw new tX(e?.message, e)
+              throw new tQ(e?.message, e)
             }
             t.on("disconnect", this._disconnected), t.on("accountChanged", this._accountChanged), this._wallet = t, this._publicKey = i, this.emit("connect", i)
           } catch (e) {
@@ -38769,7 +38784,7 @@ ${e.length}`,
             try {
               await e.disconnect()
             } catch (e) {
-              this.emit("error", new tG(e?.message, e))
+              this.emit("error", new tJ(e?.message, e))
             }
           }
           this.emit("disconnect")
@@ -38777,16 +38792,16 @@ ${e.length}`,
         async sendTransaction(e, t, r = {}) {
           try {
             let i = this._wallet;
-            if (!i) throw new tQ;
+            if (!i) throw new t0;
             try {
               let {
                 signers: n,
                 ...o
               } = r;
-              return ty(e) ? n?.length && e.sign(n) : (e = await this.prepareTransaction(e, t, o), n?.length && e.partialSign(...n)), o.preflightCommitment = o.preflightCommitment || t.commitment, await i.signAndSendTransaction(e, o)
+              return tv(e) ? n?.length && e.sign(n) : (e = await this.prepareTransaction(e, t, o), n?.length && e.partialSign(...n)), o.preflightCommitment = o.preflightCommitment || t.commitment, await i.signAndSendTransaction(e, o)
             } catch (e) {
-              if (e instanceof tF) throw e;
-              throw new t0(e?.message, e)
+              if (e instanceof tH) throw e;
+              throw new t1(e?.message, e)
             }
           } catch (e) {
             throw this.emit("error", e), e
@@ -38795,11 +38810,11 @@ ${e.length}`,
         async signTransaction(e) {
           try {
             let t = this._wallet;
-            if (!t) throw new tQ;
+            if (!t) throw new t0;
             try {
               return await t.signTransaction(e) || e
             } catch (e) {
-              throw new t1(e?.message, e)
+              throw new t2(e?.message, e)
             }
           } catch (e) {
             throw this.emit("error", e), e
@@ -38808,11 +38823,11 @@ ${e.length}`,
         async signAllTransactions(e) {
           try {
             let t = this._wallet;
-            if (!t) throw new tQ;
+            if (!t) throw new t0;
             try {
               return await t.signAllTransactions(e) || e
             } catch (e) {
-              throw new t1(e?.message, e)
+              throw new t2(e?.message, e)
             }
           } catch (e) {
             throw this.emit("error", e), e
@@ -38821,23 +38836,23 @@ ${e.length}`,
         async signMessage(e) {
           try {
             let t = this._wallet;
-            if (!t) throw new tQ;
+            if (!t) throw new t0;
             try {
               return await t.signMessage(e, "utf8")
             } catch (e) {
-              throw new t2(e?.message, e)
+              throw new t3(e?.message, e)
             }
           } catch (e) {
             throw this.emit("error", e), e
           }
         }
       }
-      let rb = new rt({
-        wallets: [new rl, new rw]
+      let ry = new rr({
+        wallets: [new rc, new rb]
       });
-      (0, ts.cz)({
-        adapters: [rb],
-        networks: [tC.Zjg],
+      (0, ta.cz)({
+        adapters: [ry],
+        networks: [tk.Zjg],
         metadata: {
           name: "PAWS",
           description: "PAWS Community",
@@ -38857,20 +38872,20 @@ ${e.length}`,
         },
         allWallets: "HIDE"
       });
-      var ry = e => {
+      var rv = e => {
           let {
             children: t
           } = e;
           return S.createElement(S.Fragment, null, t)
         },
-        rv = r(53637),
-        rx = r(35773),
-        rC = r(95305),
-        rk = r(25675),
-        rE = r.n(rk),
-        rS = r(9163),
-        r_ = r(59587);
-      let rA = e => S.createElement("svg", {
+        rx = r(53637),
+        rC = r(35773),
+        rk = r(95305),
+        rE = r(25675),
+        rS = r.n(rE),
+        r_ = r(9163),
+        rA = r(59587);
+      let rI = e => S.createElement("svg", {
           width: "30",
           height: "30",
           viewBox: "0 0 36 36",
@@ -38883,7 +38898,7 @@ ${e.length}`,
           strokeLinecap: "round",
           strokeLinejoin: "round"
         })),
-        rI = () => S.createElement("svg", {
+        rT = () => S.createElement("svg", {
           width: "25",
           height: "27",
           viewBox: "0 0 30 27",
@@ -38893,7 +38908,7 @@ ${e.length}`,
           d: "M11.6133 24.1914V16.9023C11.6133 16.6289 11.6953 16.4102 11.8594 16.2461C12.0312 16.082 12.2578 16 12.5391 16H17.4609C17.7344 16 17.9531 16.082 18.1172 16.2461C18.2891 16.4102 18.375 16.6289 18.375 16.9023V24.1914H11.6133ZM1.78125 14.0781C1.375 14.0781 1.05078 13.957 0.808594 13.7148C0.566406 13.4648 0.445312 13.1641 0.445312 12.8125C0.445312 12.4062 0.621094 12.0586 0.972656 11.7695L13.1836 1.51562C13.7383 1.03906 14.3398 0.800781 14.9883 0.800781C15.6445 0.800781 16.25 1.03906 16.8047 1.51562L29.0156 11.7695C29.3672 12.0586 29.543 12.4062 29.543 12.8125C29.543 13.1641 29.4219 13.4648 29.1797 13.7148C28.9453 13.957 28.6172 14.0781 28.1953 14.0781C28 14.0781 27.8125 14.0352 27.6328 13.9492C27.4531 13.8555 27.2852 13.7422 27.1289 13.6094L15.5508 3.90625C15.3789 3.75 15.1914 3.67188 14.9883 3.67188C14.793 3.67188 14.6094 3.75 14.4375 3.90625L2.85938 13.6094C2.70312 13.7422 2.53516 13.8555 2.35547 13.9492C2.17578 14.0352 1.98438 14.0781 1.78125 14.0781ZM22.2891 6.84766V4.19922C22.2891 3.92578 22.3711 3.71094 22.5352 3.55469C22.6992 3.39062 22.9102 3.30859 23.168 3.30859H24.9961C25.2695 3.30859 25.4844 3.39062 25.6406 3.55469C25.7969 3.71094 25.875 3.92578 25.875 4.19922V9.85938L22.2891 6.84766ZM7.06641 26.2656C6.13672 26.2656 5.41016 26.0117 4.88672 25.5039C4.37109 24.9961 4.11328 24.293 4.11328 23.3945V10.293L6.71484 8.52344V22.5273C6.71484 22.8945 6.80859 23.1719 6.99609 23.3594C7.19141 23.5547 7.46875 23.6523 7.82812 23.6523H22.1602C22.5195 23.6523 22.793 23.5547 22.9805 23.3594C23.1758 23.1719 23.2734 22.8945 23.2734 22.5273V8.52344L25.875 10.293V23.3945C25.875 24.2852 25.6172 24.9844 25.1016 25.4922C24.5859 26.0078 23.8594 26.2656 22.9219 26.2656H7.06641Z",
           fill: "white"
         })),
-        rT = () => S.createElement("svg", {
+        rO = () => S.createElement("svg", {
           width: "50",
           height: "32",
           viewBox: "0 0 41 32",
@@ -38921,7 +38936,7 @@ ${e.length}`,
           strokeWidth: "4.5",
           mask: "url(#path-1-outside-1_7113_1073)"
         })),
-        rO = () => S.createElement("svg", {
+        rN = () => S.createElement("svg", {
           width: "41",
           height: "32",
           viewBox: "0 0 41 32",
@@ -38943,20 +38958,20 @@ ${e.length}`,
           fill: "white"
         }));
       r(25931);
-      var rN = r(24441),
-        rR = {
+      var rR = r(24441),
+        rP = {
           src: "/_next/static/media/window.215d97a8.svg",
           height: 16,
           width: 16,
           blurWidth: 0,
           blurHeight: 0
         },
-        rP = r(43129),
-        rM = r(98502),
-        rD = r(48610),
-        rL = r(50861);
+        rM = r(43129),
+        rD = r(98502),
+        rL = r(48610),
+        rj = r(50861);
 
-      function rj(e, t) {
+      function r$(e, t) {
         var r = Object.keys(e);
         if (Object.getOwnPropertySymbols) {
           var i = Object.getOwnPropertySymbols(e);
@@ -38967,19 +38982,19 @@ ${e.length}`,
         return r
       }
 
-      function r$(e) {
+      function rB(e) {
         for (var t = 1; t < arguments.length; t++) {
           var r = null != arguments[t] ? arguments[t] : {};
-          t % 2 ? rj(Object(r), !0).forEach(function(t) {
+          t % 2 ? r$(Object(r), !0).forEach(function(t) {
             (0, E.Z)(e, t, r[t])
-          }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(r)) : rj(Object(r)).forEach(function(t) {
+          }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(r)) : r$(Object(r)).forEach(function(t) {
             Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(r, t))
           })
         }
         return e
       }
       r(98527);
-      var rB = e => {
+      var rU = e => {
         let {
           isOpen: t,
           setIsOpen: r,
@@ -38988,13 +39003,13 @@ ${e.length}`,
           onMaintenance: o
         } = e, {
           query: s
-        } = (0, e3.useRouter)(), a = (0, eU.TL)(), l = (0, eU.CG)(e => e.main.isMobile), [c, u] = (0, S.useState)(!1), [d] = (0, e$.dG)(), h = async (e, t) => {
+        } = (0, e3.useRouter)(), a = (0, eU.TL)(), l = (0, eU.CG)(e => e.main.isMobile), [c, u] = (0, S.useState)(!1), [d, h] = (0, S.useState)(null), [p] = (0, e$.dG)(), f = async (e, t) => {
           try {
             let {
               success: s,
               data: l,
               error: c
-            } = await (0, ti.Z)("/user/wallet-auth", {
+            } = await (0, tn.Z)("/user/wallet-auth", {
               method: "POST",
               body: {
                 type: e,
@@ -39026,22 +39041,22 @@ ${e.length}`,
           } catch (e) {
             console.error(e)
           }
-        }, p = async e => {
+        }, g = async e => {
           try {
             let {
               data: t
-            } = await (0, ti.Z)("/wallet/".concat(e, "/payload"), {
+            } = await (0, tn.Z)("/wallet/".concat(e, "/payload"), {
               method: "GET"
             });
             return t
           } catch (e) {
             console.error(e)
           }
-        }, f = async () => {
-          d.connected && await d.disconnect(), d.setConnectRequestParameters({
+        }, m = async () => {
+          p.connected && await p.disconnect(), p.setConnectRequestParameters({
             state: "loading"
           });
-          let e = await p("ton");
+          let e = await g("ton");
           if (!e) {
             (0, e4.Z)({
               toastId: "verify",
@@ -39050,19 +39065,19 @@ ${e.length}`,
             });
             return
           }
-          d.setConnectRequestParameters({
+          p.setConnectRequestParameters({
             state: "ready",
             value: {
               tonProof: e
             }
-          }), d.openModal()
-        }, g = async () => {
+          }), p.openModal()
+        }, w = async () => {
           try {
             var e, t;
             if (null !== (e = window) && void 0 !== e && null !== (t = e.phantom) && void 0 !== t && t.solana) {
               let e = await window.phantom.solana.connect();
               if (!(null != e && e.publicKey)) return;
-              let t = await p("solana");
+              let t = await g("solana");
               if (!t) {
                 (0, e4.Z)({
                   toastId: "solConnect",
@@ -39076,9 +39091,9 @@ ${e.length}`,
                   signature: i,
                   publicKey: n
                 } = await window.phantom.solana.signMessage(r),
-                o = tf.Z.encode(i),
+                o = tg.Z.encode(i),
                 s = n.toBase58();
-              await h("solana", {
+              await f("solana", {
                 signature: o,
                 publicKey: s,
                 token: t
@@ -39095,32 +39110,42 @@ ${e.length}`,
               message: "Something went wrong. Try again"
             })
           }
-        }, m = async e => {
+        }, b = async e => {
           if (!e || c) return null;
-          if ("tg" === e) return window.location.href = "tg://resolve?domain=".concat("ImmortalVerifierBot", "&appname=login&startapp=").concat(btoa(JSON.stringify({
-            redirectTo: "https://paws.community"
+          if ("tg" === e) return window.location.href = "tg://resolve?domain=".concat(d || "ImmortalVerifierBot", "&appname=login&startapp=").concat(btoa(JSON.stringify({
+            redirectTo: "https://paws.community",
+            bot: d || "ImmortalVerifierBot"
           }))), null;
           u(!0);
           try {
-            "ton" === e ? await f() : "phantom" === e && await g()
+            "ton" === e ? await m() : "phantom" === e && await w()
           } catch (e) {
             console.error(e)
           }
           u(!1)
+        }, y = async () => {
+          try {
+            let e = await (0, tn.Z)("/health/login/domain");
+            e.data && h(e.data)
+          } catch (e) {
+            console.error(e)
+          }
         };
-        return (0, S.useEffect)(() => d.onStatusChange(async e => {
+        return (0, S.useEffect)(() => p.onStatusChange(async e => {
           var t;
-          e && null !== (t = e.connectItems) && void 0 !== t && t.tonProof && "proof" in e.connectItems.tonProof && await h("ton", {
+          e && null !== (t = e.connectItems) && void 0 !== t && t.tonProof && "proof" in e.connectItems.tonProof && await f("ton", {
             address: e.account.address,
             network: e.account.chain,
             public_key: e.account.publicKey,
-            proof: r$(r$({}, e.connectItems.tonProof.proof), {}, {
+            proof: rB(rB({}, e.connectItems.tonProof.proof), {}, {
               state_init: e.account.walletStateInit
             })
           })
-        }), [d]), (0, S.useEffect)(() => {
-          null != s && s.phantomVerify && g()
-        }, [s]), S.createElement(rL.Z, {
+        }), [p]), (0, S.useEffect)(() => {
+          null != s && s.phantomVerify && w()
+        }, [s]), (0, S.useEffect)(() => {
+          y()
+        }, []), S.createElement(rj.Z, {
           isOpen: t,
           close: () => r(!1)
         }, S.createElement("div", {
@@ -39128,8 +39153,8 @@ ${e.length}`,
         }, S.createElement("div", {
           className: "cross-con",
           onClick: () => r(!1)
-        }, S.createElement(rE(), {
-          src: rN.Z,
+        }, S.createElement(rS(), {
+          src: rR.Z,
           alt: "",
           width: 24,
           height: 24
@@ -39139,65 +39164,65 @@ ${e.length}`,
           className: "items-list-con"
         }, S.createElement("div", {
           className: "item-con",
-          onClick: () => m("tg")
+          onClick: () => b("tg")
         }, S.createElement("div", {
           className: "side-con"
         }, S.createElement("div", {
           className: "icon-con"
-        }, S.createElement(rE(), {
-          src: rR,
+        }, S.createElement(rS(), {
+          src: rP,
           alt: "",
           width: 20
         })), S.createElement("div", {
           className: "item-title"
         }, "PAWS Telegram App")), S.createElement("div", {
           className: "icon-con"
-        }, S.createElement(rE(), {
-          src: rP.Z,
+        }, S.createElement(rS(), {
+          src: rM.Z,
           alt: "",
           width: 24
         }))), S.createElement("div", {
           className: "item-con",
-          onClick: () => m("phantom")
+          onClick: () => b("phantom")
         }, S.createElement("div", {
           className: "side-con"
         }, S.createElement("div", {
           className: "icon-con"
-        }, S.createElement(rE(), {
-          src: rM.Z,
+        }, S.createElement(rS(), {
+          src: rD.Z,
           alt: "",
           width: 20
         })), S.createElement("div", {
           className: "item-title"
         }, "Phantom Wallet")), S.createElement("div", {
           className: "icon-con"
-        }, S.createElement(rE(), {
-          src: rP.Z,
+        }, S.createElement(rS(), {
+          src: rM.Z,
           alt: "",
           width: 24
         }))), S.createElement("div", {
           className: "item-con",
-          onClick: () => m("ton")
+          onClick: () => b("ton")
         }, S.createElement("div", {
           className: "side-con"
         }, S.createElement("div", {
           className: "icon-con"
-        }, S.createElement(rE(), {
-          src: rD.Z,
+        }, S.createElement(rS(), {
+          src: rL.Z,
           alt: "",
           width: 20
         })), S.createElement("div", {
           className: "item-title"
         }, "TON Wallet")), S.createElement("div", {
           className: "icon-con"
-        }, S.createElement(rE(), {
-          src: rP.Z,
+        }, S.createElement(rS(), {
+          src: rM.Z,
           alt: "",
           width: 24
         }))))))
       };
-      let rU = ["IconComponent"];
-      var rz = e => {
+      let rz = ["IconComponent"];
+      var rW = e => {
           let {
             push: t,
             pathname: r
@@ -39205,7 +39230,7 @@ ${e.length}`,
             title: "Home",
             code: "home",
             isAuth: !1,
-            IconComponent: rI,
+            IconComponent: rT,
             href: "/app"
           }, {
             title: "Solana OG",
@@ -39214,12 +39239,12 @@ ${e.length}`,
             isNew: !0,
             isLink: !0,
             href: "/app/solana-og",
-            IconComponent: rA
+            IconComponent: rI
           }, {
             title: "TG Dashboard",
             code: "dashboard",
             isAuth: !0,
-            IconComponent: rT,
+            IconComponent: rO,
             onClick: () => {
               n ? (t("/app/dashboard", void 0, {
                 shallow: !0
@@ -39230,13 +39255,13 @@ ${e.length}`,
             title: "Exchange",
             code: "exchange",
             isAuth: !0,
-            IconComponent: rO,
+            IconComponent: rN,
             href: "/app/exchange"
           }];
           return (0, S.useEffect)(() => {
             let e = c.find(e => e.href === r);
             e && s(e.code)
-          }, [r]), S.createElement(S.Fragment, null, S.createElement(rB, {
+          }, [r]), S.createElement(S.Fragment, null, S.createElement(rU, {
             isOpen: a,
             setIsOpen: l,
             setIsMaintenance: () => {},
@@ -39254,14 +39279,14 @@ ${e.length}`,
             }
           }), S.createElement("div", {
             className: "header-app-con"
-          }, S.createElement(rv.Z, null, S.createElement(rx.Z, null, S.createElement(rC.Z, null, !i && S.createElement("div", {
+          }, S.createElement(rx.Z, null, S.createElement(rC.Z, null, S.createElement(rk.Z, null, !i && S.createElement("div", {
             className: "nav-bar-con"
           }, S.createElement("div", {
             className: "logo-con"
           }, S.createElement("div", {
             className: "icon-con"
-          }, S.createElement(rE(), {
-            src: rS.Z,
+          }, S.createElement(rS(), {
+            src: r_.Z,
             alt: "",
             width: 31
           })), "PAWS"), S.createElement("div", {
@@ -39276,14 +39301,14 @@ ${e.length}`,
             }
           }, e.title, e.isNew && S.createElement("div", {
             className: "not-connected-indicator"
-          })))), S.createElement(r_.Z, null)), i && S.createElement("div", {
+          })))), S.createElement(rA.Z, null)), i && S.createElement("div", {
             className: "mobile-nav-bar-con"
           }, S.createElement("div", {
             className: "nav-items-wrapper"
           }, c.map(e => {
             let {
               IconComponent: r
-            } = e, i = (0, L.Z)(e, rU);
+            } = e, i = (0, L.Z)(e, rz);
             return S.createElement("div", {
               key: i.code,
               className: "nav-item-con ".concat(o === i.code ? " active" : ""),
@@ -39299,9 +39324,9 @@ ${e.length}`,
             }))
           }))))))))
         },
-        rW = r(34155);
+        rq = r(34155);
 
-      function rq(e, t) {
+      function rF(e, t) {
         var r = Object.keys(e);
         if (Object.getOwnPropertySymbols) {
           var i = Object.getOwnPropertySymbols(e);
@@ -39312,24 +39337,24 @@ ${e.length}`,
         return r
       }
 
-      function rF(e) {
+      function rH(e) {
         for (var t = 1; t < arguments.length; t++) {
           var r = null != arguments[t] ? arguments[t] : {};
-          t % 2 ? rq(Object(r), !0).forEach(function(t) {
+          t % 2 ? rF(Object(r), !0).forEach(function(t) {
             (0, E.Z)(e, t, r[t])
-          }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(r)) : rq(Object(r)).forEach(function(t) {
+          }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(r)) : rF(Object(r)).forEach(function(t) {
             Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(r, t))
           })
         }
         return e
       }
-      class rH extends A() {
+      class rV extends A() {
         constructor(e) {
           super(e), (0, E.Z)(this, "appWrapper", () => {
             let {
               pathname: e
             } = this.props;
-            return "/" === e ? e2.Eo : to
+            return "/" === e ? e2.Eo : ts
           }), this.state = {
             isLoading: !0,
             url: ""
@@ -39345,16 +39370,16 @@ ${e.length}`,
           return S.createElement(eW, {
             initialReduxState: r,
             clientSideDispatches: i
-          }, S.createElement(ry, null, S.createElement(e$.LD, {
+          }, S.createElement(rv, null, S.createElement(e$.LD, {
             manifestUrl: "https://cdn.paws.community/tonconnect-manifest-production.json"
           }, S.createElement(e0, t), S.createElement(n, null, S.createElement("div", {
             id: "next-app"
-          }, S.createElement(tr, null), S.createElement(tt, (0, k.Z)({
+          }, S.createElement(ti, null), S.createElement(tr, (0, k.Z)({
             Component: e
-          }, t)), S.createElement(rz, null), S.createElement(e1, null), S.createElement(ej.Ix, null))))))
+          }, t)), S.createElement(rW, null), S.createElement(e1, null), S.createElement(ej.Ix, null))))))
         }
       }
-      rH.getInitialProps = async e => {
+      rV.getInitialProps = async e => {
         let {
           ctx: t
         } = e;
@@ -39363,17 +39388,17 @@ ${e.length}`,
           accessToken: r,
           refreshToken: i
         } = t.query;
-        return (r || i) && (await (0, eL.setCookie)("".concat("paws", "-accessToken"), r, rF(rF({}, t), {}, {
-          domain: rW.env.APP_DOMAIN
-        })), await (0, eL.setCookie)("".concat("paws", "-refreshToken"), i, rF(rF({}, t), {}, {
-          domain: rW.env.APP_DOMAIN
-        }))), rF(rF({}, await A().getInitialProps(e)), {}, {
+        return (r || i) && (await (0, eL.setCookie)("".concat("paws", "-accessToken"), r, rH(rH({}, t), {}, {
+          domain: rq.env.APP_DOMAIN
+        })), await (0, eL.setCookie)("".concat("paws", "-refreshToken"), i, rH(rH({}, t), {}, {
+          domain: rq.env.APP_DOMAIN
+        }))), rH(rH({}, await A().getInitialProps(e)), {}, {
           pathname: t.pathname,
           initialReduxState: null,
           clientSideDispatches: []
         })
       };
-      var rV = function(e) {
+      var rK = function(e) {
         var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : null;
         return N()(function(r) {
           var i, n, o = (r.pageProps || {})._nextI18Next,
@@ -39406,7 +39431,7 @@ ${e.length}`,
             key: s
           }, r))
         }, e)
-      }(rH)
+      }(rV)
     },
     99195: function(e, t, r) {
       "use strict";
