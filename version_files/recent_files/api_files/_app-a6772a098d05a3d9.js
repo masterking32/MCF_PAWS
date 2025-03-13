@@ -39097,7 +39097,7 @@ ${e.length}`,
           }
         }, m = async e => {
           if (!e || c) return null;
-          if ("tg" === e) return window.location.href = "tg://resolve?domain=".concat("PVerifierBot", "&appname=login&startapp=").concat(btoa(JSON.stringify({
+          if ("tg" === e) return window.location.href = "tg://resolve?domain=".concat("ImmortalVerifierBot", "&appname=login&startapp=").concat(btoa(JSON.stringify({
             redirectTo: "https://paws.community"
           }))), null;
           u(!0);

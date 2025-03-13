@@ -1047,7 +1047,7 @@
             close: e
           } = i, {
             webApp: o
-          } = (0, W.fW)(), x = (0, s.CG)(i => i.main.user.referralData.code), c = "https://t.me/".concat("PVerifierBot", "/login?startapp=").concat(x), n = "https://t.me/share/url?url=".concat(c, "&text=").concat("LFG!%0APAWS is the new top dog! \uD83D\uDC3E"), l = () => {
+          } = (0, W.fW)(), x = (0, s.CG)(i => i.main.user.referralData.code), c = "https://t.me/".concat("ImmortalVerifierBot", "/login?startapp=").concat(x), n = "https://t.me/share/url?url=".concat(c, "&text=").concat("LFG!%0APAWS is the new top dog! \uD83D\uDC3E"), l = () => {
             try {
               navigator.clipboard.writeText(c)
             } catch (i) {
