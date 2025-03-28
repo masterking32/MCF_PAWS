@@ -34560,7 +34560,7 @@ ${e.length}`,
           }, {
             id: "discord",
             icon: u,
-            link: "https://discord.gg/dvKnMMU7Jp",
+            link: "https://discord.com/invite/pawsuplabs",
             width: e ? 25 : 30
           }, {
             id: "youtube",
