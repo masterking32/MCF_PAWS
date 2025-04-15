@@ -34509,11 +34509,11 @@ ${e.length}`,
         })
       }
     },
-    59587: function(e, t, r) {
+    17052: function(e, t, r) {
       "use strict";
       r.d(t, {
         Z: function() {
-          return d
+          return h
         }
       });
       var i = r(67294),
@@ -34548,11 +34548,23 @@ ${e.length}`,
           blurWidth: 0,
           blurHeight: 0
         },
-        d = () => {
+        d = {
+          src: "/_next/static/media/whitepaper.1ddc08a9.svg",
+          height: 26,
+          width: 26,
+          blurWidth: 0,
+          blurHeight: 0
+        },
+        h = () => {
           let e = (0, s.CG)(e => e.main.isMobile);
           return i.createElement("div", {
             className: "socials-items-con"
           }, [{
+            id: "whitepaper",
+            icon: d,
+            link: "/whitepaper.pdf",
+            width: e ? 20 : 24
+          }, {
             id: "twitter",
             icon: a,
             link: "https://x.com/GOTPAWSED",
@@ -38884,7 +38896,7 @@ ${e.length}`,
         rE = r(25675),
         rS = r.n(rE),
         r_ = r(9163),
-        rA = r(59587);
+        rA = r(17052);
       let rI = e => S.createElement("svg", {
           width: "30",
           height: "30",
