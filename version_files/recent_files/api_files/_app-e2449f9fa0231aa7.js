@@ -39248,7 +39248,7 @@ ${e.length}`,
             title: "Solana OG",
             code: "solana-og",
             isAuth: !1,
-            isNew: !0,
+            isNew: !1,
             isLink: !0,
             href: "/app/solana-og",
             IconComponent: rI
