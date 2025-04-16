@@ -10,7 +10,7 @@ self.__BUILD_MANIFEST = function(s, a, c) {
     "/_error": ["static/chunks/pages/_error-4037c84fe3f5cc3c.js"],
     "/app": [s, "static/css/b62cf4e58b6cf28d.css", "static/chunks/pages/app-cbe308017d21601d.js"],
     "/app/dashboard": [s, a, "static/chunks/293-4e61cc5d98a408bc.js", "static/css/a6e375970248c8e1.css", "static/chunks/pages/app/dashboard-72b5c1d5a2f5f898.js"],
-    "/app/exchange": ["static/css/460834952e658187.css", "static/chunks/pages/app/exchange-57f8acb34ba19de9.js"],
+    "/app/exchange": ["static/css/460834952e658187.css", "static/chunks/pages/app/exchange-ea92ca736e0dbb49.js"],
     "/app/solana-og": ["static/css/968a6c73304dfb42.css", "static/chunks/pages/app/solana-og-9cbc4f23350657bb.js"],
     "/discord-verify": [c, "static/chunks/pages/discord-verify-bfa362c23f4d2a74.js"],
     "/phantom-connect": [c, "static/chunks/pages/phantom-connect-64f01712227bdb5f.js"],
