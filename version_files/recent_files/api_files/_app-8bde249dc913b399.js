@@ -39505,6 +39505,9 @@ ${e.length}`,
         tR: function() {
           return d
         },
+        uf: function() {
+          return p
+        },
         x5: function() {
           return x
         },
@@ -39639,7 +39642,7 @@ ${e.length}`,
               e.user.userData.wallet = t.payload
             },
             setUserSolWallet: (e, t) => {
-              e.user.userData.solanaWallet = t.payload
+              e.user.userData.proofSolanaWallet = t.payload
             },
             setUserData: (e, t) => {
               e.user.userData = o(o({}, e.user.userData), t.payload)
